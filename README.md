@@ -42,16 +42,14 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 | hw2 | Sept 16, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
 | hw3 | Oct 01, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
 | hw4 | Oct 10, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
-| **Midterm 1** | Oct 15 to Oct 17  | PrairiLearn (in person) | PrairiLearn (in person)|
+| **Midterm 1** | Oct 15 to Oct 17  | PrairieLearn (in person) | PrairieLearn (in person)|
 | hw5 | Oct 28, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
 | hw6 | November 04, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
-| **Midterm 2** | Nov 14 and Oct 15  | PrairiLearn (in person) | PrairiLearn (in person)|
+| **Midterm 2** | Nov 14 and Oct 15  | PrairieLearn (in person) | PrairieLearn (in person)|
 | hw7 | November 18, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
 | hw8 | November 25, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|   
 | hw9 | December 5, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
-| **Final exam** | TBA |  PrairiLearn (in person) | PrairiLearn (in person) | 
-
-
+| **Final exam** | TBA |  PrairieLearn (in person) | PrairieLearn (in person) | 
 
 ## Lecture schedule (tentative)
 
@@ -65,7 +63,7 @@ We'll be developing lecture notes directly in this repository. So if you check t
 |--------|-----------|-------------------------|------------------|
 | Sep 3 | _UBC Imagine Day - no class_ | | 
 | Sep 5 | Course intro | 📹 Pre-watch: [1.0](https://youtu.be/-1hTcS5ZE4w) | n/a |
-| Sep  10| Decision trees | 📹 Pre-watch: [2.1](https://youtu.be/YNT8n4cXu4A), [2.2](https://youtu.be/6eT5cLL-2Vc), [2.3](https://youtu.be/Hcf19Ij35rA), [2.4](https://youtu.be/KEtsfXn4w2E) |   less depth | 
+| Sep 10| Decision trees | 📹 Pre-watch: [2.1](https://youtu.be/YNT8n4cXu4A), [2.2](https://youtu.be/6eT5cLL-2Vc), [2.3](https://youtu.be/Hcf19Ij35rA), [2.4](https://youtu.be/KEtsfXn4w2E) |   less depth | 
 | Sep 12 | ML fundamentals | 📹 Pre-watch: [3.1](https://youtu.be/iS2hsRRlc2M), [3.2](https://youtu.be/h2AEobwcUQw), [3.3](https://youtu.be/4cv8VYonepA), [3.4](https://youtu.be/Ihay8yE5KTI) | similar |
 | Sep 17 | $k$-NNs and SVM with RBF kernel | 📹 Pre-watch: [4.1](https://youtu.be/hCa3EXEUmQk), [4.2](https://youtu.be/bENDqXKJLmg),  [4.3](https://youtu.be/IRGbqi5S9gQ), [4.4](https://youtu.be/ic_zqOhi020) | less depth |
 | Sep 19 | Preprocessing, `sklearn` pipelines | 📹  Pre-watch: [5.1](https://youtu.be/xx9HlmzORRk), [5.2](https://youtu.be/G2IXbVzKlt8), [5.3](https://youtu.be/nWTce7WJSd4), [5.4](https://youtu.be/2mJ9rAhMMl0)  |  more depth|
