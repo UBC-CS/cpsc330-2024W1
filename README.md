@@ -24,10 +24,10 @@ Software licensed under [the MIT License](https://spdx.org/licenses/MIT.html), n
 * [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html)
 * [Course GitHub page](https://github.com/UBC-CS/cpsc330-2024W1)
 * [Course Jupyter book]()
-* [Canvas](https://canvas.ubc.ca/courses/)
-* [Piazza]()
+* [Canvas](https://canvas.ubc.ca/courses/149122)
+* [Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1)
 * [iClicker Cloud]()
-* [Gradescope]()
+* [Gradescope](https://www.gradescope.ca/courses/18608)
 * [Course videos YouTube channel](https://www.youtube.com/playlist?list=PLHofvQE1VlGtZoAULxcHb7lOsMved0CuM)
 * [Syllabus / administrative info](docs/syllabus.md)
 * [Other course documents](https://github.com/UBC-CS/cpsc330-2024W1/tree/main/docs)
@@ -37,18 +37,19 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 
 |Assessment  | Due date |  Where to find? | Where to submit? | 
 |-------|-----------|-----------|-----------|
-| hw1 | Sept 12, 11:59 pm |  [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| Syllabus quiz | Sept 19, 11:59 pm  | [Canvas](https://canvas.ubc.ca/courses/123439) | [Canvas](https://canvas.ubc.ca/courses/123439) | 
-| hw2 | Sept 18, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)| 
-| hw3 | Oct 02, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| hw4 | Oct 10, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| **Midterm** | Oct 26 6:00 pm to 7:20 pm  | In person on [Canvas](https://canvas.ubc.ca/courses/123439) ESB 1013 + CIRS 1250 | [Canvas](https://canvas.ubc.ca/courses/123439)
-| hw5 | Oct 30, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|
-| hw6 | November 13, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| hw7 | November 20, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| hw8 | November 27, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| hw9 | December 7, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2023W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/11525)|  
-| **Final exam** | TBA | [Canvas](https://canvas.ubc.ca/courses/123439) | [Canvas](https://canvas.ubc.ca/courses/123439) |
+| hw1 | Sept 9, 11:59 pm |  [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
+| Syllabus quiz | Sept 19, 11:59 pm  | [Canvas](https://canvas.ubc.ca/courses/149122) | [Canvas](https://canvas.ubc.ca/courses/149122) | 
+| hw2 | Sept 16, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
+| hw3 | Oct 01, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
+| hw4 | Oct 10, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
+| **Midterm 1** | Oct 15 to Oct 17  | PrairiLearn (in person) | PrairiLearn (in person)|
+| hw5 | Oct 28, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
+| hw6 | November 04, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
+| **Midterm 2** | Nov 14 and Oct 15  | PrairiLearn (in person) | PrairiLearn (in person)|
+| hw7 | November 18, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
+| hw8 | November 25, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|   
+| hw9 | December 5, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
+| **Final exam** | TBA |  PrairiLearn (in person) | PrairiLearn (in person) | 
 
 
 
@@ -60,11 +61,11 @@ This course will be run in a semi flipped classroom format. There will be pre-wa
 
 We'll be developing lecture notes directly in this repository. So if you check them before the lecture, they might be in a draft form. Once they are finalized, they will be posted in the [Course Jupyter book](). 
 
-| Date  | Topic |  Assigned videos | vs. CPSC 340 |
-|-------|-----------|-------------------------|------------------|
+| Date   | Topic |  Assigned videos | vs. CPSC 340 |
+|--------|-----------|-------------------------|------------------|
 | Sep 3 | _UBC Imagine Day - no class_ | | 
 | Sep 5 | Course intro | 📹 Pre-watch: [1.0](https://youtu.be/-1hTcS5ZE4w) | n/a |
-| Sep  10| Decision trees | 📹 Pre-watch: [2.1](https://youtu.be/YNT8n4cXu4A), [2.2](https://youtu.be/6eT5cLL-2Vc), [2.3](https://youtu.be/Hcf19Ij35rA), [2.4](https://youtu.be/KEtsfXn4w2E) |   less depth| 
+| Sep  10| Decision trees | 📹 Pre-watch: [2.1](https://youtu.be/YNT8n4cXu4A), [2.2](https://youtu.be/6eT5cLL-2Vc), [2.3](https://youtu.be/Hcf19Ij35rA), [2.4](https://youtu.be/KEtsfXn4w2E) |   less depth | 
 | Sep 12 | ML fundamentals | 📹 Pre-watch: [3.1](https://youtu.be/iS2hsRRlc2M), [3.2](https://youtu.be/h2AEobwcUQw), [3.3](https://youtu.be/4cv8VYonepA), [3.4](https://youtu.be/Ihay8yE5KTI) | similar |
 | Sep 17 | $k$-NNs and SVM with RBF kernel | 📹 Pre-watch: [4.1](https://youtu.be/hCa3EXEUmQk), [4.2](https://youtu.be/bENDqXKJLmg),  [4.3](https://youtu.be/IRGbqi5S9gQ), [4.4](https://youtu.be/ic_zqOhi020) | less depth |
 | Sep 19 | Preprocessing, `sklearn` pipelines | 📹  Pre-watch: [5.1](https://youtu.be/xx9HlmzORRk), [5.2](https://youtu.be/G2IXbVzKlt8), [5.3](https://youtu.be/nWTce7WJSd4), [5.4](https://youtu.be/2mJ9rAhMMl0)  |  more depth|
@@ -73,18 +74,17 @@ We'll be developing lecture notes directly in this repository. So if you check t
 | Oct 01 | Hyperparameter optimization, overfitting the validation set | 📹 Pre-watch: [8.1](https://youtu.be/lMWdHZSZMk8), [8.2](https://youtu.be/Z9a9XZ0vQv0) |   different|
 | Oct 03 | Evaluation metrics for classification  | 📹  Reference: [9.2](https://youtu.be/ZCuCErW5lI8), [9.3](https://youtu.be/XkCTUuoH23c),[9.4](https://youtu.be/jHaKRCFb6Qw) | more depth |
 | Oct 08 | Regression metrics |  📹 Pre-watch: [10.1](https://youtu.be/lgGTKLwNgkQ) |   more depth on metrics less depth on regression|
-| Oct 10 | No class. Monday classes moved to Thursday. | | 
-| Oct 15 | Ensembles|  📹 Pre-watch: [11.1](https://youtu.be/8litm1H7DLo), [11.2](https://youtu.be/EkFkY9QB2Hw) | similar |
+| Oct 10 | Ensembles |  📹 Pre-watch: [11.1](https://youtu.be/8litm1H7DLo), [11.2](https://youtu.be/EkFkY9QB2Hw) | similar |
+| Oct 15 and 16 | No class. Midterm 1 | | |
 | Oct 17 | Feature importances, model interpretation | 📹 Pre-watch: [12.1](https://youtu.be/xfICsGL7DXE),[12.2](https://youtu.be/tiSN18OmZOo)| feature importances is new, feature engineering is new |
 | Oct 22 |   Feature engineering and feature selection | None | less depth |
-| | | |
-| Oct 24 | **Midterm. No classes.**  |  |
-| Oct 29 |   Clustering |  📹 Pre-watch: [14.1](https://youtu.be/caAuUAXwpb8), [14.2](https://youtu.be/s6AvSZ1_l7I), [14.3](https://youtu.be/M5ilrhcL0oY)  | less depth |
-| Oct 31 |   More clustering |  📹 Pre-watch: [15.1](https://youtu.be/1ZwITQyWpkY), [15.2](https://youtu.be/T4NLsrUaRtg), [15.3](https://youtu.be/NM8lFKFZ2IU)   | less depth |
-| Nov 05 |   Simple recommender systems | | less depth ||
-| Nov 07 |   Text data, embeddings, topic modeling  | 📹 Pre-watch: [16.1](https://youtu.be/GTC_iLPCjdY), [16.2](https://youtu.be/7W5Q8gzNPBc)  |   new |
+| Oct 24 |   Clustering |  📹 Pre-watch: [14.1](https://youtu.be/caAuUAXwpb8), [14.2](https://youtu.be/s6AvSZ1_l7I), [14.3](https://youtu.be/M5ilrhcL0oY)  | less depth |
+| Oct 29 |   More clustering |  📹 Pre-watch: [15.1](https://youtu.be/1ZwITQyWpkY), [15.2](https://youtu.be/T4NLsrUaRtg), [15.3](https://youtu.be/NM8lFKFZ2IU)   | less depth |
+| Oct 31 |   Simple recommender systems | | less depth ||
+| Nov 05 |   Text data, embeddings, topic modeling  | 📹 Pre-watch: [16.1](https://youtu.be/GTC_iLPCjdY), [16.2](https://youtu.be/7W5Q8gzNPBc)  |   new |
+| Nov 07 |   Neural networks and computer vision | |   less depth |
 | Nov 12 | _Midterm break - no class_  |  |
-| Nov 14 | Neural networks and computer vision | |   less depth |
+| Nov 14 to 16 | No class Midterm 2 | |
 | Nov 19 | Time series data | (Optional) [Humour: The Problem with Time & Timezones](https://www.youtube.com/watch?v=-5wpm-gesOY) | new |
 | Nov 21 | Survival analysis | 📹 (Optional but highly recommended)[Calling Bullshit 4.1: Right Censoring](https://www.youtube.com/watch?v=ITWQ5psx9Sw)|   new |
 | Nov 26 | Communication | 📹 (Optional but highly recommended) <li>[Calling BS videos](https://www.youtube.com/playlist?list=PLPnZfvKID1Sje5jWxt-4CSZD7bUI4gSPS) Chapter 6 (6 short videos, 47 min total)</li> <li>[Can you read graphs? Because I can't.](https://www.youtube.com/watch?v=vbDObzI-CTc) by Sabrina (7 min)</li> |   new |
