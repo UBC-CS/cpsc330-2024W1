@@ -58,12 +58,12 @@ The grading scheme for the course is as follows:
 
 | Component   | Weight          | Location   |
 |-------------|-----------------|------------|
-| Syllabus quiz |   1%          | [Canvas](https://canvas.ubc.ca/courses/123439) | 
-| iClicker participation |   5% | [iClicker Cloud](https://join.iclicker.com/SNBF) | 
-| Assignments |     22%         | [Gradescope](https://www.gradescope.ca/courses/11525) |
-| Midterm 1   |     21%         | [Gradescope](https://www.gradescope.ca/courses/11525) |
-| Midterm 2   |     21%         | [Gradescope](https://www.gradescope.ca/courses/11525) |
-| Final       |     30%         | [Canvas](https://canvas.ubc.ca/courses/123439)     |
+| Syllabus quiz |   1%          | [Canvas](https://canvas.ubc.ca/courses/149122) | 
+| iClicker participation |   5% | [iClicker Cloud]() | 
+| Assignments |     22%         | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Midterm 1   |     21%         | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Midterm 2   |     21%         | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Final       |     30%         | [Canvas](https://canvas.ubc.ca/courses/149122)     |
 
 
 ### iClicker 
@@ -99,18 +99,21 @@ We will post solutions after the second late day has expired.
 
 ### Use of AI in the course
 
-Use of AI-based content generation tools, or AI tools, is permitted for assignments and project work in CPSC 330. However, it is not allowed during the midterm and the final exams. 
+Use of AI-based content generation tools, or AI tools, is permitted for assignments and project work in CPSC 330. It is not allowed during midterms and the final exams. 
 
 Additionally, students are required to disclose any use of AI tools for each assignment. This includes
 - Referencing the tool used
 - Including any prompts used to query
 - Including the output of the prompts and a discussion of if/how you modified the result
 
-Failure to follow this policy will be considered a violation of UBC’s academic policy. 
+Failure to follow this policy will be considered a violation of UBC's academic policy. 
+
+When using AI tools for your assignments, be mindful of their impact on your learning. Consider carefully whether they are improving or hindering your learning, and make a conscious decision about their use. 
+
 
 ### Midterm
 
-Check the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html) for midterm date and time. 
+Check the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html) for midterm dates. 
 
 TODO: Write about midterm exam policy. 
 
@@ -120,7 +123,9 @@ The final exam is scheduled for the exam period and is likely to be comprehensiv
 
 ## Academic concessions
 
-UBC has a [policy on academic concession](https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf) for cases in which a student may be unable to complete coursework. According to this policy, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include "a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend." To request an academic concession, please complete [academic concession form](https://github.com/UBC-CS/cpsc330/blob/master/docs/ConcessionForm.pdf), clearly indicating the nature of the concession you are seeking, and send the form via email to the course coordinator, Michelle Pang (cpsc330-admin@cs.ubc.ca), with your instructor copied in the email. Additional documentation might be requested. We will review your situation and determine whether to approve the concession, and if approved, the appropriate steps to follow.
+UBC has a [policy on academic concession](https://students.ubc.ca/enrolment/academic-learning-resources/academic-concessions) for cases in which a student may be unable to complete coursework. According to this policy, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include "a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend." To request an academic concession, please complete [academic concession form](), clearly indicating the nature of the concession you are seeking, and send the form via email to the course coordinator (cpsc330-admin@cs.ubc.ca), with your instructor copied in the email. Additional documentation might be requested. We will review your situation and determine whether to approve the concession, and if approved, the appropriate steps to follow.
+
+**TODO: Include a link to the standard concession form.** 
 
 ## Code of conduct
 
@@ -129,6 +134,6 @@ UBC has a [policy on academic concession](https://senate.ubc.ca/sites/senate.ubc
 - Do not photograph or record lectures (audio or video) without permission.
 - If you commit to working with a partner on an assignment, do your fair share of the work.
 - If you have a problem or complaint, let the instructor(s) know immediately. Maybe we can fix it!
- 
+- During the exam period, do not disclose, discuss, or share any part of the exam with any other individual, except as directly permitted or required by the course instructors. This includes discussion in person, online, or through any electronic means. Violation of this will result in academic penalties, which may include failure of the exam or failure of the course.  
 
     

@@ -1,4 +1,4 @@
-# UBC CPSC 330: Applied Machine Learning (2023W1)
+# UBC CPSC 330: Applied Machine Learning (2024W1)
 
 This is the course homepage for CPSC 330: Applied Machine Learning at the University of British Columbia. You are looking at the current version (Sep-Dec 2024).
 
@@ -15,7 +15,7 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 
 ## License
 
-© 2024 Varada Kolhatkar and Mike Gelbart
+© 2024 Varada Kolhatkar, Mike Gelbart, Giulia Toti, and Firas Moosvi
 
 Software licensed under [the MIT License](https://spdx.org/licenses/MIT.html), non-software content licensed under [the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License](https://creativecommons.org/licenses/by-nc-sa/4.0/). See the [license file](LICENSE.md) for more information.
 
@@ -88,35 +88,41 @@ We'll be developing lecture notes directly in this repository. So if you check t
 | Nov 26 | Communication | 📹 (Optional but highly recommended) <li>[Calling BS videos](https://www.youtube.com/playlist?list=PLPnZfvKID1Sje5jWxt-4CSZD7bUI4gSPS) Chapter 6 (6 short videos, 47 min total)</li> <li>[Can you read graphs? Because I can't.](https://www.youtube.com/watch?v=vbDObzI-CTc) by Sabrina (7 min)</li> |   new |
 | Nov 28  |  Ethics |   📹 (Optional but highly recommended) <li>[Calling BS videos](https://www.youtube.com/playlist?list=PLPnZfvKID1Sje5jWxt-4CSZD7bUI4gSPS) Chapter 5 (6 short videos, 50 min total)</li> <li>[The ethics of data science](http://jtleek.com/ads2020/week-15.html)</li>| new |
 | Dec 03 | Model deployment and conclusion |  |  new |
-| Dec 05 | (Optional but fun) LLMs/Bayesian modeling |  |   new |
+| Dec 05 | (Optional but fun) LLMs |  |   new |
 
-### [Communicable Disease Prevention Framework at UBC](https://srs.ubc.ca/health-safety/safety-programs/communicable-disease-prevention-framework/)
+## Reference Material
+<details>
+  <summary>Click to expand!</summary>
+    
+### Books
+* [A Course in Machine Learning (CIML)](http://ciml.info/) by Hal Daumé III 
+* Introduction to Machine Learning with Python: A Guide for Data Scientists by Andreas C. Mueller and Sarah Guido.
+* [An Introduction to Statistical
+Learning](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
+* [The Elements of Statistical Learning (ESL)](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
+* [Data Mining: Practical Machine Learning Tools and Techniques (PMLTT)](https://www.wi.hs-wismar.de/~cleve/vorl/projects/dm/ss13/HierarClustern/Literatur/WittenFrank-DM-3rd.pdf)
+* Artificial intelligence: A Modern Approach by Russell, Stuart and Peter Norvig.
+* [Artificial Intelligence 2E: Foundations of Computational Agents](https://artint.info/2e/html/ArtInt2e.htm) (2017) by David Poole and Alan Mackworth (of UBC!).
 
-**Masks:** This class is going to be in person. UBC no longer requires students, faculty and staff to wear non-medical masks. Wearing masks in public indoor settings is not required by public health but a personal choice. Please be kind and respectful of an individual’s choice if they choose to wear a mask.
+### Online courses
 
-**Your personal health:**
-If you are ill or believe you have COVID-19 symptoms or been exposed to SARS-CoV-2 use the [Thrive Health](https://bc.thrive.health/covid19/en) self-assessment tool for guidance, or download the [BC COVID-19 Support App](https://welcome.thrive.health/bc-covid19-app) for iOS or Android device and follow the instructions provided. Follow the advice from [Public Health](https://www2.gov.bc.ca/gov/content/covid-19/info/restrictions).
+* [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
+* [Machine Learning](https://www.coursera.org/learn/machine-learning) (Andrew Ng's famous Coursera course)
+* [Foundations of Machine Learning](https://bloomberg.github.io/foml/#home) online course from Bloomberg.
+* [Machine Learning Exercises In Python, Part 1](http://www.johnwittenauer.net/machine-learning-exercises-in-python-part-1/) (translation of Andrew Ng's course to Python, also relevant for DSCI 561, 572, 563)
 
-Stay home if you have recently tested positive for COVID-19 or are required to quarantine. You can check [this website](http://www.bccdc.ca/health-info/diseases-conditions/covid-19/self-isolation#Who) to find out if you should self-isolate or self-monitor. 
- 
-Your precautions will help reduce risk and keep everyone safer. In this class, the marking scheme is intended to provide flexibility so that you can prioritize your health and still be able to succeed: 
-- All course notes will be provided online. 
-- All homework assignments can be done and handed in online. 
-- All exams will be held online. (But you need to be present in the classroom to write the exam unless there is a legitimate reason for not doing so.)  
-- Most of the class activity will be video recorded and will be made available to you. 
-- There will be at least a few office hours which will be held online.
+### Misc
 
+* [A Visual Introduction to Machine Learning (Part 1)](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
+* [A Few Useful Things to Know About Machine Learning](https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf) (an article by Pedro Domingos)
+* [Metacademy](https://metacademy.org/) (sort of like a concept map for machine learning, with suggested resources)
+* [Machine Learning
+  101](https://docs.google.com/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/present?slide=id.g168a3288f7_0_58)
+  (slides by Jason Mayes, engineer at Google)
+    
+</details>     
 
-## Land Acknowledgement
+## Syllabus
+The syllabus is available [here](syllabus.md). 
 
-UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəy̓əm (Musqueam) peple. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
-
-It is important that this recognition of Musqueam territory and our relationship with the Musqueam people does not appear as just a formality. Take a moment to appreciate the meaning behind the words we use:
-
-**TRADITIONAL** recognizes lands traditionally used and/or occupied by the Musqueam people or other First Nations in other parts of the country.
-
-**ANCESTRAL** recognizes land that is handed down from generation to generation.
-
-**UNCEDED** refers to land that was not turned over to the Crown (government) by a treaty or other agreement.
-
-As you begin your journey at UBC, take some time to learn about the history of this land and to honour its original inhabitants.
+Enjoy your learning journey in CPSC 330: Applied Machine Learning!
