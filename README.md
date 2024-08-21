@@ -37,18 +37,18 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 
 |Assessment  | Due date |  Where to find? | Where to submit? | 
 |-------|-----------|-----------|-----------|
-| hw1 | Sept 9, 11:59 pm |  [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
+| hw1 | Sept 09, 11:59 pm |  [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
 | Syllabus quiz | Sept 19, 11:59 pm  | [Canvas](https://canvas.ubc.ca/courses/149122) | [Canvas](https://canvas.ubc.ca/courses/149122) | 
 | hw2 | Sept 16, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
 | hw3 | Oct 01, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
-| hw4 | Oct 10, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
-| **Midterm 1** | Oct 15 to Oct 17  | PrairieLearn (in person) | PrairieLearn (in person)|
+| hw4 | Oct 07, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
+| **Midterm 1** | Oct 15 and Oct 16  | PrairieLearn (in person) | PrairieLearn (in person)|
 | hw5 | Oct 28, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
 | hw6 | November 04, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
 | **Midterm 2** | Nov 14 and Oct 15  | PrairieLearn (in person) | PrairieLearn (in person)|
 | hw7 | November 18, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
 | hw8 | November 25, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|   
-| hw9 | December 5, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
+| hw9 | December 05, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
 | **Final exam** | TBA |  PrairieLearn (in person) | PrairieLearn (in person) | 
 
 ## Lecture schedule (tentative)
@@ -73,7 +73,7 @@ We'll be developing lecture notes directly in this repository. So if you check t
 | Oct 03 | Evaluation metrics for classification  | 📹  Reference: [9.2](https://youtu.be/ZCuCErW5lI8), [9.3](https://youtu.be/XkCTUuoH23c),[9.4](https://youtu.be/jHaKRCFb6Qw) | more depth |
 | Oct 08 | Regression metrics |  📹 Pre-watch: [10.1](https://youtu.be/lgGTKLwNgkQ) |   more depth on metrics less depth on regression|
 | Oct 10 | Ensembles |  📹 Pre-watch: [11.1](https://youtu.be/8litm1H7DLo), [11.2](https://youtu.be/EkFkY9QB2Hw) | similar |
-| Oct 15 and 16 | No class. Midterm 1 | | |
+| Oct 15 and 16 | _No class - Midterm 1_ | | |
 | Oct 17 | Feature importances, model interpretation | 📹 Pre-watch: [12.1](https://youtu.be/xfICsGL7DXE),[12.2](https://youtu.be/tiSN18OmZOo)| feature importances is new, feature engineering is new |
 | Oct 22 |   Feature engineering and feature selection | None | less depth |
 | Oct 24 |   Clustering |  📹 Pre-watch: [14.1](https://youtu.be/caAuUAXwpb8), [14.2](https://youtu.be/s6AvSZ1_l7I), [14.3](https://youtu.be/M5ilrhcL0oY)  | less depth |
@@ -81,8 +81,8 @@ We'll be developing lecture notes directly in this repository. So if you check t
 | Oct 31 |   Simple recommender systems | | less depth ||
 | Nov 05 |   Text data, embeddings, topic modeling  | 📹 Pre-watch: [16.1](https://youtu.be/GTC_iLPCjdY), [16.2](https://youtu.be/7W5Q8gzNPBc)  |   new |
 | Nov 07 |   Neural networks and computer vision | |   less depth |
-| Nov 12 | _Midterm break - no class_  |  |
-| Nov 14 to 16 | No class Midterm 2 | |
+| Nov 12 | _UBC Midterm break - no class_  |  |
+| Nov 14 and 15 | _Midterm 2 - no_class_| |
 | Nov 19 | Time series data | (Optional) [Humour: The Problem with Time & Timezones](https://www.youtube.com/watch?v=-5wpm-gesOY) | new |
 | Nov 21 | Survival analysis | 📹 (Optional but highly recommended)[Calling Bullshit 4.1: Right Censoring](https://www.youtube.com/watch?v=ITWQ5psx9Sw)|   new |
 | Nov 26 | Communication | 📹 (Optional but highly recommended) <li>[Calling BS videos](https://www.youtube.com/playlist?list=PLPnZfvKID1Sje5jWxt-4CSZD7bUI4gSPS) Chapter 6 (6 short videos, 47 min total)</li> <li>[Can you read graphs? Because I can't.](https://www.youtube.com/watch?v=vbDObzI-CTc) by Sabrina (7 min)</li> |   new |
