@@ -73,7 +73,7 @@ We'll be developing lecture notes directly in this repository. So if you check t
 | Oct 03 | Evaluation metrics for classification  | 📹  Reference: [9.2](https://youtu.be/ZCuCErW5lI8), [9.3](https://youtu.be/XkCTUuoH23c),[9.4](https://youtu.be/jHaKRCFb6Qw) | more depth |
 | Oct 08 | Regression metrics |  📹 Pre-watch: [10.1](https://youtu.be/lgGTKLwNgkQ) |   more depth on metrics less depth on regression|
 | Oct 10 | Ensembles |  📹 Pre-watch: [11.1](https://youtu.be/8litm1H7DLo), [11.2](https://youtu.be/EkFkY9QB2Hw) | similar |
-| Oct 15 and 16 | _No class - Midterm 1_ | | |
+| Oct 15 and 16 | _Midterm 1 - no class_ | | |
 | Oct 17 | Feature importances, model interpretation | 📹 Pre-watch: [12.1](https://youtu.be/xfICsGL7DXE),[12.2](https://youtu.be/tiSN18OmZOo)| feature importances is new, feature engineering is new |
 | Oct 22 |   Feature engineering and feature selection | None | less depth |
 | Oct 24 |   Clustering |  📹 Pre-watch: [14.1](https://youtu.be/caAuUAXwpb8), [14.2](https://youtu.be/s6AvSZ1_l7I), [14.3](https://youtu.be/M5ilrhcL0oY)  | less depth |
