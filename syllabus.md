@@ -18,20 +18,36 @@ Application of machine learning tools, with an emphasis on solving practical pro
 
 | Section | Day  | Time   | Location |
 |----------|----------|--------|------|
-| CPSC 330 101 | Tue/Thu  | 3:30 - 4:50 PM  |  |
-| CPSC 330 102 | Tue/Thu  | 11:00 - 12:20 PM  | SWNG-Floor 2-Room 222 |
-| CPSC 330 103 | Tue/Thu  | 5:00 - 6:20 PM  |  |
+| CPSC 330 101 | Tue/Thu  | 3:30 - 4:50 PM  | SWNG-Floor 2-Room 222 |
+| CPSC 330 102 | Tue/Thu  | 11:00 AM - 12:20 PM  | SWNG-Floor 2-Room 222 |
+| CPSC 330 103 | Tue/Thu  | 5:00 - 6:20 PM  | SWNG-Floor 2-Room 222 |
 
-**Tutorials and office hours**:
+**Tutorials**:
 
-To find tutorial schedules and office hours, please refer to the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html). Tutorials for this course will be conducted by TAs and follow an office hours format. Attendance at tutorials is optional. However, participating will allow you to engage in more personalized discussions with TAs, providing you with valuable one-on-one time and an opportunity to deepen your understanding of machine learning concepts. 
+| Section | Day  | Time   | Location |
+|----------|----------|--------|------|
+| CPSC 330 T1A | Friday | 9:00 - 10:00 AM  | DMP-Floor 2-Room 201 |
+| CPSC 330 T1B | Friday  | 11:00 AM - 12:00 PM  | DMP-Floor 1-Room 101 |
+| CPSC 330 T1C | Friday  | 2:00 - 3:00 PM  | MCLD-Floor 3-Room 3002 |
+| CPSC 330 T1D | Friday  | 3:00 - 4:00 PM  | DMP-Floor 1-Room 101 |
+| CPSC 330 T1E | Thursday  | 5:00 - 6:00 PM  | MCML-Floor 1-Room 158 |
+| CPSC 330 T1F | Thursday  | 1:00 - 2:00 PM  | MCLD-Floor 3-Room 3008 |
+| CPSC 330 T1G | Thursday  | 2:00 - 3:00 PM  | ORCH-Floor 4-Room 4018 |
+| CPSC 330 T1H | Thursday  | 10:00 - 11:00 AM | MCLD-Floor 3-Room 3014 |
+| CPSC 330 T1J | Friday  | 10:00 - 11:00 AM | MCLD-Floor 3-Room 3014 |
+| CPSC 330 T1K | Friday  | 11:00 AM - 12:00 PM | MCLD-Floor 2-Room 2018 |
+| CPSC 330 T1H | Thursday  | 9:00 - 10:00 AM | ORCH-Floor 4-Room 4074 |
+
+Tutorials for this course will be conducted by TAs and follow an office hours format. Attendance at tutorials is optional. However, participating will allow you to engage in more personalized discussions with TAs, providing you with valuable one-on-one time and an opportunity to deepen your understanding of machine learning concepts. 
+
+For office hours, please refer to the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html). 
 
 ## Teaching Team
 
 **Instructors**: 
 
 - [Firas Moosvi](https://firas.moosvi.com/)
-- [Giulia Toti](https://www.gtoti.com/)
+- [Giulia Toti](https://www.gtoti.com/), OH: Monday, 2:00 - 3:15 PM, ICCS 231
 - [Varada Kolhatkar](https://kvarada.github.io/)
 
 ### Course co-ordinator
@@ -149,3 +165,5 @@ It’s important that this recognition of Musqueam territory and our relationshi
 **UNCEDED** refers to land that was not turned over to the Crown (government) by a treaty or other agreement.
 
 As you proceed through your journey at UBC, take some time to learn about the history of this land and to honour its original inhabitants.
+=======
+
