@@ -1,22 +1,38 @@
 # install with conda env create -f cpsc330env.yml 
 name: 'cpsc330'
 channels:
-  - conda-forge
-  - defaults
+    - conda-forge
+    - pytorch
+    - anaconda
+    - plotly
+    - defaults    
 dependencies:
-  - ipykernel
-  - python==3.13
-  - matplotlib
-  - scikit-learn
-  - pandas
-  - requests
-  - python-graphviz
-  - jinja2
-  - lightgbm
-  - pip
-  - lifelines
-  - pip:
-    - otter-grader==5.1.3
+    - python==3.12
+    - ipykernel
+    - matplotlib
+    - pandas
+    - scikit-learn>=1.5.1    
+    - requests
+    - ipython
     - graphviz
-    - mglearn
-    - psutil>=5.7.2
+    - python-graphviz
+    - jinja2
+    - lightgbm
+    - torchvision
+    - torchaudio
+    - pytorch
+    - autograd
+    - plotly
+    - wikipedia    
+    - spacy
+    - nltk    
+    - pip>=24.2        
+    - pip:
+        - mglearn
+        - graphviz        
+        - nbformat
+        - nbclient
+        - transformers
+        - datasets
+        - ultralytics
+        - psutil>=5.7.2
