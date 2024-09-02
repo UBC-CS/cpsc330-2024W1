@@ -45,7 +45,7 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 | **Midterm 1** | Oct 15 and Oct 16  | PrairieLearn (in person) | PrairieLearn (in person)|
 | hw5 | Oct 28, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
 | hw6 | November 04, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
-| **Midterm 2** | Nov 14 and Oct 15  | PrairieLearn (in person) | PrairieLearn (in person)|
+| **Midterm 2** | Nov 14 and Nov 15  | PrairieLearn (in person) | PrairieLearn (in person)|
 | hw7 | November 18, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
 | hw8 | November 25, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|   
 | hw9 | December 05, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
