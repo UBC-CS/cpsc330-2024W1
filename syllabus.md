@@ -152,7 +152,7 @@ UBC has a [policy on academic concession](https://students.ubc.ca/enrolment/acad
 - If you have a problem or complaint, let the instructor(s) know immediately. Maybe we can fix it!
 - During the exam period, do not disclose, discuss, or share any part of the exam with any other individual, except as directly permitted or required by the course instructors. This includes discussion in person, online, or through any electronic means. Violation of this will result in academic penalties, which may include failure of the exam or failure of the course.  
 
-## Land Acknowledgement 
+## Land acknowledgement 
 
 UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xwməθkwəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
 
@@ -164,6 +164,6 @@ It’s important that this recognition of Musqueam territory and our relationshi
 
 **UNCEDED** refers to land that was not turned over to the Crown (government) by a treaty or other agreement.
 
-As you proceed through your journey at UBC, take some time to learn about the history of this land and to honour its original inhabitants.
-=======
+**As you proceed through your journey at UBC, take some time to learn about the history of this land and to honour its original inhabitants.**
+
 

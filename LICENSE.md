@@ -19,7 +19,7 @@ license terms.
 Under the following terms:
 
 * **Attribution**---You must give appropriate credit (mentioning that
-  your work is derived from work that is Copyright © Varada Kolhatkar and Mike  Gelbart, where practical, linking to http://cpsc330.com/), provide a [link to the
+  your work is derived from work that is Copyright © Varada Kolhatkar, Mike  Gelbart, Giulia Toti, and Firas Moosvi, where practical, linking to https://github.com/UBC-CS/cpsc330-2024W1), provide a [link to the
   license][cc-by-human], and indicate if changes were made. You may do
   so in any reasonable manner, but not in any way that suggests the
   licensor endorses you or your use.
@@ -46,7 +46,7 @@ MIT license.
 
 MIT License
 
-Copyright (c) 2021 Varada Kolhatkar and Mike Gelbart 
+Copyright (c) 2024 Varada Kolhatkar, Mike Gelbart, Giulia Toti, and Firas Moosvi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
