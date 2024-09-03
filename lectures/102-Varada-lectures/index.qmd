@@ -1,0 +1,27 @@
+---
+title: Welcome
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.4
+  kernelspec:
+    display_name: 'Python [conda env:jbook]'
+    language: python
+    name: conda-env-jbook-py
+---
+
+
+Welcome to CPSC330! Here, you'll find slides for CPSC 330 Section 102. 
+These slides are based on the notes present [here](https://ubc-cs.github.io/cpsc330-2024W1/README.html). 
+
+- **Class times** 🕘
+    11 am to 12:20 pm
+
+- **Where?** 📍
+    [West Mall Swing Space (SWNG) - 222](https://learningspaces.ubc.ca/classrooms/swng-222), 2175 West Mall, Vancouver, BC V6T 1Z4
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.713167158482!2d-123.25696742249725!3d49.26288232215483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867349fa14bda7%3A0x6cf2b19f9efcc3bc!2sUBC%20West%20Mall%20Swing%20Space%20(SWNG)%20-%202nd%20Floor%20Concourse!5e0!3m2!1sen!2sca!4v1725300934712!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+

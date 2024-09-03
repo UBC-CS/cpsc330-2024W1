@@ -1,0 +1,28 @@
+---
+title: Overview
+listing:
+  - id: schedule
+    type: table
+    sort:
+      - file
+    sort-ui: false
+    filter-ui: false
+    fields:
+      - title
+      - description-short
+    field-display-names:
+      description-short: Description
+    contents:
+      - slides-*.qmd
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.4
+  kernelspec:
+    display_name: 'Python [conda env:cpsc330]'
+    language: python
+    name: conda-env-cpsc330-py
+---

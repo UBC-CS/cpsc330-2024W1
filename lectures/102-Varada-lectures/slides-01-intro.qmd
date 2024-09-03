@@ -1,0 +1,322 @@
+---
+title: 'Lecture 1: Introduction to CPSC 330'
+description: Introduction to ML and CPSC 330
+description-short: 'What is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies'
+format:
+  revealjs:
+    slide-number: true
+    smaller: true
+    center: true
+    logo: ../img/UBC-CS-logo.png
+    resources:
+      - ../data/
+      - img/
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.4
+  kernelspec:
+    display_name: 'Python [conda env:cpsc330]'
+    language: python
+    name: conda-env-cpsc330-py
+---
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+import sys
+sys.path.append(os.path.join(os.path.abspath(".."), "code"))
+from IPython.display import HTML, display
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import make_pipeline
+
+plt.rcParams["font.size"] = 16
+pd.set_option("display.max_colwidth", 200)
+
+DATA_DIR = '../data/' 
+```
+
+## QR code of CPSC 330 website
+\
+
+- Course Jupyter book: https://ubc-cs.github.io/cpsc330-2024W1
+- Course GitHub repository: https://github.com/UBC-CS/cpsc330-2024W1
+
+![](img/CPSC330-QR-code.png){.nostretch fig-align="center" width="500px"}
+
+# 🤝 Introductions 🤝 {.middle}
+
+## Meet your instructor {background="#43464B"}
+
+:::: {.columns}
+
+::: {.column width="20%"}
+<img src="img/varada.png" height="150" width="150">
+:::
+
+::: {.column width="80%"}
+- Varada Kolhatkar [[ʋəɾəda kɔːlɦəʈkər](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)]
+- You can call me Varada, **V**, or **Ada**.
+- I am an Assistant Professor of Teaching in Computer Science.
+- I did my Ph.D. in Computational Linguistics at the University of Toronto. 
+- I primarily teach machine learning courses in the [Master of Data Science (MDS) program](https://masterdatascience.ubc.ca/). 
+- Contact information
+    - Email: kvarada@cs.ubc.ca
+    - Office: ICCS 237
+:::
+
+::::
+
+## Meet Eva (a fictitious persona)!
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](../img/eva-hi.png)
+:::
+
+::: {.column width="60%"}
+Eva is among one of you. She has some experience in Python programming. She knows machine learning as a buzz word. During her recent internship, she has developed some interest and curiosity in the field. She wants to learn what is it and how to use it. She is a curious person and usually has a lot of questions!  
+:::
+
+::::
+
+## You all
+
+- Introduce yourself to your neighbour. 
+- Since we're going to spend the semester with each other, I would like to know you a bit better. 
+- Please fill out [Getting to know you survey](https://canvas.ubc.ca/courses/149122/quizzes) when you get a chance.
+
+## Activity 1
+\
+
+* What do you know about machine learning?
+* What would you like to get out this course?
+* Are there any particular topics or aspects of this course that you are especially excited or anxious about? Why?
+
+## What is Machine Learning (ML)?
+
+Machine learning uses computer programs to model data. It can be used to extract hidden patterns, make predictions in new situation, or generate novel content.   
+
+<blockquote>
+A field of study that gives computers the ability to learn without being explicitly programmed. <br> -- Arthur Samuel (1959)
+</blockquote>
+
+ML is a different way to think about problem solving. 
+
+## ML vs. traditional programming
+
+![](../img/traditional-programming-vs-ML.png){.nostretch fig-align="center" width="500px"}
+
+## Prevalence of ML
+
+Let's look at some examples. 
+
+<!-- <img src="img/ml-examples.png" height="1000" width="1000">  -->
+![](../img/ml-examples.png)
+
+## Saving time and scaling products 
+
+- Imagine writing a program for spam identification, i.e., whether an email is spam or non-spam. 
+- Traditional programming 
+    - Come up with rules using human understanding of spam messages. 
+    - Time consuming and hard to come up with robust set of rules. 
+- Machine learning
+    - Collect large amount of data of spam and non-spam emails and let the machine learning algorithm figure out rules. 
+- With machine learning, you're likely to 
+    - Save time 
+    - Customize and scale products 
+
+## Activity: For what type of problems ML is appropriate? (~5 mins)
+
+Discuss with your neighbour for which of the following problems you would use machine learning 
+
+- Finding a list of prime numbers up to a limit
+- Spam identification
+- Finding the distance between two nodes in a graph 
+
+## Types of machine learning
+
+Here are some typical learning problems. 
+
+- **Supervised learning** ([Gmail spam filtering](https://support.google.com/a/answer/2368132?hl=en))
+    - Training a model from input data and its corresponding targets to predict targets for new examples.     
+- Unsupervised learning ([Google News](https://news.google.com/))
+    - Training a model to find patterns in a dataset, typically an unlabeled dataset.
+- Reinforcement learning ([AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far))
+    - A family of algorithms for finding suitable actions to take in a given situation in order to maximize a reward. 
+- Recommendation systems ([Amazon item recommendation system](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf))
+    - Predict the "rating" or "preference" a user would give to an item.    
+
+## What is supervised learning? 
+
+- Training data comprises a set of observations ($X$) and their corresponding targets ($y$). 
+- We wish to find a model function $f$ that relates $X$ to $y$.
+- We use the model function to predict targets of new examples. 
+
+![](../img/sup-learning.png){.nostretch fig-align="center" width="700px"}
+
+## Example: Predict whether a message is spam or not 
+
+- Suppose you are given the input features $X$ (`sms`) and target $y$ (`target`) below. 
+
+::: panel-tabset
+### Code
+
+```{python}
+#| echo: true
+sms_df = pd.read_csv(DATA_DIR + "spam.csv", encoding="latin-1")
+sms_df = sms_df.drop(columns = ["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"])
+sms_df = sms_df.rename(columns={"v1": "target", "v2": "sms"})
+train_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)
+```
+
+### Output
+```{python}
+HTML(train_df.head().to_html(index=False))
+```
+:::
+
+## Let's train a model 
+
+- There are several packages that help us perform machine learning.
+- Let's train a model to learn the mapping function between `X` and `y` using a package called `sklearn`.
+
+```{python}
+#| echo : true
+X_train, y_train = train_df["sms"], train_df["target"]
+X_test, y_test = test_df["sms"], test_df["target"]
+clf = make_pipeline(CountVectorizer(max_features=5000), LogisticRegression(max_iter=5000))
+clf.fit(X_train, y_train); # Training the model
+```
+
+## Unseen messages
+
+- Now use the trained model to predict targets of unseen messages:
+
+```{python}
+pd.DataFrame(X_test[0:4])
+```
+
+## Predicting on unseen data using the trained model{.smaller}
+
+**The model is accurately predicting labels for the unseen text messages above!**
+
+```{python}
+pred_dict = {
+    "sms": X_test[0:4],
+    "spam_predictions": clf.predict(X_test[0:4]),
+}
+pred_df = pd.DataFrame(pred_dict)
+pred_df.style.set_properties(**{"text-align": "left"})
+```
+
+## 🤔 Eva's questions
+\
+
+At this point, Eva is wondering about many questions. 
+
+- How are we exactly "learning" whether a message is spam and ham? 
+- What do you mean by "learn without being explicitly programmed"? The code has to be somewhere ... 
+- Are we expected to get correct predictions for all possible messages? How does it predict the label for a message it has not seen before?  
+- What if the model mis-labels an unseen example? For instance, what if the model incorrectly predicts a non-spam as a spam? What would be the consequences? 
+- How do we measure the success or failure of spam identification? 
+- If you want to use this model in the wild, how do you know how reliable it is?  
+- Would it be useful to know how confident the model is about the predictions rather than just a yes or a no?
+
+It's great to think about these questions right now. But Eva has to be patient. By the end of this course you'll know answers to many of these questions!  
+
+## Predicting labels of a given image 
+
+- We can also use machine learning to predict labels of given images using a technique called **transfer learning**. 
+
+::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
+```{python}
+import img_classify
+from PIL import Image
+import glob
+import matplotlib.pyplot as plt
+# Predict topn labels and their associated probabilities for unseen images
+images = glob.glob(DATA_DIR + "test_images/*.*")
+class_labels_file = DATA_DIR + 'imagenet_classes.txt'
+for img_path in images:
+    img = Image.open(img_path).convert('RGB')
+    img.load()
+    plt.imshow(img)
+    plt.show();    
+    df = img_classify.classify_image(img_path, class_labels_file)
+    print(df.to_string(index=False))
+    print("--------------------------------------------------------------")
+```
+:::
+
+## Predicting housing prices
+
+Suppose we want to predict housing prices given a number of attributes associated with houses. The target here is **continuous** and not **discrete**. 
+
+```{python}
+df = pd.read_csv( DATA_DIR + "kc_house_data.csv")
+df = df.drop(columns = ["id", "date"])
+df.rename(columns={"price": "target"}, inplace=True)
+train_df, test_df = train_test_split(df, test_size=0.2, random_state=4)
+HTML(train_df.head().to_html(index=False))
+```
+
+## Building a regression model
+
+```{python}
+#| echo: true
+from lightgbm.sklearn import LGBMRegressor
+
+X_train, y_train = train_df.drop(columns= ["target"]), train_df["target"]
+X_test, y_test = test_df.drop(columns= ["target"]), train_df["target"]
+
+model = LGBMRegressor()
+model.fit(X_train, y_train);
+```
+
+## Predicting prices of unseen houses
+
+
+```{python}
+pred_df = pd.DataFrame(
+    # {"Predicted target": model.predict(X_test[0:4]).tolist(), "Actual price": y_test[0:4].tolist()}
+    {"Predicted_target": model.predict(X_test[0:4]).tolist()}
+)
+df_concat = pd.concat([pred_df, X_test[0:4].reset_index(drop=True)], axis=1)
+HTML(df_concat.to_html(index=False))
+```
+
+We are predicting continuous values here as apposed to discrete values in `spam` vs. `ham` example. 
+
+## Machine learning workflow 
+
+Supervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.  
+
+![](../img/ml-workflow.png){.nostretch fig-align="center" width="700px"}
+
+<!-- <img src="img/ml-workflow.png" height="800" width="800">  -->
+
+We will build machine learning pipelines in this course, focusing on some of the steps above. 
+
+<br><br>
+
+## ❓❓ Questions for you
+
+iClicker cloud join link: 
+
+### Select all of the following statements which are **True** (iClicker)
+
+- (A) Predicting spam is an example of machine learning. 
+- (B) Predicting housing prices is not an example of machine learning. 
+- (C) For problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it's usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model. 
+- (D) If you are asked to write a program to find all prime numbers up to  a limit, it is better to implement one of the algorithms for doing so rather than using machine learning. 
+- (E) Google News is likely be using machine learning to organize news. 
+<br><br><br><br>
