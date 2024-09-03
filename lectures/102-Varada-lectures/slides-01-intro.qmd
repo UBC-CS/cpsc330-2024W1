@@ -43,6 +43,16 @@ pd.set_option("display.max_colwidth", 200)
 DATA_DIR = '../data/' 
 ```
 
+## Learning outcomes 
+From this lecture, you will be able to 
+
+- Explain the motivation behind study machine learning. 
+- Briefly describe supervised learning.
+- Differentiate between traditional programming and machine learning.
+- Assess whether a given problem is suitable for a machine learning solution.
+- Navigate through the course material. 
+- Be familiar with the policies and how the class is going to run.
+
 ## QR code of CPSC 330 website
 \
 
@@ -93,6 +103,10 @@ Eva is among one of you. She has some experience in Python programming. She know
 - Introduce yourself to your neighbour. 
 - Since we're going to spend the semester with each other, I would like to know you a bit better. 
 - Please fill out [Getting to know you survey](https://canvas.ubc.ca/courses/149122/quizzes) when you get a chance.
+
+## Asking questions during class
+You are welcome to ask questions by raising your hand.
+There is also [a reflection Google Document](https://docs.google.com/document/d/1q9peVKhyoVhrmZ9Afk4LOGlVJA3GXStuVKQWVQDOG2o/edit?usp=sharing) for this course for your questions/comments/reflections. It will be great if you can write about your takeaways, struggle points, and general comments in this document so that I'll try to address those points in the next lecture. 
 
 ## Activity 1
 \
@@ -179,9 +193,11 @@ train_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)
 ```
 
 ### Output
+
 ```{python}
 HTML(train_df.head().to_html(index=False))
 ```
+
 :::
 
 ## Let's train a model 
@@ -190,7 +206,7 @@ HTML(train_df.head().to_html(index=False))
 - Let's train a model to learn the mapping function between `X` and `y` using a package called `sklearn`.
 
 ```{python}
-#| echo : true
+#| echo: true
 X_train, y_train = train_df["sms"], train_df["target"]
 X_test, y_test = test_df["sms"], test_df["target"]
 clf = make_pipeline(CountVectorizer(max_features=5000), LogisticRegression(max_iter=5000))
@@ -238,6 +254,7 @@ It's great to think about these questions right now. But Eva has to be patient. 
 - We can also use machine learning to predict labels of given images using a technique called **transfer learning**. 
 
 ::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
+
 ```{python}
 import img_classify
 from PIL import Image
@@ -255,6 +272,7 @@ for img_path in images:
     print(df.to_string(index=False))
     print("--------------------------------------------------------------")
 ```
+
 :::
 
 ## Predicting housing prices
@@ -283,7 +301,6 @@ model.fit(X_train, y_train);
 ```
 
 ## Predicting prices of unseen houses
-
 
 ```{python}
 pred_df = pd.DataFrame(
@@ -320,3 +337,182 @@ iClicker cloud join link:
 - (D) If you are asked to write a program to find all prime numbers up to  a limit, it is better to implement one of the algorithms for doing so rather than using machine learning. 
 - (E) Google News is likely be using machine learning to organize news. 
 <br><br><br><br>
+
+## Surveys (~8 min)
+
+- Please complete the "Getting to know you" survey on [Canvas]().
+- Also, please complete the anonymous restaurant survey on Qualtrics [here](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw).
+  - We will try to analyze this data set in the coming weeks. 
+
+## About this course
+
+::: {.callout-important}
+Course website: [https://github.com/UBC-CS/cpsc330-2024W1](https://github.com/UBC-CS/cpsc330-2024W1) is the most important link. Please read everything on this GitHub page!
+:::
+
+::: {.callout-important}
+The [Syllabus quiz](https://canvas.ubc.ca/courses/149122/quizzes) available on Canvas, Due: Monday, Sept 19th at 11:59pm. 
+:::
+
+## CPSC 330 vs. 340
+
+Read [https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md]([https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md)
+which explains the difference between two courses.  
+
+**TLDR:**
+
+- 340: how do ML models work?
+- 330: how do I use ML models?
+- CPSC 340 has many prerequisites. 
+- CPSC 340 goes deeper but has a more narrow scope.
+- I think CPSC 330 will be more useful if you just plan to apply basic ML.
+
+## Registration, waitlist and prerequisites
+
+::: {.callout-important}
+Please go through [this document](https://github.com/UBC-CS/cpsc330-2024W1/blob/master/docs/course_info.md#registration) carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.
+:::
+
+- If you are on waitlist and if you'd like to try your chances, you should be able to access [Canvas](https://canvas.ubc.ca/courses/149122) to do the syllabus quiz and homework assignments. 
+- If you're unable to make it this time, there will be two sections of this course offered next semester and then again in the summer
+
+## Lecture format
+
+- In person lectures T/Th.
+- Sometimes there will be videos to watch before or during the lecture time. You will find the list of pre-watch videos in the schedule on the course webpage.
+- We will also try to work on some questions and exercises together during the class. 
+- All materials will be posted in this GitHub repository. 
+- Weekly tutorials will be **office hour format** run by the TAs and are **completely optional**.
+  - You do not need to be registered in a tutorial.
+  - You can attend whatever tutorials or office hours your want, regardless of in which/whether you're registered.
+
+## Home work assignments
+- First homework assignment is due **this coming Monday**, September 09, midnight. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.    
+- You must do the first two homework assignments on your own.
+- I'm hoping you'll be able to work with partners on subsequent assignments. 
+
+## Exams 
+
+- We'll have two self-scheduled midterms and one final in Computer-based Testing Facility (CBTF). 
+
+## Course calendar
+
+Here is our course Calendar. Make sure you check it on a regular basis: 
+
+[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html)
+
+## Course structure
+
+- Introduction
+  - Week 1 
+- Part I: ML fundamentals, preprocessing, midterm 1
+  - Weeks 2, 3, 4, 5, 6, 7, 8
+- Part II: Unsupervised learning, transfer learning, common special cases, midterm 1
+  - Weeks 8, 9, 10, 11, 12
+- Part III: Communication and ethics
+  - ML skills are not beneficial if you can't use them responsibly and communicate your results. In this module we'll talk about these aspects. 
+  - Weeks 13, 14
+
+## Code of conduct
+
+- Our main forum for getting help will be [Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1).
+
+::: {.callout-important}
+Please read [this entire document about asking for help](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/asking_for_help.md).
+**TLDR:** Be nice.
+:::
+
+
+## Homework format: Jupyter notebooks
+
+- Our notes are created in a [Jupyter notebook](https://jupyter.org/), with file extension `.ipynb`.
+- Also, you will complete your homework assignments using Jupyter notebooks.
+- Confusingly, "Jupyter notebook" is also the original application that opens `.ipynb` files - but has since been replaced by **Jupyter lab**.
+  - I am using Jupyter lab, some things might not work with the Jupyter notebook application.
+  - You can also open these files in Visual Studio Code.
+
+## Jupyter notebooks 
+
+- Notebooks contain a mix of code, code output, markdown-formatted text (including LaTeX equations), and more.
+- When you open a Jupyter notebook in one of these apps, the document is “live”, meaning you can run the code.
+
+For example:
+```{python}
+#| echo: true
+1 + 1
+```
+
+```{python}
+#| echo: true
+x = [1, 2, 3]
+x[0] = 9999
+x
+```
+
+## Jupyter 
+
+- By default, Jupyter prints out the result of the last line of code, so you don't need as many `print` statements.
+- In addition to the "live" notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. [this](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/01_intro.ipynb).
+  - This can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.
+  - But you need to launch the app properly to interact with the notebooks.
+
+## Lecture notes
+
+- All the lectures from last year are [available here](https://ubc-cs.github.io/cpsc330-2023W1/README.html).
+- We cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.
+- A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2024W1) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2024W1/README.html) right before each class.
+- Each instructor will have slightly adapted versions of notes to present slides during lectures.  
+
+## Grades
+
+- The grading breakdown is [here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/syllabus.md#grading-scheme). 
+- The policy on challenging grades is [here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/grades.md).
+
+# Setting up your computer for the course 
+
+## Recommended browser
+
+- I'll test the course notebooks and exams, which we'll be doing via [Canvas](https://canvas.ubc.ca/courses/149122), on the following two browsers: Chrome and Firefox. So I recommend that you use one of these browsers for the course.
+
+- You can install Chrome [here](https://www.google.com/chrome/).
+- You can install Firefox [here](https://www.mozilla.org/en-US/firefox/new/). 
+
+In this course, we will primarily be using `Python` , `git`, `GitHub`, `Canvas`, `Gradescope`, `Piazza`, and `PrairieLearn`. 
+
+## Course `conda` environment
+
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2024W1/docs/setup.html) to create a course `conda` environment on your computer. 
+- If you do not have your computer with you, you can partner up with someone and set up your own computer later.
+
+## Python requirements/resources
+
+We will primarily use Python in this course.
+
+Here is the basic Python knowledge you'll need for the course: 
+
+- Basic Python programming
+- Numpy
+- Pandas
+- Basic matplotlib
+- Sparse matrices
+
+Homework 1 is all about Python.
+
+:::{.callout-note}
+We do not have time to teach all the Python we need 
+but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/resources.md).  
+:::
+
+<br><br>
+
+## Checklist for you before the next class
+
+- [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/149122) shell? 
+- [ ] Are you able to access [course Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1)?
+- [ ] Are you able to access [Gradescope](https://www.gradescope.ca/courses/18608)? (If not, refer to the [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/).)
+- [ ] Are you able to access [iClicker Cloud]() for this course?
+- [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2024W1/docs/setup.html) to create a course conda environment on your computer?
+- [ ] Did you complete the "Getting to know you" survey on Canvas?
+- [ ] Did you complete the anonymous [restaurant survey on Qualtrics](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw)?
+- [ ] Did you complete the syllabus quiz on Canvas? 
+- [ ] Are you almost finished or at least started with homework 1?
