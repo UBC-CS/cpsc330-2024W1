@@ -1,0 +1,456 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 102. These slides are based on the notes present here.\n\nClass times 🕘 11 am to 12:20 pm\nWhere? 📍 West Mall Swing Space (SWNG) - 222, 2175 West Mall, Vancouver, BC V6T 1Z4"
+  },
+  {
+    "objectID": "slides-01-intro.html#learning-outcomes",
+    "href": "slides-01-intro.html#learning-outcomes",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\nFrom this lecture, you will be able to\n\nExplain the motivation behind study machine learning.\nBriefly describe supervised learning.\nDifferentiate between traditional programming and machine learning.\nAssess whether a given problem is suitable for a machine learning solution.\nNavigate through the course material.\nBe familiar with the policies and how the class is going to run.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#qr-code-of-cpsc-330-website",
+    "href": "slides-01-intro.html#qr-code-of-cpsc-330-website",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "QR code of CPSC 330 website",
+    "text": "QR code of CPSC 330 website\n\n\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-2024W1\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2024W1",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#meet-your-instructor",
+    "href": "slides-01-intro.html#meet-your-instructor",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Meet your instructor",
+    "text": "Meet your instructor\n\n\n\n\n\nVarada Kolhatkar [ʋəɾəda kɔːlɦəʈkər]\nYou can call me Varada, V, or Ada.\nI am an Assistant Professor of Teaching in Computer Science.\nI did my Ph.D. in Computational Linguistics at the University of Toronto.\nI primarily teach machine learning courses in the Master of Data Science (MDS) program.\nContact information\n\nEmail: kvarada@cs.ubc.ca\nOffice: ICCS 237",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#meet-eva-a-fictitious-persona",
+    "href": "slides-01-intro.html#meet-eva-a-fictitious-persona",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Meet Eva (a fictitious persona)!",
+    "text": "Meet Eva (a fictitious persona)!\n\n\n\n\nEva is among one of you. She has some experience in Python programming. She knows machine learning as a buzz word. During her recent internship, she has developed some interest and curiosity in the field. She wants to learn what is it and how to use it. She is a curious person and usually has a lot of questions!",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#you-all",
+    "href": "slides-01-intro.html#you-all",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "You all",
+    "text": "You all\n\nIntroduce yourself to your neighbour.\nSince we’re going to spend the semester with each other, I would like to know you a bit better.\nPlease fill out Getting to know you survey when you get a chance.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#asking-questions-during-class",
+    "href": "slides-01-intro.html#asking-questions-during-class",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Asking questions during class",
+    "text": "Asking questions during class\nYou are welcome to ask questions by raising your hand. There is also a reflection Google Document for this course for your questions/comments/reflections. It will be great if you can write about your takeaways, struggle points, and general comments in this document so that I’ll try to address those points in the next lecture.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#activity-1",
+    "href": "slides-01-intro.html#activity-1",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Activity 1",
+    "text": "Activity 1\n\n\n\nWhat do you know about machine learning?\nWhat would you like to get out this course?\nAre there any particular topics or aspects of this course that you are especially excited or anxious about? Why?",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#what-is-machine-learning-ml",
+    "href": "slides-01-intro.html#what-is-machine-learning-ml",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "What is Machine Learning (ML)?",
+    "text": "What is Machine Learning (ML)?\nMachine learning uses computer programs to model data. It can be used to extract hidden patterns, make predictions in new situation, or generate novel content.\n\nA field of study that gives computers the ability to learn without being explicitly programmed.  – Arthur Samuel (1959)\n\nML is a different way to think about problem solving.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#ml-vs.-traditional-programming",
+    "href": "slides-01-intro.html#ml-vs.-traditional-programming",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "ML vs. traditional programming",
+    "text": "ML vs. traditional programming",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#prevalence-of-ml",
+    "href": "slides-01-intro.html#prevalence-of-ml",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Prevalence of ML",
+    "text": "Prevalence of ML\nLet’s look at some examples.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#saving-time-and-scaling-products",
+    "href": "slides-01-intro.html#saving-time-and-scaling-products",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Saving time and scaling products",
+    "text": "Saving time and scaling products\n\nImagine writing a program for spam identification, i.e., whether an email is spam or non-spam.\nTraditional programming\n\nCome up with rules using human understanding of spam messages.\nTime consuming and hard to come up with robust set of rules.\n\nMachine learning\n\nCollect large amount of data of spam and non-spam emails and let the machine learning algorithm figure out rules.\n\nWith machine learning, you’re likely to\n\nSave time\nCustomize and scale products",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#activity-for-what-type-of-problems-ml-is-appropriate-5-mins",
+    "href": "slides-01-intro.html#activity-for-what-type-of-problems-ml-is-appropriate-5-mins",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Activity: For what type of problems ML is appropriate? (~5 mins)",
+    "text": "Activity: For what type of problems ML is appropriate? (~5 mins)\nDiscuss with your neighbour for which of the following problems you would use machine learning\n\nFinding a list of prime numbers up to a limit\nSpam identification\nFinding the distance between two nodes in a graph",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#types-of-machine-learning",
+    "href": "slides-01-intro.html#types-of-machine-learning",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Types of machine learning",
+    "text": "Types of machine learning\nHere are some typical learning problems.\n\nSupervised learning (Gmail spam filtering)\n\nTraining a model from input data and its corresponding targets to predict targets for new examples.\n\n\nUnsupervised learning (Google News)\n\nTraining a model to find patterns in a dataset, typically an unlabeled dataset.\n\nReinforcement learning (AlphaGo)\n\nA family of algorithms for finding suitable actions to take in a given situation in order to maximize a reward.\n\nRecommendation systems (Amazon item recommendation system)\n\nPredict the “rating” or “preference” a user would give to an item.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#what-is-supervised-learning",
+    "href": "slides-01-intro.html#what-is-supervised-learning",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "What is supervised learning?",
+    "text": "What is supervised learning?\n\nTraining data comprises a set of observations (\\(X\\)) and their corresponding targets (\\(y\\)).\nWe wish to find a model function \\(f\\) that relates \\(X\\) to \\(y\\).\nWe use the model function to predict targets of new examples.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#example-predict-whether-a-message-is-spam-or-not",
+    "href": "slides-01-intro.html#example-predict-whether-a-message-is-spam-or-not",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Example: Predict whether a message is spam or not",
+    "text": "Example: Predict whether a message is spam or not\n\nSuppose you are given the input features \\(X\\) (sms) and target \\(y\\) (target) below.\n\n\nCodeOutput\n\n\n\nsms_df = pd.read_csv(DATA_DIR + \"spam.csv\", encoding=\"latin-1\")\nsms_df = sms_df.drop(columns = [\"Unnamed: 2\", \"Unnamed: 3\", \"Unnamed: 4\"])\nsms_df = sms_df.rename(columns={\"v1\": \"target\", \"v2\": \"sms\"})\ntrain_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)\n\n\n\n\n\n\n\n\ntarget\nsms\n\n\n\n\nspam\nLookAtMe!: Thanks for your purchase of a video clip from LookAtMe!, you've been charged 35p. Think you can do better? Why not send a video in a MMSto 32323.\n\n\nham\nAight, I'll hit you up when I get some cash\n\n\nham\nDon no da:)whats you plan?\n\n\nham\nGoing to take your babe out ?\n\n\nham\nNo need lar. Jus testing e phone card. Dunno network not gd i thk. Me waiting 4 my sis 2 finish bathing so i can bathe. Dun disturb u liao u cleaning ur room.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#lets-train-a-model",
+    "href": "slides-01-intro.html#lets-train-a-model",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Let’s train a model",
+    "text": "Let’s train a model\n\nThere are several packages that help us perform machine learning.\nLet’s train a model to learn the mapping function between X and y using a package called sklearn.\n\n\nX_train, y_train = train_df[\"sms\"], train_df[\"target\"]\nX_test, y_test = test_df[\"sms\"], test_df[\"target\"]\nclf = make_pipeline(CountVectorizer(max_features=5000), LogisticRegression(max_iter=5000))\nclf.fit(X_train, y_train); # Training the model",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#unseen-messages",
+    "href": "slides-01-intro.html#unseen-messages",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Unseen messages",
+    "text": "Unseen messages\n\nNow use the trained model to predict targets of unseen messages:\n\n\n\n\n\n\n\n\n\n\nsms\n\n\n\n\n3245\nFunny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens\n\n\n944\nI sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one m...\n\n\n1044\nWe know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p\n\n\n2484\nOnly if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#predicting-on-unseen-data-using-the-trained-model",
+    "href": "slides-01-intro.html#predicting-on-unseen-data-using-the-trained-model",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Predicting on unseen data using the trained model",
+    "text": "Predicting on unseen data using the trained model\nThe model is accurately predicting labels for the unseen text messages above!\n\n\n\n\n\n\n\n \nsms\nspam_predictions\n\n\n\n\n3245\nFunny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens\nham\n\n\n944\nI sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones\nham\n\n\n1044\nWe know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p\nspam\n\n\n2484\nOnly if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.\nham",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#evas-questions",
+    "href": "slides-01-intro.html#evas-questions",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "🤔 Eva’s questions",
+    "text": "🤔 Eva’s questions\n\n\nAt this point, Eva is wondering about many questions.\n\nHow are we exactly “learning” whether a message is spam and ham?\nWhat do you mean by “learn without being explicitly programmed”? The code has to be somewhere …\nAre we expected to get correct predictions for all possible messages? How does it predict the label for a message it has not seen before?\n\nWhat if the model mis-labels an unseen example? For instance, what if the model incorrectly predicts a non-spam as a spam? What would be the consequences?\nHow do we measure the success or failure of spam identification?\nIf you want to use this model in the wild, how do you know how reliable it is?\n\nWould it be useful to know how confident the model is about the predictions rather than just a yes or a no?\n\nIt’s great to think about these questions right now. But Eva has to be patient. By the end of this course you’ll know answers to many of these questions!",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#predicting-labels-of-a-given-image",
+    "href": "slides-01-intro.html#predicting-labels-of-a-given-image",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Predicting labels of a given image",
+    "text": "Predicting labels of a given image\n\nWe can also use machine learning to predict labels of given images using a technique called transfer learning.\n\n\n\n\n\n\n\n\n\n\n\n                         Class  Probability score\n                     tiger cat              0.636\n              tabby, tabby cat              0.174\nPembroke, Pembroke Welsh corgi              0.081\n               lynx, catamount              0.011\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.994\n                  leopard, Panthera pardus              0.005\njaguar, panther, Panthera onca, Felis onca              0.001\n       snow leopard, ounce, Panthera uncia              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.885\npatas, hussar monkey, Erythrocebus patas              0.062\n      proboscis monkey, Nasalis larvatus              0.015\n                       titi, titi monkey              0.010\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.582\n             English foxhound              0.144\n                       beagle              0.068\n                  EntleBucher              0.059\n--------------------------------------------------------------",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#predicting-housing-prices",
+    "href": "slides-01-intro.html#predicting-housing-prices",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Predicting housing prices",
+    "text": "Predicting housing prices\nSuppose we want to predict housing prices given a number of attributes associated with houses. The target here is continuous and not discrete.\n\n\n\n\n\ntarget\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nlat\nlong\nsqft_living15\nsqft_lot15\n\n\n\n\n509000.0\n2\n1.50\n1930\n3521\n2.0\n0\n0\n3\n8\n1930\n0\n1989\n0\n98007\n47.6092\n-122.146\n1840\n3576\n\n\n675000.0\n5\n2.75\n2570\n12906\n2.0\n0\n0\n3\n8\n2570\n0\n1987\n0\n98075\n47.5814\n-122.050\n2580\n12927\n\n\n420000.0\n3\n1.00\n1150\n5120\n1.0\n0\n0\n4\n6\n800\n350\n1946\n0\n98116\n47.5588\n-122.392\n1220\n5120\n\n\n680000.0\n8\n2.75\n2530\n4800\n2.0\n0\n0\n4\n7\n1390\n1140\n1901\n0\n98112\n47.6241\n-122.305\n1540\n4800\n\n\n357823.0\n3\n1.50\n1240\n9196\n1.0\n0\n0\n3\n8\n1240\n0\n1968\n0\n98072\n47.7562\n-122.094\n1690\n10800",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#building-a-regression-model",
+    "href": "slides-01-intro.html#building-a-regression-model",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Building a regression model",
+    "text": "Building a regression model\n\nfrom lightgbm.sklearn import LGBMRegressor\n\nX_train, y_train = train_df.drop(columns= [\"target\"]), train_df[\"target\"]\nX_test, y_test = test_df.drop(columns= [\"target\"]), train_df[\"target\"]\n\nmodel = LGBMRegressor()\nmodel.fit(X_train, y_train);\n\n[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000700 seconds.\nYou can set `force_col_wise=true` to remove the overhead.\n[LightGBM] [Info] Total Bins 2333\n[LightGBM] [Info] Number of data points in the train set: 17290, number of used features: 18\n[LightGBM] [Info] Start training from score 539762.702545",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#predicting-prices-of-unseen-houses",
+    "href": "slides-01-intro.html#predicting-prices-of-unseen-houses",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Predicting prices of unseen houses",
+    "text": "Predicting prices of unseen houses\n\n\n\n\n\nPredicted_target\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nlat\nlong\nsqft_living15\nsqft_lot15\n\n\n\n\n345831.740542\n4\n2.25\n2130\n8078\n1.0\n0\n0\n4\n7\n1380\n750\n1977\n0\n98055\n47.4482\n-122.209\n2300\n8112\n\n\n601042.018745\n3\n2.50\n2210\n7620\n2.0\n0\n0\n3\n8\n2210\n0\n1994\n0\n98052\n47.6938\n-122.130\n1920\n7440\n\n\n311310.186024\n4\n1.50\n1800\n9576\n1.0\n0\n0\n4\n7\n1800\n0\n1977\n0\n98045\n47.4664\n-121.747\n1370\n9576\n\n\n597555.592401\n3\n2.50\n1580\n1321\n2.0\n0\n2\n3\n8\n1080\n500\n2014\n0\n98107\n47.6688\n-122.402\n1530\n1357\n\n\n\n\n\nWe are predicting continuous values here as apposed to discrete values in spam vs. ham example.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#machine-learning-workflow",
+    "href": "slides-01-intro.html#machine-learning-workflow",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Machine learning workflow",
+    "text": "Machine learning workflow\nSupervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.\n\n\n\n\n\n\nWe will build machine learning pipelines in this course, focusing on some of the steps above.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#questions-for-you",
+    "href": "slides-01-intro.html#questions-for-you",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\niClicker cloud join link:\nSelect all of the following statements which are True (iClicker)\n\n\nPredicting spam is an example of machine learning.\n\n\nPredicting housing prices is not an example of machine learning.\n\n\nFor problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it’s usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model.\n\n\nIf you are asked to write a program to find all prime numbers up to a limit, it is better to implement one of the algorithms for doing so rather than using machine learning.\n\n\nGoogle News is likely be using machine learning to organize news.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#surveys-8-min",
+    "href": "slides-01-intro.html#surveys-8-min",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Surveys (~8 min)",
+    "text": "Surveys (~8 min)\n\nPlease complete the “Getting to know you” survey on Canvas.\nAlso, please complete the anonymous restaurant survey on Qualtrics here.\n\nWe will try to analyze this data set in the coming weeks.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#about-this-course",
+    "href": "slides-01-intro.html#about-this-course",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "About this course",
+    "text": "About this course\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://github.com/UBC-CS/cpsc330-2024W1 is the most important link. Please read everything on this GitHub page!\n\n\n\n\n\n\n\n\n\nImportant\n\n\nThe Syllabus quiz available on Canvas, Due: Monday, Sept 19th at 11:59pm.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#cpsc-330-vs.-340",
+    "href": "slides-01-intro.html#cpsc-330-vs.-340",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "CPSC 330 vs. 340",
+    "text": "CPSC 330 vs. 340\nRead https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#registration-waitlist-and-prerequisites",
+    "href": "slides-01-intro.html#registration-waitlist-and-prerequisites",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Registration, waitlist and prerequisites",
+    "text": "Registration, waitlist and prerequisites\n\n\n\n\n\n\nImportant\n\n\nPlease go through this document carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.\n\n\n\n\nIf you are on waitlist and if you’d like to try your chances, you should be able to access Canvas to do the syllabus quiz and homework assignments.\nIf you’re unable to make it this time, there will be two sections of this course offered next semester and then again in the summer",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#lecture-format",
+    "href": "slides-01-intro.html#lecture-format",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Lecture format",
+    "text": "Lecture format\n\nIn person lectures T/Th.\nSometimes there will be videos to watch before or during the lecture time. You will find the list of pre-watch videos in the schedule on the course webpage.\nWe will also try to work on some questions and exercises together during the class.\nAll materials will be posted in this GitHub repository.\nWeekly tutorials will be office hour format run by the TAs and are completely optional.\n\nYou do not need to be registered in a tutorial.\nYou can attend whatever tutorials or office hours your want, regardless of in which/whether you’re registered.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#home-work-assignments",
+    "href": "slides-01-intro.html#home-work-assignments",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Home work assignments",
+    "text": "Home work assignments\n\nFirst homework assignment is due this coming Monday, September 09, midnight. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.\n\nYou must do the first two homework assignments on your own.\nI’m hoping you’ll be able to work with partners on subsequent assignments.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#exams",
+    "href": "slides-01-intro.html#exams",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Exams",
+    "text": "Exams\n\nWe’ll have two self-scheduled midterms and one final in Computer-based Testing Facility (CBTF).",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#course-calendar",
+    "href": "slides-01-intro.html#course-calendar",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Course calendar",
+    "text": "Course calendar\nHere is our course Calendar. Make sure you check it on a regular basis:\nhttps://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#course-structure",
+    "href": "slides-01-intro.html#course-structure",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Course structure",
+    "text": "Course structure\n\nIntroduction\n\nWeek 1\n\nPart I: ML fundamentals, preprocessing, midterm 1\n\nWeeks 2, 3, 4, 5, 6, 7, 8\n\nPart II: Unsupervised learning, transfer learning, common special cases, midterm 1\n\nWeeks 8, 9, 10, 11, 12\n\nPart III: Communication and ethics\n\nML skills are not beneficial if you can’t use them responsibly and communicate your results. In this module we’ll talk about these aspects.\nWeeks 13, 14",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#code-of-conduct",
+    "href": "slides-01-intro.html#code-of-conduct",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Code of conduct",
+    "text": "Code of conduct\n\nOur main forum for getting help will be Piazza.\n\n\n\n\n\n\n\nImportant\n\n\nPlease read this entire document about asking for help. TLDR: Be nice.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#homework-format-jupyter-notebooks",
+    "href": "slides-01-intro.html#homework-format-jupyter-notebooks",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Homework format: Jupyter notebooks",
+    "text": "Homework format: Jupyter notebooks\n\nOur notes are created in a Jupyter notebook, with file extension .ipynb.\nAlso, you will complete your homework assignments using Jupyter notebooks.\nConfusingly, “Jupyter notebook” is also the original application that opens .ipynb files - but has since been replaced by Jupyter lab.\n\nI am using Jupyter lab, some things might not work with the Jupyter notebook application.\nYou can also open these files in Visual Studio Code.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#jupyter-notebooks",
+    "href": "slides-01-intro.html#jupyter-notebooks",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Jupyter notebooks",
+    "text": "Jupyter notebooks\n\nNotebooks contain a mix of code, code output, markdown-formatted text (including LaTeX equations), and more.\nWhen you open a Jupyter notebook in one of these apps, the document is “live”, meaning you can run the code.\n\nFor example:\n\n1 + 1\n\n2\n\n\n\nx = [1, 2, 3]\nx[0] = 9999\nx\n\n[9999, 2, 3]",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#jupyter",
+    "href": "slides-01-intro.html#jupyter",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Jupyter",
+    "text": "Jupyter\n\nBy default, Jupyter prints out the result of the last line of code, so you don’t need as many print statements.\nIn addition to the “live” notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. this.\n\nThis can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.\nBut you need to launch the app properly to interact with the notebooks.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#lecture-notes",
+    "href": "slides-01-intro.html#lecture-notes",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Lecture notes",
+    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#grades",
+    "href": "slides-01-intro.html#grades",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Grades",
+    "text": "Grades\n\nThe grading breakdown is here.\nThe policy on challenging grades is here.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#recommended-browser",
+    "href": "slides-01-intro.html#recommended-browser",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Recommended browser",
+    "text": "Recommended browser\n\nI’ll test the course notebooks and exams, which we’ll be doing via Canvas, on the following two browsers: Chrome and Firefox. So I recommend that you use one of these browsers for the course.\nYou can install Chrome here.\nYou can install Firefox here.\n\nIn this course, we will primarily be using Python , git, GitHub, Canvas, Gradescope, Piazza, and PrairieLearn.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#course-conda-environment",
+    "href": "slides-01-intro.html#course-conda-environment",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Course conda environment",
+    "text": "Course conda environment\n\nFollow the setup instructions here to create a course conda environment on your computer.\nIf you do not have your computer with you, you can partner up with someone and set up your own computer later.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#python-requirementsresources",
+    "href": "slides-01-intro.html#python-requirementsresources",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Python requirements/resources",
+    "text": "Python requirements/resources\nWe will primarily use Python in this course.\nHere is the basic Python knowledge you’ll need for the course:\n\nBasic Python programming\nNumpy\nPandas\nBasic matplotlib\nSparse matrices\n\nHomework 1 is all about Python.\n\n\n\n\n\n\nNote\n\n\nWe do not have time to teach all the Python we need but you can find some useful Python resources here.",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides-01-intro.html#checklist-for-you-before-the-next-class",
+    "href": "slides-01-intro.html#checklist-for-you-before-the-next-class",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Checklist for you before the next class",
+    "text": "Checklist for you before the next class\n\nAre you able to access course Canvas shell?\nAre you able to access course Piazza?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.)\nAre you able to access iClicker Cloud for this course?\nDid you follow the setup instructions here to create a course conda environment on your computer?\nDid you complete the “Getting to know you” survey on Canvas?\nDid you complete the anonymous restaurant survey on Qualtrics?\nDid you complete the syllabus quiz on Canvas?\nAre you almost finished or at least started with homework 1?",
+    "crumbs": [
+      "Lecture 1: Introduction to CPSC 330"
+    ]
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\nNo matching items"
+  }
+]
