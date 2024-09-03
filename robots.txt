@@ -1,1 +1,0 @@
-Sitemap: https://UBC-CS.github.io/cpsc330-2024W1/sitemap.xml
