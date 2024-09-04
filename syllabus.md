@@ -36,7 +36,7 @@ Application of machine learning tools, with an emphasis on solving practical pro
 | CPSC 330 T1H | Thursday | 10:00 - 11:00 AM    | MCLD-Floor 3-Room 3014 |
 | CPSC 330 T1J | Friday   | 10:00 - 11:00 AM    | MCLD-Floor 3-Room 3014 |
 | CPSC 330 T1K | Friday   | 11:00 AM - 12:00 PM | MCLD-Floor 2-Room 2018 |
-| CPSC 330 T1H | Thursday | 9:00 - 10:00 AM     | ORCH-Floor 4-Room 4074 |
+| CPSC 330 T1L | Thursday | 9:00 - 10:00 AM     | ORCH-Floor 4-Room 4074 |
 
 Tutorials for this course will be conducted by TAs and follow an office hours format. Attendance at tutorials is optional. However, participating will allow you to engage in more personalized discussions with TAs, providing you with valuable one-on-one time and an opportunity to deepen your understanding of machine learning concepts. 
 
