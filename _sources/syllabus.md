@@ -16,27 +16,27 @@ Application of machine learning tools, with an emphasis on solving practical pro
 
 **Lectures**:
 
-| Section | Day  | Time   | Location |
-|----------|----------|--------|------|
-| CPSC 330 101 | Tue/Thu  | 3:30 - 4:50 PM  | SWNG-Floor 2-Room 222 |
-| CPSC 330 102 | Tue/Thu  | 11:00 AM - 12:20 PM  | SWNG-Floor 2-Room 222 |
-| CPSC 330 103 | Tue/Thu  | 5:00 - 6:20 PM  | SWNG-Floor 2-Room 222 |
+| Section      | Day     | Time                | Location              |
+|--------------|---------|---------------------|-----------------------|
+| CPSC 330 101 | Tue/Thu | 3:30 - 4:50 PM      | SWNG-Floor 2-Room 222 |
+| CPSC 330 102 | Tue/Thu | 11:00 AM - 12:20 PM | SWNG-Floor 2-Room 222 |
+| CPSC 330 103 | Tue/Thu | 5:00 - 6:20 PM      | SWNG-Floor 2-Room 222 |
 
 **Tutorials**:
 
-| Section | Day  | Time   | Location |
-|----------|----------|--------|------|
-| CPSC 330 T1A | Friday | 9:00 - 10:00 AM  | DMP-Floor 2-Room 201 |
-| CPSC 330 T1B | Friday  | 11:00 AM - 12:00 PM  | DMP-Floor 1-Room 101 |
-| CPSC 330 T1C | Friday  | 2:00 - 3:00 PM  | MCLD-Floor 3-Room 3002 |
-| CPSC 330 T1D | Friday  | 3:00 - 4:00 PM  | DMP-Floor 1-Room 101 |
-| CPSC 330 T1E | Thursday  | 5:00 - 6:00 PM  | MCML-Floor 1-Room 158 |
-| CPSC 330 T1F | Thursday  | 1:00 - 2:00 PM  | MCLD-Floor 3-Room 3008 |
-| CPSC 330 T1G | Thursday  | 2:00 - 3:00 PM  | ORCH-Floor 4-Room 4018 |
-| CPSC 330 T1H | Thursday  | 10:00 - 11:00 AM | MCLD-Floor 3-Room 3014 |
-| CPSC 330 T1J | Friday  | 10:00 - 11:00 AM | MCLD-Floor 3-Room 3014 |
-| CPSC 330 T1K | Friday  | 11:00 AM - 12:00 PM | MCLD-Floor 2-Room 2018 |
-| CPSC 330 T1H | Thursday  | 9:00 - 10:00 AM | ORCH-Floor 4-Room 4074 |
+| Section      | Day      | Time                | Location               |
+|--------------|----------|---------------------|------------------------|
+| CPSC 330 T1A | Friday   | 9:00 - 10:00 AM     | DMP-Floor 2-Room 201   |
+| CPSC 330 T1B | Friday   | 11:00 AM - 12:00 PM | DMP-Floor 1-Room 101   |
+| CPSC 330 T1C | Friday   | 2:00 - 3:00 PM      | MCLD-Floor 3-Room 3002 |
+| CPSC 330 T1D | Friday   | 3:00 - 4:00 PM      | DMP-Floor 1-Room 101   |
+| CPSC 330 T1E | Thursday | 5:00 - 6:00 PM      | MCML-Floor 1-Room 158  |
+| CPSC 330 T1F | Thursday | 1:00 - 2:00 PM      | MCLD-Floor 3-Room 3008 |
+| CPSC 330 T1G | Thursday | 2:00 - 3:00 PM      | ORCH-Floor 4-Room 4018 |
+| CPSC 330 T1H | Thursday | 10:00 - 11:00 AM    | MCLD-Floor 3-Room 3014 |
+| CPSC 330 T1J | Friday   | 10:00 - 11:00 AM    | MCLD-Floor 3-Room 3014 |
+| CPSC 330 T1K | Friday   | 11:00 AM - 12:00 PM | MCLD-Floor 2-Room 2018 |
+| CPSC 330 T1H | Thursday | 9:00 - 10:00 AM     | ORCH-Floor 4-Room 4074 |
 
 Tutorials for this course will be conducted by TAs and follow an office hours format. Attendance at tutorials is optional. However, participating will allow you to engage in more personalized discussions with TAs, providing you with valuable one-on-one time and an opportunity to deepen your understanding of machine learning concepts. 
 
@@ -51,10 +51,12 @@ For office hours, please refer to the [Calendar](https://htmlpreview.github.io/?
 - [Varada Kolhatkar](https://kvarada.github.io/)
 
 ### Course co-ordinator
-- 
+
+TBD
 
 ### TAs
 
+TBD
 
 ## Registration
 
@@ -72,15 +74,14 @@ In practice, the prerequisite is familiarity with Python programming.
  
 The grading scheme for the course is as follows:
 
-| Component   | Weight          | Location   |
-|-------------|-----------------|------------|
-| Syllabus quiz |   1%          | [Canvas](https://canvas.ubc.ca/courses/149122) | 
-| iClicker participation |   5% | [iClicker Cloud]() | 
-| Assignments |     22%         | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| Midterm 1   |     21%         | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| Midterm 2   |     21%         | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| Final       |     30%         | [Canvas](https://canvas.ubc.ca/courses/149122)     |
-
+| Component              | Weight | Location                                              |
+|------------------------|--------|-------------------------------------------------------|
+| Syllabus quiz          | 1%     | [Canvas](https://canvas.ubc.ca/courses/149122)        |
+| iClicker participation | 5%     | [iClicker Cloud]()                                    |
+| Assignments            | 22%    | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Midterm 1              | 21%    | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Midterm 2              | 21%    | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Final                  | 30%    | [Canvas](https://canvas.ubc.ca/courses/149122)        |
 
 ### iClicker 
 
@@ -88,30 +89,33 @@ The iClicker participation grade will mainly consider your engagement rather tha
 
 ### Assignments
 
-The plan is that most of the assignments will contribute equally towards the overall Assignments grade. However, this is not finalized yet. For example, the last assignment ends up particularly short or long due to timing. Furthermore, we will drop your lowest homework grade. 
+The plan is that most of the assignments will contribute equally towards the overall Assignments grade.
+<!-- However, this is not finalized yet.
+For example, the last assignment ends up particularly short or long due to timing. -->
+We will drop your lowest homework grade. 
 <!--**By default late submissions will not be accepted.** The rationale is that we will be posting the solutions shortly after the assignment deadline, and we cannot accept submissions after the solutions are posted. I do not like this, but I believe the overall policy is best for the class as a whole.--> 
 See [this document](docs/homework_instructions.md) for more detailed instructions on submitting homework assignments.
 
-For the full policy on grades, see [this document](docs/grades.md). We understand that grades are important for you for several reasons. But try not to focus too much on them. You will have a better learning experience and in general, you'll be happier in life if you focus more on learning the material well. For the grading scheme we wish we could use [this](https://youtu.be/HdHlfiOAJyE?t=3771).
-
+For the full policy on grades, see [this document](docs/grades.md). We understand that grades are important for you for several reasons. But try not to focus too much on them. You will have a better learning experience and in general, you'll be happier in life if you focus more on learning the material well. 
+For the grading scheme we wish we could use [this](https://youtu.be/HdHlfiOAJyE?t=3771).
 
 **Late policy**
 
-Assignments will be due 5 minutes before midnight on the due date.
-
-If you can't make it, you can use late classes:
+Assignments will be due at 11:59 PM on the due date.
+If you cannot make this due date, you may use a "late token".
+Each student will have 4 late tokens for the entire semester, we will track them on PrairieLearn.
 
 For example, if assignment is due on a Monday at 11:59 pm:
-- Handing it anytime on Tuesday is 1 late day (irrespective of whether it's a holiday).
-- Handing it anytime on Wednesday is 2 late days (irrespective of whether it's a holiday).
+- Handing it anytime on Tuesday will cost you 1 late token (irrespective of whether it's a holiday).
+- Handing it anytime on Wednesday will cost you 2 late tokens (irrespective of whether it's a holiday).
 
-There is no penalty for using "late days", but you will get a mark of 0 on an assignment if you:
-- Use more than 2 late days on the assignment.
-- Use more than 4 late days across all assignments.
+There is no penalty for using "late tokens", but you will get a mark of 0 on an assignment if you:
+- Use more than 2 late tokens on the assignment.
+- Use more than 4 late tokens across all assignments.
 
-If you are working in a pair, you both must have late days remaining.
+<!-- If you are working in a pair, you both must have late tokens remaining. -->
 
-We will post solutions after the second late day has expired.
+We will post solutions 48-hours after the due date.
 
 ### Use of AI in the course
 
@@ -126,12 +130,28 @@ Failure to follow this policy will be considered a violation of UBC's academic p
 
 When using AI tools for your assignments, be mindful of their impact on your learning. Consider carefully whether they are improving or hindering your learning, and make a conscious decision about their use. 
 
-
 ### Midterm
 
-Check the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html) for midterm dates. 
+Check the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html) for midterm dates.
 
-TODO: Write about midterm exam policy. 
+There will be two midterms in CPSC 330 and both of them will be conducted in the CBTF via self-reservation over a two-day period.
+The CBTF (computer based testing facility) is designed to enhance the student’s writing experience by providing them with a familiar, secure testing environment with quick access to technical support, as well as support from their instructor for common access issues.
+
+#### Centre for Accessibility (CfA) Exam Accommodations
+
+ Students who are registered with the Centre for Accessibility (CfA) with exam accommodations listed below will need to write all of their assessments in the Computer-Based Testing Facility (CBTF). The CBTF will provide the following accommodations: 
+
+- Extended-time (up to 4x)
+- Distraction-reduced environment
+- Close proximity to washroom
+- Phone permitted for medical purposes
+- Medical equipment/supplies/food
+
+If you have an accommodation that is not listed above, you will write your assessments with the CfA and will need to book a time by their deadline. Please do not book any assessments with the CfA if you are expected to write in the CBTF, as the CfA will cancel the exam booking and ask you to book it yourself with the CBTF. If you have any concerns about your accommodations being met in the CBTF, please reach out to your Accessibility Advisor.
+
+For more information, [please see the CBTF page](https://cbtf.ubc.ca/students/accommodations).
+
+<!-- TODO: Write about midterm exam policy.  -->
 
 ### Final exam
 
