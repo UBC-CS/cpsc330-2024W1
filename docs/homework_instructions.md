@@ -35,11 +35,27 @@ Here are the steps to create a repository for the released homework assignment.
 
 When you're ready to submit your assignment, make sure all your work in the Jupyter Notebook is saved, all changes in the repository are committed, and you've pushed up to GitHub.
 
-To submit your work you must **submit your final version of the notebook to [Gradescope](https://www.gradescope.ca)** where it will be graded.
+### Preparation
+
+1. Run all cells in your notebook to make sure there are no errors by running all cells: `Kernel -> Restart Kernel and Clear All Outputs` and then `Run -> Run All Cells`.
+
+1. Notebooks with cell execution numbers out of order or not starting from “1” will have marks deducted. Notebooks without the output displayed may not be graded at all (because we need to see the output in order to grade your work).
+
+### Submitting on Gradescope
+
+1. Upload the assignment using Gradescope’s drag and drop tool. Make sure to access Gradescope via Canvas. Check out this [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/) if you need help with your Gradescope submission.
+
+1. Make sure that the plots and output are rendered properly in your submitted files.
+
+1. If the `.ipynb` file is too big and doesn’t render on Gradescope, also upload a `pdf` or `html` in addition to the `.ipynb file`. If the `pdf` or `html` also fail to render on Gradescope, please create two files for your homework (e.g., `hw6a.ipynb` with Exercise 1 and `hw6b.ipynb` with Exercises 2 and 3) and include these two files in your repository.
+
+You must **submit your final version of the notebook to [Gradescope](https://www.gradescope.ca)** where it will be graded.
 
 Here is a video that shows you the process you'll be following (from a different course):
 
+<div>
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/1006094160?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Submit GitHub Repository on Gradescope"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
 
 Once you submit to Gradescope, you should go there and ensure your assignment is there as expected and all the output and plots are rendered properly. 
 
