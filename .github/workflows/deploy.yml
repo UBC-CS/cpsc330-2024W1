@@ -29,6 +29,13 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
+    # Set the kernel to remove the conda kernel
+    - name: Remove Special Kernel
+      run: |
+        python -m ipykernel install --user --name mykernel
+        jupytext --set-kernel mykernel --to md:myst
+        
     # Build the book
     - name: Build the book
       run: |
