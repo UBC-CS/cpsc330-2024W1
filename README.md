@@ -49,7 +49,7 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 | hw7            | November 18, 11:59 pm | Github repo[](https://github.com/new?template_name=hw7&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | hw8            | November 25, 11:59 pm | Github repo[](https://github.com/new?template_name=hw8&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | hw9            | December 05, 11:59 pm | Github repo[](https://github.com/new?template_name=hw9&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| **Final exam** | TBA                   | PrairieLearn (in person)                                                           | PrairieLearn (in person)                              |
+| **Final exam** | TBA                   | PrairieLearn (CBTF, in person)                                                           | PrairieLearn (CBTF, in person)                              |
 
 ## Lecture schedule (tentative)
 
