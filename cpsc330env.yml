@@ -33,6 +33,7 @@ dependencies:
     - pip>=24.2        
     - pip:
         - mglearn
+        - otter-grader
         - graphviz        
         - nbformat
         - nbclient
