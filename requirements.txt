@@ -8,7 +8,6 @@ scikit-learn>=1.5.1
 requests
 ipython
 graphviz
-python-graphviz
 jinja2
 lightgbm
 torchvision
@@ -20,7 +19,6 @@ wikipedia
 spacy
 nltk
 mglearn
-graphviz
 nbformat
 nbclient
 transformers
