@@ -20,7 +20,7 @@ Note: If you plan to take notes, try not to do it in this repository. If you do 
 
 ## Python and Conda
 
-We will be using Python for this course because it is open source and widely used in machine learning and data science. We will use Python 3 (in particular 3.10). **Python 2 is not supported in this course.**
+We will be using Python for this course because it is open source and widely used in machine learning and data science. We will use Python 3 (in particular 3.12). **Python 2 is not supported in this course.**
 
 We recommend the Miniconda Python distribution because it comes bundled with a bunch of useful packages (NumPy, SciPy, scikit-learn, Jupyter notebook) pre-installed. You can [download Miniconda from their website](https://docs.conda.io/en/latest/miniconda.html) that is suitable for your operating system. For example, I downloaded [Miniconda3 MaxOSX 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg) on my macOS.  
 
@@ -28,7 +28,7 @@ To make sure that miniconda and Python are correctly installed, follow the instr
 
 ### macOS
 
-After installation, go to spotlight search on your macbook and type "terminal" and go to this program. If you already have terminal open,  restart it. If the installation was successful, you will see (base) prepending to your prompt string. For example, here is how the terminal prompt looks like on my macbook. 
+After installation, go to spotlight search on your macbook and type "terminal" and go to this program. If you already have terminal open,  restart it. If the installation was successful, you will see `(base)` prepending to your prompt string. For example, here is how the terminal prompt looks like on my macbook. 
 
 ```
 (base) kvarada@CPSC-W-KVARADA01:~$
@@ -115,9 +115,9 @@ We will be using [JupyterLab](https://jupyter.org/) as our main coding environme
 
 5. We are all set! When you want to run the lecture materials or work on your homework, start Jupyter Lab from your cpsc330 environment, as shown below.
 
-```(cpsc330) CPSC-M-KVARADA01:cpsc330-2024W1 kvarada$ jupyter lab```
+    ```(cpsc330) CPSC-M-KVARADA01:cpsc330-2024W1 kvarada$ jupyter lab```
 
-Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab. 
+    Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab. 
 
 
 6. To deactivate the environment, you can run
