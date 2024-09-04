@@ -11,6 +11,10 @@ dependencies:
     - ipykernel
     - matplotlib
     - pandas
+    - jupyterlab
+    - jupyterlab-git
+    - jupyterlab-spellchecker
+    - nb_conda_kernels
     - scikit-learn>=1.5.1    
     - requests
     - ipython
