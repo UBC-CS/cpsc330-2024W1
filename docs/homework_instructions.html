@@ -351,7 +351,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-homework-assignments">Accessing homework assignments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-our-template-to-create-a-repository">Use our template to create a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit">How to submit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit">How to submit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-on-gradescope">Submitting on Gradescope</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-submission-instructions">Additional submission instructions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-format">Report format</a></li>
@@ -405,11 +409,28 @@ See this document for <a class="reference internal" href="setup.html"><span clas
 <section id="how-to-submit">
 <h2>How to submit<a class="headerlink" href="#how-to-submit" title="Link to this heading">#</a></h2>
 <p>When you’re ready to submit your assignment, make sure all your work in the Jupyter Notebook is saved, all changes in the repository are committed, and you’ve pushed up to GitHub.</p>
-<p>To submit your work you must <strong>submit your final version of the notebook to <a class="reference external" href="https://www.gradescope.ca">Gradescope</a></strong> where it will be graded.</p>
+<section id="preparation">
+<h3>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Run all cells in your notebook to make sure there are no errors by running all cells: <code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">-&gt;</span> <span class="pre">Restart</span> <span class="pre">Kernel</span> <span class="pre">and</span> <span class="pre">Clear</span> <span class="pre">All</span> <span class="pre">Outputs</span></code> and then <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">-&gt;</span> <span class="pre">Run</span> <span class="pre">All</span> <span class="pre">Cells</span></code>.</p></li>
+<li><p>Notebooks with cell execution numbers out of order or not starting from “1” will have marks deducted. Notebooks without the output displayed may not be graded at all (because we need to see the output in order to grade your work).</p></li>
+</ol>
+</section>
+<section id="submitting-on-gradescope">
+<h3>Submitting on Gradescope<a class="headerlink" href="#submitting-on-gradescope" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Upload the assignment using Gradescope’s drag and drop tool. Make sure to access Gradescope via Canvas. Check out this <a class="reference external" href="https://lthub.ubc.ca/guides/gradescope-student-guide/">Gradescope Student Guide</a> if you need help with your Gradescope submission.</p></li>
+<li><p>Make sure that the plots and output are rendered properly in your submitted files.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file is too big and doesn’t render on Gradescope, also upload a <code class="docutils literal notranslate"><span class="pre">pdf</span></code> or <code class="docutils literal notranslate"><span class="pre">html</span></code> in addition to the <code class="docutils literal notranslate"><span class="pre">.ipynb</span> <span class="pre">file</span></code>. If the <code class="docutils literal notranslate"><span class="pre">pdf</span></code> or <code class="docutils literal notranslate"><span class="pre">html</span></code> also fail to render on Gradescope, please create two files for your homework (e.g., <code class="docutils literal notranslate"><span class="pre">hw6a.ipynb</span></code> with Exercise 1 and <code class="docutils literal notranslate"><span class="pre">hw6b.ipynb</span></code> with Exercises 2 and 3) and include these two files in your repository.</p></li>
+</ol>
+<p>You must <strong>submit your final version of the notebook to <a class="reference external" href="https://www.gradescope.ca">Gradescope</a></strong> where it will be graded.</p>
 <p>Here is a video that shows you the process you’ll be following (from a different course):</p>
+<div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/1006094160?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Submit GitHub Repository on Gradescope"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
 <p>Once you submit to Gradescope, you should go there and ensure your assignment is there as expected and all the output and plots are rendered properly.</p>
 <p><strong>It is your responsibility to make sure your assignment is submitted properly and failure to do so will result in a deduction of marks.</strong></p>
+</section>
 </section>
 <section id="additional-submission-instructions">
 <h2>Additional submission instructions<a class="headerlink" href="#additional-submission-instructions" title="Link to this heading">#</a></h2>
@@ -505,7 +526,11 @@ This is not ideal, but I believe the overall policy is best for the class as a w
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-homework-assignments">Accessing homework assignments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-our-template-to-create-a-repository">Use our template to create a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit">How to submit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit">How to submit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-on-gradescope">Submitting on Gradescope</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-submission-instructions">Additional submission instructions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-format">Report format</a></li>
