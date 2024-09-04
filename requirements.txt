@@ -12,7 +12,7 @@ jinja2
 lightgbm
 torchvision
 torchaudio
-pytorch
+torch
 autograd
 plotly
 wikipedia
