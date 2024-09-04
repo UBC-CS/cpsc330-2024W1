@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -355,7 +355,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python-packages">Installing Python packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">JupyterLab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-and-why">What and Why</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-virtual-environment-conda-environments">Setting up a virtual environment: Conda environments</a></li>
@@ -378,8 +377,8 @@ document.write(`
 <h1>Setting up coding environment<a class="headerlink" href="#setting-up-coding-environment" title="Link to this heading">#</a></h1>
 <section id="git">
 <h2>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
-<p>If you want to clone the class GitHub repository and run lecture notebooks locally, which is highly recommended, you will need <code class="docutils literal notranslate"><span class="pre">Git</span></code> on your computer. Check out the <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/master/docs/git_installation.md">git setup instructions</a>. Also, most of our homework assignments will be done in JupyterLab. You don’t have to do it but it might be easier for you to create a private GitHub repository for your homework assignments.</p>
-<p>Once you have <code class="docutils literal notranslate"><span class="pre">Git</span></code> go to the directory where you want to do CPSC 330 work, and clone the Course GitHub repository using the following command on your command line.</p>
+<p>If you want to clone the class GitHub repository and run lecture notebooks locally, which is highly recommended, you will need <code class="docutils literal notranslate"><span class="pre">Git</span></code> on your computer. Check out the <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/git_installation.md">git setup instructions</a>. Also, most of our homework assignments will be done in JupyterLab.</p>
+<p>Once you have <code class="docutils literal notranslate"><span class="pre">Git</span></code>, go to the directory where you want to do CPSC 330 related work, and clone the course GitHub repository using the following command on your command line.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">UBC</span><span class="o">-</span><span class="n">CS</span><span class="o">/</span><span class="n">cpsc330</span><span class="o">-</span><span class="mi">2024</span><span class="n">W1</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
@@ -434,14 +433,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
-</section>
-<section id="jupyterlab">
-<h2>JupyterLab<a class="headerlink" href="#jupyterlab" title="Link to this heading">#</a></h2>
-<p>We will be using <a class="reference external" href="https://jupyter.org/">JupyterLab</a> as our main coding environment and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is one of the key data analyses packages. Install them via the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pandas</span> <span class="n">jupyterlab</span> <span class="n">jupyterlab</span><span class="o">-</span><span class="n">spellchecker</span> <span class="n">nb_conda_kernels</span>
-</pre></div>
-</div>
-<p>For other packages we need for the course, we will be creating a <code class="docutils literal notranslate"><span class="pre">conda</span></code> virtual environment. (See the instructions in the next section.)</p>
+<p>We will be using <a class="reference external" href="https://jupyter.org/">JupyterLab</a> as our main coding environment and several python packages. To install these packages, we will be creating a <code class="docutils literal notranslate"><span class="pre">conda</span></code> virtual environment. (See the instructions in the next section.)</p>
 </section>
 <section id="virtual-environment">
 <h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h2>
@@ -458,8 +450,12 @@ document.write(`
 </div>
 <p>You should see a list of environments as the output. If Miniconda is not installed, you can download Miniconda (a small, bootstrap version of Anaconda) from <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">here</a>.</p>
 </li>
-<li><p>If you have cloned the repository, navigate to it. Alternatively download <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2023W1/blob/master/cpsc330env.yml">cpsc330env.yml</a> and put it in your working directory</p></li>
-<li><p>Create an environment by</p>
+<li><p>If you have cloned the repository, navigate to it in the terminal and view the contents of the repository using the command below. You will see <code class="docutils literal notranslate"><span class="pre">cpsc330env.yml</span></code> at the root of the repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> 
+</pre></div>
+</div>
+</li>
+<li><p>Create an environment by running the command below in</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">cpsc330env</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
@@ -472,19 +468,19 @@ You can check that the environemnt is installed successfully by running <code cl
 </div>
 <p>After a successful activation, something like <code class="docutils literal notranslate"><span class="pre">(cpsc330)</span></code> should show up in the terminal.</p>
 </li>
-<li><p>To deactivate the environment, run</p>
+<li><p>We are all set! When you want to run the lecture materials or work on your homework, start Jupyter Lab from your cpsc330 environment, as shown below.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">(cpsc330)</span> <span class="pre">CPSC-M-KVARADA01:cpsc330-2024W1</span> <span class="pre">kvarada$</span> <span class="pre">jupyter</span> <span class="pre">lab</span></code></p>
+<p>Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab.</p>
+<ol class="arabic" start="6">
+<li><p>To deactivate the environment, you can run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
 </pre></div>
 </div>
 </li>
-<li><p>We are all set! When you want to run the lecture materials or work on your homework, start Jupyter Lab from your base environment, as shown below.</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">(base)</span> <span class="pre">kvarada&#64;CPSC-W-KVARADA01:~$</span> <span class="pre">jupyter</span> <span class="pre">lab</span></code></p>
-<p>Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab. When you open the notebook, you should see our newly created <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code> there. See the screenshots below. Select <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code> as the preferred kernel.</p>
-<p><img alt="" src="../_images/conda-kernel.png" /></p>
-<p><img alt="" src="../_images/conda-env.png" /></p>
 <p>For more information on conda environments, see <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">here</a>.</p>
-<p>Now you should be able to run the lecture notebooks on your computer!! Note that the environment file above is good to get started but it does not contain <strong>all</strong> packages we will be using in the course and we might have to install some packages manually later in the course.</p>
+<p>Now you should be able to run the lecture notebooks on your computer! Please note that the environment file above is good to get started, but it does not contain all the packages we will be using in the course. We might need to install some packages manually later on, and we’ll provide you with instructions when the time comes.</p>
 </section>
 <section id="debugging">
 <h3>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h3>
@@ -557,7 +553,6 @@ You can check that the environemnt is installed successfully by running <code cl
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python-packages">Installing Python packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">JupyterLab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-and-why">What and Why</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-virtual-environment-conda-environments">Setting up a virtual environment: Conda environments</a></li>
