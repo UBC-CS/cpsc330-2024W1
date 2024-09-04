@@ -23,7 +23,7 @@ Software licensed under [the MIT License](https://spdx.org/licenses/MIT.html), n
 
 * [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html)
 * [Course GitHub page](https://github.com/UBC-CS/cpsc330-2024W1)
-* [Course Jupyter book]()
+* [Course Jupyter book](https://ubc-cs.github.io/cpsc330-2024W1)
 * [Canvas](https://canvas.ubc.ca/courses/149122)
 * [Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1)
 * [iClicker Cloud]()
@@ -35,21 +35,21 @@ Software licensed under [the MIT License](https://spdx.org/licenses/MIT.html), n
 ## Deliverable due dates (tentative)
 Usually the homework assignments will be due on Mondays (except next week) and will be released on Tuesdays. We'll also add the due dates in the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html). If you find inconsistencies in due dates, follow the due date in the Calendar. For this course, we'll assume that the [Calendar](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330/blob/master/docs/calendar.html) is always right!      
 
-|Assessment  | Due date |  Where to find? | Where to submit? | 
-|-------|-----------|-----------|-----------|
-| hw1 | Sept 09, 11:59 pm |  [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
-| Syllabus quiz | Sept 19, 11:59 pm  | [Canvas](https://canvas.ubc.ca/courses/149122) | [Canvas](https://canvas.ubc.ca/courses/149122) | 
-| hw2 | Sept 16, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
-| hw3 | Oct 01, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
-| hw4 | Oct 07, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
-| **Midterm 1** | Oct 15 and Oct 16  | PrairieLearn (in person) | PrairieLearn (in person)|
-| hw5 | Oct 28, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)| 
-| hw6 | November 04, 11:59 pm |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|
-| **Midterm 2** | Nov 14 and Nov 15  | PrairieLearn (in person) | PrairieLearn (in person)|
-| hw7 | November 18, 11:59 pm  |   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
-| hw8 | November 25, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|   
-| hw9 | December 05, 11:59 pm|   [Github repo](https://github.com/UBC-CS/cpsc330-2024W1/hw/) | [Gradescope](https://www.gradescope.ca/courses/18608)|  
-| **Final exam** | TBA |  PrairieLearn (in person) | PrairieLearn (in person) | 
+| Assessment     | Due date              | Where to find?                                                                     | Where to submit?                                      |
+|----------------|-----------------------|------------------------------------------------------------------------------------|-------------------------------------------------------|
+| hw1            | Sept 09, 11:59 pm     | [Github repo](https://github.com/new?template_name=hw1&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| Syllabus quiz  | Sept 19, 11:59 pm     | [PrairieLearn](https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488)                                     | [Canvas](https://canvas.ubc.ca/courses/149122)        |
+| hw2            | Sept 16, 11:59 pm     | Github repo[](https://github.com/new?template_name=hw2&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw3            | Oct 01, 11:59 pm      | Github repo[](https://github.com/new?template_name=hw3&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw4            | Oct 07, 11:59 pm      | Github repo[](https://github.com/new?template_name=hw4&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| **Midterm 1**  | Oct 15 and Oct 16     | PrairieLearn (CBTF, in person)                                                     | PrairieLearn (CBTF, in person)                        |
+| hw5            | Oct 28, 11:59 pm      | Github repo[](https://github.com/new?template_name=hw5&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw6            | November 04, 11:59 pm | Github repo[](https://github.com/new?template_name=hw6&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| **Midterm 2**  | Nov 14 and Nov 15     | PrairieLearn (CBTF, in person)                                                     | PrairieLearn (CBTF, in person)                        |
+| hw7            | November 18, 11:59 pm | Github repo[](https://github.com/new?template_name=hw7&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw8            | November 25, 11:59 pm | Github repo[](https://github.com/new?template_name=hw8&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw9            | December 05, 11:59 pm | Github repo[](https://github.com/new?template_name=hw9&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| **Final exam** | TBA                   | PrairieLearn (in person)                                                           | PrairieLearn (in person)                              |
 
 ## Lecture schedule (tentative)
 
@@ -57,7 +57,7 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 
 This course will be run in a semi flipped classroom format. There will be pre-watch videos for many lectures, at least in the first half of the course. All the videos are available on [YouTube](https://www.youtube.com/playlist?list=PLHofvQE1VlGtZoAULxcHb7lOsMved0CuM) and are posted in the schedule below. Try to watch the assigned videos before the corresponding lecture. During the lecture, we'll summarize the important points from the videos and focus on demos, iClickers, and Q&A. 
 
-We'll be developing lecture notes directly in this repository. So if you check them before the lecture, they might be in a draft form. Once they are finalized, they will be posted in the [Course Jupyter book](). 
+We'll be developing lecture notes directly in this repository. So if you check them before the lecture, they might be in a draft form. Once they are finalized, they will be posted in the [Course Jupyter book](https://ubc-cs.github.io/cpsc330-2024W1/README.html). 
 
 | Date   | Topic |  Assigned videos | vs. CPSC 340 |
 |--------|-----------|-------------------------|------------------|
