@@ -2,9 +2,9 @@
 
 ## Git 
 
-If you want to clone the class GitHub repository and run lecture notebooks locally, which is highly recommended, you will need `Git` on your computer. Check out the [git setup instructions](https://github.com/UBC-CS/cpsc330-2024W1/blob/master/docs/git_installation.md). Also, most of our homework assignments will be done in JupyterLab. You don't have to do it but it might be easier for you to create a private GitHub repository for your homework assignments. 
+If you want to clone the class GitHub repository and run lecture notebooks locally, which is highly recommended, you will need `Git` on your computer. Check out the [git setup instructions](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/git_installation.md). Also, most of our homework assignments will be done in JupyterLab. 
 
-Once you have `Git` go to the directory where you want to do CPSC 330 work, and clone the Course GitHub repository using the following command on your command line. 
+Once you have `Git`, go to the directory where you want to do CPSC 330 related work, and clone the course GitHub repository using the following command on your command line. 
 
 ```
 git clone https://github.com/UBC-CS/cpsc330-2024W1.git
@@ -82,15 +82,7 @@ _Note: If instead you see Python 2.7.X you installed the wrong version. Uninstal
 conda config --add channels conda-forge
 ```
 
-## JupyterLab
-
-We will be using [JupyterLab](https://jupyter.org/) as our main coding environment and `pandas` is one of the key data analyses packages. Install them via the following commands:
-
-```
-conda install pandas jupyterlab jupyterlab-spellchecker nb_conda_kernels
-```
-
-For other packages we need for the course, we will be creating a `conda` virtual environment. (See the instructions in the next section.)
+We will be using [JupyterLab](https://jupyter.org/) as our main coding environment and several python packages. To install these packages, we will be creating a `conda` virtual environment. (See the instructions in the next section.)
 
 ## Virtual environment
 
@@ -104,8 +96,12 @@ For other packages we need for the course, we will be creating a `conda` virtual
     conda env list
     ```
     You should see a list of environments as the output. If Miniconda is not installed, you can download Miniconda (a small, bootstrap version of Anaconda) from [here](https://docs.conda.io/en/latest/miniconda.html).  
-2. If you have cloned the repository, navigate to it. Alternatively download [cpsc330env.yml](https://github.com/UBC-CS/cpsc330-2023W1/blob/master/cpsc330env.yml) and put it in your working directory
-3. Create an environment by 
+2. If you have cloned the repository, navigate to it in the terminal and view the contents of the repository using the command below. You will see `cpsc330env.yml` at the root of the repository.
+
+    ```
+    ls 
+    ```
+3. Create an environment by running the command below in 
     ```
     conda env create -f cpsc330env.yml
     ```
@@ -116,23 +112,22 @@ For other packages we need for the course, we will be creating a `conda` virtual
     conda activate cpsc330
     ```
     After a successful activation, something like `(cpsc330)` should show up in the terminal.
-5. To deactivate the environment, run
+
+5. We are all set! When you want to run the lecture materials or work on your homework, start Jupyter Lab from your cpsc330 environment, as shown below.
+
+```(cpsc330) CPSC-M-KVARADA01:cpsc330-2024W1 kvarada$ jupyter lab```
+
+Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab. 
+
+
+6. To deactivate the environment, you can run
     ```
     conda deactivate
     ```    
-6. We are all set! When you want to run the lecture materials or work on your homework, start Jupyter Lab from your base environment, as shown below.
 
-```(base) kvarada@CPSC-W-KVARADA01:~$ jupyter lab```
-
-Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab. When you open the notebook, you should see our newly created `conda` environment `cpsc330` there. See the screenshots below. Select `cpsc330` as the preferred kernel. 
-
-![](img/conda-kernel.png)
-
-![](img/conda-env.png)
-    
 For more information on conda environments, see [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
-Now you should be able to run the lecture notebooks on your computer!! Note that the environment file above is good to get started but it does not contain **all** packages we will be using in the course and we might have to install some packages manually later in the course.  
+Now you should be able to run the lecture notebooks on your computer! Please note that the environment file above is good to get started, but it does not contain all the packages we will be using in the course. We might need to install some packages manually later on, and we’ll provide you with instructions when the time comes.
 
 
 ### Debugging
