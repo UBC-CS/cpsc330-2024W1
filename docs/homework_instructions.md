@@ -53,7 +53,7 @@ You must **submit your final version of the notebook to [Gradescope](https://www
 
 Here is a video that shows you the process you'll be following (from a different course):
 
-<div>
+<div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/1006094160?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Submit GitHub Repository on Gradescope"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
 </div>
 
