@@ -1,0 +1,64 @@
+name: deploy-book
+
+# Only run this when the master branch changes
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    # Install dependencies
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: cache installation
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.pythonLocation }}
+        key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('requirements.txt') }}
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build .
+        
+    # Push to CS server
+    - name: rsync and ssh to CS
+      env:
+        COURSE_REMOTE_HOST: kunghit.students.cs.ubc.ca
+        COURSE_REMOTE_USER: cs-330
+        CS_REMOTE_USER: firasm
+        CS_TUNNEL: remote.cs.ubc.ca
+        REMOTE_KEY: ${{ secrets.FIRAS_SERVER_SSH_KEY }}
+        FIRAS_KEYBOARDMBP: ${{ secrets.FIRAS_KEYBOARDMBP }}
+        TERM: 2024_W1
+        LOCAL_DIR: _build/html/
+      run: |
+        mkdir -p ~/.ssh
+        echo "$REMOTE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H $CS_TUNNEL >> ~/.ssh/known_hosts
+
+        echo "$FIRAS_KEYBOARDMBP" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+
+        # Set up a tunnel in the background
+        ssh -fN -L 2222:$COURSE_REMOTE_HOST:22 $CS_REMOTE_USER@$CS_TUNNEL -p 22
+
+        # send files all in one shot
+        rsync -avzr -e 'ssh -p 22 -o StrictHostKeyChecking=no -J $CS_REMOTE_USER@$CS_TUNNEL' $LOCAL_DIR $COURSE_REMOTE_USER@$COURSE_REMOTE_HOST:public_html/$TERM
+
+    # - name: Setup tmate session
+    #   uses: mxschmitt/action-tmate@v3
