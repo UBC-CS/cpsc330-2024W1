@@ -34,7 +34,7 @@ parts:
 
   - file: lectures/103-Firas-lectures/README
     sections:
-      - url: "https://cbc.ca"
+      - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro.html#/title-slide"
         title: Lecture 1
 
 - caption: Attribution
