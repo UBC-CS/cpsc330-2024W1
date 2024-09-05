@@ -7,12 +7,13 @@ root: README.md
 parts:
 - caption: Things you should know
   chapters: 
+  - file: 
   - file: syllabus.md  
   - file: docs/README.md
   - file: learning-objectives.md
   sections:
   - file: docs/330_vs_340.md  
-  - file: docs/homework_instructions.md     
+  - file: docs/homework_instructions.md
   - file: docs/resources.md 
   - file: docs/grades.md
   - file: docs/setup.md
