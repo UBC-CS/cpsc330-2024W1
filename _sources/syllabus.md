@@ -76,8 +76,8 @@ The grading scheme for the course is as follows:
 
 | Component              | Weight | Location                                              |
 |------------------------|--------|-------------------------------------------------------|
-| Syllabus quiz          | 1%     | [Canvas](https://canvas.ubc.ca/courses/149122)        |
-| iClicker participation | 5%     | [iClicker Cloud]()                                    |
+| Syllabus quiz          | 1%     | [PrairieLearn](https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488)        |
+| iClicker participation | 5%     | [iClicker Cloud](https://join.iclicker.com/VYFJ)                                    |
 | Assignments            | 22%    | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | Midterm 1              | 21%    | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | Midterm 2              | 21%    | [Gradescope](https://www.gradescope.ca/courses/18608) |
