@@ -1,4 +1,4 @@
-## Welcome to CPSC 330 2024W1! 
+## Section 102
 
 - [Click here to access CPSC 330 Section 102 Slides.](https://kvarada.github.io/cpsc330-slides).
 

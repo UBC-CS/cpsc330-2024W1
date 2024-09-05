@@ -21,6 +21,22 @@ parts:
 - caption: Lectures
   chapters: 
   - file: lectures/notes/01_intro.ipynb
+- caption: Section slides
+  chapters:
+  - file: lectures/101-Giulia-lectures/README
+    sections:
+      - file: lectures/101-Giulia-lectures/01_intro.ipynb
+
+  - file: lectures/102-Varada-lectures/README
+    sections:
+      - url: "https://kvarada.github.io/cpsc330-slides/slides-01-intro.html"
+        title: Lecture 1
+
+  - file: lectures/103-Firas-lectures/README
+    sections:
+      - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro.html#/title-slide"
+        title: Lecture 1
+
 - caption: Attribution
   chapters: 
   - file: attribution
