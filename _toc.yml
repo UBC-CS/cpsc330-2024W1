@@ -7,7 +7,6 @@ root: README.md
 parts:
 - caption: Things you should know
   chapters: 
-  - file: 
   - file: syllabus.md  
   - file: docs/README.md
   - file: learning-objectives.md
