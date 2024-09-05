@@ -60,12 +60,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/notes/01_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/101-Giulia-lectures/01_intro';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LICENSE" href="../../LICENSE.html" />
-    <link rel="prev" title="Course Learning Objectives" href="../../learning-objectives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -190,8 +190,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../learning-objectives.html">Course Learning Objectives</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 1: Course Introduction</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
 <ul class="nav bd-sidenav">
@@ -265,7 +265,7 @@
       
       
       
-      <li><a href="../../_sources/lectures/notes/01_intro.ipynb" target="_blank"
+      <li><a href="../../_sources/lectures/101-Giulia-lectures/01_intro.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,6 +398,26 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-all-of-the-following-statements-which-are-true-iclicker">Select all of the following statements which are <strong>True</strong> (iClicker)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-course">About this course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-website">Course website</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpsc-330-vs-340">CPSC 330 vs. 340</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-waitlist-and-prerequisites">Registration, waitlist and prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-format">Course format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communications">Communications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grades">Grades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-deliverables">First deliverables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-and-homework-format-jupyter-notebooks">Lecture and homework format: Jupyter notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-style">Lecture style</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-computer-for-the-course">Setting up your computer for the course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-browser">Recommended browser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-requirements-resources">Python requirements/resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity">Activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-for-you-before-next-class">Checklist for you before next class</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
@@ -432,8 +452,6 @@ document.write(`
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s1">&#39;../data/&#39;</span> 
 </pre></div>
@@ -699,44 +717,66 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_3f806_row0_col0, #T_3f806_row0_col1, #T_3f806_row1_col0, #T_3f806_row1_col1, #T_3f806_row2_col0, #T_3f806_row2_col1, #T_3f806_row3_col0, #T_3f806_row3_col1 {
+#T_2a186_row0_col0, #T_2a186_row0_col1, #T_2a186_row1_col0, #T_2a186_row1_col1, #T_2a186_row2_col0, #T_2a186_row2_col1, #T_2a186_row3_col0, #T_2a186_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_3f806">
+<table id="T_2a186">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3f806_level0_col0" class="col_heading level0 col0" >sms</th>
-      <th id="T_3f806_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
+      <th id="T_2a186_level0_col0" class="col_heading level0 col0" >sms</th>
+      <th id="T_2a186_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3f806_level0_row0" class="row_heading level0 row0" >3245</th>
-      <td id="T_3f806_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
-      <td id="T_3f806_row0_col1" class="data row0 col1" >ham</td>
+      <th id="T_2a186_level0_row0" class="row_heading level0 row0" >3245</th>
+      <td id="T_2a186_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+      <td id="T_2a186_row0_col1" class="data row0 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_3f806_level0_row1" class="row_heading level0 row1" >944</th>
-      <td id="T_3f806_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
-      <td id="T_3f806_row1_col1" class="data row1 col1" >ham</td>
+      <th id="T_2a186_level0_row1" class="row_heading level0 row1" >944</th>
+      <td id="T_2a186_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+      <td id="T_2a186_row1_col1" class="data row1 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_3f806_level0_row2" class="row_heading level0 row2" >1044</th>
-      <td id="T_3f806_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
-      <td id="T_3f806_row2_col1" class="data row2 col1" >spam</td>
+      <th id="T_2a186_level0_row2" class="row_heading level0 row2" >1044</th>
+      <td id="T_2a186_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+      <td id="T_2a186_row2_col1" class="data row2 col1" >spam</td>
     </tr>
     <tr>
-      <th id="T_3f806_level0_row3" class="row_heading level0 row3" >2484</th>
-      <td id="T_3f806_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
-      <td id="T_3f806_row3_col1" class="data row3 col1" >ham</td>
+      <th id="T_2a186_level0_row3" class="row_heading level0 row3" >2484</th>
+      <td id="T_2a186_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+      <td id="T_2a186_row3_col1" class="data row3 col1" >ham</td>
     </tr>
   </tbody>
 </table>
 </div></div>
 </div>
 <p><strong>We have accurately predicted labels for the unseen text messages above!</strong></p>
+<p>Question: how many examples do you think were needed to get this result? In other words, how many samples are in <code class="docutils literal notranslate"><span class="pre">train_df</span></code>?</p>
+<ul class="simple">
+<li><p>(A) &lt; 10</p></li>
+<li><p>(B) 10 - 100</p></li>
+<li><p>(C) 100 - 1000</p></li>
+<li><p>(D) 1000 - 10000</p></li>
+<li><p>(E) 10000 - 100000</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ready to find out?</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5014
+</pre></div>
+</div>
+</div>
+</div>
 <p><br><br></p>
 </section>
 </section>
@@ -1461,6 +1501,7 @@ conda install -c pytorch torchvision</p>
 <span class="c1"># Predict topn labels and their associated probabilities for unseen images</span>
 <span class="n">images</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;test_images/*.*&quot;</span><span class="p">)</span>
 <span class="n">class_labels_file</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s1">&#39;imagenet_classes.txt&#39;</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
 <span class="k">for</span> <span class="n">img_path</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
     <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
     <span class="n">img</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
@@ -1473,6 +1514,69 @@ conda install -c pytorch torchvision</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading: &quot;https://download.pytorch.org/models/vgg16-397923af.pth&quot; to /home/runner/.cache/torch/hub/checkpoints/vgg16-397923af.pth
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/528M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 15.5M/528M [00:00&lt;00:03, 162MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|▉         | 46.9M/528M [00:00&lt;00:01, 260MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█▍        | 76.6M/528M [00:00&lt;00:01, 283MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|█▉        | 104M/528M [00:00&lt;00:01, 268MB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██▌       | 134M/528M [00:00&lt;00:01, 283MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███       | 163M/528M [00:00&lt;00:01, 292MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | 194M/528M [00:00&lt;00:01, 302MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 224M/528M [00:00&lt;00:01, 307MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|████▊     | 255M/528M [00:00&lt;00:00, 312MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▍    | 285M/528M [00:01&lt;00:00, 311MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|█████▉    | 316M/528M [00:01&lt;00:00, 314MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 347M/528M [00:01&lt;00:00, 318MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████▏  | 378M/528M [00:01&lt;00:00, 320MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 409M/528M [00:01&lt;00:00, 321MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 440M/528M [00:01&lt;00:00, 320MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████▉ | 470M/528M [00:01&lt;00:00, 320MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▌| 502M/528M [00:01&lt;00:00, 324MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:01&lt;00:00, 307MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <img alt="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" src="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     Class  Probability score
          cheetah, chetah, Acinonyx jubatus              0.994
@@ -1518,75 +1622,77 @@ Pembroke, Pembroke Welsh corgi              0.081
 <p>Suppose you are interested in predicting whether a given movie review is positive or negative. You can do it using supervised machine learning.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Download the data from <a class="reference external" href="https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews">here</a>. You’ll have to rename it to <code class="docutils literal notranslate"><span class="pre">imdb_master.csv</span></code> and move it under <code class="docutils literal notranslate"><span class="pre">../data/</span></code> directory.</p>
+<p>Download the data from <a class="reference external" href="https://www.kaggle.com/utathya/imdb-review-dataset">here</a>.</p>
+<p>Note: the textbook uses a very similar dataset for this example (https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews), but be aware that the columns have different names.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imdb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;imdb_master.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
-<span class="n">imdb_df</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sentiment
-positive    25000
-negative    25000
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imdb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;imdb_master.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imdb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/imdb_master.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
+<span class="n">imdb_df</span> <span class="o">=</span> <span class="n">imdb_df</span><span class="p">[</span><span class="n">imdb_df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="s2">&quot;neg&quot;</span><span class="p">))]</span>
+<span class="n">imdb_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;file&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">imdb_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">imdb_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<div class="output text_html"><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>review</th>
-      <th>sentiment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Often tagged as a comedy, The Man In The White Suit is laying out far more than a chuckle here and there.&lt;br /&gt;&lt;br /&gt;Sidney Stratton is an eccentric inventor who isn't getting the chances to flourish his inventions on the world because nobody pays him notice, he merely is the odd ball odd job man about the place as it were. After bluffing his way into Birnley's textile mill, he uses their laboratory to achieve his goal of inventing a fabric that not only never wears out, but also never needs to be cleaned!. He is at first proclaimed a genius and those who ignored him at first suddenly want a big piece of him, but then the doom portents of an industry going bust rears its head and acclaim quickly turns to something far more scary.&lt;br /&gt;&lt;br /&gt;Yes the film is very funny, in fact some scenes are dam hilarious, but it's the satirical edge to the film that lifts it way above the ordinary to me. The contradictions about the advent of technology is a crucial theme here, do we want inventions that save us fortunes whilst closing down industries ?, you only have to see what happened to the coal industry in Britain to know what I'm on about. The decade the film was made is a crucial point to note, the making of nuclear weapons became more than just hearsay, science was advancing to frighteningly new proportions. You watch this film and see the quick turnaround of events for the main protagonist Stanley, from hero to enemy in one foul swoop, a victim of his own pursuit to better mankind !, it's so dark the film should of been called The Man In The Black Suit.&lt;br /&gt;&lt;br /&gt;I honestly can't find anything wrong in this film, the script from Roger MacDougall, John Dighton, and director Alex Mackendrick could be filmed today and it wouldn't be out of place such is the sharpness and thought of mind it has. The sound and setting is tremendous, the direction is seamless, with the tonal shift adroitly handled by Mackendrick. Some of the scenes are just wonderful, one in particular tugs on the heart strings and brings one to think of a certain scene in David Lynch's Elephant Man some 29 years later, and yet after such a downturn of events the film still manages to take a wink as the genius that is Alec Guinness gets to close out the film to keep the viewers pondering not only the future of Stanley, but also the rest of us in this rapidly advancing world.&lt;br /&gt;&lt;br /&gt;A timeless masterpiece, thematically and as a piece of art, 10/10.</td>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <td>Dirty Harry goes to Atlanta is what Burt called this fantastic, first-rate detective thriller that borrows some of its plot from the venerable Dana Andrews movie "Laura." Not only does Burt Reynolds star in this superb saga but he also helmed it and he doesn't make a single mistake either staging the action or with his casting of characters. Not a bad performance in the movie and Reynolds does an outstanding job of directing it. Henry Silva is truly icy as a hit-man.&lt;br /&gt;&lt;br /&gt;Detective Tom Sharky (Burt Reynolds) is on a narcotics case in underground Atlanta when everything goes wrong. He winds up chasing a suspect and shooting it out with the gunman on a bus. During the melee, an innocent bystander dies. John Woo's "The Killer" replicates this scene. Anyway, the Atlanta Police Department busts Burt down to Vice and he takes orders from a new boss, Frisco (Charles Durning of "Oh, Brother, Where Art Thou?") in the basement. Sharky winds up in a real cesspool of crime. Sharky and his fellow detectives Arch (Bernie Casey) and Papa (Brian Keith) set up surveillance on a high-priced call girl Dominoe (Rachel Ward of "After Dark, My Sweet")who has a luxurious apartment that she shares with another girl.&lt;br /&gt;&lt;br /&gt;Dominoe is seeing a local politician Hotchkins (Earl Holliman of "Police Woman") on the side who is campaigning for governor but the chief villain, Victor (Vittorio Gassman of "The Dirty Game") wants him to end the affair. Hotchkins is reluctant to accommodate Victor, so Victor has cocaine snorting Billy Score (Henry Silva of "Wipeout")terminate Dominoe. Billy blasts a hole the size of a twelve inch pizza in the door of Dominoe's apartment and kills her.&lt;br /&gt;&lt;br /&gt;Sharky has done the unthinkable. During the surveillance, he has grown fond of Dominoe to the point that he becomes hopelessly infatuated with her. Sharky's mission in life now is to bust Victor, but he learns that Victor has an informant inside the Atlanta Police Department. The plot really heats up when Sharky discovers later that Billy shot the wrong girl and that Dominoe is still alive! Sharky takes her into protective custody and things grow even more complicated. He assembles his "Machine" of the title to deal with Victor and his hoods.&lt;br /&gt;&lt;br /&gt;William Fraker's widescreen lensing of the action is immaculate. Unfortunately, this vastly underrated classic is available only as a full-frame film. Fraker definitely contributes to the atmosphere of the picture, especially during the mutilation scene on the boat when the villain's cut off one of Sharky's fingers. This is a rather gruesome scene.&lt;br /&gt;&lt;br /&gt;Burt never made a movie that surpassed "Sharky's Machine."</td>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <td>Yah. I know. It has the name "Sinatra" in the title, so how bad can it be? Well, it's bad, trust me! I rented this thinking it was some movie I missed in the theaters. It's not. It's some garbage "movie" made by the folks at Showtime (cable station). Geez, these cable stations make a few bucks they think they can make whatever garbage movies they want! It's not good. I am as big a Sinatra fan as any sane man, but this movie was just dumb. Boring. Dull. Unfunny. Uninteresting. The only redeeming quality is that (assuming they did stick to the facts) you do learn about what happened to the captors of Frank Jr. Otherwise it's just a stupid film.</td>
-      <td>negative</td>
-    </tr>
-    <tr>
-      <td>The other lowest-rating reviewers have summed up this sewage so perfectly there seems little to add. I must stress that I've only had the Cockney Filth imposed on me during visits from my children, who insist on watching the Sunday omnibus. My god, it's depressing! Like all soaps, it consists entirely of totally unlikeable characters being unpleasant to each other, but it's ten times as bad as the next worst one could be. The reviewer who mocked the 'true to life' bilge spouted by its defenders was spot-on. If anyone lived in a social environment like this, they'd slash their wrists within days. And I can assure anyone not familiar with the real East End that it's rather more 'ethnically enriched' than you'll ever see here. Take my advice - avoid this nadir of the British TV industry. It is EVIL.</td>
-      <td>negative</td>
-    </tr>
-    <tr>
-      <td>Made the unfortunate mistake of seeing this film in the Edinburgh film festival. It was well shot from the outset, but that's the last positive comment I have about the film. The acting was awful, I wonder if actual gogo girls were hired? But it was the plot that was truly laughable, in fact that it was laughable and not boring is the only reason I gave this 3/10.&lt;br /&gt;&lt;br /&gt;** Spoilers below **.&lt;br /&gt;&lt;br /&gt;I just want to mention a few of the scenes that really got the audience laughing:.&lt;br /&gt;&lt;br /&gt;Shoving the girl in the field: who would have thought that a kid shoving another kid could be acted so badly. A real eye-opener.&lt;br /&gt;&lt;br /&gt;The getting on the bus scene: the girl is getting on the bus. But, according to the music, the world is ending.&lt;br /&gt;&lt;br /&gt;The rolling under the clothes line: Wow, this one really demonstrates the plot writer's skills. In the room, followed by raw meat and skill selling. Why not just get her to perform all three 'sins' at once? At least then the film might have been slightly shorter.&lt;br /&gt;&lt;br /&gt;The running down the stairs of the mall: watch as one of the girls takes to flight down the stairs pursued by a flesh eating Dau, no wait .. she *is* just walking quickly trying not to break her nails.&lt;br /&gt;&lt;br /&gt;The running covered in blood: this is definitely my favourite scene, and a fitting end to the movie. A half marathon in red paint, completed by vaulting up stairs and over the bridge, only to be sent flying most unrealistically by a passing car. Not only this, but this suicide is undertaken by the most self obsessed girl in the film, now that's sticking to character for you.&lt;br /&gt;&lt;br /&gt;I'd like to think that this film was created by a 16 year old and their mates. Sadly, having met the director at the presentation, this is not the case.&lt;br /&gt;&lt;br /&gt;But, if you're in a sarcastic mood, and fancy a laugh with a few mates.. then still don't even think about it.</td>
-      <td>negative</td>
-    </tr>
-  </tbody>
-</table></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File index.pyx:167,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File index.pyx:196,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7081,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7089,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;label&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">imdb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/imdb_master.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">imdb_df</span> <span class="o">=</span> <span class="n">imdb_df</span><span class="p">[</span><span class="n">imdb_df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="s2">&quot;neg&quot;</span><span class="p">))]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">imdb_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;file&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">imdb_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3811</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3812</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3813</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3814</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3815</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3816</span>     <span class="c1">#  the TypeError.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3817</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;label&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build an ML model</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;sentiment&quot;</span><span class="p">]</span>
-<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;sentiment&quot;</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
 
 <span class="n">clf</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">),</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">5000</span><span class="p">))</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">);</span>
@@ -1606,44 +1712,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_be1ab_row0_col0, #T_be1ab_row0_col1, #T_be1ab_row1_col0, #T_be1ab_row1_col1, #T_be1ab_row2_col0, #T_be1ab_row2_col1, #T_be1ab_row3_col0, #T_be1ab_row3_col1 {
-  text-align: left;
-}
-</style>
-<table id="T_be1ab">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_be1ab_level0_col0" class="col_heading level0 col0" >reviews</th>
-      <th id="T_be1ab_level0_col1" class="col_heading level0 col1" >sentiment_predictions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_be1ab_level0_row0" class="row_heading level0 row0" >11872</th>
-      <td id="T_be1ab_row0_col0" class="data row0 col0" >This movie was beyond awful, it was a pimple on the a*s of the movie industry. I know that every movie can't be a hit or for that matter even average, but the responsible parties that got together for this epic dud, should have been able to see that they had a ticking time bomb on their hands. I can't help but think that the cast would get together in between scenes and console each other for being in such a massive heap of dung. I can hear it now, "You getting' paid?" "Nope, you?" I understand that this flick was more than likely made on a shoe string budget but even with that taken into account, it still could've been better. You wait for the appearance of a monster/creature and when you finally see it, it's a big yawn.I'm so mad at myself for spending a 1.07 on this stinker!!!</td>
-      <td id="T_be1ab_row0_col1" class="data row0 col1" >negative</td>
-    </tr>
-    <tr>
-      <th id="T_be1ab_level0_row1" class="row_heading level0 row1" >40828</th>
-      <td id="T_be1ab_row1_col0" class="data row1 col0" >As of this writing John Carpenter's 'Halloween' is nearing it's 30th anniversary. It has since spawned 7 sequels, a remake, a whole mess of imitations and every year around Halloween when they do those 'Top 10 Scariest Movies' lists it's always on there. That's quite amazing for a film that was made on a budget of around $300,000 and featured a then almost completely unknown cast of up and coming young talent. I could go on and on, but the big question here is: How does the film hold up today? And all I can say to that is, fantastically! <br /><br />Pros: A simple, but spooky opening credits sequence that really sets the mood. An unforgettable and goosebump-inducing score by director/co-writer John Carpenter and Alan Howarth. Great cinematography. Stellar direction by Carpenter who keeps the suspense high, gets some great shots, and is careful not to show too much of his villain. Good performances from the then mostly unknown cast. A good sense of humor. Michael Myers is one scary, evil guy. A lot of eerie moments that'll stay with you. The pace is slow, but steady and never drags. Unlike most other slasher films, this one is more about suspense and terror than blood and a big body count.<br /><br />Cons: Probably not nearly as scary now as it was then. Many of the goofs really stand out. <br /><br />Final thoughts: I want to start out this section by saying this is not my favorite film in the series. I know that's not a popular opinion, but it's really how I feel. Despite that it truly is an important film that keeps reaching new generations of film buffs. And just because it's been remade for a new generation doesn't mean it'll be forgotten. No way, no how.<br /><br />My rating: 5/5</td>
-      <td id="T_be1ab_row1_col1" class="data row1 col1" >positive</td>
-    </tr>
-    <tr>
-      <th id="T_be1ab_level0_row2" class="row_heading level0 row2" >36400</th>
-      <td id="T_be1ab_row2_col0" class="data row2 col0" >I must admit a slight disappointment with this film; I had read a lot about how spectacular it was, yet the actual futuristic sequences, the Age of Science, take up a very small amount of the film. The sets and are excellent when we get to them, and there are some startling images, but this final sequence is lacking in too many other regards...<br /><br />Much the best drama of the piece is in the mid-section, and then it plays as melodrama, arising from the 'high concept' science-fiction nature of it all, and insufficiently robust dialogue. There is far more human life in this part though, with the great Ralph Richardson sailing gloriously over-the-top as the small dictator, the "Boss" of the Everytown. I loved Richardson's mannerisms and curt delivery of lines, dismissing the presence and ideas of Raymond Massey's aloof, confident visitor. This Boss is a posturing, convincingly deluded figure, unable to realise the small-fry nature of his kingdom... It's not a great role, yet Richardson makes a lot of it.<br /><br />Everytown itself is presumably meant to be England, or at least an English town fairly representative of England. Interesting was the complete avoidance of any religious side to things; the 'things to come' seem to revolve around a conflict between warlike barbarism and a a faith in science that seems to have little ultimate goal, but to just go on and on. There is a belated attempt to raise some arguments and tensions in the last section, concerning more personal 'life', yet one is left quite unsatisfied. The film hasn't got much interest in subtle complexities; it goes for barnstorming spectacle and unsubtle, blunt moralism, every time. And, of course, recall the hedged-bet finale: Raymond Massey waxing lyrical about how uncertain things are! <br /><br />Concerning the question of the film being a prediction: I must say it's not at all bad as such, considering that one obviously allows that it is impossible to gets the details of life anything like right. The grander conceptions have something to them; a war in 1940, well that was perhaps predictable... Lasting nearly 30 years, mind!? A nuclear bomb - the "super gun" or some such contraption - in 2036... A technocratic socialist "we don't believe in independent nation states"-type government, in Britain, after 1970... Hmmm, sadly nowhere near on that one, chaps! ;-) No real politics are gone into here which is a shame; all that surfaces is a very laudable anti-war sentiment. Generally, it is assumed that dictatorship - whether boneheaded-luddite-fascist, as under the Boss, or all-hands-to-the-pump scientific socialism - will *be the deal*, and these implications are not broached... While we must remember that in 1936, there was no knowledge at all of how Nazism and Communism would turn out - or even how they were turning out - the lack of consideration of this seems meek beside the scope of the filmmakers' vision on other matters.<br /><br />Much of the earlier stuff should - and could - have been cut in my opinion; only the briefest stuff from '1940' would have been necessary, yet this segment tends to get rather ponderous, and it is ages before we get to the Richardson-Massey parts. I would have liked to have seen more done with Margareta Scott; who is just a trifle sceptical, cutting a flashing-eyed Mediterranean figure to negligible purpose. The character is not explored, or frankly explained or exploited, except for one scene which I shall not spoil, and her relationship with the Boss isn't explored; but then this was the 1930s, and there was such a thing as widespread institutional censorship back then. Edward Chapman is mildly amusing in his two roles; more so in the first as a hapless chap, praying for war, only to be bluntly put down by another Massey character. Massey himself helps things a lot, playing his parts with a mixture of restraint and sombre gusto, contrasting well with a largely diffident cast, save for Richardson, and Scott and Chapman, slightly.<br /><br />I would say that "Things to Come" is undoubtedly a very extraordinary film to have been made in Britain in 1936; one of the few serious British science fiction films to date, indeed! Its set (piece) design and harnessing of resources are ravenous, marvellous. <br /><br />Yet, the script is ultimately over-earnest and, at times, all over the place. The direction is prone to a flatness, though it does step up a scenic gear or two upon occasion. The cinematographer and Mr Richardson really do salvage things however; respectively creating an awed sense of wonder at technology, and an engaging, jerky performance that consistently beguiles. Such a shame there is so little substance or real filmic conception to the whole thing; Powell and Pressburger would have been the perfect directors to take on such a task as this - they are without peer among British directors as daring visual storytellers, great helmsmen of characters and dealers in dialogue of the first rate.<br /><br />"Things to Come", as it stands, is an intriguing oddity, well worth perusing, yet far short of a "Metropolis"... 'Tis much as "silly", in Wells' words, as that Lang film, yet with nothing like the astonishing force of it.</td>
-      <td id="T_be1ab_row2_col1" class="data row2 col1" >positive</td>
-    </tr>
-    <tr>
-      <th id="T_be1ab_level0_row3" class="row_heading level0 row3" >5166</th>
-      <td id="T_be1ab_row3_col0" class="data row3 col0" >Oh dear! The BBC is not about to be knocked off its pedestal for absorbing period dramas by this one. I agree this novel of Jane Austens is the difficult to portray particularly to a modern audience, the heroine is hardly a Elizabeth Bennet, even Edmund is not calculated to cause female hearts to skip a beat. However I must say I was hoping for an improvement on the last and was sadly disappointed. The basic story was preserved, but the dialogue was so altered that all that was Jane Austen's tone, manner, feeling, wit, depth, was diluted if not lost. If some past adaptions may be seen as dated the weakness of this one must be that it is too modern ('his life is one long party'?????) The cast was generally adequate, but I think Billie Piper was the wrong choice, it needed someone more restrained, I gained no impression of hidden depths beneath a submissive exterior, she was more like a frolicking child. I see I must wait for the BBC to weave its magic once again.</td>
-      <td id="T_be1ab_row3_col1" class="data row3 col1" >negative</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
 </div>
 <p><br><br></p>
 </section>
@@ -1670,139 +1738,6 @@ Name: count, dtype: int64
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output text_html"><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>target</th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>lat</th>
-      <th>long</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>509000.0</td>
-      <td>2</td>
-      <td>1.50</td>
-      <td>1930</td>
-      <td>3521</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1930</td>
-      <td>0</td>
-      <td>1989</td>
-      <td>0</td>
-      <td>98007</td>
-      <td>47.6092</td>
-      <td>-122.146</td>
-      <td>1840</td>
-      <td>3576</td>
-    </tr>
-    <tr>
-      <td>675000.0</td>
-      <td>5</td>
-      <td>2.75</td>
-      <td>2570</td>
-      <td>12906</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>2570</td>
-      <td>0</td>
-      <td>1987</td>
-      <td>0</td>
-      <td>98075</td>
-      <td>47.5814</td>
-      <td>-122.050</td>
-      <td>2580</td>
-      <td>12927</td>
-    </tr>
-    <tr>
-      <td>420000.0</td>
-      <td>3</td>
-      <td>1.00</td>
-      <td>1150</td>
-      <td>5120</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>6</td>
-      <td>800</td>
-      <td>350</td>
-      <td>1946</td>
-      <td>0</td>
-      <td>98116</td>
-      <td>47.5588</td>
-      <td>-122.392</td>
-      <td>1220</td>
-      <td>5120</td>
-    </tr>
-    <tr>
-      <td>680000.0</td>
-      <td>8</td>
-      <td>2.75</td>
-      <td>2530</td>
-      <td>4800</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>7</td>
-      <td>1390</td>
-      <td>1140</td>
-      <td>1901</td>
-      <td>0</td>
-      <td>98112</td>
-      <td>47.6241</td>
-      <td>-122.305</td>
-      <td>1540</td>
-      <td>4800</td>
-    </tr>
-    <tr>
-      <td>357823.0</td>
-      <td>3</td>
-      <td>1.50</td>
-      <td>1240</td>
-      <td>9196</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1240</td>
-      <td>0</td>
-      <td>1968</td>
-      <td>0</td>
-      <td>98072</td>
-      <td>47.7562</td>
-      <td>-122.094</td>
-      <td>1690</td>
-      <td>10800</td>
-    </tr>
-  </tbody>
-</table></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1831,118 +1766,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Predicted_target</th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>lat</th>
-      <th>long</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>345831.740542</td>
-      <td>4</td>
-      <td>2.25</td>
-      <td>2130</td>
-      <td>8078</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>7</td>
-      <td>1380</td>
-      <td>750</td>
-      <td>1977</td>
-      <td>0</td>
-      <td>98055</td>
-      <td>47.4482</td>
-      <td>-122.209</td>
-      <td>2300</td>
-      <td>8112</td>
-    </tr>
-    <tr>
-      <td>601042.018745</td>
-      <td>3</td>
-      <td>2.50</td>
-      <td>2210</td>
-      <td>7620</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>2210</td>
-      <td>0</td>
-      <td>1994</td>
-      <td>0</td>
-      <td>98052</td>
-      <td>47.6938</td>
-      <td>-122.130</td>
-      <td>1920</td>
-      <td>7440</td>
-    </tr>
-    <tr>
-      <td>311310.186024</td>
-      <td>4</td>
-      <td>1.50</td>
-      <td>1800</td>
-      <td>9576</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>7</td>
-      <td>1800</td>
-      <td>0</td>
-      <td>1977</td>
-      <td>0</td>
-      <td>98045</td>
-      <td>47.4664</td>
-      <td>-121.747</td>
-      <td>1370</td>
-      <td>9576</td>
-    </tr>
-    <tr>
-      <td>597555.592401</td>
-      <td>3</td>
-      <td>2.50</td>
-      <td>1580</td>
-      <td>1321</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1080</td>
-      <td>500</td>
-      <td>2014</td>
-      <td>0</td>
-      <td>98107</td>
-      <td>47.6688</td>
-      <td>-122.402</td>
-      <td>1530</td>
-      <td>1357</td>
-    </tr>
-  </tbody>
-</table></div></div>
 </div>
 <p>To summarize, supervised machine learning can be used on a variety of problems and different kinds of data.</p>
 <p><br><br></p>
@@ -1987,6 +1810,173 @@ Name: count, dtype: int64
 </ul>
 </section>
 </section>
+<section id="break-5-min">
+<h2>Break (5 min)<a class="headerlink" href="#break-5-min" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/eva-coffee.png" /></p>
+<ul class="simple">
+<li><p>We will try to take a 5-minute break half way through every class.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="about-this-course">
+<h2>About this course<a class="headerlink" href="#about-this-course" title="Link to this heading">#</a></h2>
+<section id="course-website">
+<h3>Course website<a class="headerlink" href="#course-website" title="Link to this heading">#</a></h3>
+<p><a class="github reference external" href="https://github.com/UBC-CS/cpsc330-2024W1">UBC-CS/cpsc330-2024W1</a> is the most important link. Please read everything on there!</p>
+</section>
+<section id="cpsc-330-vs-340">
+<h3>CPSC 330 vs. 340<a class="headerlink" href="#cpsc-330-vs-340" title="Link to this heading">#</a></h3>
+<p>Read <a class="github reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md">UBC-CS/cpsc330-2024W1</a>
+which explains the difference between the two courses.</p>
+<p><strong>TLDR:</strong></p>
+<ul class="simple">
+<li><p>340: how do ML models work?</p></li>
+<li><p>330: how do I use ML models?</p></li>
+<li><p>CPSC 340 has many prerequisites.</p></li>
+<li><p>CPSC 340 goes deeper but has a more narrow scope.</p></li>
+<li><p>I think CPSC 330 will be more useful if you just plan to apply basic ML.</p></li>
+</ul>
+</section>
+<section id="registration-waitlist-and-prerequisites">
+<h3>Registration, waitlist and prerequisites<a class="headerlink" href="#registration-waitlist-and-prerequisites" title="Link to this heading">#</a></h3>
+<p>Please go through <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/syllabus.md">the syllabus</a> carefully before contacting me about these issues. Even then, I am very unlikely to be able to help with registration, waitlist or prerequisite issues.</p>
+</section>
+<section id="course-format">
+<h3>Course format<a class="headerlink" href="#course-format" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Lectures are T/Th at 3:30pm.</p></li>
+<li><p>Often, there will be videos to watch before or during the lecture time. (Check the main course page to see if you are expected to watch videos before the class.)</p></li>
+<li><p>Weekly tutorials will be <strong>office hour format</strong> run by the TAs and are <strong>completely optional</strong>.</p></li>
+<li><p>We’ll have two midterms and one final (<a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/syllabus.md">dates</a>).</p></li>
+</ul>
+</section>
+<section id="communications">
+<h3>Communications<a class="headerlink" href="#communications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Our main forum for getting help will be Piazza –&gt; access through Canvas.</p></li>
+<li><p>Other forms of communications (Canvas, email…) will likely go unresponded.</p></li>
+<li><p>Let’s all take 2 minutes to register (through the link or through the tab on Canvas)</p></li>
+<li><p>You must have a &#64;ubc.ca email associated with your account. Unrecognizable accounts (other emails) will be dropped without warning.</p></li>
+</ul>
+</section>
+<section id="grades">
+<h3>Grades<a class="headerlink" href="#grades" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The grading breakdown is <a class="reference external" href="https://piazza.com/class/m01ukubppof625">here</a>. This page also explains the policy on challenging grades and <strong>late tokens</strong>.</p></li>
+<li><p>You have one week to raise a concern from the time that your grades were posted, by contacting the course coordinator.</p></li>
+</ul>
+</section>
+<section id="first-deliverables">
+<h3>First deliverables<a class="headerlink" href="#first-deliverables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>First homework assignment is due <strong>this coming Tuesday</strong>, September 10th, at 11:59pm. The assignment is available on GitHub.</p></li>
+<li><p>You must do the first homework assignment on your own.</p></li>
+<li><p>The <a class="reference external" href="https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488">Syllabus quiz</a> is available on PrairieLearn and is due by Sept 19th, 11:59 pm.</p></li>
+</ul>
+<p>Please read <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/asking_for_help.md">this entire document about asking for help</a>.
+<strong>TLDR:</strong> Be nice.</p>
+</section>
+<section id="lecture-and-homework-format-jupyter-notebooks">
+<h3>Lecture and homework format: Jupyter notebooks<a class="headerlink" href="#lecture-and-homework-format-jupyter-notebooks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>This document is a <a class="reference external" href="https://jupyter.org/">Jupyter notebook</a>, with file extension <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>.</p></li>
+<li><p>Confusingly, “Jupyter notebook” is also the original application that opens <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files - but has since been replaced by <strong>Jupyter lab</strong>.</p>
+<ul>
+<li><p>Some things might not work with the Jupyter notebook application.</p></li>
+<li><p>The course setup/install instructions include Jupyter lab.</p></li>
+</ul>
+</li>
+<li><p>Jupyter notebooks contain a mix of code, code output, markdown-formatted text (including LaTeX equations), and more.</p>
+<ul>
+<li><p>When you open a Jupyter notebook in one of these apps, the document is “live”, meaning you can run the code.</p></li>
+<li><p>For example:</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9999</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>By default, Jupyter prints out the result of the last line of code, so you don’t need as many <code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</p></li>
+<li><p>In addition to the “live” notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. <a class="reference external" href="https://github.com/UBC-CS/cpsc330/blob/master/lectures/01_intro.ipynb">this</a>.</p>
+<ul>
+<li><p>This can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.</p></li>
+<li><p>But you need to launch the app properly to interact with the notebooks.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="lecture-style">
+<h3>Lecture style<a class="headerlink" href="#lecture-style" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Lots of code snippets in Jupyter.</p></li>
+<li><p>There will be some <a class="reference external" href="https://www.youtube.com/channel/UC40oUwJPrUmhsYdURk8OjqA">YouTube videos</a> to watch before or during the lecture.</p></li>
+<li><p>We will also try to work on some questions and exercises together during the class.</p></li>
+<li><p>All materials will be posted on the course website. Lecture notes will be posted right before each class.</p></li>
+<li><p>Lectures from the previous semester are available on previous course repositories (change 2024W1 with 2022W2, for example).</p></li>
+<li><p>I cannot promise anything will stay the same from last year to this year, so watch out for differences.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+</section>
+<section id="setting-up-your-computer-for-the-course">
+<h2>Setting up your computer for the course<a class="headerlink" href="#setting-up-your-computer-for-the-course" title="Link to this heading">#</a></h2>
+<section id="recommended-browser">
+<h3>Recommended browser<a class="headerlink" href="#recommended-browser" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>I’ll test the course notebooks and exams, which we’ll be doing via <a class="reference external" href="https://canvas.ubc.ca/courses/106375">Canvas</a>, on the following two browsers: Chrome and Firefox. So I recommend that you use one of these browsers for the course.</p></li>
+<li><p>You can install Chrome <a class="reference external" href="https://www.google.com/chrome/">here</a>.</p></li>
+<li><p>You can install Firefox <a class="reference external" href="https://www.mozilla.org/en-US/firefox/new/">here</a>.</p></li>
+</ul>
+</section>
+<section id="python-requirements-resources">
+<h3>Python requirements/resources<a class="headerlink" href="#python-requirements-resources" title="Link to this heading">#</a></h3>
+<p>We will primarily use Python in this course.</p>
+<p>Here is the basic Python knowledge you’ll need for the course:</p>
+<ul class="simple">
+<li><p>Basic Python programming</p></li>
+<li><p>Numpy</p></li>
+<li><p>Pandas</p></li>
+<li><p>Basic matplotlib</p></li>
+<li><p>Sparse matrices</p></li>
+</ul>
+<p>Some of you will already know Python, others won’t. Homework 1 is all about Python.</p>
+<p>We do not have time to teach all the Python we need
+but you can find some useful Python resources <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/python_notes.ipynb">here</a>.</p>
+</section>
+<section id="activity">
+<h3>Activity<a class="headerlink" href="#activity" title="Link to this heading">#</a></h3>
+<p>In this course, we will primarily be using Python, git, GitHub, Canvas, Gradescope, and Piazza. Let’s set up your computers for the course.</p>
+<ul class="simple">
+<li><p>Follow the setup instructions <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/setup.md">here</a> to create a course conda environment on your computer.</p></li>
+</ul>
+</section>
+<section id="checklist-for-you-before-next-class">
+<h3>Checklist for you before next class<a class="headerlink" href="#checklist-for-you-before-next-class" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>[ ] Are you able to access course <a class="reference external" href="https://canvas.ubc.ca/courses/149122">Canvas</a> shell?</p></li>
+<li><p>[ ] Are you able to access <a class="reference external" href="https://www.gradescope.ca/courses/18608">Gradescope</a>? (If not, refer to the <a class="reference external" href="https://lthub.ubc.ca/guides/gradescope-student-guide/">Gradescope Student Guide</a>.)</p></li>
+<li><p>[ ] Are you able to access course Piazza (through Canvas)?</p></li>
+<li><p>[ ] Did you follow the setup instructions <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/setup.md">here</a> to create a course conda environment on your computer?</p></li>
+<li><p>[ ] Did you complete the <a class="reference external" href="https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488">Syllabus quiz on PrairieLearn</a>? (Due date: Thursday, Sep 19th at 11:59pm)</p></li>
+<li><p>[ ] Are you done with homework 1? (Due: Tuesday, Sep 10th at 11:59pm)</p></li>
+</ul>
+<p><br><br></p>
+</section>
+</section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -2008,16 +1998,16 @@ Name: count, dtype: int64
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-py"
+            mode: "conda-env-cpsc330-24-py"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-py",
-            path: "./lectures/notes"
+            name: "conda-env-cpsc330-24-py",
+            path: "./lectures/101-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-py'</script>
+    <script>kernelName = 'conda-env-cpsc330-24-py'</script>
 
                 </article>
               
@@ -2029,24 +2019,6 @@ Name: count, dtype: int64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../../learning-objectives.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Course Learning Objectives</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../../LICENSE.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LICENSE</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -2100,6 +2072,26 @@ Name: count, dtype: int64
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-workflow">Machine learning workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-all-of-the-following-statements-which-are-true-iclicker">Select all of the following statements which are <strong>True</strong> (iClicker)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-course">About this course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-website">Course website</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpsc-330-vs-340">CPSC 330 vs. 340</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-waitlist-and-prerequisites">Registration, waitlist and prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-format">Course format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communications">Communications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grades">Grades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-deliverables">First deliverables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-and-homework-format-jupyter-notebooks">Lecture and homework format: Jupyter notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-style">Lecture style</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-computer-for-the-course">Setting up your computer for the course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-browser">Recommended browser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-requirements-resources">Python requirements/resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity">Activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-for-you-before-next-class">Checklist for you before next class</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
