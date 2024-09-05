@@ -16,7 +16,7 @@ parts:
   - file: docs/resources.md 
   - file: docs/grades.md
   - file: docs/setup.md
-  - file: docs/git_installation.md  
+  - file: docs/git_installation.md
   - file: docs/asking_for_help.md
 - caption: Lectures
   chapters: 
