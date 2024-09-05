@@ -12,11 +12,11 @@ parts:
   - file: learning-objectives.md
   sections:
   - file: docs/330_vs_340.md  
-  - file: docs/homework_instructions.md     
+  - file: docs/homework_instructions.md
   - file: docs/resources.md 
   - file: docs/grades.md
   - file: docs/setup.md
-  - file: docs/git_installation.md  
+  - file: docs/git_installation.md
   - file: docs/asking_for_help.md
 - caption: Lectures
   chapters: 

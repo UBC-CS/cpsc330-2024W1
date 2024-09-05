@@ -29,10 +29,25 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
+    # Set the kernel to remove the conda kernel
+    - name: Remove Special Kernel
+      run: |
+        python -m ipykernel install --user --name conda-env-cpsc330-py
+        jupytext --set-kernel conda-env-cpsc330-py --to md:myst
+        
     # Build the book
     - name: Build the book
       run: |
         jupyter-book build .
+
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v4
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
         
     # Push to CS server
     - name: rsync and ssh to CS
