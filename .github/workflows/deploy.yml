@@ -33,8 +33,9 @@ jobs:
     # Set the kernel to remove the conda kernel
     - name: Remove Special Kernel
       run: |
+        python -m ipykernel install --user --name conda-env-cpsc330-24-py
         python -m ipykernel install --user --name conda-env-cpsc330-py
-        jupytext --set-kernel conda-env-cpsc330-py --to md:myst
+        # jupytext --set-kernel conda-env-cpsc330-24-py --to md:myst
         
     # Build the book
     - name: Build the book

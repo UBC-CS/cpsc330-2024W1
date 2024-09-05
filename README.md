@@ -4,7 +4,7 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 
 ## The teaching team  
 ### Instructors
-- [Giulia Toti](gtoti@cs.ubc.ca) (Section 101: Tue Thu 3:00 to 5:30)
+- [Giulia Toti](gtoti@cs.ubc.ca) (Section 101: Tue Thu 3:30 to 5:00)
 - [Varada Kolhatkar](kvarada@cs.ubc.ca) (Section 102: Tue Thu 11:00 to 12:30)
 - [Firas Moosvi](firas.moosvi@ubc.ca) (Section 103: Tue Thu 5:00 to 6:30)
 
