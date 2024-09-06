@@ -12,25 +12,24 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 - Devyani McLaren (cpsc330-admin@cs.ubc.ca), please reach out to Devyani for: admin questions, extensions, academic concessions etc. 
 
 ### TAs
-- Akash Adhikary	akash7adhikary@gmail.com
-- Amirali Goodarzvand Chegini	amiralic@student.ubc.ca
-- Aryan Ballani	aryanballani070603@gmail.com 
-- Atabak Eghbal	eghbal.atabak@gmail.com
-- Derrick Cheng	dcheng04@students.cs.ubc.ca
-- Frederick Sunstrum	fr.sunstrum@gmail.com
-- Hongkai Liu	liuhongkai112233@163.com
-- Noah Marusenko	noah.marusenko@icloud.com
-- Jialin (Mike) Lu	mike020830@gmail.com
-- Kimia Rostin	krostin@student.ubc.ca
-- Mahsa Zarei	mahsazarei19@gmail.com
-- Mike Ju	feng0025@student.ubc.ca
-- Mishaal Kazmi	mkazmi@cs.ubc.ca
-- Rubia Reis Guerra	rubiarg@cs.ubc.ca
-- Shadab Shaikh	shadabs3@cs.ubc.ca
-- Sohbat Sandhu	sohbat@student.ubc.ca
-- Sparsh Trivedy	sparsh01@student.ubc.ca
-- Stash Currie	stashubc@student.ubc.ca
-- Tianyu (Niki) Duan	dty200@student.ubc.ca
+- Akash Adhikary	
+- Amirali Goodarzvand Chegini	
+- Aryan Ballani	
+- Atabak Eghbal	
+- Derrick Cheng	
+- Frederick Sunstrum
+- Hongkai Liu
+- Noah Marusenko
+- Jialin (Mike) Lu
+- Kimia Rostin	
+- Mahsa Zarei	
+- Mike Ju	
+- Mishaal Kazmi	
+- Rubia Reis Guerra	
+- Shadab Shaikh	
+- Sohbat Sandhu	
+- Stash Currie	
+- Tianyu (Niki) Duan	
 
 ## License
 
