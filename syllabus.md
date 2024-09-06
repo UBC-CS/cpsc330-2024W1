@@ -119,7 +119,7 @@ We will post solutions 48-hours after the due date.
 
 ### Lecture recordings 
 
-This is an in-person class, and we do not livestream or make recordings available by default. If you miss a class, you can catch up by reviewing the lecture notes and talking to your peers for their notes. Section 102 lectures (11 am to 12:20 am) are being recorded, but the recordings are not shared widely. Typically, the backs of students sitting in the first three to four rows may appear in the recording. If you prefer not to be recorded, please avoid sitting in those rows. When recordings are available, instructors may grant access to students who were absent for approved reasons only (e.g., illness, jury duty, etc.).
+This is an in-person class, and we do not livestream or make recordings available by default. If you miss a class, you can catch up by reviewing the lecture notes and talking to your peers. Section 102 lectures (11 am to 12:20 am) are being recorded, but the recordings are not shared widely. Typically, the backs of students sitting in the first three to four rows may appear in the recording. If you prefer not to be recorded, please avoid sitting in those rows. When recordings are available, instructors may grant access to students who were absent for approved reasons only (e.g., illness, jury duty, etc.).
 
 ### Use of AI in the course
 
