@@ -51,12 +51,27 @@ For office hours, please refer to the [Calendar](https://htmlpreview.github.io/?
 - [Varada Kolhatkar](https://kvarada.github.io/), OH: Thursdays, 1:00 - 2:00 PM, ICCS 237
 
 ### Course co-ordinator
-
-TBD
+- Devyani McLaren (cpsc330-admin@cs.ubc.ca), please reach out to Devyani for: admin questions, extensions, academic concessions etc. 
 
 ### TAs
-
-TBD
+- Akash Adhikary	
+- Amirali Goodarzvand Chegini	
+- Aryan Ballani	
+- Atabak Eghbal	
+- Derrick Cheng
+- Frederick Sunstrum	
+- Hongkai Liu	
+- Noah Marusenko	
+- Jialin (Mike) Lu	
+- Kimia Rostin	
+- Mahsa Zarei	
+- Mike Ju
+- Mishaal Kazmi
+- Rubia Reis Guerra	
+- Shadab Shaikh	
+- Sohbat Sandhu
+- Stash Currie	
+- Tianyu (Niki) Duan	
 
 ## Registration
 
