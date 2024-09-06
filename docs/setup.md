@@ -138,7 +138,19 @@ If the `conda env create -f cpsc330env.yml` command above results in an error on
 - Get rid of the line with that package from your local copy of `cpsc330env.yml`. 
 - Try creating the environment again with the modified `cpsc330env.yml`. 
 - Once the environment is created, activate the environment and install the missing packages manually in the environment. You may have to install these packages using `pip install` in some cases, as the most recent version of the package might not available via `conda` for your operating system yet. 
-- If you still have trouble with the environment and running lecture notebooks on your machine, make use of office hours and tutorials. 
+- If you still have trouble with the environment and running lecture notebooks on your machine, make use of office hours and tutorials.
+
+## [Optional] Jupyterlab and/or Python
+
+Here is a short video of an introduction to JupyterLab and Python - I created the video for another course that uses similar tooling.
+
+If you're new to Jupyterlab and/or Python, I encourage you to watch this to get familiar with the tools:
+
+<div class="container youtube">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1006820659?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Introduction to Jupyterlab and Python"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+
+
 
 ## Credit
 
