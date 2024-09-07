@@ -21,7 +21,8 @@ parts:
 - caption: Lectures
   chapters: 
   - file: lectures/notes/01_intro.ipynb
-  - file: lectures/notes/02_terminology-decision-trees.ipynb  
+  - file: lectures/notes/02_terminology-decision-trees.ipynb
+  - file: lectures/notes/03_ml-fundamentals.ipynb    
 - caption: Section slides
   chapters:
   - file: lectures/101-Giulia-lectures/README
