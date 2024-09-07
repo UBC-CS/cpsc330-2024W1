@@ -7,7 +7,6 @@ jupyterlab-spellchecker
 scikit-learn>=1.5.1
 requests
 ipython
-python-graphviz
 graphviz
 jinja2
 lightgbm
