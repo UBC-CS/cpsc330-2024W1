@@ -1,3 +1,5 @@
+[![deploy-book](https://github.com/UBC-CS/cpsc330-2024W1/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/UBC-CS/cpsc330-2024W1/actions/workflows/deploy.yml)
+
 # UBC CPSC 330: Applied Machine Learning (2024W1)
 
 This is the course homepage for CPSC 330: Applied Machine Learning at the University of British Columbia. You are looking at the current version (Sep-Dec 2024).
