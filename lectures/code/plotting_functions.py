@@ -28,7 +28,7 @@ def plot_tree_decision_boundary(
 
 
 def plot_tree_decision_boundary_and_tree(
-    model, X, y, height=6, width=16, x_label="x-axis", y_label="y-axis", eps=None
+    model, X, y, height=6, width=16, fontsize = 9, x_label="x-axis", y_label="y-axis", eps=None
 ):
     fig, ax = plt.subplots(
         1,
@@ -38,7 +38,11 @@ def plot_tree_decision_boundary_and_tree(
         gridspec_kw={"width_ratios": [1.5, 2]},
     )
     plot_tree_decision_boundary(model, X, y, x_label, y_label, eps, ax=ax[0])
-    ax[1].imshow(tree_image(X.columns, model))
+    custom_plot_tree(model, 
+                 feature_names=X.columns.tolist(), 
+                 class_names=['A+', 'not A+'],
+                 impurity=False,
+                 fontsize=fontsize, ax=ax[1])
     ax[1].set_axis_off()
     plt.show()
     
