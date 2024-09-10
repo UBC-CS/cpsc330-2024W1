@@ -1,3 +1,5 @@
+[![deploy-book](https://github.com/UBC-CS/cpsc330-2024W1/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/UBC-CS/cpsc330-2024W1/actions/workflows/deploy.yml)
+
 # UBC CPSC 330: Applied Machine Learning (2024W1)
 
 This is the course homepage for CPSC 330: Applied Machine Learning at the University of British Columbia. You are looking at the current version (Sep-Dec 2024).
@@ -12,25 +14,24 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 - Devyani McLaren (cpsc330-admin@cs.ubc.ca), please reach out to Devyani for: admin questions, extensions, academic concessions etc. 
 
 ### TAs
-- Akash Adhikary	akash7adhikary@gmail.com
-- Amirali Goodarzvand Chegini	amiralic@student.ubc.ca
-- Aryan Ballani	aryanballani070603@gmail.com 
-- Atabak Eghbal	eghbal.atabak@gmail.com
-- Derrick Cheng	dcheng04@students.cs.ubc.ca
-- Frederick Sunstrum	fr.sunstrum@gmail.com
-- Hongkai Liu	liuhongkai112233@163.com
-- Noah Marusenko	noah.marusenko@icloud.com
-- Jialin (Mike) Lu	mike020830@gmail.com
-- Kimia Rostin	krostin@student.ubc.ca
-- Mahsa Zarei	mahsazarei19@gmail.com
-- Mike Ju	feng0025@student.ubc.ca
-- Mishaal Kazmi	mkazmi@cs.ubc.ca
-- Rubia Reis Guerra	rubiarg@cs.ubc.ca
-- Shadab Shaikh	shadabs3@cs.ubc.ca
-- Sohbat Sandhu	sohbat@student.ubc.ca
-- Sparsh Trivedy	sparsh01@student.ubc.ca
-- Stash Currie	stashubc@student.ubc.ca
-- Tianyu (Niki) Duan	dty200@student.ubc.ca
+- Akash Adhikary	
+- Amirali Goodarzvand Chegini	
+- Aryan Ballani	
+- Atabak Eghbal	
+- Derrick Cheng	
+- Frederick Sunstrum
+- Hongkai Liu
+- Noah Marusenko
+- Jialin (Mike) Lu
+- Kimia Rostin	
+- Mahsa Zarei	
+- Mike Ju	
+- Mishaal Kazmi	
+- Rubia Reis Guerra	
+- Shadab Shaikh	
+- Sohbat Sandhu	
+- Stash Currie	
+- Tianyu (Niki) Duan	
 
 ## License
 
@@ -57,7 +58,7 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 | Assessment     | Due date              | Where to find?                                                                     | Where to submit?                                      |
 |----------------|-----------------------|------------------------------------------------------------------------------------|-------------------------------------------------------|
 | hw1            | Sept 10, 11:59 pm     | [GitHub repo](https://github.com/new?template_name=hw1&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| hw2            | Sept 16, 11:59 pm     | GitHub repo[](https://github.com/new?template_name=hw2&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw2            | Sept 16, 11:59 pm     | [GitHub repo](https://github.com/new?template_name=hw2&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | Syllabus quiz  | Sept 19, 11:59 pm     | [PrairieLearn](https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488) | [PrairieLearn](https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488)       |
 | hw3            | Oct 01, 11:59 pm      | GitHub repo[](https://github.com/new?template_name=hw3&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | hw4            | Oct 07, 11:59 pm      | GitHub repo[](https://github.com/new?template_name=hw4&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |

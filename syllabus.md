@@ -51,12 +51,27 @@ For office hours, please refer to the [Calendar](https://htmlpreview.github.io/?
 - [Varada Kolhatkar](https://kvarada.github.io/), OH: Thursdays, 1:00 - 2:00 PM, ICCS 237
 
 ### Course co-ordinator
-
-TBD
+- Devyani McLaren (cpsc330-admin@cs.ubc.ca), please reach out to Devyani for: admin questions, extensions, academic concessions etc. 
 
 ### TAs
-
-TBD
+- Akash Adhikary	
+- Amirali Goodarzvand Chegini	
+- Aryan Ballani	
+- Atabak Eghbal	
+- Derrick Cheng
+- Frederick Sunstrum	
+- Hongkai Liu	
+- Noah Marusenko	
+- Jialin (Mike) Lu	
+- Kimia Rostin	
+- Mahsa Zarei	
+- Mike Ju
+- Mishaal Kazmi
+- Rubia Reis Guerra	
+- Shadab Shaikh	
+- Sohbat Sandhu
+- Stash Currie	
+- Tianyu (Niki) Duan	
 
 ## Registration
 
@@ -117,6 +132,10 @@ There is no penalty for using "late tokens", but you will get a mark of 0 on an 
 
 We will post solutions 48-hours after the due date.
 
+### Lecture recordings 
+
+This is an in-person class, and we do not livestream or make recordings available by default. If you miss a class, you can catch up by reviewing the lecture notes and talking to your peers. Section 102 lectures (11 am to 12:20 am) are being recorded, but the recordings are not shared widely. Typically, the backs of students sitting in the first three to four rows may appear in the recording. If you prefer not to be recorded, please avoid sitting in those rows. When recordings are available, instructors may grant access to students who were absent for approved reasons only (e.g., illness, jury duty, etc.).
+
 ### Use of AI in the course
 
 Use of AI-based content generation tools, or AI tools, is permitted for assignments and project work in CPSC 330. It is not allowed during midterms and the final exams. 
@@ -159,9 +178,8 @@ The final exam is scheduled for the exam period and is likely to be comprehensiv
 
 ## Academic concessions
 
-UBC has a [policy on academic concession](https://students.ubc.ca/enrolment/academic-learning-resources/academic-concessions) for cases in which a student may be unable to complete coursework. According to this policy, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include "a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend." To request an academic concession, please complete [academic concession form](), clearly indicating the nature of the concession you are seeking, and send the form via email to the course coordinator (cpsc330-admin@cs.ubc.ca), with your instructor copied in the email. Additional documentation might be requested. We will review your situation and determine whether to approve the concession, and if approved, the appropriate steps to follow.
+UBC has a [policy on academic concession](https://students.ubc.ca/enrolment/academic-learning-resources/academic-concessions) for cases in which a student may be unable to complete coursework. According to this policy, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include "a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend." To request an academic concession, please write to the course coordinator (cpsc330-admin@cs.ubc.ca), with your section instructor copied in the email. Additional documentation might be requested. We will review your situation and determine whether to approve the concession, and if approved, the appropriate steps to follow.
 
-**TODO: Include a link to the standard concession form.** 
 
 ## Code of conduct
 

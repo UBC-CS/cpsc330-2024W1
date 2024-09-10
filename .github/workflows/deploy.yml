@@ -26,6 +26,20 @@ jobs:
         path: ${{ env.pythonLocation }}
         key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('requirements.txt') }}
 
+    - id: install-graphviz-linux
+      name: Install Graphviz on Linux
+      # if: runner.os == 'Linux'
+      # shell: bash
+      run: |
+        # Install Graphviz on Linux
+        sudo apt update
+        sudo apt install -qy gsfonts
+        sudo apt -qq list fonts-liberation gsfonts
+        sudo apt install -qy graphviz
+        sudo apt -y autoremove --purge
+        sudo apt -y autoclean
+        sudo apt clean
+
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
