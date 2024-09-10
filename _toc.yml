@@ -40,6 +40,8 @@ parts:
     sections:
       - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro.html"
         title: Lecture 1
+      - url: "https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html"
+        title: Lecture 2
 
 - caption: Attribution
   chapters: 
