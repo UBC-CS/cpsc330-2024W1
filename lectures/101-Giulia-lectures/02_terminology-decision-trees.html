@@ -60,12 +60,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/notes/02_terminology-decision-trees';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/101-Giulia-lectures/02_terminology-decision-trees';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 3: Machine Learning Fundamentals" href="03_ml-fundamentals.html" />
-    <link rel="prev" title="Lecture 1: Course Introduction" href="01_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -190,15 +190,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../learning-objectives.html">Course Learning Objectives</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -283,7 +283,7 @@
       
       
       
-      <li><a href="../../_sources/lectures/notes/02_terminology-decision-trees.ipynb" target="_blank"
+      <li><a href="../../_sources/lectures/101-Giulia-lectures/02_terminology-decision-trees.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +388,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-supervised-machine-learning">Recap: Supervised machine learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular data</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-grade-prediction">Example: Tabular data for grade prediction</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-the-housing-price-prediction">Example: Tabular data for the housing price prediction</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-terminology-for-examples-features-targets-and-training">Alternative terminology for examples, features, targets, and training</a></li>
 </ul>
 </li>
@@ -397,6 +396,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-the-housing-price-prediction">Example: Tabular data for the housing price prediction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning">Exercise 2.1 Select all of the following statements which are examples of supervised machine learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-2-supervised-vs-unsupervised">iClicker Exercise 2.2 Supervised vs unsupervised</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-3-classification-vs-regression">iClicker Exercise 2.3 Classification vs regression</a></li>
@@ -510,6 +510,12 @@ document.write(`
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s1">&#39;../data/&#39;</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/cpsc330-2024W1/cpsc330-2024W1/lectures/code/utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
 </pre></div>
 </div>
 </div>
@@ -883,338 +889,6 @@ document.write(`
 3        A+
 4        A+
 Name: quiz2, dtype: object
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="example-tabular-data-for-the-housing-price-prediction">
-<h4>Example: Tabular data for the housing price prediction<a class="headerlink" href="#example-tabular-data-for-the-housing-price-prediction" title="Link to this heading">#</a></h4>
-<p>Here is an example of tabular data for housing price prediction. You can download the data from <a class="reference external" href="https://www.kaggle.com/harlfoxem/housesalesprediction">here</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;kc_house_data.csv&quot;</span><span class="p">)</span>
-<span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">HTML</span><span class="p">(</span><span class="n">housing_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>price</th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>lat</th>
-      <th>long</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>221900.0</td>
-      <td>3</td>
-      <td>1.00</td>
-      <td>1180</td>
-      <td>5650</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>1180</td>
-      <td>0</td>
-      <td>1955</td>
-      <td>0</td>
-      <td>98178</td>
-      <td>47.5112</td>
-      <td>-122.257</td>
-      <td>1340</td>
-      <td>5650</td>
-    </tr>
-    <tr>
-      <td>538000.0</td>
-      <td>3</td>
-      <td>2.25</td>
-      <td>2570</td>
-      <td>7242</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>2170</td>
-      <td>400</td>
-      <td>1951</td>
-      <td>1991</td>
-      <td>98125</td>
-      <td>47.7210</td>
-      <td>-122.319</td>
-      <td>1690</td>
-      <td>7639</td>
-    </tr>
-    <tr>
-      <td>180000.0</td>
-      <td>2</td>
-      <td>1.00</td>
-      <td>770</td>
-      <td>10000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>6</td>
-      <td>770</td>
-      <td>0</td>
-      <td>1933</td>
-      <td>0</td>
-      <td>98028</td>
-      <td>47.7379</td>
-      <td>-122.233</td>
-      <td>2720</td>
-      <td>8062</td>
-    </tr>
-    <tr>
-      <td>604000.0</td>
-      <td>4</td>
-      <td>3.00</td>
-      <td>1960</td>
-      <td>5000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>7</td>
-      <td>1050</td>
-      <td>910</td>
-      <td>1965</td>
-      <td>0</td>
-      <td>98136</td>
-      <td>47.5208</td>
-      <td>-122.393</td>
-      <td>1360</td>
-      <td>5000</td>
-    </tr>
-    <tr>
-      <td>510000.0</td>
-      <td>3</td>
-      <td>2.00</td>
-      <td>1680</td>
-      <td>8080</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1680</td>
-      <td>0</td>
-      <td>1987</td>
-      <td>0</td>
-      <td>98074</td>
-      <td>47.6168</td>
-      <td>-122.045</td>
-      <td>1800</td>
-      <td>7503</td>
-    </tr>
-  </tbody>
-</table></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">housing_df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span>
-<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>lat</th>
-      <th>long</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3</td>
-      <td>1.00</td>
-      <td>1180</td>
-      <td>5650</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>1180</td>
-      <td>0</td>
-      <td>1955</td>
-      <td>0</td>
-      <td>98178</td>
-      <td>47.5112</td>
-      <td>-122.257</td>
-      <td>1340</td>
-      <td>5650</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>2.25</td>
-      <td>2570</td>
-      <td>7242</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>2170</td>
-      <td>400</td>
-      <td>1951</td>
-      <td>1991</td>
-      <td>98125</td>
-      <td>47.7210</td>
-      <td>-122.319</td>
-      <td>1690</td>
-      <td>7639</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>1.00</td>
-      <td>770</td>
-      <td>10000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>6</td>
-      <td>770</td>
-      <td>0</td>
-      <td>1933</td>
-      <td>0</td>
-      <td>98028</td>
-      <td>47.7379</td>
-      <td>-122.233</td>
-      <td>2720</td>
-      <td>8062</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>3.00</td>
-      <td>1960</td>
-      <td>5000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>7</td>
-      <td>1050</td>
-      <td>910</td>
-      <td>1965</td>
-      <td>0</td>
-      <td>98136</td>
-      <td>47.5208</td>
-      <td>-122.393</td>
-      <td>1360</td>
-      <td>5000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3</td>
-      <td>2.00</td>
-      <td>1680</td>
-      <td>8080</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1680</td>
-      <td>0</td>
-      <td>1987</td>
-      <td>0</td>
-      <td>98074</td>
-      <td>47.6168</td>
-      <td>-122.045</td>
-      <td>1800</td>
-      <td>7503</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    221900.0
-1    538000.0
-2    180000.0
-3    604000.0
-4    510000.0
-Name: price, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21613, 18)
 </pre></div>
 </div>
 </div>
@@ -1726,6 +1400,326 @@ Name: price, dtype: float64
 </section>
 <section id="questions-for-you">
 <h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
+<section id="example-tabular-data-for-the-housing-price-prediction">
+<h3>Example: Tabular data for the housing price prediction<a class="headerlink" href="#example-tabular-data-for-the-housing-price-prediction" title="Link to this heading">#</a></h3>
+<p>Here is an example of tabular data for housing price prediction. You can download the data from <a class="reference external" href="https://www.kaggle.com/harlfoxem/housesalesprediction">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;kc_house_data.csv&quot;</span><span class="p">)</span>
+<span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">housing_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>price</th>
+      <th>bedrooms</th>
+      <th>bathrooms</th>
+      <th>sqft_living</th>
+      <th>sqft_lot</th>
+      <th>floors</th>
+      <th>waterfront</th>
+      <th>view</th>
+      <th>condition</th>
+      <th>grade</th>
+      <th>sqft_above</th>
+      <th>sqft_basement</th>
+      <th>yr_built</th>
+      <th>yr_renovated</th>
+      <th>zipcode</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>sqft_living15</th>
+      <th>sqft_lot15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>221900.0</td>
+      <td>3</td>
+      <td>1.00</td>
+      <td>1180</td>
+      <td>5650</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>7</td>
+      <td>1180</td>
+      <td>0</td>
+      <td>1955</td>
+      <td>0</td>
+      <td>98178</td>
+      <td>47.5112</td>
+      <td>-122.257</td>
+      <td>1340</td>
+      <td>5650</td>
+    </tr>
+    <tr>
+      <td>538000.0</td>
+      <td>3</td>
+      <td>2.25</td>
+      <td>2570</td>
+      <td>7242</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>7</td>
+      <td>2170</td>
+      <td>400</td>
+      <td>1951</td>
+      <td>1991</td>
+      <td>98125</td>
+      <td>47.7210</td>
+      <td>-122.319</td>
+      <td>1690</td>
+      <td>7639</td>
+    </tr>
+    <tr>
+      <td>180000.0</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>770</td>
+      <td>10000</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>6</td>
+      <td>770</td>
+      <td>0</td>
+      <td>1933</td>
+      <td>0</td>
+      <td>98028</td>
+      <td>47.7379</td>
+      <td>-122.233</td>
+      <td>2720</td>
+      <td>8062</td>
+    </tr>
+    <tr>
+      <td>604000.0</td>
+      <td>4</td>
+      <td>3.00</td>
+      <td>1960</td>
+      <td>5000</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>7</td>
+      <td>1050</td>
+      <td>910</td>
+      <td>1965</td>
+      <td>0</td>
+      <td>98136</td>
+      <td>47.5208</td>
+      <td>-122.393</td>
+      <td>1360</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>510000.0</td>
+      <td>3</td>
+      <td>2.00</td>
+      <td>1680</td>
+      <td>8080</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>8</td>
+      <td>1680</td>
+      <td>0</td>
+      <td>1987</td>
+      <td>0</td>
+      <td>98074</td>
+      <td>47.6168</td>
+      <td>-122.045</td>
+      <td>1800</td>
+      <td>7503</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">housing_df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bedrooms</th>
+      <th>bathrooms</th>
+      <th>sqft_living</th>
+      <th>sqft_lot</th>
+      <th>floors</th>
+      <th>waterfront</th>
+      <th>view</th>
+      <th>condition</th>
+      <th>grade</th>
+      <th>sqft_above</th>
+      <th>sqft_basement</th>
+      <th>yr_built</th>
+      <th>yr_renovated</th>
+      <th>zipcode</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>sqft_living15</th>
+      <th>sqft_lot15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>1.00</td>
+      <td>1180</td>
+      <td>5650</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>7</td>
+      <td>1180</td>
+      <td>0</td>
+      <td>1955</td>
+      <td>0</td>
+      <td>98178</td>
+      <td>47.5112</td>
+      <td>-122.257</td>
+      <td>1340</td>
+      <td>5650</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>2.25</td>
+      <td>2570</td>
+      <td>7242</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>7</td>
+      <td>2170</td>
+      <td>400</td>
+      <td>1951</td>
+      <td>1991</td>
+      <td>98125</td>
+      <td>47.7210</td>
+      <td>-122.319</td>
+      <td>1690</td>
+      <td>7639</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1.00</td>
+      <td>770</td>
+      <td>10000</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>6</td>
+      <td>770</td>
+      <td>0</td>
+      <td>1933</td>
+      <td>0</td>
+      <td>98028</td>
+      <td>47.7379</td>
+      <td>-122.233</td>
+      <td>2720</td>
+      <td>8062</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3.00</td>
+      <td>1960</td>
+      <td>5000</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>7</td>
+      <td>1050</td>
+      <td>910</td>
+      <td>1965</td>
+      <td>0</td>
+      <td>98136</td>
+      <td>47.5208</td>
+      <td>-122.393</td>
+      <td>1360</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>2.00</td>
+      <td>1680</td>
+      <td>8080</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>8</td>
+      <td>1680</td>
+      <td>0</td>
+      <td>1987</td>
+      <td>0</td>
+      <td>98074</td>
+      <td>47.6168</td>
+      <td>-122.045</td>
+      <td>1800</td>
+      <td>7503</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    221900.0
+1    538000.0
+2    180000.0
+3    604000.0
+4    510000.0
+Name: price, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning">
 <h3>Exercise 2.1 Select all of the following statements which are examples of supervised machine learning<a class="headerlink" href="#exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
@@ -1738,6 +1732,18 @@ Name: price, dtype: float64
 </ol>
 </li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21613, 18)
+</pre></div>
+</div>
+</div>
+</div>
 <p><br><br></p>
 </section>
 <section id="iclicker-exercise-2-2-supervised-vs-unsupervised">
@@ -2191,10 +2197,10 @@ Name: count, dtype: int64
 </div>
 </div>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code> paradigms similar to classification. The <code class="docutils literal notranslate"><span class="pre">score</span></code> method in the context of regression returns somethings called <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score"><span class="math notranslate nohighlight">\(R^2\)</span> score</a>. (More on this in later videos.)</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code> work similarly to classification. The <code class="docutils literal notranslate"><span class="pre">score</span></code> method in the context of regression returns somethings called <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score"><span class="math notranslate nohighlight">\(R^2\)</span> score</a>. (More on this in later videos.)</p>
 <ul>
 <li><p>The maximum <span class="math notranslate nohighlight">\(R^2\)</span> is 1 for perfect predictions.</p></li>
-<li><p>For <code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code> it returns the mean of the <code class="docutils literal notranslate"><span class="pre">y</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code> returns the mean of the <code class="docutils literal notranslate"><span class="pre">y</span></code> values, which means that <span class="math notranslate nohighlight">\(R^2\)</span> is:</p></li>
 </ul>
 </li>
 </ul>
@@ -2601,7 +2607,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/13d8f62a95e7c8d430482707bf82a5032c881259bfa1a0aa36dbe68ae33ac96c.png" src="../../_images/13d8f62a95e7c8d430482707bf82a5032c881259bfa1a0aa36dbe68ae33ac96c.png" />
+<img alt="../../_images/7c9b49c8c2e2aed9d10ce761a3a8cc59c3a37e2cc217f12ae197d25bc3f5b6f0.png" src="../../_images/7c9b49c8c2e2aed9d10ce761a3a8cc59c3a37e2cc217f12ae197d25bc3f5b6f0.png" />
 </div>
 </div>
 <div class="warning admonition">
@@ -2716,7 +2722,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/daa893b0602811c4f75c8b3e3c7ffd7660807d0462389aab93d51966e84118f2.png" src="../../_images/daa893b0602811c4f75c8b3e3c7ffd7660807d0462389aab93d51966e84118f2.png" />
+<img alt="../../_images/4b86d44bd414c0cb75b7407edae5c4b0659feab101e7592a2f6cbe42758af151.png" src="../../_images/4b86d44bd414c0cb75b7407edae5c4b0659feab101e7592a2f6cbe42758af151.png" />
 </div>
 </div>
 </section>
@@ -3008,7 +3014,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/91e8771c286984782cf4f8b154eaee40472965467ded823a211be47faa4d4484.png" src="../../_images/91e8771c286984782cf4f8b154eaee40472965467ded823a211be47faa4d4484.png" />
+<img alt="../../_images/2ddc40d9c9ec0ca4763d2cb6a7fadd8b3c539091dac311ecab3163d3c4436821.png" src="../../_images/2ddc40d9c9ec0ca4763d2cb6a7fadd8b3c539091dac311ecab3163d3c4436821.png" />
 </div>
 </div>
 <ul class="simple">
@@ -3069,7 +3075,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a64de57dcd1913fb888f292ae41325b0f958cfe3b921f6ac32e293b9f44bc3b0.png" src="../../_images/a64de57dcd1913fb888f292ae41325b0f958cfe3b921f6ac32e293b9f44bc3b0.png" />
+<img alt="../../_images/392bae792b57872b170e82239299b797e0d1263e1b925f7208e33db2b6934086.png" src="../../_images/392bae792b57872b170e82239299b797e0d1263e1b925f7208e33db2b6934086.png" />
 </div>
 </div>
 </section>
@@ -3404,6 +3410,8 @@ In decision tree models, when we are working with only two features, the decisio
 <img alt="../../_images/e57a37e01505ce2e09113f6f4c9611af60f6760c816f78bf8f638518ed76841e.png" src="../../_images/e57a37e01505ce2e09113f6f4c9611af60f6760c816f78bf8f638518ed76841e.png" />
 </div>
 </div>
+<p>So we can control the depth of the tree… why does it matter? Is a bigger tree always better?</p>
+<p>To be continued…</p>
 </section>
 </section>
 </section>
@@ -3470,16 +3478,16 @@ terminology includes:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-py"
+            mode: "conda-env-cpsc330-24-py"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-py",
-            path: "./lectures/notes"
+            name: "conda-env-cpsc330-24-py",
+            path: "./lectures/101-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-py'</script>
+    <script>kernelName = 'conda-env-cpsc330-24-py'</script>
 
                 </article>
               
@@ -3491,24 +3499,6 @@ terminology includes:</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="01_intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lecture 1: Course Introduction</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="03_ml-fundamentals.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 3: Machine Learning Fundamentals</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -3536,7 +3526,6 @@ terminology includes:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-supervised-machine-learning">Recap: Supervised machine learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular data</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-grade-prediction">Example: Tabular data for grade prediction</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-the-housing-price-prediction">Example: Tabular data for the housing price prediction</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-terminology-for-examples-features-targets-and-training">Alternative terminology for examples, features, targets, and training</a></li>
 </ul>
 </li>
@@ -3545,6 +3534,7 @@ terminology includes:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-the-housing-price-prediction">Example: Tabular data for the housing price prediction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning">Exercise 2.1 Select all of the following statements which are examples of supervised machine learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-2-supervised-vs-unsupervised">iClicker Exercise 2.2 Supervised vs unsupervised</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-3-classification-vs-regression">iClicker Exercise 2.3 Classification vs regression</a></li>
