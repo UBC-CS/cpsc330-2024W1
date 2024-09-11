@@ -28,6 +28,7 @@ parts:
   - file: lectures/101-Giulia-lectures/README
     sections:
       - file: lectures/101-Giulia-lectures/01_intro.ipynb
+      - file: lectures/101-Giulia-lectures/02_terminology-decision-trees.ipynb
 
   - file: lectures/102-Varada-lectures/README
     sections:
