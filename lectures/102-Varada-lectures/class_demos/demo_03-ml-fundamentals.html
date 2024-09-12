@@ -377,21 +377,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Imports</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-model">Decision tree model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-splitting">Data splitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-model">Decision tree model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-splitting">Data splitting</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-discuss-the-following-questions-in-your-group">Activity: Discuss the following questions in your group</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-validation-set">Single validation set</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-optimization">Hyperparameter optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-validation-set">Single validation set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discuss-the-following-questions-in-your-group">Discuss the following questions in your group</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-on-the-test-set">Assessing on the test set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-on-the-test-set">Assessing on the test set</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learned-model">Learned model</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-we-revised-in-this-demo">Concepts we revised in this demo</a></li>
 </ul>
             </nav>
         </div>
@@ -407,8 +412,6 @@ document.write(`
 <h1>Lecture 3: ML Fundamentals Class Demo<a class="headerlink" href="#lecture-3-ml-fundamentals-class-demo" title="Link to this heading">#</a></h1>
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>Imports<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the libraries</span>
@@ -432,8 +435,8 @@ document.write(`
 </div>
 <p><br><br></p>
 </section>
-<section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Let’s bring back King County housing sale prediction data from the course introduction video. You can download the data from <a class="reference external" href="https://www.kaggle.com/harlfoxem/housesalesprediction">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -754,22 +757,9 @@ document.write(`
 <p>21613 rows × 21 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;20141013T000000&#39;</span><span class="p">,</span> <span class="s1">&#39;20141209T000000&#39;</span><span class="p">,</span> <span class="s1">&#39;20150218T000000&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span>
-<span class="n">dates</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2014-10-13&#39;, &#39;2014-12-09&#39;, &#39;2015-02-18&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="exploratory-data-analysis">
-<h3>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Link to this heading">#</a></h3>
+<h2>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Link to this heading">#</a></h2>
 <p>Is this a classification problem or a regression problem?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -788,7 +778,7 @@ document.write(`
 <p>Let’s explore some features. Let’s try the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -812,6 +802,7 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>id</th>
+      <th>date</th>
       <th>price</th>
       <th>bedrooms</th>
       <th>bathrooms</th>
@@ -820,7 +811,7 @@ document.write(`
       <th>floors</th>
       <th>waterfront</th>
       <th>view</th>
-      <th>condition</th>
+      <th>...</th>
       <th>grade</th>
       <th>sqft_above</th>
       <th>sqft_basement</th>
@@ -837,6 +828,7 @@ document.write(`
     <tr>
       <th>count</th>
       <td>2.161300e+04</td>
+      <td>21613</td>
       <td>2.161300e+04</td>
       <td>21613.000000</td>
       <td>21613.000000</td>
@@ -845,7 +837,7 @@ document.write(`
       <td>21613.000000</td>
       <td>21613.000000</td>
       <td>21613.000000</td>
-      <td>21613.000000</td>
+      <td>...</td>
       <td>21613.000000</td>
       <td>21613.000000</td>
       <td>21613.000000</td>
@@ -858,8 +850,81 @@ document.write(`
       <td>21613.000000</td>
     </tr>
     <tr>
+      <th>unique</th>
+      <td>NaN</td>
+      <td>372</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>NaN</td>
+      <td>20140623T000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>NaN</td>
+      <td>142</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <th>mean</th>
       <td>4.580302e+09</td>
+      <td>NaN</td>
       <td>5.400881e+05</td>
       <td>3.370842</td>
       <td>2.114757</td>
@@ -868,7 +933,7 @@ document.write(`
       <td>1.494309</td>
       <td>0.007542</td>
       <td>0.234303</td>
-      <td>3.409430</td>
+      <td>...</td>
       <td>7.656873</td>
       <td>1788.390691</td>
       <td>291.509045</td>
@@ -883,6 +948,7 @@ document.write(`
     <tr>
       <th>std</th>
       <td>2.876566e+09</td>
+      <td>NaN</td>
       <td>3.671272e+05</td>
       <td>0.930062</td>
       <td>0.770163</td>
@@ -891,7 +957,7 @@ document.write(`
       <td>0.539989</td>
       <td>0.086517</td>
       <td>0.766318</td>
-      <td>0.650743</td>
+      <td>...</td>
       <td>1.175459</td>
       <td>828.090978</td>
       <td>442.575043</td>
@@ -906,6 +972,7 @@ document.write(`
     <tr>
       <th>min</th>
       <td>1.000102e+06</td>
+      <td>NaN</td>
       <td>7.500000e+04</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -914,7 +981,7 @@ document.write(`
       <td>1.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>1.000000</td>
+      <td>...</td>
       <td>1.000000</td>
       <td>290.000000</td>
       <td>0.000000</td>
@@ -929,6 +996,7 @@ document.write(`
     <tr>
       <th>25%</th>
       <td>2.123049e+09</td>
+      <td>NaN</td>
       <td>3.219500e+05</td>
       <td>3.000000</td>
       <td>1.750000</td>
@@ -937,7 +1005,7 @@ document.write(`
       <td>1.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>3.000000</td>
+      <td>...</td>
       <td>7.000000</td>
       <td>1190.000000</td>
       <td>0.000000</td>
@@ -952,6 +1020,7 @@ document.write(`
     <tr>
       <th>50%</th>
       <td>3.904930e+09</td>
+      <td>NaN</td>
       <td>4.500000e+05</td>
       <td>3.000000</td>
       <td>2.250000</td>
@@ -960,7 +1029,7 @@ document.write(`
       <td>1.500000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>3.000000</td>
+      <td>...</td>
       <td>7.000000</td>
       <td>1560.000000</td>
       <td>0.000000</td>
@@ -975,6 +1044,7 @@ document.write(`
     <tr>
       <th>75%</th>
       <td>7.308900e+09</td>
+      <td>NaN</td>
       <td>6.450000e+05</td>
       <td>4.000000</td>
       <td>2.500000</td>
@@ -983,7 +1053,7 @@ document.write(`
       <td>2.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>4.000000</td>
+      <td>...</td>
       <td>8.000000</td>
       <td>2210.000000</td>
       <td>560.000000</td>
@@ -998,6 +1068,7 @@ document.write(`
     <tr>
       <th>max</th>
       <td>9.900000e+09</td>
+      <td>NaN</td>
       <td>7.700000e+06</td>
       <td>33.000000</td>
       <td>8.000000</td>
@@ -1006,7 +1077,7 @@ document.write(`
       <td>3.500000</td>
       <td>1.000000</td>
       <td>4.000000</td>
-      <td>5.000000</td>
+      <td>...</td>
       <td>13.000000</td>
       <td>9410.000000</td>
       <td>4820.000000</td>
@@ -1020,18 +1091,49 @@ document.write(`
     </tr>
   </tbody>
 </table>
+<p>11 rows × 21 columns</p>
 </div></div></div>
 </div>
+<p>Do we need to keep all the columns?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do we need to keep all the columns? </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21436
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;zipcode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zipcode
+98103    602
+98038    590
+98115    583
+98052    574
+98117    553
+        ... 
+98102    105
+98010    100
+98024     81
+98148     57
+98039     50
+Name: count, Length: 70, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;20141013T000000&#39;</span><span class="p">,</span> <span class="s1">&#39;20141209T000000&#39;</span><span class="p">,</span> <span class="s1">&#39;20150218T000000&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1039,6 +1141,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What are the value counts of the `waterfront` feature? </span>
+<span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;waterfront&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>waterfront
+0    21450
+1      163
+Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1046,15 +1157,96 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What are the value_counts of `yr_renovated` feature? </span>
+<span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;yr_renovated&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yr_renovated
+0       20699
+2014       91
+2013       37
+2003       36
+2005       35
+        ...  
+1951        1
+1959        1
+1948        1
+1954        1
+1944        1
+Name: count, Length: 70, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
 <p>Many opportunities to clean the data but we’ll stop here.</p>
+<p>Let’s create <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File index.pyx:167,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File index.pyx:196,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7081,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7089,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">housing_df</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3811</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3812</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3813</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3814</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3815</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3816</span>     <span class="c1">#  the TypeError.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3817</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p><br><br></p>
 </section>
 <section id="baseline-model">
-<h3>Baseline model<a class="headerlink" href="#baseline-model" title="Link to this heading">#</a></h3>
+<h2>Baseline model<a class="headerlink" href="#baseline-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train a DummyRegressor model </span>
@@ -1062,6 +1254,7 @@ document.write(`
 <span class="kn">from</span> <span class="nn">sklearn.dummy</span> <span class="kn">import</span> <span class="n">DummyRegressor</span> <span class="c1"># Import DummyRegressor </span>
 
 <span class="c1"># Create a class object for the sklearn model.</span>
+<span class="n">dummy_regr</span> <span class="o">=</span> 
 
 
 <span class="c1"># fit the dummy regressor</span>
@@ -1072,6 +1265,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>How to interpret the score here?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict on X using the model</span>
@@ -1082,7 +1276,7 @@ document.write(`
 <p><br><br></p>
 </section>
 <section id="decision-tree-model">
-<h3>Decision tree model<a class="headerlink" href="#decision-tree-model" title="Link to this heading">#</a></h3>
+<h2>Decision tree model<a class="headerlink" href="#decision-tree-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train a decision tree model </span>
@@ -1090,6 +1284,7 @@ document.write(`
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span> <span class="c1"># Import DecisionTreeRegressor </span>
 
 <span class="c1"># Create a class object for the sklearn model.</span>
+<span class="n">dt_regr</span> <span class="o">=</span> 
 
 
 <span class="c1"># fit the decision tree regressor </span>
@@ -1102,9 +1297,10 @@ document.write(`
 </div>
 <p>We are getting a perfect accuracy. Should we be happy with this model and deploy it? Why or why not?</p>
 <p>What’s the depth of this model?</p>
+<p><br><br></p>
 </section>
 <section id="data-splitting">
-<h3>Data splitting<a class="headerlink" href="#data-splitting" title="Link to this heading">#</a></h3>
+<h2>Data splitting<a class="headerlink" href="#data-splitting" title="Link to this heading">#</a></h2>
 <p>Let’s split the data and</p>
 <ul class="simple">
 <li><p>Train on the train split</p></li>
@@ -1114,6 +1310,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split the data </span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> 
 </pre></div>
 </div>
 </div>
@@ -1124,9 +1321,10 @@ document.write(`
 <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
 
 <span class="c1"># Train a decision tree on X_train, y_train</span>
-
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
 <span class="c1"># Score on the train set</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1134,11 +1332,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Score on the test set</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 <section id="activity-discuss-the-following-questions-in-your-group">
 <h3>Activity: Discuss the following questions in your group<a class="headerlink" href="#activity-discuss-the-following-questions-in-your-group" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1147,7 +1345,12 @@ document.write(`
 <li><p>Why are we setting the <code class="docutils literal notranslate"><span class="pre">random_state</span></code>? Is it a good idea to try a bunch of values for the <code class="docutils literal notranslate"><span class="pre">random_state</span></code> and pick the one which gives the best scores?</p></li>
 <li><p>Would it be possible to further improve the scores?</p></li>
 </ul>
-<p>Let’s try out different depths.</p>
+<p><br><br></p>
+</section>
+</section>
+<section id="hyperparameter-optimization">
+<h2>Hyperparameter optimization<a class="headerlink" href="#hyperparameter-optimization" title="Link to this heading">#</a></h2>
+<p>Let’s try out different tree depths.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># max_depth= 1 </span>
@@ -1156,24 +1359,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># max_depth= 1 </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;X_train&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize your decision stump</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">plot_tree</span> 
-<span class="n">plot_tree</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">impurity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">impurity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1219,9 +1410,10 @@ document.write(`
 </div>
 </div>
 <p>Any improvements? Which depth should we pick?</p>
+<p><br><br></p>
 </section>
 <section id="single-validation-set">
-<h3>Single validation set<a class="headerlink" href="#single-validation-set" title="Link to this heading">#</a></h3>
+<h2>Single validation set<a class="headerlink" href="#single-validation-set" title="Link to this heading">#</a></h2>
 <p>We are using the test data again and again. How about creating a validation set to pick the right depth and assessing the final model on the test set?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1261,29 +1453,16 @@ document.write(`
 <p>What depth gives the “best” validation score?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_depth</span> <span class="o">=</span> <span class="n">results_single_valid_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">results_single_valid_df</span><span class="p">[</span><span class="s1">&#39;valid_score&#39;</span><span class="p">])]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What depth gives the &quot;best&quot; validation score?</span>
+<span class="n">best_depth</span> <span class="o">=</span> <span class="n">results_single_valid_df</span><span class="p">[</span><span class="s1">&#39;valid_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span> 
 <span class="n">best_depth</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s assess the best model on the test set.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_model</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">best_depth</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
-<span class="n">test_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">test_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>How do the test scores compare to the validation scores?</p></li>
-<li><p>Can we have a more robust estimate of the test score?</p></li>
-</ul>
 </section>
 <section id="cross-validation">
-<h3>Cross-validation<a class="headerlink" href="#cross-validation" title="Link to this heading">#</a></h3>
+<h2>Cross-validation<a class="headerlink" href="#cross-validation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -1321,24 +1500,25 @@ document.write(`
 <p>What’s the “best” depth with cross-validation?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_depth</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;valid_score&#39;</span><span class="p">])]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_depth</span> <span class="o">=</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;valid_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 <span class="n">best_depth</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 <section id="discuss-the-following-questions-in-your-group">
 <h3>Discuss the following questions in your group<a class="headerlink" href="#discuss-the-following-questions-in-your-group" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>For which depth(s) we are underfitting? How about overfitting?</p></li>
-<li><p>Above we are picking the depth which gives us the best cross-validation score. Is it always a good idea to pick such a depth? What if you have a much simpler model (smaller <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>), which gives us almost the same CV scores?</p></li>
-<li><p>If we care about the test scores in the end, why don’t we use it in training?</p></li>
-<li><p>Do you trust our hyperparameter optimization? In other words, do you believe that we have found the best possible depth?</p></li>
+<li><p>At which depth(s) are we underfitting? At which depth(s) are we overfitting?</p></li>
+<li><p>Above, we chose the depth that gives us the best cross-validation score. Is it always a good idea to select this depth? What if a simpler model with a smaller max_depth gives nearly the same cross-validation score?</p></li>
+<li><p>If our main concern is test scores, why don’t we use the test set during training?</p></li>
+<li><p>Do you trust our hyperparameter optimization process? In other words, do you believe we’ve found the best possible depth?</p></li>
 </ol>
+<p><br><br></p>
+</section>
 </section>
 <section id="assessing-on-the-test-set">
-<h3>Assessing on the test set<a class="headerlink" href="#assessing-on-the-test-set" title="Link to this heading">#</a></h3>
+<h2>Assessing on the test set<a class="headerlink" href="#assessing-on-the-test-set" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train a model with the best depth of the full training data</span>
@@ -1357,7 +1537,6 @@ document.write(`
 </div>
 </div>
 <p>How do these scores compare to the scores when we used a single validation set?</p>
-</section>
 <section id="learned-model">
 <h3>Learned model<a class="headerlink" href="#learned-model" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -1370,7 +1549,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dt_final</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">impurity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot_tree(dt_final, feature_names = X_train.columns.tolist(), impurity=False, filled=True);</span>
 </pre></div>
 </div>
 </div>
@@ -1400,6 +1579,18 @@ document.write(`
 <p><br><br></p>
 </section>
 </section>
+<section id="concepts-we-revised-in-this-demo">
+<h2>Concepts we revised in this demo<a class="headerlink" href="#concepts-we-revised-in-this-demo" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Exploratory data analysis</p></li>
+<li><p>Baselines</p></li>
+<li><p>Data splitting: train, test, validation sets</p></li>
+<li><p>Cross validation</p></li>
+<li><p>Underfitting, overfitting, the fundamental tradeoff</p></li>
+<li><p>The golden rule of supervised ML</p></li>
+</ul>
+<p><br><br></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1411,16 +1602,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-env-cpsc330-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-env-cpsc330-py",
             path: "./lectures/102-Varada-lectures/class_demos"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
 
                 </article>
               
@@ -1448,21 +1639,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Imports</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-model">Decision tree model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-splitting">Data splitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-model">Decision tree model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-splitting">Data splitting</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-discuss-the-following-questions-in-your-group">Activity: Discuss the following questions in your group</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-validation-set">Single validation set</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-optimization">Hyperparameter optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-validation-set">Single validation set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discuss-the-following-questions-in-your-group">Discuss the following questions in your group</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-on-the-test-set">Assessing on the test set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-on-the-test-set">Assessing on the test set</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learned-model">Learned model</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-we-revised-in-this-demo">Concepts we revised in this demo</a></li>
 </ul>
   </nav></div>
 
