@@ -39,10 +39,12 @@ parts:
 
   - file: lectures/103-Firas-lectures/README
     sections:
-      - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro.html"
+      - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
         title: Lecture 1
-      - url: "https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html"
+      - url: "https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees"
         title: Lecture 2
+      - url: "https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals"
+        title: Lecture 3
 
 - caption: Attribution
   chapters: 
