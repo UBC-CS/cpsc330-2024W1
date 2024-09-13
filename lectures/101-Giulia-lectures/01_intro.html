@@ -194,6 +194,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="current nav bd-sidenav">
@@ -739,38 +740,38 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_ff063_row0_col0, #T_ff063_row0_col1, #T_ff063_row1_col0, #T_ff063_row1_col1, #T_ff063_row2_col0, #T_ff063_row2_col1, #T_ff063_row3_col0, #T_ff063_row3_col1 {
+#T_8f1d8_row0_col0, #T_8f1d8_row0_col1, #T_8f1d8_row1_col0, #T_8f1d8_row1_col1, #T_8f1d8_row2_col0, #T_8f1d8_row2_col1, #T_8f1d8_row3_col0, #T_8f1d8_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_ff063">
+<table id="T_8f1d8">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ff063_level0_col0" class="col_heading level0 col0" >sms</th>
-      <th id="T_ff063_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
+      <th id="T_8f1d8_level0_col0" class="col_heading level0 col0" >sms</th>
+      <th id="T_8f1d8_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ff063_level0_row0" class="row_heading level0 row0" >3245</th>
-      <td id="T_ff063_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
-      <td id="T_ff063_row0_col1" class="data row0 col1" >ham</td>
+      <th id="T_8f1d8_level0_row0" class="row_heading level0 row0" >3245</th>
+      <td id="T_8f1d8_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+      <td id="T_8f1d8_row0_col1" class="data row0 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_ff063_level0_row1" class="row_heading level0 row1" >944</th>
-      <td id="T_ff063_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
-      <td id="T_ff063_row1_col1" class="data row1 col1" >ham</td>
+      <th id="T_8f1d8_level0_row1" class="row_heading level0 row1" >944</th>
+      <td id="T_8f1d8_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+      <td id="T_8f1d8_row1_col1" class="data row1 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_ff063_level0_row2" class="row_heading level0 row2" >1044</th>
-      <td id="T_ff063_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
-      <td id="T_ff063_row2_col1" class="data row2 col1" >spam</td>
+      <th id="T_8f1d8_level0_row2" class="row_heading level0 row2" >1044</th>
+      <td id="T_8f1d8_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+      <td id="T_8f1d8_row2_col1" class="data row2 col1" >spam</td>
     </tr>
     <tr>
-      <th id="T_ff063_level0_row3" class="row_heading level0 row3" >2484</th>
-      <td id="T_ff063_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
-      <td id="T_ff063_row3_col1" class="data row3 col1" >ham</td>
+      <th id="T_8f1d8_level0_row3" class="row_heading level0 row3" >2484</th>
+      <td id="T_8f1d8_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+      <td id="T_8f1d8_row3_col1" class="data row3 col1" >ham</td>
     </tr>
   </tbody>
 </table>
@@ -1542,67 +1543,55 @@ conda install -c pytorch torchvision</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/528M [00:00&lt;?, ?B/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 14.5M/528M [00:00&lt;00:03, 152MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|▍         | 23.6M/528M [00:00&lt;00:02, 247MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|▊         | 41.6M/528M [00:00&lt;00:02, 228MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|█▏        | 59.8M/528M [00:00&lt;00:01, 324MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█▎        | 68.8M/528M [00:00&lt;00:01, 254MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█▋        | 90.8M/528M [00:00&lt;00:01, 312MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | 93.9M/528M [00:00&lt;00:01, 257MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 121M/528M [00:00&lt;00:01, 307MB/s] 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 121M/528M [00:00&lt;00:01, 266MB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 150M/528M [00:00&lt;00:01, 290MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 148M/528M [00:00&lt;00:01, 271MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|███▎      | 178M/528M [00:00&lt;00:01, 265MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 174M/528M [00:00&lt;00:01, 272MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|███▊      | 204M/528M [00:00&lt;00:01, 262MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 200M/528M [00:00&lt;00:01, 273MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|████▍     | 231M/528M [00:00&lt;00:01, 270MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 227M/528M [00:00&lt;00:01, 276MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████▊     | 257M/528M [00:00&lt;00:01, 263MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|████▊     | 254M/528M [00:01&lt;00:01, 277MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▍    | 286M/528M [00:01&lt;00:00, 275MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████▎    | 281M/528M [00:01&lt;00:00, 272MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▉    | 313M/528M [00:01&lt;00:00, 265MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████▊    | 308M/528M [00:01&lt;00:00, 276MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 348M/528M [00:01&lt;00:00, 293MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▎   | 335M/528M [00:01&lt;00:00, 274MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|███████▎  | 384M/528M [00:01&lt;00:00, 319MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 69%|██████▊   | 362M/528M [00:01&lt;00:00, 276MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|███████▉  | 421M/528M [00:01&lt;00:00, 340MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▍  | 389M/528M [00:01&lt;00:00, 278MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 457M/528M [00:01&lt;00:00, 350MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████▉  | 416M/528M [00:01&lt;00:00, 279MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| 492M/528M [00:01&lt;00:00, 354MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|████████▍ | 444M/528M [00:01&lt;00:00, 283MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████▉ | 471M/528M [00:01&lt;00:00, 280MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▍| 499M/528M [00:01&lt;00:00, 283MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|█████████▉| 526M/528M [00:02&lt;00:00, 281MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:02&lt;00:00, 273MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:01&lt;00:00, 309MB/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
