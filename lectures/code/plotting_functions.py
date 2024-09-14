@@ -91,7 +91,7 @@ def plot_knn_clf(X_train, y_train, X_test, n_neighbors=1, class_names=['class 0'
                 fc="k",
                 ec="k",
             )    
-    plt.show()
+    # plt.show()
 
 def plot_knn_decision_boundaries(X_train, y_train, k_values = [1,11,100]):
     fig, axes = plt.subplots(1, len(k_values), figsize=(15, 4))
