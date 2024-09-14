@@ -106,7 +106,7 @@ def plot_knn_decision_boundaries(X_train, y_train, k_values = [1,11,100]):
             clf, X_train.to_numpy(), fill=True, eps=0.5, ax=ax, alpha=0.4
         )
         mglearn.discrete_scatter(X_train.iloc[:, 0], X_train.iloc[:, 1], y_train, ax=ax)
-        title = "n_neighbors={}\n train score={}, valid score={}".format(
+        title = "n_neighbors={}\n train score={},\n valid score={}".format(
             n_neighbors, round(mean_train_score, 2), round(mean_valid_score, 2)
         )
         ax.set_title(title)
