@@ -622,36 +622,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000976</td>
-      <td>0.000639</td>
+      <td>0.001085</td>
+      <td>0.000636</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000653</td>
-      <td>0.000555</td>
+      <td>0.000655</td>
+      <td>0.000518</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000654</td>
-      <td>0.000494</td>
+      <td>0.000676</td>
+      <td>0.000503</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000640</td>
-      <td>0.000489</td>
+      <td>0.000673</td>
+      <td>0.000495</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000614</td>
-      <td>0.000494</td>
+      <td>0.000621</td>
+      <td>0.000533</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -699,36 +699,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003233</td>
-      <td>0.014105</td>
+      <td>0.003290</td>
+      <td>0.014203</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002756</td>
-      <td>0.013634</td>
+      <td>0.002512</td>
+      <td>0.013706</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002843</td>
-      <td>0.013921</td>
+      <td>0.002477</td>
+      <td>0.013716</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002815</td>
-      <td>0.014034</td>
+      <td>0.002491</td>
+      <td>0.013664</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002738</td>
-      <td>0.013870</td>
+      <td>0.002458</td>
+      <td>0.013556</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -1392,72 +1392,105 @@ Test score: 0.686
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">housing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;housing.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">housing_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/housing.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+      <th>ocean_proximity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6051</th>
+      <td>-117.75</td>
+      <td>34.04</td>
+      <td>22.0</td>
+      <td>2948.0</td>
+      <td>636.0</td>
+      <td>2600.0</td>
+      <td>602.0</td>
+      <td>3.1250</td>
+      <td>113600.0</td>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>20113</th>
+      <td>-119.57</td>
+      <td>37.94</td>
+      <td>17.0</td>
+      <td>346.0</td>
+      <td>130.0</td>
+      <td>51.0</td>
+      <td>20.0</td>
+      <td>3.4861</td>
+      <td>137500.0</td>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>14289</th>
+      <td>-117.13</td>
+      <td>32.74</td>
+      <td>46.0</td>
+      <td>3355.0</td>
+      <td>768.0</td>
+      <td>1457.0</td>
+      <td>708.0</td>
+      <td>2.6604</td>
+      <td>170100.0</td>
+      <td>NEAR OCEAN</td>
+    </tr>
+    <tr>
+      <th>13665</th>
+      <td>-117.31</td>
+      <td>34.02</td>
+      <td>18.0</td>
+      <td>1634.0</td>
+      <td>274.0</td>
+      <td>899.0</td>
+      <td>285.0</td>
+      <td>5.2139</td>
+      <td>129300.0</td>
+      <td>INLAND</td>
+    </tr>
+    <tr>
+      <th>14471</th>
+      <td>-117.23</td>
+      <td>32.88</td>
+      <td>18.0</td>
+      <td>5566.0</td>
+      <td>1465.0</td>
+      <td>6303.0</td>
+      <td>1458.0</td>
+      <td>1.8580</td>
+      <td>205000.0</td>
+      <td>NEAR OCEAN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Some column values are mean/median but some are not.</p>
 <p>Let’s add some new features to the dataset which could help predicting the target: <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code>.</p>
@@ -1933,7 +1966,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cec35287804e9d0184e24946e32555243e3994ee98e22f32ad2a512333fe0bc0.png" src="../../_images/cec35287804e9d0184e24946e32555243e3994ee98e22f32ad2a512333fe0bc0.png" />
+<img alt="../../_images/e64f9a8a30c06fdd0d0da78869aeaa3c1fd53fe7b7f4293a1dd372cf95f7540e.png" src="../../_images/e64f9a8a30c06fdd0d0da78869aeaa3c1fd53fe7b7f4293a1dd372cf95f7540e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1955,7 +1988,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/26b392f64a3b632a5fba634dc29f94f98eb7f89f17be94f876e51ff83859979c.png" src="../../_images/26b392f64a3b632a5fba634dc29f94f98eb7f89f17be94f876e51ff83859979c.png" />
+<img alt="../../_images/710b50247ff9c2becef83d7b33d8c9105a44fdf438a9cfc657201f4d3c489f3b.png" src="../../_images/710b50247ff9c2becef83d7b33d8c9105a44fdf438a9cfc657201f4d3c489f3b.png" />
 </div>
 </div>
 </section>
@@ -2034,7 +2067,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/80/kr9rkqfj4w78h49djkz8yy9r0000gp/T/ipykernel_77151/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3554/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -2507,7 +2540,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ee11b850b76c4000bef649c7502c7c42d696a6b0a027f668018077047b16e9f6.png" src="../../_images/ee11b850b76c4000bef649c7502c7c42d696a6b0a027f668018077047b16e9f6.png" />
+<img alt="../../_images/3ed1a0231c69f35aaa70968274ef39bb33def3835950c43f9d5e2e022bcfeb0b.png" src="../../_images/3ed1a0231c69f35aaa70968274ef39bb33def3835950c43f9d5e2e022bcfeb0b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2774,36 +2807,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.006213</td>
-      <td>0.162222</td>
+      <td>0.011939</td>
+      <td>0.172225</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.006139</td>
-      <td>0.145472</td>
+      <td>0.011998</td>
+      <td>0.155278</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.006583</td>
-      <td>0.158980</td>
+      <td>0.012000</td>
+      <td>0.169136</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.006252</td>
-      <td>0.160143</td>
+      <td>0.011955</td>
+      <td>0.174407</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.006624</td>
-      <td>0.098673</td>
+      <td>0.011865</td>
+      <td>0.104398</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3339,7 +3372,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/80/kr9rkqfj4w78h49djkz8yy9r0000gp/T/ipykernel_77151/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3554/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -3377,8 +3410,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + knn</th>
-      <td>0.018 (+/- 0.001)</td>
-      <td>0.157 (+/- 0.015)</td>
+      <td>0.027 (+/- 0.001)</td>
+      <td>0.158 (+/- 0.014)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
     </tr>
