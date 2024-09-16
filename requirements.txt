@@ -28,6 +28,8 @@ psutil>=5.7.2
 numpy
 linkify
 linkify-it-py
+panel
+watchfiles
+ipywidgets
 jupyter-book
 jupytext
-ipywidgets
