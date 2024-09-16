@@ -46,7 +46,7 @@ For office hours, please refer to the [Calendar](https://htmlpreview.github.io/?
 
 **Instructors**: 
 
-- [Firas Moosvi](https://firas.moosvi.com/)
+- [Firas Moosvi](https://firas.moosvi.com/), OH: Wednesday 1:30 - 2:30, ICCS 253
 - [Giulia Toti](https://www.gtoti.com/), OH: Monday, 2:00 - 3:15 PM, ICCS 231
 - [Varada Kolhatkar](https://kvarada.github.io/), OH: Thursdays, 1:00 - 2:00 PM, ICCS 237
 
