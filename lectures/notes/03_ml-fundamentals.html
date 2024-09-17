@@ -209,6 +209,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-01-intro.html">Lecture 1</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-03-ml-fundamentals.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html">Lecture 4</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -838,7 +839,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error:   0.000
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
   warnings.warn(
 </pre></div>
 </div>
@@ -978,7 +979,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/IPython/core/display.py:431: UserWarning: Consider using IPython.display.IFrame instead
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/IPython/core/display.py:431: UserWarning: Consider using IPython.display.IFrame instead
   warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
 </pre></div>
 </div>
@@ -1279,7 +1280,7 @@ Name: country, Length: 209, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/849bd1cb7a803d1f0a7fd2b65bd2405d9607e8071866a77f2f76f2f75d3b9668.png" src="../../_images/849bd1cb7a803d1f0a7fd2b65bd2405d9607e8071866a77f2f76f2f75d3b9668.png" />
+<img alt="../../_images/fd5ebdcd44e7426bbd82674eab70e520ba0748678c096331dee22b15d28a1374.png" src="../../_images/fd5ebdcd44e7426bbd82674eab70e520ba0748678c096331dee22b15d28a1374.png" />
 </div>
 </div>
 <p>Let’s examine the train and test accuracies with the split now.</p>
@@ -1292,7 +1293,7 @@ Name: country, Length: 209, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train accuracy:   1.000
-Test accuracy:   0.714
+Test accuracy:   0.738
 </pre></div>
 </div>
 </div>
@@ -1304,11 +1305,11 @@ Test accuracy:   0.714
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
   warnings.warn(
 </pre></div>
 </div>
-<img alt="../../_images/59cc5ba36ffe857920a07327cad743cc9b7bdf6cc77612591542380e2a9d40c7.png" src="../../_images/59cc5ba36ffe857920a07327cad743cc9b7bdf6cc77612591542380e2a9d40c7.png" />
+<img alt="../../_images/8b8bf4e8abd7a1390a3b44f6b1ef0a9b5eb91649752f509d85881802116cfa34.png" src="../../_images/8b8bf4e8abd7a1390a3b44f6b1ef0a9b5eb91649752f509d85881802116cfa34.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1338,13 +1339,13 @@ Test accuracy:   0.714
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
   warnings.warn(
-/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
   warnings.warn(
 </pre></div>
 </div>
-<img alt="../../_images/28594b2839646b7e12e6a2e9d29773f4423bda61d78acb58bb89d782c1e0175b.png" src="../../_images/28594b2839646b7e12e6a2e9d29773f4423bda61d78acb58bb89d782c1e0175b.png" />
+<img alt="../../_images/66cca2a648cd17a2505d2cf0e3d58c9603780d119d52a1c9093e36e9e5ea414c.png" src="../../_images/66cca2a648cd17a2505d2cf0e3d58c9603780d119d52a1c9093e36e9e5ea414c.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1592,71 +1593,71 @@ Standard deviation of cross-validation score = 0.09
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002370</td>
-      <td>0.001748</td>
+      <td>0.001955</td>
+      <td>0.001377</td>
       <td>0.764706</td>
       <td>0.913333</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.001720</td>
-      <td>0.001103</td>
+      <td>0.001811</td>
+      <td>0.001296</td>
       <td>0.823529</td>
       <td>0.906667</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.001448</td>
-      <td>0.001076</td>
+      <td>0.001480</td>
+      <td>0.001113</td>
       <td>0.705882</td>
       <td>0.906667</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.001428</td>
-      <td>0.001084</td>
+      <td>0.001445</td>
+      <td>0.001087</td>
       <td>0.941176</td>
       <td>0.900000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.001413</td>
-      <td>0.001057</td>
+      <td>0.001431</td>
+      <td>0.001088</td>
       <td>0.823529</td>
       <td>0.906667</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.001420</td>
-      <td>0.001073</td>
+      <td>0.001430</td>
+      <td>0.001069</td>
       <td>0.823529</td>
       <td>0.913333</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.001413</td>
-      <td>0.001064</td>
+      <td>0.001441</td>
+      <td>0.001080</td>
       <td>0.705882</td>
       <td>0.920000</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.001428</td>
-      <td>0.001139</td>
+      <td>0.001458</td>
+      <td>0.001072</td>
       <td>0.937500</td>
       <td>0.900662</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.001432</td>
-      <td>0.001054</td>
+      <td>0.001460</td>
+      <td>0.001086</td>
       <td>0.937500</td>
       <td>0.900662</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.001435</td>
-      <td>0.001059</td>
+      <td>0.001416</td>
+      <td>0.001087</td>
       <td>0.937500</td>
       <td>0.900662</td>
     </tr>
@@ -1695,11 +1696,11 @@ Standard deviation of cross-validation score = 0.09
   <tbody>
     <tr>
       <th>fit_time</th>
-      <td>0.001551</td>
+      <td>0.001533</td>
     </tr>
     <tr>
       <th>score_time</th>
-      <td>0.001146</td>
+      <td>0.001135</td>
     </tr>
     <tr>
       <th>test_score</th>
@@ -1779,71 +1780,71 @@ Standard deviation of cross-validation score = 0.09
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002386</td>
-      <td>0.001711</td>
+      <td>0.002544</td>
+      <td>0.001596</td>
       <td>0.875000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.001966</td>
-      <td>0.001491</td>
+      <td>0.001978</td>
+      <td>0.001455</td>
       <td>0.875000</td>
       <td>0.992857</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.001963</td>
-      <td>0.001420</td>
+      <td>0.001918</td>
+      <td>0.001449</td>
       <td>0.875000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.001952</td>
-      <td>0.001404</td>
-      <td>0.750000</td>
+      <td>0.001937</td>
+      <td>0.001398</td>
+      <td>0.687500</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.001878</td>
-      <td>0.001384</td>
+      <td>0.001902</td>
+      <td>0.001389</td>
       <td>0.812500</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.001868</td>
-      <td>0.001420</td>
+      <td>0.001913</td>
+      <td>0.001406</td>
       <td>0.812500</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.001515</td>
-      <td>0.001083</td>
+      <td>0.001524</td>
+      <td>0.001098</td>
       <td>0.866667</td>
       <td>0.985816</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.001471</td>
-      <td>0.001059</td>
-      <td>0.600000</td>
-      <td>0.992908</td>
+      <td>0.001489</td>
+      <td>0.001084</td>
+      <td>0.533333</td>
+      <td>1.000000</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.001463</td>
-      <td>0.001063</td>
+      <td>0.001484</td>
+      <td>0.001070</td>
       <td>0.666667</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.001414</td>
-      <td>0.001071</td>
+      <td>0.001437</td>
+      <td>0.001064</td>
       <td>0.733333</td>
       <td>1.000000</td>
     </tr>
@@ -1882,7 +1883,7 @@ Standard deviation of cross-validation score = 0.09
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3214/2246468746.py:12: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3292/2246468746.py:12: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -1915,7 +1916,7 @@ Standard deviation of cross-validation score = 0.09
       <th>Decision tree</th>
       <td>0.002 (+/- 0.000)</td>
       <td>0.001 (+/- 0.000)</td>
-      <td>0.782 (+/- 0.059)</td>
+      <td>0.769 (+/- 0.050)</td>
       <td>0.994 (+/- 0.014)</td>
     </tr>
   </tbody>
@@ -1979,7 +1980,7 @@ Validation error:   0.212
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train error:   0.000
-Validation error:   0.220
+Validation error:   0.213
 </pre></div>
 </div>
 </div>
@@ -2028,7 +2029,7 @@ Validation error:   0.220
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/995b5790ae6176602d598cd267f45ecc73a2afb8bc8a1a5553d47bf708d0c6df.png" src="../../_images/995b5790ae6176602d598cd267f45ecc73a2afb8bc8a1a5553d47bf708d0c6df.png" />
+<img alt="../../_images/5dbbac5365483e6837cb80a64ac4530bc9e9479055d6854407577a1b2c1d6b57.png" src="../../_images/5dbbac5365483e6837cb80a64ac4530bc9e9479055d6854407577a1b2c1d6b57.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2143,8 +2144,8 @@ Validation error:   0.220
     <tr>
       <th>3</th>
       <td>0.142467</td>
-      <td>0.204583</td>
-      <td>0.053763</td>
+      <td>0.210833</td>
+      <td>0.067757</td>
       <td>0.022848</td>
     </tr>
     <tr>
@@ -2163,23 +2164,23 @@ Validation error:   0.220
     </tr>
     <tr>
       <th>6</th>
-      <td>0.066960</td>
+      <td>0.066251</td>
       <td>0.191250</td>
       <td>0.072707</td>
-      <td>0.012065</td>
+      <td>0.012019</td>
     </tr>
     <tr>
       <th>7</th>
       <td>0.044873</td>
-      <td>0.210833</td>
-      <td>0.085192</td>
+      <td>0.217083</td>
+      <td>0.085543</td>
       <td>0.009059</td>
     </tr>
     <tr>
       <th>8</th>
       <td>0.030618</td>
-      <td>0.216250</td>
-      <td>0.096833</td>
+      <td>0.222500</td>
+      <td>0.088353</td>
       <td>0.010547</td>
     </tr>
     <tr>
@@ -2191,23 +2192,23 @@ Validation error:   0.220
     </tr>
     <tr>
       <th>10</th>
-      <td>0.010679</td>
+      <td>0.009260</td>
       <td>0.222500</td>
-      <td>0.088353</td>
-      <td>0.007938</td>
+      <td>0.101810</td>
+      <td>0.005563</td>
     </tr>
     <tr>
       <th>11</th>
       <td>0.005699</td>
-      <td>0.228750</td>
-      <td>0.101387</td>
+      <td>0.235417</td>
+      <td>0.096990</td>
       <td>0.004264</td>
     </tr>
     <tr>
       <th>12</th>
       <td>0.003561</td>
-      <td>0.242083</td>
-      <td>0.086932</td>
+      <td>0.229583</td>
+      <td>0.084870</td>
       <td>0.004769</td>
     </tr>
     <tr>
@@ -2220,15 +2221,15 @@ Validation error:   0.220
     <tr>
       <th>14</th>
       <td>0.000000</td>
-      <td>0.229583</td>
-      <td>0.089354</td>
+      <td>0.223333</td>
+      <td>0.089892</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>15</th>
       <td>0.000000</td>
-      <td>0.235833</td>
-      <td>0.092687</td>
+      <td>0.229583</td>
+      <td>0.084870</td>
       <td>0.000000</td>
     </tr>
   </tbody>

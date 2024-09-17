@@ -209,6 +209,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-01-intro.html">Lecture 1</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-03-ml-fundamentals.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html">Lecture 4</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -742,38 +743,38 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_f869a_row0_col0, #T_f869a_row0_col1, #T_f869a_row1_col0, #T_f869a_row1_col1, #T_f869a_row2_col0, #T_f869a_row2_col1, #T_f869a_row3_col0, #T_f869a_row3_col1 {
+#T_a2475_row0_col0, #T_a2475_row0_col1, #T_a2475_row1_col0, #T_a2475_row1_col1, #T_a2475_row2_col0, #T_a2475_row2_col1, #T_a2475_row3_col0, #T_a2475_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_f869a">
+<table id="T_a2475">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_f869a_level0_col0" class="col_heading level0 col0" >sms</th>
-      <th id="T_f869a_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
+      <th id="T_a2475_level0_col0" class="col_heading level0 col0" >sms</th>
+      <th id="T_a2475_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_f869a_level0_row0" class="row_heading level0 row0" >3245</th>
-      <td id="T_f869a_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
-      <td id="T_f869a_row0_col1" class="data row0 col1" >ham</td>
+      <th id="T_a2475_level0_row0" class="row_heading level0 row0" >3245</th>
+      <td id="T_a2475_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+      <td id="T_a2475_row0_col1" class="data row0 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_f869a_level0_row1" class="row_heading level0 row1" >944</th>
-      <td id="T_f869a_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
-      <td id="T_f869a_row1_col1" class="data row1 col1" >ham</td>
+      <th id="T_a2475_level0_row1" class="row_heading level0 row1" >944</th>
+      <td id="T_a2475_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+      <td id="T_a2475_row1_col1" class="data row1 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_f869a_level0_row2" class="row_heading level0 row2" >1044</th>
-      <td id="T_f869a_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
-      <td id="T_f869a_row2_col1" class="data row2 col1" >spam</td>
+      <th id="T_a2475_level0_row2" class="row_heading level0 row2" >1044</th>
+      <td id="T_a2475_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+      <td id="T_a2475_row2_col1" class="data row2 col1" >spam</td>
     </tr>
     <tr>
-      <th id="T_f869a_level0_row3" class="row_heading level0 row3" >2484</th>
-      <td id="T_f869a_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
-      <td id="T_f869a_row3_col1" class="data row3 col1" >ham</td>
+      <th id="T_a2475_level0_row3" class="row_heading level0 row3" >2484</th>
+      <td id="T_a2475_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+      <td id="T_a2475_row3_col1" class="data row3 col1" >ham</td>
     </tr>
   </tbody>
 </table>
@@ -1545,64 +1546,55 @@ conda install -c pytorch torchvision</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/528M [00:00&lt;?, ?B/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|▍         | 23.5M/528M [00:00&lt;00:02, 246MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▋         | 34.2M/528M [00:00&lt;00:01, 359MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|█         | 56.8M/528M [00:00&lt;00:01, 299MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█▎        | 72.0M/528M [00:00&lt;00:01, 380MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█▋        | 91.9M/528M [00:00&lt;00:01, 330MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|██        | 109M/528M [00:00&lt;00:01, 384MB/s] 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██▍       | 128M/528M [00:00&lt;00:01, 347MB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 147M/528M [00:00&lt;00:01, 387MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███       | 163M/528M [00:00&lt;00:01, 357MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███▌      | 185M/528M [00:00&lt;00:00, 392MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | 198M/528M [00:00&lt;00:00, 358MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|████▏     | 222M/528M [00:00&lt;00:00, 367MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|████▍     | 232M/528M [00:00&lt;00:00, 358MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████▉     | 258M/528M [00:00&lt;00:00, 356MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|█████     | 266M/528M [00:00&lt;00:00, 358MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|█████▌    | 292M/528M [00:00&lt;00:00, 346MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | 301M/528M [00:00&lt;00:00, 359MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████▏   | 325M/528M [00:00&lt;00:00, 339MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▎   | 336M/528M [00:01&lt;00:00, 361MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████▊   | 358M/528M [00:01&lt;00:00, 335MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|███████   | 371M/528M [00:01&lt;00:00, 363MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▌  | 396M/528M [00:01&lt;00:00, 354MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 406M/528M [00:01&lt;00:00, 364MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████▏ | 430M/528M [00:01&lt;00:00, 344MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|████████▎ | 441M/528M [00:01&lt;00:00, 365MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|████████▊ | 463M/528M [00:01&lt;00:00, 337MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|█████████ | 477M/528M [00:01&lt;00:00, 367MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▍| 495M/528M [00:01&lt;00:00, 333MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████▋| 512M/528M [00:01&lt;00:00, 366MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|█████████▉| 527M/528M [00:01&lt;00:00, 332MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:01&lt;00:00, 355MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:01&lt;00:00, 350MB/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<img alt="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" src="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     Class  Probability score
-         cheetah, chetah, Acinonyx jubatus              0.994
-                  leopard, Panthera pardus              0.005
-jaguar, panther, Panthera onca, Felis onca              0.001
-       snow leopard, ounce, Panthera uncia              0.000
---------------------------------------------------------------
 </pre></div>
 </div>
 <img alt="../../_images/01670d339f7d854ddc74808305b1bc8efe66fffbda32c69f28574ab94c2d48c9.png" src="../../_images/01670d339f7d854ddc74808305b1bc8efe66fffbda32c69f28574ab94c2d48c9.png" />
@@ -1614,21 +1606,30 @@ patas, hussar monkey, Erythrocebus patas              0.062
 --------------------------------------------------------------
 </pre></div>
 </div>
-<img alt="../../_images/f1fdde2f513421083053c95f719b1337f75c123c8f26fd1e6c6a505e2235c679.png" src="../../_images/f1fdde2f513421083053c95f719b1337f75c123c8f26fd1e6c6a505e2235c679.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Class  Probability score
-Walker hound, Walker foxhound              0.582
-             English foxhound              0.144
-                       beagle              0.068
-                  EntleBucher              0.059
---------------------------------------------------------------
-</pre></div>
-</div>
 <img alt="../../_images/b30633387ba928e6e7a22ea8bc364b08eadfc2e3100c0c80e0a2abe325ecf7e6.png" src="../../_images/b30633387ba928e6e7a22ea8bc364b08eadfc2e3100c0c80e0a2abe325ecf7e6.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Class  Probability score
                      tiger cat              0.636
               tabby, tabby cat              0.174
 Pembroke, Pembroke Welsh corgi              0.081
                lynx, catamount              0.011
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" src="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     Class  Probability score
+         cheetah, chetah, Acinonyx jubatus              0.994
+                  leopard, Panthera pardus              0.005
+jaguar, panther, Panthera onca, Felis onca              0.001
+       snow leopard, ounce, Panthera uncia              0.000
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/f1fdde2f513421083053c95f719b1337f75c123c8f26fd1e6c6a505e2235c679.png" src="../../_images/f1fdde2f513421083053c95f719b1337f75c123c8f26fd1e6c6a505e2235c679.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Class  Probability score
+Walker hound, Walker foxhound              0.582
+             English foxhound              0.144
+                       beagle              0.068
+                  EntleBucher              0.059
 --------------------------------------------------------------
 </pre></div>
 </div>
@@ -1658,7 +1659,7 @@ Pembroke, Pembroke Welsh corgi              0.081
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -1682,14 +1683,14 @@ Pembroke, Pembroke Welsh corgi              0.081
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">imdb_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;file&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">imdb_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>

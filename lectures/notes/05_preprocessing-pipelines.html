@@ -209,6 +209,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-01-intro.html">Lecture 1</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-03-ml-fundamentals.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html">Lecture 4</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -623,36 +624,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000889</td>
-      <td>0.000631</td>
+      <td>0.001007</td>
+      <td>0.000700</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000641</td>
-      <td>0.000530</td>
+      <td>0.000651</td>
+      <td>0.000539</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000623</td>
-      <td>0.000494</td>
+      <td>0.000658</td>
+      <td>0.000539</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000618</td>
-      <td>0.000484</td>
+      <td>0.000654</td>
+      <td>0.000483</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000607</td>
-      <td>0.000483</td>
+      <td>0.000634</td>
+      <td>0.000493</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -700,36 +701,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003058</td>
-      <td>0.014152</td>
+      <td>0.003046</td>
+      <td>0.014413</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002571</td>
-      <td>0.013700</td>
+      <td>0.002629</td>
+      <td>0.014215</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002620</td>
-      <td>0.013789</td>
+      <td>0.002545</td>
+      <td>0.013988</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002517</td>
-      <td>0.013631</td>
+      <td>0.002648</td>
+      <td>0.013835</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002494</td>
-      <td>0.013468</td>
+      <td>0.002526</td>
+      <td>0.013867</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2068,7 +2069,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3296/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3365/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -2808,36 +2809,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.011930</td>
-      <td>0.171910</td>
+      <td>0.012094</td>
+      <td>0.175529</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.012576</td>
-      <td>0.154268</td>
+      <td>0.012243</td>
+      <td>0.157747</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.012072</td>
-      <td>0.167789</td>
+      <td>0.012084</td>
+      <td>0.170751</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.011922</td>
-      <td>0.170808</td>
+      <td>0.012142</td>
+      <td>0.173599</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.012047</td>
-      <td>0.103642</td>
+      <td>0.011970</td>
+      <td>0.105673</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3373,7 +3374,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3296/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3365/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -3412,7 +3413,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>imp + scaling + knn</th>
       <td>0.027 (+/- 0.000)</td>
-      <td>0.163 (+/- 0.015)</td>
+      <td>0.160 (+/- 0.015)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
     </tr>
