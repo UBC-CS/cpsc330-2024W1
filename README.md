@@ -31,7 +31,8 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 - Shadab Shaikh	
 - Sohbat Sandhu	
 - Stash Currie	
-- Tianyu (Niki) Duan	
+- Tianyu (Niki) Duan
+- Moein Heidari
 
 ## License
 
