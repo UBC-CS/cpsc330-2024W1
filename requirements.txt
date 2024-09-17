@@ -30,6 +30,8 @@ linkify
 linkify-it-py
 panel
 watchfiles
+holoviews
+bokeh
 ipywidgets
 jupyter-book
 jupytext
