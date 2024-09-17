@@ -52,6 +52,8 @@ parts:
         title: Lecture 2
       - url: "https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals"
         title: Lecture 3
+      - url: "https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF"
+        title: Lecture 4
 
 - caption: Attribution
   chapters: 
