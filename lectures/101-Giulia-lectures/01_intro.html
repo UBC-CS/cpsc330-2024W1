@@ -216,6 +216,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
 </ul>
 </details></li>
 </ul>
@@ -743,38 +744,38 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_225e9_row0_col0, #T_225e9_row0_col1, #T_225e9_row1_col0, #T_225e9_row1_col1, #T_225e9_row2_col0, #T_225e9_row2_col1, #T_225e9_row3_col0, #T_225e9_row3_col1 {
+#T_09c15_row0_col0, #T_09c15_row0_col1, #T_09c15_row1_col0, #T_09c15_row1_col1, #T_09c15_row2_col0, #T_09c15_row2_col1, #T_09c15_row3_col0, #T_09c15_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_225e9">
+<table id="T_09c15">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_225e9_level0_col0" class="col_heading level0 col0" >sms</th>
-      <th id="T_225e9_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
+      <th id="T_09c15_level0_col0" class="col_heading level0 col0" >sms</th>
+      <th id="T_09c15_level0_col1" class="col_heading level0 col1" >spam_predictions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_225e9_level0_row0" class="row_heading level0 row0" >3245</th>
-      <td id="T_225e9_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
-      <td id="T_225e9_row0_col1" class="data row0 col1" >ham</td>
+      <th id="T_09c15_level0_row0" class="row_heading level0 row0" >3245</th>
+      <td id="T_09c15_row0_col0" class="data row0 col0" >Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+      <td id="T_09c15_row0_col1" class="data row0 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_225e9_level0_row1" class="row_heading level0 row1" >944</th>
-      <td id="T_225e9_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
-      <td id="T_225e9_row1_col1" class="data row1 col1" >ham</td>
+      <th id="T_09c15_level0_row1" class="row_heading level0 row1" >944</th>
+      <td id="T_09c15_row1_col0" class="data row1 col0" >I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+      <td id="T_09c15_row1_col1" class="data row1 col1" >ham</td>
     </tr>
     <tr>
-      <th id="T_225e9_level0_row2" class="row_heading level0 row2" >1044</th>
-      <td id="T_225e9_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
-      <td id="T_225e9_row2_col1" class="data row2 col1" >spam</td>
+      <th id="T_09c15_level0_row2" class="row_heading level0 row2" >1044</th>
+      <td id="T_09c15_row2_col0" class="data row2 col0" >We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+      <td id="T_09c15_row2_col1" class="data row2 col1" >spam</td>
     </tr>
     <tr>
-      <th id="T_225e9_level0_row3" class="row_heading level0 row3" >2484</th>
-      <td id="T_225e9_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
-      <td id="T_225e9_row3_col1" class="data row3 col1" >ham</td>
+      <th id="T_09c15_level0_row3" class="row_heading level0 row3" >2484</th>
+      <td id="T_09c15_row3_col0" class="data row3 col0" >Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+      <td id="T_09c15_row3_col1" class="data row3 col1" >ham</td>
     </tr>
   </tbody>
 </table>
@@ -1546,76 +1547,67 @@ conda install -c pytorch torchvision</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/528M [00:00&lt;?, ?B/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 16.5M/528M [00:00&lt;00:03, 173MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 16.9M/528M [00:00&lt;00:03, 175MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|▉         | 48.6M/528M [00:00&lt;00:01, 269MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▋         | 33.6M/528M [00:00&lt;00:03, 166MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█▌        | 81.0M/528M [00:00&lt;00:01, 301MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|█         | 58.9M/528M [00:00&lt;00:02, 209MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██▏       | 114M/528M [00:00&lt;00:01, 318MB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█▌        | 84.2M/528M [00:00&lt;00:02, 231MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 147M/528M [00:00&lt;00:01, 329MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|██        | 110M/528M [00:00&lt;00:01, 242MB/s] 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|███▍      | 181M/528M [00:00&lt;00:01, 337MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██▌       | 135M/528M [00:00&lt;00:01, 250MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|████      | 213M/528M [00:00&lt;00:00, 338MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|███       | 159M/528M [00:00&lt;00:01, 252MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 246M/528M [00:00&lt;00:00, 335MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███▍      | 184M/528M [00:00&lt;00:01, 255MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████▎    | 278M/528M [00:00&lt;00:00, 315MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████      | 216M/528M [00:00&lt;00:01, 280MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▊    | 310M/528M [00:01&lt;00:00, 322MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 250M/528M [00:01&lt;00:00, 302MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 65%|██████▍   | 342M/528M [00:01&lt;00:00, 325MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████▎    | 282M/528M [00:01&lt;00:00, 311MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████   | 373M/528M [00:01&lt;00:00, 326MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|██████    | 317M/528M [00:01&lt;00:00, 329MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 405M/528M [00:01&lt;00:00, 328MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 348M/528M [00:01&lt;00:00, 299MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 437M/528M [00:01&lt;00:00, 320MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████▏  | 378M/528M [00:01&lt;00:00, 287MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████▊ | 467M/528M [00:01&lt;00:00, 302MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 406M/528M [00:01&lt;00:00, 276MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▍| 499M/528M [00:01&lt;00:00, 309MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|████████▏ | 432M/528M [00:01&lt;00:00, 273MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:01&lt;00:00, 317MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 458M/528M [00:01&lt;00:00, 267MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████▏| 484M/528M [00:01&lt;00:00, 263MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████▋| 509M/528M [00:02&lt;00:00, 262MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 528M/528M [00:02&lt;00:00, 267MB/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<img alt="../../_images/01670d339f7d854ddc74808305b1bc8efe66fffbda32c69f28574ab94c2d48c9.png" src="../../_images/01670d339f7d854ddc74808305b1bc8efe66fffbda32c69f28574ab94c2d48c9.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Class  Probability score
-                                 macaque              0.885
-patas, hussar monkey, Erythrocebus patas              0.062
-      proboscis monkey, Nasalis larvatus              0.015
-                       titi, titi monkey              0.010
---------------------------------------------------------------
-</pre></div>
-</div>
-<img alt="../../_images/b30633387ba928e6e7a22ea8bc364b08eadfc2e3100c0c80e0a2abe325ecf7e6.png" src="../../_images/b30633387ba928e6e7a22ea8bc364b08eadfc2e3100c0c80e0a2abe325ecf7e6.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Class  Probability score
-                     tiger cat              0.636
-              tabby, tabby cat              0.174
-Pembroke, Pembroke Welsh corgi              0.081
-               lynx, catamount              0.011
---------------------------------------------------------------
 </pre></div>
 </div>
 <img alt="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" src="../../_images/4141593557a291fafe43159b22632f752089dd7f08b1cb1321841c28628b7bcc.png" />
@@ -1627,12 +1619,30 @@ jaguar, panther, Panthera onca, Felis onca              0.001
 --------------------------------------------------------------
 </pre></div>
 </div>
+<img alt="../../_images/01670d339f7d854ddc74808305b1bc8efe66fffbda32c69f28574ab94c2d48c9.png" src="../../_images/01670d339f7d854ddc74808305b1bc8efe66fffbda32c69f28574ab94c2d48c9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Class  Probability score
+                                 macaque              0.885
+patas, hussar monkey, Erythrocebus patas              0.062
+      proboscis monkey, Nasalis larvatus              0.015
+                       titi, titi monkey              0.010
+--------------------------------------------------------------
+</pre></div>
+</div>
 <img alt="../../_images/f1fdde2f513421083053c95f719b1337f75c123c8f26fd1e6c6a505e2235c679.png" src="../../_images/f1fdde2f513421083053c95f719b1337f75c123c8f26fd1e6c6a505e2235c679.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Class  Probability score
 Walker hound, Walker foxhound              0.582
              English foxhound              0.144
                        beagle              0.068
                   EntleBucher              0.059
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/b30633387ba928e6e7a22ea8bc364b08eadfc2e3100c0c80e0a2abe325ecf7e6.png" src="../../_images/b30633387ba928e6e7a22ea8bc364b08eadfc2e3100c0c80e0a2abe325ecf7e6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Class  Probability score
+                     tiger cat              0.636
+              tabby, tabby cat              0.174
+Pembroke, Pembroke Welsh corgi              0.081
+               lynx, catamount              0.011
 --------------------------------------------------------------
 </pre></div>
 </div>
@@ -1662,7 +1672,7 @@ Walker hound, Walker foxhound              0.582
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -1686,14 +1696,14 @@ Walker hound, Walker foxhound              0.582
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">imdb_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;file&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">imdb_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
