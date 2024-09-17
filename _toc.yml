@@ -31,6 +31,7 @@ parts:
     sections:
       - file: lectures/101-Giulia-lectures/01_intro.ipynb
       - file: lectures/101-Giulia-lectures/02_terminology-decision-trees.ipynb
+      - file: lectures/101-Giulia-lectures/03_ml-fundamentals.ipynb
 
   - file: lectures/102-Varada-lectures/README
     sections:
