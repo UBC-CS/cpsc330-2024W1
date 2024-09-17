@@ -41,6 +41,8 @@ parts:
         title: Lecture 2
       - url: "https://kvarada.github.io/cpsc330-slides/slides-03-ml-fundamentals.html"
         title: Lecture 3
+      - url: "https://kvarada.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html"
+        title: Lecture 4        
         
   - file: lectures/103-Firas-lectures/README
     sections:
