@@ -61,7 +61,7 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 | hw1            | Sept 10, 11:59 pm     | [GitHub repo](https://github.com/new?template_name=hw1&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | hw2            | Sept 16, 11:59 pm     | [GitHub repo](https://github.com/new?template_name=hw2&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | Syllabus quiz  | Sept 19, 11:59 pm     | [PrairieLearn](https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488) | [PrairieLearn](https://us.prairielearn.com/pl/course_instance/163899/assessment/2451488)       |
-| hw3            | Oct 01, 11:59 pm      | GitHub repo[](https://github.com/new?template_name=hw3&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw3            | Oct 01, 11:59 pm      | [GitHub repo](https://github.com/new?template_name=hw3&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | hw4            | Oct 07, 11:59 pm      | GitHub repo[](https://github.com/new?template_name=hw4&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | **Midterm 1**  | Oct 15 and Oct 16     | PrairieLearn (CBTF, in person)                                                     | PrairieLearn (CBTF, in person)                        |
 | hw5            | Oct 28, 11:59 pm      | GitHub repo[](https://github.com/new?template_name=hw5&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
