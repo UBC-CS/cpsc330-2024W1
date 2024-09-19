@@ -217,6 +217,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
 </ul>
 </details></li>
 </ul>
@@ -625,36 +626,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.001015</td>
-      <td>0.000699</td>
+      <td>0.000960</td>
+      <td>0.000653</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000727</td>
-      <td>0.000526</td>
+      <td>0.000640</td>
+      <td>0.000542</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000697</td>
-      <td>0.000522</td>
+      <td>0.000639</td>
+      <td>0.000479</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000673</td>
-      <td>0.000518</td>
+      <td>0.000639</td>
+      <td>0.000481</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000679</td>
-      <td>0.000498</td>
+      <td>0.000616</td>
+      <td>0.000473</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -702,36 +703,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003792</td>
-      <td>0.015420</td>
+      <td>0.003121</td>
+      <td>0.014268</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002887</td>
-      <td>0.014750</td>
+      <td>0.002667</td>
+      <td>0.013917</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002835</td>
-      <td>0.014726</td>
+      <td>0.002707</td>
+      <td>0.013816</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002778</td>
-      <td>0.014621</td>
+      <td>0.002665</td>
+      <td>0.013628</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002813</td>
-      <td>0.014826</td>
+      <td>0.002658</td>
+      <td>0.013817</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2070,7 +2071,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3477/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3447/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -2810,36 +2811,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.013168</td>
-      <td>0.185400</td>
+      <td>0.012100</td>
+      <td>0.174206</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.013350</td>
-      <td>0.165052</td>
+      <td>0.012287</td>
+      <td>0.156703</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.013572</td>
-      <td>0.180978</td>
+      <td>0.012130</td>
+      <td>0.169508</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.013725</td>
-      <td>0.187014</td>
+      <td>0.012051</td>
+      <td>0.172747</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.014296</td>
-      <td>0.116185</td>
+      <td>0.012182</td>
+      <td>0.104479</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3375,7 +3376,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3477/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3447/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -3413,8 +3414,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + knn</th>
-      <td>0.030 (+/- 0.001)</td>
-      <td>0.168 (+/- 0.017)</td>
+      <td>0.027 (+/- 0.001)</td>
+      <td>0.160 (+/- 0.014)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
     </tr>

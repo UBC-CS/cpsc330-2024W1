@@ -217,6 +217,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
 </ul>
 </details></li>
 </ul>
@@ -1281,7 +1282,7 @@ Name: country, Length: 209, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/86f66fe30d2e87337e0b89e63acc2d7509b80e6a6ee11fc834e1f2085ae05ca9.png" src="../../_images/86f66fe30d2e87337e0b89e63acc2d7509b80e6a6ee11fc834e1f2085ae05ca9.png" />
+<img alt="../../_images/af1b697d6a479adcdf0d68e8061ef669b383289a243645015c34db008cba3eb4.png" src="../../_images/af1b697d6a479adcdf0d68e8061ef669b383289a243645015c34db008cba3eb4.png" />
 </div>
 </div>
 <p>Let’s examine the train and test accuracies with the split now.</p>
@@ -1294,7 +1295,7 @@ Name: country, Length: 209, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train accuracy:   1.000
-Test accuracy:   0.738
+Test accuracy:   0.762
 </pre></div>
 </div>
 </div>
@@ -1310,7 +1311,7 @@ Test accuracy:   0.738
   warnings.warn(
 </pre></div>
 </div>
-<img alt="../../_images/31376ba2cd8d089b70928596e6e59802e130bb56cff05d043621519d0bfe2338.png" src="../../_images/31376ba2cd8d089b70928596e6e59802e130bb56cff05d043621519d0bfe2338.png" />
+<img alt="../../_images/0b0cd32e879da334ebe57f3b3ea743cf44b9861237bd6127127a2fe094f89fa1.png" src="../../_images/0b0cd32e879da334ebe57f3b3ea743cf44b9861237bd6127127a2fe094f89fa1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1346,7 +1347,7 @@ Test accuracy:   0.738
   warnings.warn(
 </pre></div>
 </div>
-<img alt="../../_images/b9657846de65a81551c4195c7e71a0d25af03e30cc8fcc50331f8a0b0aa6bb77.png" src="../../_images/b9657846de65a81551c4195c7e71a0d25af03e30cc8fcc50331f8a0b0aa6bb77.png" />
+<img alt="../../_images/0fe542bb9b391c41ea1a59b3f2590cf1ff5b24b3376cfae8ecc2c9df0ed12ce2.png" src="../../_images/0fe542bb9b391c41ea1a59b3f2590cf1ff5b24b3376cfae8ecc2c9df0ed12ce2.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1596,71 +1597,71 @@ Standard deviation of cross-validation score = 0.09
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002111</td>
-      <td>0.001500</td>
+      <td>0.001961</td>
+      <td>0.001361</td>
       <td>0.764706</td>
       <td>0.913333</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.001537</td>
-      <td>0.001171</td>
+      <td>0.001479</td>
+      <td>0.001127</td>
       <td>0.823529</td>
       <td>0.906667</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.001524</td>
-      <td>0.001173</td>
+      <td>0.001456</td>
+      <td>0.001091</td>
       <td>0.705882</td>
       <td>0.906667</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.001482</td>
-      <td>0.001149</td>
+      <td>0.001441</td>
+      <td>0.001089</td>
       <td>0.941176</td>
       <td>0.900000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.001523</td>
-      <td>0.001128</td>
+      <td>0.001432</td>
+      <td>0.001074</td>
       <td>0.823529</td>
       <td>0.906667</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.001513</td>
-      <td>0.001129</td>
+      <td>0.001442</td>
+      <td>0.001067</td>
       <td>0.823529</td>
       <td>0.913333</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.001590</td>
-      <td>0.001177</td>
+      <td>0.001426</td>
+      <td>0.001078</td>
       <td>0.705882</td>
       <td>0.920000</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.001541</td>
-      <td>0.001154</td>
+      <td>0.001434</td>
+      <td>0.001104</td>
       <td>0.937500</td>
       <td>0.900662</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.001541</td>
-      <td>0.001131</td>
+      <td>0.001428</td>
+      <td>0.001093</td>
       <td>0.937500</td>
       <td>0.900662</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.001472</td>
-      <td>0.001104</td>
+      <td>0.001448</td>
+      <td>0.001076</td>
       <td>0.937500</td>
       <td>0.900662</td>
     </tr>
@@ -1699,11 +1700,11 @@ Standard deviation of cross-validation score = 0.09
   <tbody>
     <tr>
       <th>fit_time</th>
-      <td>0.001583</td>
+      <td>0.001495</td>
     </tr>
     <tr>
       <th>score_time</th>
-      <td>0.001182</td>
+      <td>0.001116</td>
     </tr>
     <tr>
       <th>test_score</th>
@@ -1783,71 +1784,71 @@ Standard deviation of cross-validation score = 0.09
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002708</td>
-      <td>0.002020</td>
+      <td>0.002879</td>
+      <td>0.001645</td>
       <td>0.875000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002140</td>
-      <td>0.001550</td>
+      <td>0.002008</td>
+      <td>0.001481</td>
       <td>0.875000</td>
       <td>0.992857</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002046</td>
-      <td>0.001541</td>
+      <td>0.001935</td>
+      <td>0.001422</td>
       <td>0.875000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002070</td>
-      <td>0.001518</td>
+      <td>0.001947</td>
+      <td>0.001426</td>
       <td>0.687500</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002093</td>
-      <td>0.001564</td>
+      <td>0.001914</td>
+      <td>0.001402</td>
       <td>0.812500</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.002109</td>
-      <td>0.001568</td>
+      <td>0.001915</td>
+      <td>0.001429</td>
       <td>0.812500</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.002089</td>
-      <td>0.001509</td>
+      <td>0.001520</td>
+      <td>0.001079</td>
       <td>0.866667</td>
       <td>0.985816</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.002101</td>
-      <td>0.001543</td>
-      <td>0.600000</td>
+      <td>0.001498</td>
+      <td>0.001079</td>
+      <td>0.533333</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.001660</td>
-      <td>0.001170</td>
+      <td>0.001492</td>
+      <td>0.001086</td>
       <td>0.666667</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.001567</td>
-      <td>0.001177</td>
+      <td>0.001454</td>
+      <td>0.001085</td>
       <td>0.733333</td>
       <td>1.000000</td>
     </tr>
@@ -1886,7 +1887,7 @@ Standard deviation of cross-validation score = 0.09
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3025/2246468746.py:12: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3069/2246468746.py:12: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -1919,7 +1920,7 @@ Standard deviation of cross-validation score = 0.09
       <th>Decision tree</th>
       <td>0.002 (+/- 0.000)</td>
       <td>0.001 (+/- 0.000)</td>
-      <td>0.782 (+/- 0.059)</td>
+      <td>0.775 (+/- 0.062)</td>
       <td>0.994 (+/- 0.014)</td>
     </tr>
   </tbody>
@@ -1983,7 +1984,7 @@ Validation error:   0.212
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train error:   0.000
-Validation error:   0.220
+Validation error:   0.207
 </pre></div>
 </div>
 </div>
@@ -2032,7 +2033,7 @@ Validation error:   0.220
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c394d271e998b8eddfb37f680b870d0876832aef7e0c9d8f84d363482f6655fb.png" src="../../_images/c394d271e998b8eddfb37f680b870d0876832aef7e0c9d8f84d363482f6655fb.png" />
+<img alt="../../_images/8f339ce5f196b4d139bfd556df404144dc08e42b2e9cf1c614756b21c2303097.png" src="../../_images/8f339ce5f196b4d139bfd556df404144dc08e42b2e9cf1c614756b21c2303097.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2154,15 +2155,15 @@ Validation error:   0.220
     <tr>
       <th>4</th>
       <td>0.092604</td>
-      <td>0.204167</td>
-      <td>0.070907</td>
+      <td>0.197917</td>
+      <td>0.056955</td>
       <td>0.006531</td>
     </tr>
     <tr>
       <th>5</th>
       <td>0.083338</td>
-      <td>0.191250</td>
-      <td>0.067120</td>
+      <td>0.185000</td>
+      <td>0.064205</td>
       <td>0.010650</td>
     </tr>
     <tr>
@@ -2175,64 +2176,64 @@ Validation error:   0.220
     <tr>
       <th>7</th>
       <td>0.044873</td>
-      <td>0.204167</td>
-      <td>0.088329</td>
+      <td>0.217083</td>
+      <td>0.085543</td>
       <td>0.009059</td>
     </tr>
     <tr>
       <th>8</th>
       <td>0.029909</td>
-      <td>0.203750</td>
-      <td>0.095696</td>
+      <td>0.228750</td>
+      <td>0.092204</td>
       <td>0.009422</td>
     </tr>
     <tr>
       <th>9</th>
       <td>0.020653</td>
-      <td>0.191250</td>
-      <td>0.096994</td>
+      <td>0.203333</td>
+      <td>0.090978</td>
       <td>0.010294</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.009260</td>
-      <td>0.228333</td>
-      <td>0.099927</td>
-      <td>0.005563</td>
+      <td>0.010679</td>
+      <td>0.229167</td>
+      <td>0.093782</td>
+      <td>0.007938</td>
     </tr>
     <tr>
       <th>11</th>
       <td>0.005699</td>
-      <td>0.235417</td>
-      <td>0.096990</td>
+      <td>0.222500</td>
+      <td>0.101810</td>
       <td>0.004264</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.002143</td>
+      <td>0.003561</td>
       <td>0.235833</td>
-      <td>0.083836</td>
-      <td>0.003273</td>
+      <td>0.088373</td>
+      <td>0.004769</td>
     </tr>
     <tr>
       <th>13</th>
       <td>0.000000</td>
-      <td>0.229583</td>
-      <td>0.089354</td>
+      <td>0.242083</td>
+      <td>0.086932</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>14</th>
       <td>0.000000</td>
-      <td>0.242083</td>
-      <td>0.086932</td>
+      <td>0.248333</td>
+      <td>0.089485</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>15</th>
       <td>0.000000</td>
-      <td>0.242083</td>
-      <td>0.086932</td>
+      <td>0.229583</td>
+      <td>0.084870</td>
       <td>0.000000</td>
     </tr>
   </tbody>
@@ -2256,7 +2257,7 @@ Validation error:   0.220
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum validation error is 0.191 at max_depth = 5 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum validation error is 0.185 at max_depth = 5 
 </pre></div>
 </div>
 </div>
