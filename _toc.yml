@@ -35,15 +35,15 @@ parts:
 
   - file: lectures/102-Varada-lectures/README
     sections:
-      - url: "https://kvarada.github.io/cpsc330-slides/slides-01-intro.html"
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-01.html"
         title: Lecture 1
-      - url: "https://kvarada.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html"
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-02.html"
         title: Lecture 2
-      - url: "https://kvarada.github.io/cpsc330-slides/slides-03-ml-fundamentals.html"
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-03.html"
         title: Lecture 3
-      - url: "https://kvarada.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html"
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-04.html"
         title: Lecture 4 
-      - url: "https://kvarada.github.io/cpsc330-slides/slides-05-preprocessing-pipelines.html#/title-slide"
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-05.html"
         title: Lecture 5 
         
   - file: lectures/103-Firas-lectures/README
