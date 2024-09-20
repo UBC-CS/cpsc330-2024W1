@@ -23,7 +23,7 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 - Hongkai Liu
 - Noah Marusenko
 - Jialin (Mike) Lu
-- Kimia Rostin (OH's, Wed's 5-6:30pm, zoom - link on Canvas)
+- Kimia Rostin (OH's, Tues's 5-6:30pm, zoom - link on Canvas)
 - Mahsa Zarei	(OH's, Mon's 5-6pm, zoom - link on Canvas)
 - Mike Ju	
 - Mishaal Kazmi	
@@ -31,7 +31,7 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 - Shadab Shaikh	
 - Sohbat Sandhu	
 - Stash Currie	
-- Tianyu (Niki) Duan
+- Tianyu (Niki) Duan (OH's, Wed's 5-6:30pm, zoom - link on Canvas)
 - Moein Heidari
 
 ## License
