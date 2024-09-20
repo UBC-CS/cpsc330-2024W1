@@ -210,6 +210,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-03-ml-fundamentals.html">Lecture 3</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html">Lecture 4</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -559,7 +560,7 @@ document.write(`
 <section id="example-k-nearest-neighbours-on-the-spotify-dataset">
 <h3>Example: <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbours on the Spotify dataset<a class="headerlink" href="#example-k-nearest-neighbours-on-the-spotify-dataset" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>In lab1 you used <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> to predict whether the user would like a particular song or not.</p></li>
+<li><p>In HW2 you used <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> to predict whether the user would like a particular song or not.</p></li>
 <li><p>Can we use <span class="math notranslate nohighlight">\(k\)</span>-NN classifier for this task?</p></li>
 <li><p>Intuition: To predict whether the user likes a particular song or not (query point)</p>
 <ul>
@@ -626,36 +627,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000960</td>
-      <td>0.000653</td>
+      <td>0.000919</td>
+      <td>0.000692</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000640</td>
-      <td>0.000542</td>
+      <td>0.000681</td>
+      <td>0.000514</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000639</td>
-      <td>0.000479</td>
+      <td>0.000619</td>
+      <td>0.000529</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000639</td>
-      <td>0.000481</td>
+      <td>0.000616</td>
+      <td>0.000520</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000616</td>
-      <td>0.000473</td>
+      <td>0.000634</td>
+      <td>0.000496</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -703,36 +704,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003121</td>
-      <td>0.014268</td>
+      <td>0.003185</td>
+      <td>0.014552</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002667</td>
-      <td>0.013917</td>
+      <td>0.002712</td>
+      <td>0.014009</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002707</td>
-      <td>0.013816</td>
+      <td>0.002571</td>
+      <td>0.014103</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002665</td>
-      <td>0.013628</td>
+      <td>0.002577</td>
+      <td>0.013965</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002658</td>
-      <td>0.013817</td>
+      <td>0.002571</td>
+      <td>0.013888</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -1649,6 +1650,13 @@ Test score: 0.686
 </table>
 </div></div></div>
 </div>
+<ul class="simple">
+<li><p>Question: Should we remove <code class="docutils literal notranslate"><span class="pre">total_rooms</span></code>, <code class="docutils literal notranslate"><span class="pre">total_bedrooms</span></code>, and <code class="docutils literal notranslate"><span class="pre">population</span></code> columns?</p>
+<ul>
+<li><p>Probably because we have created <code class="docutils literal notranslate"><span class="pre">rooms_per_household</span></code> and <code class="docutils literal notranslate"><span class="pre">bedrooms_per_household</span></code> and <code class="docutils literal notranslate"><span class="pre">population_per_household</span></code> features which are more relevant for this task.</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="s2">&quot;total_rooms&quot;</span><span class="p">,</span> <span class="s2">&quot;total_bedrooms&quot;</span><span class="p">])</span>
@@ -1663,11 +1671,6 @@ Test score: 0.686
 <ul class="simple">
 <li><p>Here it would have been OK to add new features before splitting because we are not using any global information in the data but only looking at one row at a time.</p></li>
 <li><p>But just to be safe and to avoid accidentally breaking the golden rule, it’s better to do it after splitting.</p></li>
-<li><p>Question: Should we remove <code class="docutils literal notranslate"><span class="pre">total_rooms</span></code>, <code class="docutils literal notranslate"><span class="pre">total_bedrooms</span></code>, and <code class="docutils literal notranslate"><span class="pre">population</span></code> columns?</p>
-<ul>
-<li><p>Probably. But I am keeping them in this lecture. You could experiment with removing them and examine whether results change.</p></li>
-</ul>
-</li>
 </ul>
 </section>
 <section id="eda">
@@ -2071,7 +2074,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3447/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3536/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -2302,7 +2305,7 @@ memory usage: 1.6+ MB
 </section>
 <section id="what-s-the-problem">
 <h3>What’s the problem?<a class="headerlink" href="#what-s-the-problem" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span><span class="p">:</span> <span class="n">Input</span> <span class="n">contains</span> <span class="n">NaN</span><span class="p">,</span> <span class="n">infinity</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">value</span> <span class="n">too</span> <span class="n">large</span> <span class="k">for</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span><span class="p">:</span> <span class="n">Input</span> <span class="n">X</span> <span class="n">contains</span> <span class="n">NaN</span><span class="o">.</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -2811,36 +2814,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.012100</td>
-      <td>0.174206</td>
+      <td>0.012119</td>
+      <td>0.174700</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.012287</td>
-      <td>0.156703</td>
+      <td>0.012205</td>
+      <td>0.160786</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.012130</td>
-      <td>0.169508</td>
+      <td>0.012131</td>
+      <td>0.169484</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.012051</td>
-      <td>0.172747</td>
+      <td>0.012147</td>
+      <td>0.171890</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.012182</td>
-      <td>0.104479</td>
+      <td>0.012064</td>
+      <td>0.104956</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3376,7 +3379,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3447/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3536/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -3414,7 +3417,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + knn</th>
-      <td>0.027 (+/- 0.001)</td>
+      <td>0.027 (+/- 0.000)</td>
       <td>0.160 (+/- 0.014)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
