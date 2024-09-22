@@ -197,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="nav bd-sidenav">
@@ -628,36 +629,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000973</td>
-      <td>0.000626</td>
+      <td>0.000887</td>
+      <td>0.000735</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000686</td>
-      <td>0.000512</td>
+      <td>0.000654</td>
+      <td>0.000523</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000625</td>
-      <td>0.000512</td>
+      <td>0.000648</td>
+      <td>0.000518</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000618</td>
-      <td>0.000535</td>
+      <td>0.000625</td>
+      <td>0.000492</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000638</td>
-      <td>0.000503</td>
+      <td>0.000618</td>
+      <td>0.000468</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -705,36 +706,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003219</td>
-      <td>0.014193</td>
+      <td>0.003109</td>
+      <td>0.014256</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002909</td>
-      <td>0.016792</td>
+      <td>0.002613</td>
+      <td>0.013587</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002588</td>
-      <td>0.013791</td>
+      <td>0.002715</td>
+      <td>0.013819</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002576</td>
-      <td>0.013693</td>
+      <td>0.002691</td>
+      <td>0.013771</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002687</td>
-      <td>0.013808</td>
+      <td>0.002691</td>
+      <td>0.013734</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2050,7 +2051,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3103/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3094/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
