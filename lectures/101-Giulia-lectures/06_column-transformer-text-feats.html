@@ -60,12 +60,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/notes/06_column-transformer-text-feats';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/101-Giulia-lectures/06_column-transformer-text-feats';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 7: Linear Models" href="07_linear-models.html" />
-    <link rel="prev" title="Lecture 5: Preprocessing and sklearn pipelines" href="05_preprocessing-pipelines.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -190,23 +190,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../../learning-objectives.html">Course Learning Objectives</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -299,7 +299,7 @@
       
       
       
-      <li><a href="../../_sources/lectures/notes/06_column-transformer-text-feats.ipynb" target="_blank"
+      <li><a href="../../_sources/lectures/101-Giulia-lectures/06_column-transformer-text-feats.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +398,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-s-columntransformer">sklearn’s <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-s-columntransformer-video">sklearn’s <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> (Video)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations-on-the-toy-data">Transformations on the toy data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#columntransformer-example"><code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> example</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
@@ -438,7 +438,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-targets">Preprocessing the targets?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-text-data">Encoding text data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-text-data-video">Encoding text data (Video)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spam-non-spam-toy-example">Spam/non spam toy example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-we-apply-ohe">What if we apply OHE?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bag-of-words-bow-representation">Bag of words (BOW) representation</a></li>
@@ -539,8 +539,8 @@ document.write(`
 <p><br><br><br><br></p>
 </section>
 </section>
-<section id="sklearn-s-columntransformer">
-<h2>sklearn’s <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"><code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code></a><a class="headerlink" href="#sklearn-s-columntransformer" title="Link to this heading">#</a></h2>
+<section id="sklearn-s-columntransformer-video">
+<h2>sklearn’s <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"><code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code></a> <a class="reference external" href="https://www.youtube.com/watch?v=to2mukSyvLk">(Video)</a><a class="headerlink" href="#sklearn-s-columntransformer-video" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>In most applications, some features are categorical, some are continuous, some are binary, and some are ordinal.</p></li>
 <li><p>When we want to develop supervised machine learning pipelines on real-world datasets, very often we want to apply different transformation on different columns.</p></li>
@@ -3388,7 +3388,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <span class="p">(</span>
         <span class="n">make_pipeline</span><span class="p">(</span><span class="n">SimpleImputer</span><span class="p">(),</span> <span class="n">StandardScaler</span><span class="p">()),</span>
         <span class="n">numeric_feats</span><span class="p">,</span>
-    <span class="p">),</span>  <span class="c1"># scaling on numeric features</span>
+    <span class="p">),</span>  <span class="c1"># imputation and scaling on numeric features</span>
     <span class="p">(</span><span class="s2">&quot;passthrough&quot;</span><span class="p">,</span> <span class="n">passthrough_feats</span><span class="p">),</span>  <span class="c1"># no transformations on the binary features    </span>
     <span class="p">(</span><span class="n">OneHotEncoder</span><span class="p">(),</span> <span class="n">categorical_feats</span><span class="p">),</span>  <span class="c1"># OHE on categorical features</span>
     <span class="p">(</span><span class="s2">&quot;drop&quot;</span><span class="p">,</span> <span class="n">drop_feats</span><span class="p">),</span>  <span class="c1"># drop the drop features</span>
@@ -6065,36 +6065,36 @@ ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during tran
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.008777</td>
-      <td>0.004145</td>
+      <td>0.009629</td>
+      <td>0.004869</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007395</td>
-      <td>0.003901</td>
+      <td>0.007825</td>
+      <td>0.003891</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007470</td>
-      <td>0.003910</td>
+      <td>0.007319</td>
+      <td>0.003840</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007435</td>
-      <td>0.003842</td>
+      <td>0.007428</td>
+      <td>0.003834</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007226</td>
-      <td>0.005269</td>
+      <td>0.007235</td>
+      <td>0.005315</td>
       <td>NaN</td>
       <td>1.000000</td>
     </tr>
@@ -6652,36 +6652,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009757</td>
-      <td>0.004362</td>
+      <td>0.009967</td>
+      <td>0.004441</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007456</td>
-      <td>0.003896</td>
+      <td>0.007460</td>
+      <td>0.003895</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007295</td>
-      <td>0.003934</td>
+      <td>0.007426</td>
+      <td>0.003864</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007627</td>
-      <td>0.003961</td>
+      <td>0.007394</td>
+      <td>0.003831</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007381</td>
-      <td>0.003875</td>
+      <td>0.007273</td>
+      <td>0.003849</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -7359,36 +7359,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.011086</td>
-      <td>0.005305</td>
+      <td>0.011420</td>
+      <td>0.004994</td>
       <td>1.00</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.008389</td>
-      <td>0.004544</td>
+      <td>0.008533</td>
+      <td>0.004634</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.008261</td>
-      <td>0.004499</td>
+      <td>0.008321</td>
+      <td>0.004593</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.008290</td>
-      <td>0.004446</td>
+      <td>0.008293</td>
+      <td>0.004553</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.008187</td>
-      <td>0.004471</td>
+      <td>0.008321</td>
+      <td>0.004528</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -9667,7 +9667,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.039 (+/- 0.001)</td>
+      <td>0.040 (+/- 0.001)</td>
       <td>0.256 (+/- 0.020)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
@@ -9678,7 +9678,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svr_pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> <span class="n">SVR</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell may take a bit longer to run</span>
+
+<span class="n">svr_pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> <span class="n">SVR</span><span class="p">())</span>
 <span class="n">results_dict</span><span class="p">[</span><span class="s2">&quot;imp + scaling + ohe + SVR (default)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
     <span class="n">svr_pipe</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
@@ -9720,24 +9722,31 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.000 (+/- 0.000)</td>
+      <td>0.004 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.002)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.015 (+/- 0.001)</td>
-      <td>0.115 (+/- 0.009)</td>
+      <td>0.038 (+/- 0.026)</td>
+      <td>0.198 (+/- 0.015)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>5.202 (+/- 0.031)</td>
-      <td>1.666 (+/- 0.055)</td>
+      <td>14.411 (+/- 0.238)</td>
+      <td>4.922 (+/- 0.025)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
+    </tr>
+    <tr>
+      <th>imp + scaling + ohe + SVR (C=10000)</th>
+      <td>13.175 (+/- 0.092)</td>
+      <td>4.902 (+/- 0.074)</td>
+      <td>0.708 (+/- 0.011)</td>
+      <td>0.713 (+/- 0.017)</td>
     </tr>
   </tbody>
 </table>
@@ -9746,7 +9755,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>The results with <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>’s default SVR hyperparameters are pretty bad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svr_C_pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> <span class="n">SVR</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">10000</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell may take a bit longer to run</span>
+
+<span class="n">svr_C_pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> <span class="n">SVR</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">10000</span><span class="p">))</span>
 <span class="n">results_dict</span><span class="p">[</span><span class="s2">&quot;imp + scaling + ohe + SVR (C=10000)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
     <span class="n">svr_C_pipe</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
@@ -9788,29 +9799,29 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.000 (+/- 0.000)</td>
+      <td>0.004 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.002)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.015 (+/- 0.001)</td>
-      <td>0.115 (+/- 0.009)</td>
+      <td>0.038 (+/- 0.026)</td>
+      <td>0.198 (+/- 0.015)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>5.202 (+/- 0.031)</td>
-      <td>1.666 (+/- 0.055)</td>
+      <td>14.411 (+/- 0.238)</td>
+      <td>4.922 (+/- 0.025)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (C=10000)</th>
-      <td>4.785 (+/- 0.087)</td>
-      <td>1.711 (+/- 0.134)</td>
+      <td>13.175 (+/- 0.092)</td>
+      <td>4.902 (+/- 0.074)</td>
       <td>0.708 (+/- 0.011)</td>
       <td>0.713 (+/- 0.017)</td>
     </tr>
@@ -9818,7 +9829,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </table>
 </div></div></div>
 </div>
-<p>With a bigger value for <code class="docutils literal notranslate"><span class="pre">C</span></code> the results are much better. We need to carry out systematic hyperparameter optimization to get better results. (Coming up next week.)</p>
+<p>With a bigger value for <code class="docutils literal notranslate"><span class="pre">C</span></code> the results are much better. We need to carry out systematic hyperparameter optimization to get better results. (Coming up)</p>
 <ul class="simple">
 <li><p>Note that categorical features are different than free text features. Sometimes there are columns containing free text information and we we’ll look at ways to deal with them in the later part of this lecture.</p></li>
 </ul>
@@ -9852,8 +9863,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p><br><br><br><br></p>
 </section>
 </section>
-<section id="encoding-text-data">
-<h2>Encoding text data<a class="headerlink" href="#encoding-text-data" title="Link to this heading">#</a></h2>
+<section id="encoding-text-data-video">
+<h2>Encoding text data <a class="reference external" href="https://www.youtube.com/watch?v=hteVvLwrWZ4">(Video)</a><a class="headerlink" href="#encoding-text-data-video" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toy_spam</span> <span class="o">=</span> <span class="p">[</span>
@@ -10346,8 +10357,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Compressed Sparse Row sparse matrix of dtype &#39;int64&#39;
-	with 71 stored elements and shape (6, 61)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;6x61 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+	with 71 stored elements in Compressed Sparse Row format&gt;
 </pre></div>
 </div>
 </div>
@@ -10388,10 +10399,6 @@ The value at cell 3,27 is: 1
 </div>
 </div>
 </div>
-<p>Question for you</p>
-<ul class="simple">
-<li><p>What would happen if you apply <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> on sparse data?</p></li>
-</ul>
 </section>
 <section id="onehotencoder-and-sparse-features">
 <h3><code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> and sparse features<a class="headerlink" href="#onehotencoder-and-sparse-features" title="Link to this heading">#</a></h3>
@@ -11189,7 +11196,7 @@ The value at cell 3,27 is: 1
 <section id="preprocessing">
 <h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Note that <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code> is carrying out some preprocessing such as because of the default argument values</p>
+<li><p>Note that <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code> is carrying out some preprocessing (because of the default argument values), such as:</p>
 <ul>
 <li><p>Converting words to lowercase (<code class="docutils literal notranslate"><span class="pre">lowercase=True</span></code>)</p></li>
 <li><p>getting rid of punctuation and special characters (<code class="docutils literal notranslate"><span class="pre">token_pattern</span> <span class="pre">='(?u)\\b\\w\\w+\\b'</span></code>)</p></li>
@@ -11698,16 +11705,16 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-py"
+            mode: "conda-env-cpsc330-24-py"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-py",
-            path: "./lectures/notes"
+            name: "conda-env-cpsc330-24-py",
+            path: "./lectures/101-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-py'</script>
+    <script>kernelName = 'conda-env-cpsc330-24-py'</script>
 
                 </article>
               
@@ -11719,24 +11726,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="05_preprocessing-pipelines.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="07_linear-models.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 7: Linear Models</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -11758,7 +11747,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-s-columntransformer">sklearn’s <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-s-columntransformer-video">sklearn’s <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> (Video)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations-on-the-toy-data">Transformations on the toy data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#columntransformer-example"><code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> example</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
@@ -11798,7 +11787,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-targets">Preprocessing the targets?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-text-data">Encoding text data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-text-data-video">Encoding text data (Video)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spam-non-spam-toy-example">Spam/non spam toy example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-we-apply-ohe">What if we apply OHE?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bag-of-words-bow-representation">Bag of words (BOW) representation</a></li>
