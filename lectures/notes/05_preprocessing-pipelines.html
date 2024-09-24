@@ -205,6 +205,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -629,36 +631,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.001140</td>
-      <td>0.000645</td>
+      <td>0.001188</td>
+      <td>0.000628</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000652</td>
-      <td>0.000512</td>
+      <td>0.000675</td>
+      <td>0.000499</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000637</td>
-      <td>0.000494</td>
+      <td>0.000627</td>
+      <td>0.000526</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000622</td>
-      <td>0.000473</td>
+      <td>0.000609</td>
+      <td>0.000521</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000599</td>
-      <td>0.000496</td>
+      <td>0.000635</td>
+      <td>0.000502</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -706,36 +708,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003233</td>
-      <td>0.013973</td>
+      <td>0.003226</td>
+      <td>0.014418</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002572</td>
-      <td>0.013565</td>
+      <td>0.002700</td>
+      <td>0.014198</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002558</td>
-      <td>0.013584</td>
+      <td>0.002733</td>
+      <td>0.014235</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002537</td>
-      <td>0.013503</td>
+      <td>0.002784</td>
+      <td>0.013949</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002516</td>
-      <td>0.013575</td>
+      <td>0.002682</td>
+      <td>0.014186</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2076,7 +2078,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3447/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3520/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -2816,36 +2818,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.011936</td>
-      <td>0.172196</td>
+      <td>0.012031</td>
+      <td>0.171412</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.012132</td>
-      <td>0.153881</td>
+      <td>0.012217</td>
+      <td>0.155865</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.012086</td>
-      <td>0.166194</td>
+      <td>0.012090</td>
+      <td>0.167097</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.011928</td>
-      <td>0.168586</td>
+      <td>0.011996</td>
+      <td>0.169473</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.012069</td>
-      <td>0.103401</td>
+      <td>0.011986</td>
+      <td>0.103905</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3381,7 +3383,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3447/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3520/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -3419,8 +3421,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + knn</th>
-      <td>0.028 (+/- 0.002)</td>
-      <td>0.172 (+/- 0.017)</td>
+      <td>0.027 (+/- 0.001)</td>
+      <td>0.164 (+/- 0.013)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
     </tr>
