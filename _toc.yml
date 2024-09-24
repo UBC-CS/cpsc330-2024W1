@@ -51,6 +51,8 @@ parts:
         title: Lecture 4 
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-05.html"
         title: Lecture 5 
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-06.html"
+        title: Lecture 6 
         
   - file: lectures/103-Firas-lectures/README
     sections:
