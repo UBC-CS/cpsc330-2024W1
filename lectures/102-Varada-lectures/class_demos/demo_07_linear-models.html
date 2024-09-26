@@ -689,35 +689,35 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002812</td>
-      <td>0.002027</td>
+      <td>0.002654</td>
+      <td>0.001945</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002216</td>
-      <td>0.001840</td>
+      <td>0.002225</td>
+      <td>0.001825</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002203</td>
-      <td>0.001852</td>
+      <td>0.002228</td>
+      <td>0.001847</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002207</td>
-      <td>0.001831</td>
+      <td>0.002186</td>
+      <td>0.001857</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002242</td>
+      <td>0.002188</td>
       <td>0.001856</td>
       <td>0.503</td>
       <td>0.50350</td>
@@ -767,36 +767,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>2.171788</td>
-      <td>0.175930</td>
+      <td>1.429024</td>
+      <td>0.155017</td>
       <td>0.828</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.510007</td>
-      <td>0.157002</td>
+      <td>1.292262</td>
+      <td>0.177550</td>
       <td>0.830</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.795657</td>
-      <td>0.180653</td>
+      <td>1.282007</td>
+      <td>0.184304</td>
       <td>0.848</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.499379</td>
-      <td>0.171632</td>
+      <td>1.279408</td>
+      <td>0.167495</td>
       <td>0.833</td>
       <td>1.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.376009</td>
-      <td>0.161137</td>
+      <td>1.492329</td>
+      <td>0.154456</td>
       <td>0.840</td>
       <td>0.99975</td>
     </tr>
@@ -915,14 +915,14 @@ Name: count, dtype: int64
 <span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">136</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:915,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
-<span class="g g-Whitespace">    </span><span class="mi">913</span>     <span class="n">score_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">-</span> <span class="n">fit_time</span>
-<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="k">if</span> <span class="n">return_train_score</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">915</span>         <span class="n">train_scores</span> <span class="o">=</span> <span class="n">_score</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">916</span>             <span class="n">estimator</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scorer</span><span class="p">,</span> <span class="n">score_params_train</span><span class="p">,</span> <span class="n">error_score</span>
-<span class="g g-Whitespace">    </span><span class="mi">917</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">919</span> <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">920</span>     <span class="n">total_time</span> <span class="o">=</span> <span class="n">score_time</span> <span class="o">+</span> <span class="n">fit_time</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:910,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
+<span class="g g-Whitespace">    </span><span class="mi">907</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;fit_error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span> <span class="n">fit_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="ne">--&gt; </span><span class="mi">910</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">_score</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">911</span>     <span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">scorer</span><span class="p">,</span> <span class="n">score_params_test</span><span class="p">,</span> <span class="n">error_score</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span> <span class="n">score_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">-</span> <span class="n">fit_time</span>
+<span class="g g-Whitespace">    </span><span class="mi">914</span> <span class="k">if</span> <span class="n">return_train_score</span><span class="p">:</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:971,</span> in <span class="ni">_score</span><span class="nt">(estimator, X_test, y_test, scorer, score_params, error_score)</span>
 <span class="g g-Whitespace">    </span><span class="mi">969</span>         <span class="n">scores</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span>
@@ -952,19 +952,8 @@ Name: count, dtype: int64
 <span class="g g-Whitespace">   </span><span class="mi">1418</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1419</span>     <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1259,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1257</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">raw_documents</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span>     <span class="n">feature_counter</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">-&gt; </span><span class="mi">1259</span>     <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">analyze</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span>             <span class="n">feature_idx</span> <span class="o">=</span> <span class="n">vocabulary</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:110,</span> in <span class="ni">_analyze</span><span class="nt">(doc, analyzer, tokenizer, ngrams, preprocessor, decoder, stop_words)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">ngrams</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">if</span> <span class="n">stop_words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
+<span class="g g-Whitespace">      </span><span class="mi">0</span> <span class="o">&lt;</span><span class="n">Error</span> <span class="n">retrieving</span> <span class="n">source</span> <span class="n">code</span> <span class="k">with</span> <span class="n">stack_data</span> <span class="n">see</span> <span class="n">ipython</span><span class="o">/</span><span class="n">ipython</span><span class="c1">#13598&gt;</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
