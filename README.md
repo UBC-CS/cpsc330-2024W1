@@ -11,7 +11,7 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 - [Firas Moosvi](firas.moosvi@ubc.ca) (Section 103: Tue Thu 5:00 to 6:20) (Office Hours, Wed's ICCS 253, 1:30-2:30pm)
 
 ### Course co-ordinator
-- Devyani McLaren (cpsc330-admin@cs.ubc.ca), please reach out to Devyani for: admin questions, extensions, academic concessions etc. Include a descriptive, subject, your name and student number, this will help me keep track of emails.
+- Devyani McLaren (cpsc330-admin@cs.ubc.ca), please reach out to Devyani for: admin questions, extensions, academic concessions etc. Include a descriptive subject, your name and student number, this will help me keep track of emails.
 
 ### TAs
 - Akash Adhikary	
