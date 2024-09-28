@@ -9,6 +9,7 @@ from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.ensemble import RandomForestClassifier
 
+
 def plot_tree_decision_boundary(
     model, X, y, x_label="x-axis", y_label="y-axis", eps=None, ax=None, title=None
 ):
@@ -430,4 +431,33 @@ def plot_multiclass_lr_ovr(lr, X_train, y_train, n_classes, test_points=None, de
             plt.plot(test_point[0], test_point[1], "k*", markersize=16)
     if decision_boundary:
         mglearn.plots.plot_2d_classification(lr, X_train, fill=True, alpha=0.7)
+
+# adapted from mglearn https://github.com/amueller/mglearn/blob/master/mglearn/tools.py
+def my_heatmap(values, xlabel, ylabel, xticklabels, yticklabels, cmap=None,
+            vmin=None, vmax=None, ax=None, fmt="%0.2f"):
+    if ax is None:
+        ax = plt.gca()
+    # plot the mean cross-validation scores
+    img = ax.pcolor(values, cmap=cmap, vmin=vmin, vmax=vmax)
+    img.update_scalarmappable()
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_xticks(np.arange(len(xticklabels)) + .5)
+    ax.set_yticks(np.arange(len(yticklabels)) + .5)
+    ax.set_xticklabels(xticklabels)
+    ax.set_yticklabels(yticklabels)
+    ax.set_aspect(1)
+
+    
+    iteration = 0
+    for p, color, value in zip(img.get_paths(), img.get_facecolors(),
+                               img.get_array().flatten()):
+        x, y = p.vertices[:-2, :].mean(0)
+        if np.mean(color[:3]) > 0.5:
+            c = 'k'
+        else:
+            c = 'w'        
+        ax.text(x, y, fmt % value, color=c, ha="center", va="center")
+    return img
+
         
