@@ -690,36 +690,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002627</td>
-      <td>0.002145</td>
+      <td>0.002782</td>
+      <td>0.002079</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002282</td>
-      <td>0.001835</td>
+      <td>0.002359</td>
+      <td>0.001907</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002281</td>
-      <td>0.001848</td>
+      <td>0.002426</td>
+      <td>0.001911</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002229</td>
-      <td>0.001939</td>
+      <td>0.002491</td>
+      <td>0.001943</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002234</td>
-      <td>0.001863</td>
+      <td>0.002404</td>
+      <td>0.001907</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
@@ -768,36 +768,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.252565</td>
-      <td>0.153974</td>
+      <td>2.022249</td>
+      <td>0.156132</td>
       <td>0.828</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.259761</td>
-      <td>0.170282</td>
+      <td>1.199322</td>
+      <td>0.170189</td>
       <td>0.830</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.125375</td>
-      <td>0.173426</td>
+      <td>1.481591</td>
+      <td>0.154432</td>
       <td>0.848</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.781874</td>
-      <td>0.186882</td>
+      <td>1.400128</td>
+      <td>0.188851</td>
       <td>0.833</td>
       <td>1.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.389818</td>
-      <td>0.155329</td>
+      <td>1.432644</td>
+      <td>0.166815</td>
       <td>0.840</td>
       <td>0.99975</td>
     </tr>
@@ -984,66 +984,31 @@ Name: count, dtype: int64
 <span class="g g-Whitespace">   </span><span class="mi">1472</span> <span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1473</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1385,</span> in <span class="ni">CountVectorizer.fit_transform</span><span class="nt">(self, raw_documents, y)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1383</span> <span class="k">if</span> <span class="n">max_features</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1384</span>     <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sort_features</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">vocabulary</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1385</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_limit_features</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1386</span>     <span class="n">X</span><span class="p">,</span> <span class="n">vocabulary</span><span class="p">,</span> <span class="n">max_doc_count</span><span class="p">,</span> <span class="n">min_doc_count</span><span class="p">,</span> <span class="n">max_features</span>
-<span class="g g-Whitespace">   </span><span class="mi">1387</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="k">if</span> <span class="n">max_features</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1389</span>     <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sort_features</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">vocabulary</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1372,</span> in <span class="ni">CountVectorizer.fit_transform</span><span class="nt">(self, raw_documents, y)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="s2">&quot;Upper case characters found in&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>                 <span class="s2">&quot; vocabulary while &#39;lowercase&#39;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span>                 <span class="s2">&quot; is True. These entries will not&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span>                 <span class="s2">&quot; be matched with any documents&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span>             <span class="k">break</span>
+<span class="ne">-&gt; </span><span class="mi">1372</span> <span class="n">vocabulary</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_vocab</span><span class="p">(</span><span class="n">raw_documents</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_vocabulary_</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1223,</span> in <span class="ni">CountVectorizer._limit_features</span><span class="nt">(self, X, vocabulary, high, low, limit)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">mask</span> <span class="o">&amp;=</span> <span class="n">dfs</span> <span class="o">&gt;=</span> <span class="n">low</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span> <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1223</span>     <span class="n">tfs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">mask_inds</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">tfs</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="n">limit</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">new_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1259,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1257</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">raw_documents</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1258</span>     <span class="n">feature_counter</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">-&gt; </span><span class="mi">1259</span>     <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">analyze</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1261</span>             <span class="n">feature_idx</span> <span class="o">=</span> <span class="n">vocabulary</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_compressed.py:646,</span> in <span class="ni">_cs_matrix.sum</span><span class="nt">(self, axis, dtype, out)</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span>     <span class="k">return</span> <span class="n">ret</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="c1"># _spbase handles the situations when axis is in {None, -2, -1, 0, 1}</span>
-<span class="ne">--&gt; </span><span class="mi">646</span>     <span class="k">return</span> <span class="n">_spbase</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_base.py:1108,</span> in <span class="ni">_spbase.sum</span><span class="nt">(self, axis, dtype, out)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span> <span class="c1"># axis = 0 or 1 now</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>     <span class="c1"># sum over columns</span>
-<span class="ne">-&gt; </span><span class="mi">1108</span>     <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ascontainer</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1109</span>         <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">res_dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1110</span>     <span class="p">)</span> <span class="o">@</span> <span class="bp">self</span>
-<span class="g g-Whitespace">   </span><span class="mi">1111</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1112</span>     <span class="c1"># sum over rows</span>
-<span class="g g-Whitespace">   </span><span class="mi">1113</span>     <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ascontainer</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1114</span>         <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">res_dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1115</span>     <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_base.py:675,</span> in <span class="ni">_spbase.__rmatmul__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="k">if</span> <span class="n">isscalarlike</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Scalar operands are not allowed, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">674</span>                      <span class="s2">&quot;use &#39;*&#39; instead&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">675</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rmatmul_dispatch</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_base.py:656,</span> in <span class="ni">_spbase._rmatmul_dispatch</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span> <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">tr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">656</span> <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">_matmul_dispatch</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span> <span class="k">if</span> <span class="n">ret</span> <span class="ow">is</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_base.py:600,</span> in <span class="ni">_spbase._matmul_dispatch</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span> <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="n">N</span><span class="p">,)</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">598</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;dimension mismatch&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">600</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul_vector</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">603</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ascontainer</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_compressed.py:492,</span> in <span class="ni">_cs_matrix._matmul_vector</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="c1"># csr_matvec or csc_matvec</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="n">fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_sparsetools</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">+</span> <span class="s1">&#39;_matvec&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">492</span> <span class="n">fn</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indptr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">result</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:110,</span> in <span class="ni">_analyze</span><span class="nt">(doc, analyzer, tokenizer, ngrams, preprocessor, decoder, stop_words)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">ngrams</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">if</span> <span class="n">stop_words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
