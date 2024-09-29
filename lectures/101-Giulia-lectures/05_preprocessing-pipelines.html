@@ -198,6 +198,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="current nav bd-sidenav">
@@ -635,36 +637,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000914</td>
-      <td>0.000706</td>
+      <td>0.000913</td>
+      <td>0.000875</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000696</td>
-      <td>0.000513</td>
-      <td>0.507740</td>
-      <td>0.507752</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.000616</td>
+      <td>0.000682</td>
       <td>0.000510</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
+      <th>2</th>
+      <td>0.000654</td>
+      <td>0.000502</td>
+      <td>0.507740</td>
+      <td>0.507752</td>
+    </tr>
+    <tr>
       <th>3</th>
-      <td>0.000610</td>
-      <td>0.000529</td>
+      <td>0.000621</td>
+      <td>0.000534</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000633</td>
-      <td>0.000498</td>
+      <td>0.000617</td>
+      <td>0.000527</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -712,36 +714,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003378</td>
-      <td>0.014543</td>
+      <td>0.003500</td>
+      <td>0.014646</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002882</td>
-      <td>0.014036</td>
+      <td>0.002813</td>
+      <td>0.014190</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002831</td>
-      <td>0.014135</td>
+      <td>0.002802</td>
+      <td>0.016548</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002863</td>
-      <td>0.014007</td>
+      <td>0.002820</td>
+      <td>0.014192</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002648</td>
-      <td>0.013887</td>
+      <td>0.002824</td>
+      <td>0.014046</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2057,7 +2059,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3172/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3259/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>

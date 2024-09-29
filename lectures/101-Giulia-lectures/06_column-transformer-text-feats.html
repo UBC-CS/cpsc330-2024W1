@@ -198,6 +198,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="nav bd-sidenav">
@@ -6068,36 +6070,36 @@ ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during tran
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.008970</td>
-      <td>0.004330</td>
+      <td>0.009802</td>
+      <td>0.005414</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007174</td>
-      <td>0.003799</td>
+      <td>0.007696</td>
+      <td>0.003925</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007262</td>
-      <td>0.003752</td>
+      <td>0.007422</td>
+      <td>0.003891</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007233</td>
-      <td>0.003794</td>
+      <td>0.007647</td>
+      <td>0.003867</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007129</td>
-      <td>0.005240</td>
+      <td>0.007402</td>
+      <td>0.005456</td>
       <td>NaN</td>
       <td>1.000000</td>
     </tr>
@@ -6655,36 +6657,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009593</td>
-      <td>0.004311</td>
+      <td>0.010597</td>
+      <td>0.004417</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007235</td>
-      <td>0.003864</td>
+      <td>0.007655</td>
+      <td>0.004023</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007217</td>
-      <td>0.003798</td>
+      <td>0.007624</td>
+      <td>0.004003</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007291</td>
-      <td>0.003785</td>
+      <td>0.007550</td>
+      <td>0.003922</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007129</td>
-      <td>0.003782</td>
+      <td>0.007370</td>
+      <td>0.003881</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -7362,36 +7364,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.010807</td>
-      <td>0.005463</td>
+      <td>0.010395</td>
+      <td>0.004733</td>
       <td>1.00</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.008373</td>
-      <td>0.004521</td>
+      <td>0.008502</td>
+      <td>0.004617</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.008176</td>
-      <td>0.004438</td>
+      <td>0.008412</td>
+      <td>0.004586</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.008175</td>
-      <td>0.004695</td>
+      <td>0.008492</td>
+      <td>0.004484</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.008266</td>
-      <td>0.004449</td>
+      <td>0.008327</td>
+      <td>0.004519</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -9670,8 +9672,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.000)</td>
-      <td>0.256 (+/- 0.020)</td>
+      <td>0.040 (+/- 0.001)</td>
+      <td>0.260 (+/- 0.019)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>

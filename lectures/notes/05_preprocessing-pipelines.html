@@ -198,6 +198,8 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="nav bd-sidenav">
@@ -635,36 +637,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000855</td>
-      <td>0.000833</td>
+      <td>0.000822</td>
+      <td>0.000716</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000660</td>
-      <td>0.000514</td>
+      <td>0.000676</td>
+      <td>0.000506</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000607</td>
-      <td>0.000519</td>
+      <td>0.000639</td>
+      <td>0.000504</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000616</td>
-      <td>0.000512</td>
+      <td>0.000618</td>
+      <td>0.000506</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000630</td>
-      <td>0.000500</td>
+      <td>0.000632</td>
+      <td>0.000511</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -712,36 +714,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003163</td>
-      <td>0.014543</td>
+      <td>0.003301</td>
+      <td>0.014544</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002908</td>
-      <td>0.014250</td>
+      <td>0.002861</td>
+      <td>0.014117</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002834</td>
-      <td>0.014516</td>
+      <td>0.002789</td>
+      <td>0.014125</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002778</td>
-      <td>0.014085</td>
+      <td>0.002776</td>
+      <td>0.014206</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002770</td>
-      <td>0.014058</td>
+      <td>0.002825</td>
+      <td>0.014050</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2082,7 +2084,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3566/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3646/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -2822,36 +2824,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.012017</td>
-      <td>0.175562</td>
+      <td>0.012196</td>
+      <td>0.172908</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.012243</td>
-      <td>0.156235</td>
+      <td>0.012222</td>
+      <td>0.156319</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.012115</td>
-      <td>0.170715</td>
+      <td>0.012204</td>
+      <td>0.169934</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.012090</td>
-      <td>0.173315</td>
+      <td>0.012099</td>
+      <td>0.172535</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.013919</td>
-      <td>0.108215</td>
+      <td>0.012218</td>
+      <td>0.107012</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3387,7 +3389,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3566/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3646/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -3426,7 +3428,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>imp + scaling + knn</th>
       <td>0.028 (+/- 0.000)</td>
-      <td>0.165 (+/- 0.016)</td>
+      <td>0.159 (+/- 0.015)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
     </tr>
