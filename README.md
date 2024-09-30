@@ -119,11 +119,11 @@ We'll be developing lecture notes directly in this repository. So if you check t
 * [A Course in Machine Learning (CIML)](http://ciml.info/) by Hal Daumé III 
 * Introduction to Machine Learning with Python: A Guide for Data Scientists by Andreas C. Mueller and Sarah Guido.
 * [An Introduction to Statistical
-Learning](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
+Learning](https://hastie.su.domains/ISLP/ISLP_website.pdf.download.html)
 * [The Elements of Statistical Learning (ESL)](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
-* [Data Mining: Practical Machine Learning Tools and Techniques (PMLTT)](https://www.wi.hs-wismar.de/~cleve/vorl/projects/dm/ss13/HierarClustern/Literatur/WittenFrank-DM-3rd.pdf)
+* [Data Mining: Practical Machine Learning Tools and Techniques (PMLTT)](https://tjzhifei.github.io/links/DM3.pdf)
 * Artificial intelligence: A Modern Approach by Russell, Stuart and Peter Norvig.
-* [Artificial Intelligence 2E: Foundations of Computational Agents](https://artint.info/2e/html/ArtInt2e.htm) (2017) by David Poole and Alan Mackworth (of UBC!).
+* [Artificial Intelligence 2E: Foundations of Computational Agents](https://artint.info/3e/html/ArtInt3e.html) (2023) by David Poole and Alan Mackworth (of UBC!).
 
 ### Online courses
 
