@@ -692,36 +692,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002637</td>
-      <td>0.001984</td>
+      <td>0.002747</td>
+      <td>0.001988</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002244</td>
-      <td>0.001845</td>
+      <td>0.002263</td>
+      <td>0.001841</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002210</td>
-      <td>0.001846</td>
+      <td>0.002228</td>
+      <td>0.001862</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002219</td>
-      <td>0.001887</td>
+      <td>0.002231</td>
+      <td>0.001846</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002291</td>
-      <td>0.001860</td>
+      <td>0.002206</td>
+      <td>0.001865</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
@@ -770,36 +770,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.436686</td>
-      <td>0.173725</td>
+      <td>1.317114</td>
+      <td>0.182020</td>
       <td>0.828</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.417447</td>
-      <td>0.185041</td>
+      <td>2.206407</td>
+      <td>0.183646</td>
       <td>0.830</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.348626</td>
-      <td>0.155555</td>
+      <td>2.170174</td>
+      <td>0.184547</td>
       <td>0.848</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.466489</td>
-      <td>0.173619</td>
+      <td>1.722696</td>
+      <td>0.180987</td>
       <td>0.833</td>
       <td>1.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.975012</td>
-      <td>0.175349</td>
+      <td>1.065750</td>
+      <td>0.146009</td>
       <td>0.840</td>
       <td>0.99975</td>
     </tr>
@@ -962,12 +962,19 @@ Name: count, dtype: int64
 <span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1261</span>             <span class="n">feature_idx</span> <span class="o">=</span> <span class="n">vocabulary</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:110,</span> in <span class="ni">_analyze</span><span class="nt">(doc, analyzer, tokenizer, ngrams, preprocessor, decoder, stop_words)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:113,</span> in <span class="ni">_analyze</span><span class="nt">(doc, analyzer, tokenizer, ngrams, preprocessor, decoder, stop_words)</span>
 <span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">ngrams</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">if</span> <span class="n">stop_words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="n">doc</span> <span class="o">=</span> <span class="n">ngrams</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">stop_words</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="n">doc</span> <span class="o">=</span> <span class="n">ngrams</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:246,</span> in <span class="ni">_VectorizerMixin._word_ngrams</span><span class="nt">(self, tokens, stop_words)</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="c1"># handle stop words</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">if</span> <span class="n">stop_words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">246</span>     <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="c1"># handle token n-grams</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="n">min_n</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ngram_range</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
