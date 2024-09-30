@@ -692,36 +692,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002854</td>
-      <td>0.002019</td>
+      <td>0.002890</td>
+      <td>0.002022</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002271</td>
-      <td>0.001916</td>
+      <td>0.002277</td>
+      <td>0.001921</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002278</td>
-      <td>0.001886</td>
+      <td>0.002279</td>
+      <td>0.001934</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002331</td>
-      <td>0.001914</td>
+      <td>0.002312</td>
+      <td>0.001935</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002323</td>
-      <td>0.001882</td>
+      <td>0.002255</td>
+      <td>0.001922</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
@@ -770,36 +770,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.575557</td>
-      <td>0.154063</td>
+      <td>1.209212</td>
+      <td>0.161100</td>
       <td>0.828</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.363509</td>
-      <td>0.159645</td>
+      <td>1.662394</td>
+      <td>0.173848</td>
       <td>0.830</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.326983</td>
-      <td>0.189295</td>
+      <td>1.253689</td>
+      <td>0.160096</td>
       <td>0.848</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.201979</td>
-      <td>0.174737</td>
+      <td>1.481416</td>
+      <td>0.156556</td>
       <td>0.833</td>
       <td>1.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.623348</td>
-      <td>0.173250</td>
+      <td>1.301932</td>
+      <td>0.158775</td>
       <td>0.840</td>
       <td>0.99975</td>
     </tr>
@@ -918,56 +918,103 @@ Name: count, dtype: int64
 <span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">136</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:910,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
-<span class="g g-Whitespace">    </span><span class="mi">907</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;fit_error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">909</span> <span class="n">fit_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
-<span class="ne">--&gt; </span><span class="mi">910</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">_score</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">911</span>     <span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">scorer</span><span class="p">,</span> <span class="n">score_params_test</span><span class="p">,</span> <span class="n">error_score</span>
-<span class="g g-Whitespace">    </span><span class="mi">912</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">913</span> <span class="n">score_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">-</span> <span class="n">fit_time</span>
-<span class="g g-Whitespace">    </span><span class="mi">914</span> <span class="k">if</span> <span class="n">return_train_score</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:888,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span>         <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">888</span>         <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">891</span>     <span class="c1"># Note fit time as time until error</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">fit_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:971,</span> in <span class="ni">_score</span><span class="nt">(estimator, X_test, y_test, scorer, score_params, error_score)</span>
-<span class="g g-Whitespace">    </span><span class="mi">969</span>         <span class="n">scores</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">971</span>         <span class="n">scores</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">972</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">973</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">_MultimetricScorer</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">974</span>         <span class="c1"># If `_MultimetricScorer` raises exception, the `error_score`</span>
-<span class="g g-Whitespace">    </span><span class="mi">975</span>         <span class="c1"># parameter is equal to &quot;raise&quot;.</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:1473,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1466</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1468</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1469</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1470</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1471</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1472</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1473</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/metrics/_scorer.py:455,</span> in <span class="ni">_PassthroughScorer.__call__</span><span class="nt">(self, estimator, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Method that wraps estimator.score&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">455</span>     <span class="k">return</span> <span class="n">estimator</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py:469,</span> in <span class="ni">Pipeline.fit</span><span class="nt">(self, X, y, **params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Fit the model.</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span><span class="sd"> Fit all the transformers one after the other and sequentially transform the</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="sd">     Pipeline with fitted steps.</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span> <span class="n">routed_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_method_params</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">469</span> <span class="n">Xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">routed_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span> <span class="k">with</span> <span class="n">_print_elapsed_time</span><span class="p">(</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">471</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span> <span class="o">!=</span> <span class="s2">&quot;passthrough&quot;</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py:1000,</span> in <span class="ni">Pipeline.score</span><span class="nt">(self, X, y, sample_weight, **params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_routing_enabled</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span>     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1000</span>         <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>     <span class="n">score_params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span>     <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py:406,</span> in <span class="ni">Pipeline._fit</span><span class="nt">(self, X, y, routed_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span>     <span class="n">cloned_transformer</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="n">transformer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span> <span class="c1"># Fit or load from cache the current transformer</span>
+<span class="ne">--&gt; </span><span class="mi">406</span> <span class="n">X</span><span class="p">,</span> <span class="n">fitted_transformer</span> <span class="o">=</span> <span class="n">fit_transform_one_cached</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">cloned_transformer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span>     <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>     <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span>     <span class="n">message_clsname</span><span class="o">=</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="n">message</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="n">step_idx</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="n">params</span><span class="o">=</span><span class="n">routed_params</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="c1"># Replace the transformer of the step with the fitted</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="c1"># transformer. This is necessary when loading the transformer</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span> <span class="c1"># from the cache.</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="n">step_idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fitted_transformer</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1417,</span> in <span class="ni">CountVectorizer.transform</span><span class="nt">(self, raw_documents)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1414</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_vocabulary</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1416</span> <span class="c1"># use the same matrix-building strategy as fit_transform</span>
-<span class="ne">-&gt; </span><span class="mi">1417</span> <span class="n">_</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_vocab</span><span class="p">(</span><span class="n">raw_documents</span><span class="p">,</span> <span class="n">fixed_vocab</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1419</span>     <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/memory.py:312,</span> in <span class="ni">NotMemorizedFunc.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">312</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1259,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1257</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">raw_documents</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span>     <span class="n">feature_counter</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">-&gt; </span><span class="mi">1259</span>     <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">analyze</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span>             <span class="n">feature_idx</span> <span class="o">=</span> <span class="n">vocabulary</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py:1310,</span> in <span class="ni">_fit_transform_one</span><span class="nt">(transformer, X, y, weight, message_clsname, message, params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1308</span> <span class="k">with</span> <span class="n">_print_elapsed_time</span><span class="p">(</span><span class="n">message_clsname</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1309</span>     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">transformer</span><span class="p">,</span> <span class="s2">&quot;fit_transform&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1310</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">transformer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fit_transform&quot;</span><span class="p">,</span> <span class="p">{}))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1311</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1312</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">transformer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="p">{}))</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span>             <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="g g-Whitespace">   </span><span class="mi">1314</span>         <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:110,</span> in <span class="ni">_analyze</span><span class="nt">(doc, analyzer, tokenizer, ngrams, preprocessor, decoder, stop_words)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">ngrams</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">if</span> <span class="n">stop_words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:1473,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1466</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1468</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1469</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1470</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1471</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1472</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1473</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1372,</span> in <span class="ni">CountVectorizer.fit_transform</span><span class="nt">(self, raw_documents, y)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="s2">&quot;Upper case characters found in&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>                 <span class="s2">&quot; vocabulary while &#39;lowercase&#39;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span>                 <span class="s2">&quot; is True. These entries will not&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span>                 <span class="s2">&quot; be matched with any documents&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span>             <span class="k">break</span>
+<span class="ne">-&gt; </span><span class="mi">1372</span> <span class="n">vocabulary</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_vocab</span><span class="p">(</span><span class="n">raw_documents</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_vocabulary_</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1304,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1297</span> <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">intc</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span> <span class="n">X</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>     <span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">j_indices</span><span class="p">,</span> <span class="n">indptr</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>     <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">indptr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">vocabulary</span><span class="p">)),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1302</span>     <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1304</span> <span class="n">X</span><span class="o">.</span><span class="n">sort_indices</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1305</span> <span class="k">return</span> <span class="n">vocabulary</span><span class="p">,</span> <span class="n">X</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/sparse/_compressed.py:1291,</span> in <span class="ni">_cs_matrix.sort_indices</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1287</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Sort the indices of this array/matrix *in place*</span>
+<span class="g g-Whitespace">   </span><span class="mi">1288</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1290</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_sorted_indices</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1291</span>     <span class="n">_sparsetools</span><span class="o">.</span><span class="n">csr_sort_indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indptr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indptr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1292</span>                                   <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1293</span>     <span class="bp">self</span><span class="o">.</span><span class="n">has_sorted_indices</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

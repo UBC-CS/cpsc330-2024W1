@@ -575,83 +575,190 @@ document.write(`
 <section id="dataset-for-demonstration">
 <h3>Dataset for demonstration<a class="headerlink" href="#dataset-for-demonstration" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Let’s classify fraudulent and non-fraudulent transactions using Kaggle’s <a class="reference external" href="https://www.kaggle.com/mlg-ulb/creditcardfraud">Credit Card Fraud Detection</a> data set.</p></li>
+<li><p>Let’s classify fraudulent and non-fraudulent transactions using Kaggle’s <a class="reference external" href="https://www.kaggle.com/mlg-ulb/creditcardfraud">Credit Card Fraud Detection</a> data set.</p>
+<ul>
+<li><p>Note, that the credit card fraud detection data set is very large (150mb!) so we’ve stored it using <a class="reference external" href="https://josh-ops.com/posts/add-files-to-git-lfs/">GitLFS</a> in a personal repo. You should download the data locally to follow-along, and be sure not to commit large data files to your repository!</p></li>
+</ul>
+</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;creditcard.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This dataset will be loaded using a URL instead of a CSV file</span>
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/firasm/bits/raw/refs/heads/master/creditcard.csv&quot;</span>
+
+<span class="n">cc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_URL</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
 <span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">cc_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;creditcard.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">cc_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">111</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/creditcard.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>V1</th>
+      <th>V2</th>
+      <th>V3</th>
+      <th>V4</th>
+      <th>V5</th>
+      <th>V6</th>
+      <th>V7</th>
+      <th>V8</th>
+      <th>V9</th>
+      <th>...</th>
+      <th>V21</th>
+      <th>V22</th>
+      <th>V23</th>
+      <th>V24</th>
+      <th>V25</th>
+      <th>V26</th>
+      <th>V27</th>
+      <th>V28</th>
+      <th>Amount</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>64454</th>
+      <td>51150.0</td>
+      <td>-3.538816</td>
+      <td>3.481893</td>
+      <td>-1.827130</td>
+      <td>-0.573050</td>
+      <td>2.644106</td>
+      <td>-0.340988</td>
+      <td>2.102135</td>
+      <td>-2.939006</td>
+      <td>2.578654</td>
+      <td>...</td>
+      <td>0.530978</td>
+      <td>-0.860677</td>
+      <td>-0.201810</td>
+      <td>-1.719747</td>
+      <td>0.729143</td>
+      <td>-0.547993</td>
+      <td>-0.023636</td>
+      <td>-0.454966</td>
+      <td>1.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>37906</th>
+      <td>39163.0</td>
+      <td>-0.363913</td>
+      <td>0.853399</td>
+      <td>1.648195</td>
+      <td>1.118934</td>
+      <td>0.100882</td>
+      <td>0.423852</td>
+      <td>0.472790</td>
+      <td>-0.972440</td>
+      <td>0.033833</td>
+      <td>...</td>
+      <td>0.687055</td>
+      <td>-0.094586</td>
+      <td>0.121531</td>
+      <td>0.146830</td>
+      <td>-0.944092</td>
+      <td>-0.558564</td>
+      <td>-0.186814</td>
+      <td>-0.257103</td>
+      <td>18.49</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>79378</th>
+      <td>57994.0</td>
+      <td>1.193021</td>
+      <td>-0.136714</td>
+      <td>0.622612</td>
+      <td>0.780864</td>
+      <td>-0.823511</td>
+      <td>-0.706444</td>
+      <td>-0.206073</td>
+      <td>-0.016918</td>
+      <td>0.781531</td>
+      <td>...</td>
+      <td>-0.310405</td>
+      <td>-0.842028</td>
+      <td>0.085477</td>
+      <td>0.366005</td>
+      <td>0.254443</td>
+      <td>0.290002</td>
+      <td>-0.036764</td>
+      <td>0.015039</td>
+      <td>23.74</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>245686</th>
+      <td>152859.0</td>
+      <td>1.604032</td>
+      <td>-0.808208</td>
+      <td>-1.594982</td>
+      <td>0.200475</td>
+      <td>0.502985</td>
+      <td>0.832370</td>
+      <td>-0.034071</td>
+      <td>0.234040</td>
+      <td>0.550616</td>
+      <td>...</td>
+      <td>0.519029</td>
+      <td>1.429217</td>
+      <td>-0.139322</td>
+      <td>-1.293663</td>
+      <td>0.037785</td>
+      <td>0.061206</td>
+      <td>0.005387</td>
+      <td>-0.057296</td>
+      <td>156.52</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>60943</th>
+      <td>49575.0</td>
+      <td>-2.669614</td>
+      <td>-2.734385</td>
+      <td>0.662450</td>
+      <td>-0.059077</td>
+      <td>3.346850</td>
+      <td>-2.549682</td>
+      <td>-1.430571</td>
+      <td>-0.118450</td>
+      <td>0.469383</td>
+      <td>...</td>
+      <td>-0.228329</td>
+      <td>-0.370643</td>
+      <td>-0.211544</td>
+      <td>-0.300837</td>
+      <td>-1.174590</td>
+      <td>0.573818</td>
+      <td>0.388023</td>
+      <td>0.161782</td>
+      <td>57.50</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1012,8 +1119,8 @@ memory usage: 48.7 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.007252
-score_time     0.001363
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.008113
+score_time     0.001580
 test_score     0.998302
 train_score    0.998302
 dtype: float64
@@ -1060,8 +1167,8 @@ Name: proportion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.082478
-score_time     0.002983
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.145168
+score_time     0.008128
 test_score     0.999183
 train_score    0.999221
 dtype: float64
@@ -1103,7 +1210,7 @@ $<span class="math notranslate nohighlight">\(\frac{\text{correct predictions}}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2553eccdb3e73d56e8988fc6e4746956e1a4fe2237a11111bd40da693808d1d2.png" src="../../_images/2553eccdb3e73d56e8988fc6e4746956e1a4fe2237a11111bd40da693808d1d2.png" />
+<img alt="../../_images/5d2e388c556b520803a9c07a03adc0cbd5703e59ee2c092d7c6e0dc0a2d0dce7.png" src="../../_images/5d2e388c556b520803a9c07a03adc0cbd5703e59ee2c092d7c6e0dc0a2d0dce7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1117,7 +1224,7 @@ $<span class="math notranslate nohighlight">\(\frac{\text{correct predictions}}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aba2bd5118843bdd02933524c2b4ed7e659b47af2659308f0085aad38666a51c.png" src="../../_images/aba2bd5118843bdd02933524c2b4ed7e659b47af2659308f0085aad38666a51c.png" />
+<img alt="../../_images/1c98b91537f1e37997b63e450f55f2e2c53248578d9871953ed5348df8a96524.png" src="../../_images/1c98b91537f1e37997b63e450f55f2e2c53248578d9871953ed5348df8a96524.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1240,7 +1347,7 @@ $<span class="math notranslate nohighlight">\(\frac{\text{correct predictions}}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2553eccdb3e73d56e8988fc6e4746956e1a4fe2237a11111bd40da693808d1d2.png" src="../../_images/2553eccdb3e73d56e8988fc6e4746956e1a4fe2237a11111bd40da693808d1d2.png" />
+<img alt="../../_images/5d2e388c556b520803a9c07a03adc0cbd5703e59ee2c092d7c6e0dc0a2d0dce7.png" src="../../_images/5d2e388c556b520803a9c07a03adc0cbd5703e59ee2c092d7c6e0dc0a2d0dce7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1275,7 +1382,7 @@ $<span class="math notranslate nohighlight">\( recall = \frac{TP}{TP+FN} = \frac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2553eccdb3e73d56e8988fc6e4746956e1a4fe2237a11111bd40da693808d1d2.png" src="../../_images/2553eccdb3e73d56e8988fc6e4746956e1a4fe2237a11111bd40da693808d1d2.png" />
+<img alt="../../_images/5d2e388c556b520803a9c07a03adc0cbd5703e59ee2c092d7c6e0dc0a2d0dce7.png" src="../../_images/5d2e388c556b520803a9c07a03adc0cbd5703e59ee2c092d7c6e0dc0a2d0dce7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1632,8 +1739,8 @@ weighted avg       0.85      0.80      0.78         5
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.163271</td>
-      <td>0.022020</td>
+      <td>0.201139</td>
+      <td>0.060275</td>
       <td>0.999122</td>
       <td>0.999335</td>
       <td>0.700855</td>
@@ -1645,8 +1752,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>1</th>
-      <td>0.137349</td>
-      <td>0.019380</td>
+      <td>0.220494</td>
+      <td>0.057208</td>
       <td>0.999223</td>
       <td>0.999317</td>
       <td>0.735043</td>
@@ -1658,8 +1765,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>2</th>
-      <td>0.133367</td>
-      <td>0.020118</td>
+      <td>0.219811</td>
+      <td>0.057690</td>
       <td>0.999298</td>
       <td>0.999210</td>
       <td>0.754386</td>
@@ -1671,8 +1778,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>3</th>
-      <td>0.158231</td>
-      <td>0.020251</td>
+      <td>0.224684</td>
+      <td>0.057673</td>
       <td>0.999172</td>
       <td>0.999254</td>
       <td>0.697248</td>
@@ -1684,8 +1791,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>4</th>
-      <td>0.130882</td>
-      <td>0.019979</td>
+      <td>0.202785</td>
+      <td>0.057580</td>
       <td>0.999147</td>
       <td>0.999185</td>
       <td>0.696429</td>
@@ -1720,104 +1827,72 @@ weighted avg       0.85      0.80      0.78         5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="o">+</span><span class="s2">&quot;cleaned_hm.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sample_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sample_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wid</th>
-      <th>reflection_period</th>
-      <th>original_hm</th>
-      <th>moment</th>
-      <th>modified</th>
-      <th>num_sentence</th>
-      <th>target</th>
-      <th>predicted_category</th>
-    </tr>
-    <tr>
-      <th>hmid</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>27676</th>
-      <td>206</td>
-      <td>24h</td>
-      <td>We had a serious talk with some friends of ours who have been flaky lately. They understood and we had a good evening hanging out.</td>
-      <td>We had a serious talk with some friends of ours who have been flaky lately. They understood and we had a good evening hanging out.</td>
-      <td>True</td>
-      <td>2</td>
-      <td>bonding</td>
-      <td>bonding</td>
-    </tr>
-    <tr>
-      <th>27678</th>
-      <td>45</td>
-      <td>24h</td>
-      <td>I meditated last night.</td>
-      <td>I meditated last night.</td>
-      <td>True</td>
-      <td>1</td>
-      <td>leisure</td>
-      <td>leisure</td>
-    </tr>
-    <tr>
-      <th>27697</th>
-      <td>498</td>
-      <td>24h</td>
-      <td>My grandmother start to walk from the bed after a long time.</td>
-      <td>My grandmother start to walk from the bed after a long time.</td>
-      <td>True</td>
-      <td>1</td>
-      <td>affection</td>
-      <td>affection</td>
-    </tr>
-    <tr>
-      <th>27705</th>
-      <td>5732</td>
-      <td>24h</td>
-      <td>I picked my daughter up from the airport and we have a fun and good conversation on the way home.</td>
-      <td>I picked my daughter up from the airport and we have a fun and good conversation on the way home.</td>
-      <td>True</td>
-      <td>1</td>
-      <td>bonding</td>
-      <td>affection</td>
-    </tr>
-    <tr>
-      <th>27715</th>
-      <td>2272</td>
-      <td>24h</td>
-      <td>when i received flowers from my best friend</td>
-      <td>when i received flowers from my best friend</td>
-      <td>True</td>
-      <td>1</td>
-      <td>bonding</td>
-      <td>bonding</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/cleaned_hm.csv&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5394,16 +5469,16 @@ weighted avg       0.81      0.76      0.77      8711
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-py",
+            name: "python3",
             path: "./lectures/notes"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
