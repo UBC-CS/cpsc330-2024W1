@@ -39,6 +39,9 @@ parts:
       - file: lectures/101-Giulia-lectures/03_ml-fundamentals.ipynb
       - file: lectures/101-Giulia-lectures/04_kNNs-SVM-RBF.ipynb
       - file: lectures/101-Giulia-lectures/05_preprocessing-pipelines.ipynb
+      - file: lectures/101-Giulia-lectures/06_column-transformer-text-feats.ipynb
+      - file: lectures/101-Giulia-lectures/07_linear-models.ipynb
+      - file: lectures/101-Giulia-lectures/08_hyperparameter-optimization.ipynb
       
 
   - file: lectures/102-Varada-lectures/README
