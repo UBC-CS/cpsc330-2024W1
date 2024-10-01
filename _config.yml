@@ -13,6 +13,10 @@ repository:
 # See https://jupyterbook.org/content/execute.html
 execute_notebooks         : "cache"  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
 
+# some cells (for eg grid search) take a long time so this extends the timeout
+execute:
+  timeout: 100
+
 sphinx:
   config:
     html_js_files:
