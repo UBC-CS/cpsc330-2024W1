@@ -209,6 +209,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -6070,36 +6073,36 @@ ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during tran
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009228</td>
-      <td>0.003971</td>
+      <td>0.008775</td>
+      <td>0.004156</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007200</td>
-      <td>0.003848</td>
+      <td>0.007579</td>
+      <td>0.003975</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007163</td>
-      <td>0.003797</td>
+      <td>0.007521</td>
+      <td>0.003910</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007331</td>
-      <td>0.003781</td>
+      <td>0.007432</td>
+      <td>0.003870</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007183</td>
-      <td>0.005251</td>
+      <td>0.007368</td>
+      <td>0.005380</td>
       <td>NaN</td>
       <td>1.000000</td>
     </tr>
@@ -6657,36 +6660,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.010398</td>
-      <td>0.004365</td>
+      <td>0.009108</td>
+      <td>0.004076</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007327</td>
-      <td>0.003835</td>
+      <td>0.007701</td>
+      <td>0.003937</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007232</td>
-      <td>0.003808</td>
+      <td>0.007440</td>
+      <td>0.003882</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007316</td>
-      <td>0.003800</td>
+      <td>0.007629</td>
+      <td>0.003936</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007214</td>
-      <td>0.003757</td>
+      <td>0.007664</td>
+      <td>0.004000</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -7364,36 +7367,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.010849</td>
-      <td>0.005381</td>
+      <td>0.010346</td>
+      <td>0.004819</td>
       <td>1.00</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.010217</td>
-      <td>0.005125</td>
+      <td>0.008514</td>
+      <td>0.004600</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.008263</td>
-      <td>0.004482</td>
+      <td>0.008351</td>
+      <td>0.004582</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.008187</td>
-      <td>0.004421</td>
+      <td>0.008368</td>
+      <td>0.004525</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.008109</td>
-      <td>0.004406</td>
+      <td>0.008355</td>
+      <td>0.004491</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -9672,8 +9675,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.256 (+/- 0.020)</td>
+      <td>0.039 (+/- 0.001)</td>
+      <td>0.257 (+/- 0.020)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
@@ -9732,15 +9735,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.256 (+/- 0.020)</td>
+      <td>0.039 (+/- 0.001)</td>
+      <td>0.257 (+/- 0.020)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>7.887 (+/- 0.044)</td>
-      <td>1.951 (+/- 0.006)</td>
+      <td>7.865 (+/- 0.035)</td>
+      <td>1.950 (+/- 0.004)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
     </tr>
@@ -9800,22 +9803,22 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.256 (+/- 0.020)</td>
+      <td>0.039 (+/- 0.001)</td>
+      <td>0.257 (+/- 0.020)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>7.887 (+/- 0.044)</td>
-      <td>1.951 (+/- 0.006)</td>
+      <td>7.865 (+/- 0.035)</td>
+      <td>1.950 (+/- 0.004)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (C=10000)</th>
-      <td>7.248 (+/- 0.046)</td>
-      <td>2.024 (+/- 0.017)</td>
+      <td>7.230 (+/- 0.029)</td>
+      <td>1.947 (+/- 0.002)</td>
       <td>0.708 (+/- 0.011)</td>
       <td>0.713 (+/- 0.017)</td>
     </tr>

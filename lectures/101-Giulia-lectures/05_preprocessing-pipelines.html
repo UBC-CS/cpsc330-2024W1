@@ -64,7 +64,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Section 102" href="../102-Varada-lectures/README.html" />
+    <link rel="next" title="Lecture 6: sklearn ColumnTransformer and Text Features" href="06_column-transformer-text-feats.html" />
     <link rel="prev" title="Lecture 4: \(k\)-Nearest Neighbours and SVM RBFs" href="04_kNNs-SVM-RBF.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -209,6 +209,9 @@
 <li class="toctree-l2"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -637,35 +640,35 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000992</td>
-      <td>0.000661</td>
+      <td>0.000936</td>
+      <td>0.000636</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000637</td>
-      <td>0.000515</td>
+      <td>0.000630</td>
+      <td>0.000532</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000616</td>
-      <td>0.000516</td>
+      <td>0.000615</td>
+      <td>0.000527</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000644</td>
-      <td>0.000478</td>
+      <td>0.000634</td>
+      <td>0.000468</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000628</td>
+      <td>0.000637</td>
       <td>0.000474</td>
       <td>0.509317</td>
       <td>0.507359</td>
@@ -714,36 +717,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003147</td>
-      <td>0.014538</td>
+      <td>0.003274</td>
+      <td>0.016730</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002558</td>
-      <td>0.014123</td>
+      <td>0.002783</td>
+      <td>0.014672</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002511</td>
-      <td>0.015788</td>
+      <td>0.002692</td>
+      <td>0.014086</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002547</td>
-      <td>0.013849</td>
+      <td>0.002860</td>
+      <td>0.014201</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002551</td>
-      <td>0.013801</td>
+      <td>0.002872</td>
+      <td>0.013948</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -2059,7 +2062,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3129/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3174/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
@@ -4549,11 +4552,11 @@ You will often see people using <a class="reference external" href="https://pand
       </div>
     </a>
     <a class="right-next"
-       href="../102-Varada-lectures/README.html"
+       href="06_column-transformer-text-feats.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Section 102</p>
+        <p class="prev-next-title">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

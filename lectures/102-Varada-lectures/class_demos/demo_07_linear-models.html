@@ -209,6 +209,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -692,36 +695,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003024</td>
-      <td>0.002041</td>
+      <td>0.002910</td>
+      <td>0.002038</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002372</td>
-      <td>0.001876</td>
+      <td>0.002302</td>
+      <td>0.001922</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002332</td>
-      <td>0.001878</td>
+      <td>0.002367</td>
+      <td>0.001925</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002335</td>
-      <td>0.001892</td>
+      <td>0.002310</td>
+      <td>0.001921</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>0.002889</td>
       <td>0.002330</td>
-      <td>0.001911</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
@@ -770,36 +773,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.538398</td>
-      <td>0.179903</td>
+      <td>1.931895</td>
+      <td>0.152474</td>
       <td>0.828</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.286263</td>
-      <td>0.180956</td>
+      <td>1.259810</td>
+      <td>0.175909</td>
       <td>0.830</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.249101</td>
-      <td>0.160864</td>
+      <td>1.429595</td>
+      <td>0.187524</td>
       <td>0.848</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.750842</td>
-      <td>0.186177</td>
+      <td>1.888626</td>
+      <td>0.174268</td>
       <td>0.833</td>
       <td>1.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3.631699</td>
-      <td>0.163230</td>
+      <td>1.067252</td>
+      <td>0.158665</td>
       <td>0.840</td>
       <td>0.99975</td>
     </tr>

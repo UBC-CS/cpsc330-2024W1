@@ -64,6 +64,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Section 102" href="../102-Varada-lectures/README.html" />
+    <link rel="prev" title="Lecture 7: Linear Models" href="07_linear-models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -202,13 +202,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Section 101</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -807,7 +810,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7309405226621541
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7321769897890505
 </pre></div>
 </div>
 </div>
@@ -1283,8 +1286,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.072003
-score_time     0.018335
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.073595
+score_time     0.018965
 test_score     0.734011
 train_score    0.828891
 dtype: float64
@@ -2634,99 +2637,99 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.137878</td>
-      <td>0.134281</td>
-      <td>0.135481</td>
-      <td>0.13822</td>
-      <td>0.135794</td>
-      <td>0.177354</td>
-      <td>0.134926</td>
-      <td>0.135105</td>
-      <td>0.137527</td>
-      <td>0.137747</td>
+      <td>0.138386</td>
+      <td>0.133902</td>
+      <td>0.135814</td>
+      <td>0.135555</td>
+      <td>0.138982</td>
+      <td>0.177963</td>
+      <td>0.137946</td>
+      <td>0.138903</td>
+      <td>0.141118</td>
+      <td>0.138043</td>
       <td>...</td>
-      <td>0.187985</td>
-      <td>0.172797</td>
-      <td>0.188959</td>
-      <td>0.219843</td>
-      <td>0.151996</td>
-      <td>0.220147</td>
-      <td>0.190301</td>
-      <td>0.179012</td>
-      <td>0.183979</td>
-      <td>0.219881</td>
+      <td>0.187228</td>
+      <td>0.176827</td>
+      <td>0.182734</td>
+      <td>0.223322</td>
+      <td>0.146158</td>
+      <td>0.225351</td>
+      <td>0.189248</td>
+      <td>0.175191</td>
+      <td>0.188192</td>
+      <td>0.207985</td>
     </tr>
     <tr>
       <th>std_fit_time</th>
-      <td>0.002186</td>
-      <td>0.002908</td>
-      <td>0.001063</td>
-      <td>0.005055</td>
-      <td>0.001247</td>
-      <td>0.004637</td>
-      <td>0.001962</td>
-      <td>0.000431</td>
-      <td>0.001709</td>
-      <td>0.000984</td>
+      <td>0.003809</td>
+      <td>0.002854</td>
+      <td>0.002203</td>
+      <td>0.002071</td>
+      <td>0.002413</td>
+      <td>0.004644</td>
+      <td>0.004043</td>
+      <td>0.002878</td>
+      <td>0.012029</td>
+      <td>0.002078</td>
       <td>...</td>
-      <td>0.003723</td>
-      <td>0.000646</td>
-      <td>0.007913</td>
-      <td>0.002192</td>
-      <td>0.011029</td>
-      <td>0.002459</td>
-      <td>0.002935</td>
-      <td>0.010155</td>
-      <td>0.001854</td>
-      <td>0.002864</td>
+      <td>0.001761</td>
+      <td>0.005573</td>
+      <td>0.00157</td>
+      <td>0.006351</td>
+      <td>0.003146</td>
+      <td>0.008562</td>
+      <td>0.002266</td>
+      <td>0.001365</td>
+      <td>0.007754</td>
+      <td>0.018977</td>
     </tr>
     <tr>
       <th>mean_score_time</th>
-      <td>0.033165</td>
-      <td>0.032422</td>
-      <td>0.032812</td>
-      <td>0.033173</td>
-      <td>0.033064</td>
-      <td>0.042821</td>
-      <td>0.032541</td>
-      <td>0.032648</td>
-      <td>0.032422</td>
-      <td>0.033184</td>
+      <td>0.033081</td>
+      <td>0.032305</td>
+      <td>0.032477</td>
+      <td>0.032351</td>
+      <td>0.032917</td>
+      <td>0.04296</td>
+      <td>0.032546</td>
+      <td>0.034774</td>
+      <td>0.03275</td>
+      <td>0.033151</td>
       <td>...</td>
-      <td>0.033637</td>
-      <td>0.036313</td>
-      <td>0.037797</td>
-      <td>0.046344</td>
-      <td>0.031723</td>
-      <td>0.030025</td>
-      <td>0.033357</td>
-      <td>0.036625</td>
-      <td>0.037576</td>
-      <td>0.050787</td>
+      <td>0.032837</td>
+      <td>0.036636</td>
+      <td>0.037128</td>
+      <td>0.046652</td>
+      <td>0.031265</td>
+      <td>0.029931</td>
+      <td>0.032917</td>
+      <td>0.036602</td>
+      <td>0.03725</td>
+      <td>0.043605</td>
     </tr>
     <tr>
       <th>std_score_time</th>
-      <td>0.001765</td>
-      <td>0.00048</td>
-      <td>0.000642</td>
-      <td>0.00069</td>
-      <td>0.000572</td>
-      <td>0.000321</td>
-      <td>0.000613</td>
-      <td>0.000647</td>
-      <td>0.000408</td>
-      <td>0.000596</td>
+      <td>0.000996</td>
+      <td>0.000149</td>
+      <td>0.000423</td>
+      <td>0.000153</td>
+      <td>0.000267</td>
+      <td>0.000489</td>
+      <td>0.000131</td>
+      <td>0.004474</td>
+      <td>0.000127</td>
+      <td>0.000608</td>
       <td>...</td>
-      <td>0.001752</td>
-      <td>0.000249</td>
-      <td>0.000926</td>
-      <td>0.000228</td>
-      <td>0.001533</td>
-      <td>0.000896</td>
-      <td>0.000901</td>
-      <td>0.000296</td>
-      <td>0.000973</td>
-      <td>0.01105</td>
+      <td>0.000907</td>
+      <td>0.001073</td>
+      <td>0.001635</td>
+      <td>0.000603</td>
+      <td>0.000425</td>
+      <td>0.000662</td>
+      <td>0.000242</td>
+      <td>0.000557</td>
+      <td>0.000445</td>
+      <td>0.004688</td>
     </tr>
     <tr>
       <th>param_columntransformer__countvectorizer__max_features</th>
@@ -3243,99 +3246,99 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.134575</td>
-      <td>0.14186</td>
-      <td>0.127555</td>
-      <td>0.131701</td>
-      <td>0.122549</td>
-      <td>0.118863</td>
-      <td>0.178175</td>
-      <td>0.180797</td>
-      <td>0.187985</td>
-      <td>0.173533</td>
+      <td>0.14041</td>
+      <td>0.14265</td>
+      <td>0.127722</td>
+      <td>0.131419</td>
+      <td>0.121693</td>
+      <td>0.12059</td>
+      <td>0.178769</td>
+      <td>0.188121</td>
+      <td>0.187228</td>
+      <td>0.179003</td>
       <td>...</td>
-      <td>0.151942</td>
-      <td>0.153181</td>
-      <td>0.148547</td>
-      <td>0.142706</td>
-      <td>0.143578</td>
-      <td>0.14418</td>
-      <td>0.143645</td>
-      <td>0.143813</td>
-      <td>0.190591</td>
-      <td>0.137878</td>
+      <td>0.150741</td>
+      <td>0.152175</td>
+      <td>0.151426</td>
+      <td>0.143432</td>
+      <td>0.144384</td>
+      <td>0.152562</td>
+      <td>0.146209</td>
+      <td>0.147763</td>
+      <td>0.192589</td>
+      <td>0.138386</td>
     </tr>
     <tr>
       <th>std_fit_time</th>
-      <td>0.001396</td>
-      <td>0.002213</td>
-      <td>0.00348</td>
-      <td>0.002294</td>
-      <td>0.002704</td>
-      <td>0.001316</td>
-      <td>0.002607</td>
-      <td>0.002269</td>
-      <td>0.003723</td>
-      <td>0.001463</td>
+      <td>0.005216</td>
+      <td>0.001326</td>
+      <td>0.001588</td>
+      <td>0.001811</td>
+      <td>0.003577</td>
+      <td>0.002589</td>
+      <td>0.001229</td>
+      <td>0.004069</td>
+      <td>0.001761</td>
+      <td>0.008219</td>
       <td>...</td>
-      <td>0.005502</td>
-      <td>0.008395</td>
-      <td>0.005623</td>
-      <td>0.003477</td>
-      <td>0.001269</td>
-      <td>0.001881</td>
-      <td>0.001925</td>
-      <td>0.002246</td>
-      <td>0.001483</td>
-      <td>0.002186</td>
+      <td>0.002112</td>
+      <td>0.006946</td>
+      <td>0.005859</td>
+      <td>0.003138</td>
+      <td>0.001793</td>
+      <td>0.008389</td>
+      <td>0.001094</td>
+      <td>0.001192</td>
+      <td>0.001989</td>
+      <td>0.003809</td>
     </tr>
     <tr>
       <th>mean_score_time</th>
-      <td>0.030879</td>
-      <td>0.032525</td>
-      <td>0.030093</td>
-      <td>0.02971</td>
-      <td>0.027858</td>
-      <td>0.027165</td>
-      <td>0.02994</td>
-      <td>0.031708</td>
-      <td>0.033637</td>
-      <td>0.028558</td>
+      <td>0.03048</td>
+      <td>0.031586</td>
+      <td>0.029824</td>
+      <td>0.029998</td>
+      <td>0.028061</td>
+      <td>0.027716</td>
+      <td>0.030033</td>
+      <td>0.030999</td>
+      <td>0.032837</td>
+      <td>0.0286</td>
       <td>...</td>
-      <td>0.035462</td>
-      <td>0.035486</td>
-      <td>0.035024</td>
-      <td>0.033742</td>
-      <td>0.034002</td>
-      <td>0.034097</td>
-      <td>0.034143</td>
-      <td>0.03431</td>
-      <td>0.046445</td>
-      <td>0.033165</td>
+      <td>0.035795</td>
+      <td>0.035794</td>
+      <td>0.035572</td>
+      <td>0.034059</td>
+      <td>0.034833</td>
+      <td>0.034944</td>
+      <td>0.034763</td>
+      <td>0.034742</td>
+      <td>0.045876</td>
+      <td>0.033081</td>
     </tr>
     <tr>
       <th>std_score_time</th>
-      <td>0.00037</td>
-      <td>0.001542</td>
-      <td>0.000815</td>
-      <td>0.000136</td>
-      <td>0.000186</td>
-      <td>0.000183</td>
-      <td>0.000859</td>
-      <td>0.001369</td>
-      <td>0.001752</td>
-      <td>0.000287</td>
+      <td>0.000378</td>
+      <td>0.000258</td>
+      <td>0.0005</td>
+      <td>0.000486</td>
+      <td>0.000361</td>
+      <td>0.0007</td>
+      <td>0.000872</td>
+      <td>0.000845</td>
+      <td>0.000907</td>
+      <td>0.000894</td>
       <td>...</td>
-      <td>0.000655</td>
-      <td>0.000498</td>
-      <td>0.000772</td>
-      <td>0.000497</td>
-      <td>0.000177</td>
-      <td>0.000171</td>
-      <td>0.000224</td>
-      <td>0.000141</td>
-      <td>0.000715</td>
-      <td>0.001765</td>
+      <td>0.000495</td>
+      <td>0.000578</td>
+      <td>0.001187</td>
+      <td>0.000674</td>
+      <td>0.000479</td>
+      <td>0.000572</td>
+      <td>0.000594</td>
+      <td>0.00027</td>
+      <td>0.000853</td>
+      <td>0.000996</td>
     </tr>
     <tr>
       <th>param_columntransformer__countvectorizer__max_features</th>
@@ -3851,7 +3854,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.507750</td>
       <td>0.507750</td>
       <td>0.507750</td>
-      <td>0.50775</td>
+      <td>0.507750</td>
       <td>0.507750</td>
       <td>0.507750</td>
       <td>0.507750</td>
@@ -3875,7 +3878,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>1000.000000</td>
       <td>400.000000</td>
       <td>400.000000</td>
-      <td>400.00000</td>
+      <td>400.000000</td>
       <td>400.000000</td>
       <td>400.000000</td>
       <td>1000.000000</td>
@@ -3899,7 +3902,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.001000</td>
       <td>0.001000</td>
       <td>0.010000</td>
-      <td>0.10000</td>
+      <td>0.100000</td>
       <td>1.000000</td>
       <td>10.000000</td>
       <td>100.000000</td>
@@ -3923,7 +3926,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.001000</td>
       <td>0.001000</td>
       <td>0.001000</td>
-      <td>0.00100</td>
+      <td>0.001000</td>
       <td>0.001000</td>
       <td>0.001000</td>
       <td>0.001000</td>
@@ -3931,27 +3934,27 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.134575</td>
-      <td>0.141860</td>
-      <td>0.127555</td>
-      <td>0.131701</td>
-      <td>0.122549</td>
-      <td>0.118863</td>
-      <td>0.178175</td>
-      <td>0.180797</td>
-      <td>0.187985</td>
-      <td>0.173533</td>
+      <td>0.140410</td>
+      <td>0.142650</td>
+      <td>0.127722</td>
+      <td>0.131419</td>
+      <td>0.121693</td>
+      <td>0.120590</td>
+      <td>0.178769</td>
+      <td>0.188121</td>
+      <td>0.187228</td>
+      <td>0.179003</td>
       <td>...</td>
-      <td>0.151942</td>
-      <td>0.153181</td>
-      <td>0.148547</td>
-      <td>0.142706</td>
-      <td>0.143578</td>
-      <td>0.14418</td>
-      <td>0.143645</td>
-      <td>0.143813</td>
-      <td>0.190591</td>
-      <td>0.137878</td>
+      <td>0.150741</td>
+      <td>0.152175</td>
+      <td>0.151426</td>
+      <td>0.143432</td>
+      <td>0.144384</td>
+      <td>0.152562</td>
+      <td>0.146209</td>
+      <td>0.147763</td>
+      <td>0.192589</td>
+      <td>0.138386</td>
     </tr>
   </tbody>
 </table>
@@ -5184,7 +5187,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                   CountVectorizer(max_features=100,
                                                                   stop_words=&#x27;english&#x27;),
                                                   &#x27;song_title&#x27;)])),
-                (&#x27;svc&#x27;, SVC(C=2.6, gamma=0.1))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-48" type="checkbox" ><label for="sk-estimator-id-48" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;columntransformer: ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for columntransformer: ColumnTransformer</span></a></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;, StandardScaler(),
+                (&#x27;svc&#x27;, SVC(C=2.8, gamma=0.1))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-48" type="checkbox" ><label for="sk-estimator-id-48" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;columntransformer: ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for columntransformer: ColumnTransformer</span></a></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;, StandardScaler(),
                                  [&#x27;acousticness&#x27;, &#x27;danceability&#x27;, &#x27;energy&#x27;,
                                   &#x27;instrumentalness&#x27;, &#x27;liveness&#x27;, &#x27;loudness&#x27;,
                                   &#x27;speechiness&#x27;, &#x27;tempo&#x27;, &#x27;valence&#x27;]),
@@ -5195,7 +5198,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                 (&#x27;countvectorizer&#x27;,
                                  CountVectorizer(max_features=100,
                                                  stop_words=&#x27;english&#x27;),
-                                 &#x27;song_title&#x27;)])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-49" type="checkbox" ><label for="sk-estimator-id-49" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">standardscaler</label><div class="sk-toggleable__content fitted"><pre>[&#x27;acousticness&#x27;, &#x27;danceability&#x27;, &#x27;energy&#x27;, &#x27;instrumentalness&#x27;, &#x27;liveness&#x27;, &#x27;loudness&#x27;, &#x27;speechiness&#x27;, &#x27;tempo&#x27;, &#x27;valence&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-50" type="checkbox" ><label for="sk-estimator-id-50" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-51" type="checkbox" ><label for="sk-estimator-id-51" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">onehotencoder</label><div class="sk-toggleable__content fitted"><pre>[&#x27;time_signature&#x27;, &#x27;key&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-52" type="checkbox" ><label for="sk-estimator-id-52" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OneHotEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-53" type="checkbox" ><label for="sk-estimator-id-53" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">passthrough</label><div class="sk-toggleable__content fitted"><pre>[&#x27;mode&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-54" type="checkbox" ><label for="sk-estimator-id-54" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">passthrough</label><div class="sk-toggleable__content fitted"><pre>passthrough</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-55" type="checkbox" ><label for="sk-estimator-id-55" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">countvectorizer</label><div class="sk-toggleable__content fitted"><pre>song_title</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-56" type="checkbox" ><label for="sk-estimator-id-56" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;CountVectorizer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></label><div class="sk-toggleable__content fitted"><pre>CountVectorizer(max_features=100, stop_words=&#x27;english&#x27;)</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-57" type="checkbox" ><label for="sk-estimator-id-57" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SVC<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.svm.SVC.html">?<span>Documentation for SVC</span></a></label><div class="sk-toggleable__content fitted"><pre>SVC(C=2.6, gamma=0.1)</pre></div> </div></div></div></div></div></div></div></div></div></div></div></div></div>
+                                 &#x27;song_title&#x27;)])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-49" type="checkbox" ><label for="sk-estimator-id-49" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">standardscaler</label><div class="sk-toggleable__content fitted"><pre>[&#x27;acousticness&#x27;, &#x27;danceability&#x27;, &#x27;energy&#x27;, &#x27;instrumentalness&#x27;, &#x27;liveness&#x27;, &#x27;loudness&#x27;, &#x27;speechiness&#x27;, &#x27;tempo&#x27;, &#x27;valence&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-50" type="checkbox" ><label for="sk-estimator-id-50" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-51" type="checkbox" ><label for="sk-estimator-id-51" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">onehotencoder</label><div class="sk-toggleable__content fitted"><pre>[&#x27;time_signature&#x27;, &#x27;key&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-52" type="checkbox" ><label for="sk-estimator-id-52" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OneHotEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-53" type="checkbox" ><label for="sk-estimator-id-53" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">passthrough</label><div class="sk-toggleable__content fitted"><pre>[&#x27;mode&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-54" type="checkbox" ><label for="sk-estimator-id-54" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">passthrough</label><div class="sk-toggleable__content fitted"><pre>passthrough</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-55" type="checkbox" ><label for="sk-estimator-id-55" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">countvectorizer</label><div class="sk-toggleable__content fitted"><pre>song_title</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-56" type="checkbox" ><label for="sk-estimator-id-56" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;CountVectorizer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></label><div class="sk-toggleable__content fitted"><pre>CountVectorizer(max_features=100, stop_words=&#x27;english&#x27;)</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-57" type="checkbox" ><label for="sk-estimator-id-57" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SVC<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.svm.SVC.html">?<span>Documentation for SVC</span></a></label><div class="sk-toggleable__content fitted"><pre>SVC(C=2.8, gamma=0.1)</pre></div> </div></div></div></div></div></div></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5234,7 +5237,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>1</th>
       <th>2</th>
       <th>3</th>
-      <th>3</th>
+      <th>4</th>
       <th>5</th>
       <th>6</th>
       <th>7</th>
@@ -5242,31 +5245,31 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>9</th>
       <th>10</th>
       <th>...</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
+      <th>82</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>mean_test_score</th>
-      <td>0.743323</td>
+      <td>0.745801</td>
+      <td>0.744565</td>
       <td>0.743321</td>
-      <td>0.742088</td>
+      <td>0.742709</td>
       <td>0.742088</td>
       <td>0.742086</td>
-      <td>0.742084</td>
       <td>0.742078</td>
-      <td>0.741463</td>
       <td>0.741461</td>
       <td>0.740842</td>
+      <td>0.740840</td>
       <td>...</td>
       <td>0.508371</td>
       <td>0.508371</td>
@@ -5282,26 +5285,26 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>param_columntransformer__countvectorizer__max_features</th>
       <td>100.000000</td>
+      <td>400.000000</td>
       <td>2000.000000</td>
       <td>2000.000000</td>
       <td>400.000000</td>
-      <td>1000.000000</td>
-      <td>800.000000</td>
       <td>1000.000000</td>
       <td>1000.000000</td>
       <td>400.000000</td>
       <td>200.000000</td>
+      <td>1000.000000</td>
       <td>...</td>
+      <td>2000.000000</td>
+      <td>2000.000000</td>
       <td>1000.000000</td>
-      <td>1000.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>200.000000</td>
-      <td>1000.000000</td>
-      <td>200.000000</td>
+      <td>400.000000</td>
+      <td>400.000000</td>
       <td>100.000000</td>
       <td>2000.000000</td>
-      <td>2000.000000</td>
-      <td>800.000000</td>
-      <td>800.000000</td>
     </tr>
     <tr>
       <th>param_svc__gamma</th>
@@ -5329,51 +5332,51 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>param_svc__C</th>
-      <td>2.600000</td>
-      <td>2.000000</td>
-      <td>2.600000</td>
-      <td>2.600000</td>
       <td>2.800000</td>
-      <td>2.800000</td>
-      <td>2.000000</td>
       <td>3.000000</td>
+      <td>2.000000</td>
+      <td>2.800000</td>
+      <td>2.600000</td>
+      <td>2.800000</td>
+      <td>2.000000</td>
       <td>2.200000</td>
       <td>3.000000</td>
+      <td>2.200000</td>
       <td>...</td>
-      <td>2.200000</td>
+      <td>2.000000</td>
+      <td>2.400000</td>
+      <td>2.400000</td>
       <td>2.600000</td>
-      <td>2.200000</td>
-      <td>2.800000</td>
+      <td>2.400000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
       <td>2.600000</td>
-      <td>2.400000</td>
-      <td>2.800000</td>
-      <td>2.400000</td>
-      <td>2.200000</td>
-      <td>2.400000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.127649</td>
-      <td>0.163320</td>
-      <td>0.169906</td>
-      <td>0.133414</td>
-      <td>0.163923</td>
-      <td>0.156461</td>
-      <td>0.140648</td>
-      <td>0.164925</td>
-      <td>0.131218</td>
-      <td>0.129301</td>
+      <td>0.124571</td>
+      <td>0.139527</td>
+      <td>0.175143</td>
+      <td>0.179058</td>
+      <td>0.136417</td>
+      <td>0.166441</td>
+      <td>0.142643</td>
+      <td>0.132218</td>
+      <td>0.130336</td>
+      <td>0.148232</td>
       <td>...</td>
-      <td>0.216200</td>
-      <td>0.215975</td>
-      <td>0.210926</td>
-      <td>0.218897</td>
-      <td>0.211874</td>
-      <td>0.202721</td>
-      <td>0.218386</td>
-      <td>0.224178</td>
-      <td>0.219355</td>
-      <td>0.197256</td>
+      <td>0.227104</td>
+      <td>0.223818</td>
+      <td>0.222221</td>
+      <td>0.205991</td>
+      <td>0.207374</td>
+      <td>0.207808</td>
+      <td>0.211017</td>
+      <td>0.209336</td>
+      <td>0.203935</td>
+      <td>0.226963</td>
     </tr>
   </tbody>
 </table>
@@ -5939,10 +5942,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
-  _data = np.array(data, dtype=dtype, copy=copy,
-</pre></div>
-</div>
 <div class="output text_html"><style>#sk-container-id-7 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: black;
@@ -6365,9 +6364,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                                 &#x27;key&#x27;]),
                                                                               (&#x27;passthrough&#x27;,
                                                                                &#x27;pass...
-                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7fb475c5c7d0&gt;,
-                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb475c18050&gt;,
-                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb4a9ae18e0&gt;},
+                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f7ed1180080&gt;,
+                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7f0d9c8050&gt;,
+                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7ed32c75c0&gt;},
                    return_train_score=True)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-69" type="checkbox" ><label for="sk-estimator-id-69" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;RandomizedSearchCV<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.model_selection.RandomizedSearchCV.html">?<span>Documentation for RandomizedSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>RandomizedSearchCV(estimator=Pipeline(steps=[(&#x27;columntransformer&#x27;,
                                               ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                                                StandardScaler(),
@@ -6386,9 +6385,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                                 &#x27;key&#x27;]),
                                                                               (&#x27;passthrough&#x27;,
                                                                                &#x27;pass...
-                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7fb475c5c7d0&gt;,
-                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb475c18050&gt;,
-                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb4a9ae18e0&gt;},
+                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f7ed1180080&gt;,
+                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7f0d9c8050&gt;,
+                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7ed32c75c0&gt;},
                    return_train_score=True)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-70" type="checkbox" ><label for="sk-estimator-id-70" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">best_estimator_: Pipeline</label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;columntransformer&#x27;,
                  ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                   StandardScaler(),
@@ -6588,27 +6587,27 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.183036</td>
-      <td>0.180514</td>
-      <td>0.167451</td>
-      <td>0.188893</td>
-      <td>0.621424</td>
-      <td>0.190136</td>
-      <td>0.159770</td>
-      <td>0.340819</td>
-      <td>0.214541</td>
-      <td>0.241526</td>
+      <td>0.187523</td>
+      <td>0.178508</td>
+      <td>0.169009</td>
+      <td>0.195553</td>
+      <td>0.617645</td>
+      <td>0.190277</td>
+      <td>0.158704</td>
+      <td>0.333843</td>
+      <td>0.217369</td>
+      <td>0.243590</td>
       <td>...</td>
-      <td>0.188968</td>
-      <td>0.217934</td>
-      <td>0.207788</td>
-      <td>0.213514</td>
-      <td>0.207908</td>
-      <td>0.220320</td>
-      <td>0.218519</td>
-      <td>0.215423</td>
-      <td>0.206999</td>
-      <td>0.221667</td>
+      <td>0.185900</td>
+      <td>0.219948</td>
+      <td>0.208133</td>
+      <td>0.213193</td>
+      <td>0.206693</td>
+      <td>0.221467</td>
+      <td>0.217815</td>
+      <td>0.219586</td>
+      <td>0.210456</td>
+      <td>0.218250</td>
     </tr>
   </tbody>
 </table>
@@ -6664,22 +6663,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
-  _data = np.array(data, dtype=dtype, copy=copy,
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
-  _data = np.array(data, dtype=dtype, copy=copy,
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
-  _data = np.array(data, dtype=dtype, copy=copy,
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
-  _data = np.array(data, dtype=dtype, copy=copy,
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
   _data = np.array(data, dtype=dtype, copy=copy,
 </pre></div>
@@ -7111,9 +7094,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                                  (&#x27;passthrough&#x27;,
                                                                                   &#x27;p...
                       factor=2,
-                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7fb475c5c7d0&gt;,
-                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb475c18050&gt;,
-                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb4a9ae18e0&gt;},
+                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f7ed1180080&gt;,
+                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7f0d9c8050&gt;,
+                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7ed32c75c0&gt;},
                       random_state=123)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-81" type="checkbox" ><label for="sk-estimator-id-81" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;HalvingRandomSearchCV<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.model_selection.HalvingRandomSearchCV.html">?<span>Documentation for HalvingRandomSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>HalvingRandomSearchCV(estimator=Pipeline(steps=[(&#x27;columntransformer&#x27;,
                                                  ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                                                   StandardScaler(),
@@ -7133,9 +7116,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                                  (&#x27;passthrough&#x27;,
                                                                                   &#x27;p...
                       factor=2,
-                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7fb475c5c7d0&gt;,
-                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb475c18050&gt;,
-                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7fb4a9ae18e0&gt;},
+                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x7f7ed1180080&gt;,
+                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7f0d9c8050&gt;,
+                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x7f7ed32c75c0&gt;},
                       random_state=123)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-82" type="checkbox" ><label for="sk-estimator-id-82" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">best_estimator_: Pipeline</label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;columntransformer&#x27;,
                  ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                   StandardScaler(),
@@ -7223,10 +7206,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>0</th>
       <td>0</td>
       <td>20</td>
-      <td>0.007695</td>
-      <td>0.000613</td>
-      <td>0.004184</td>
-      <td>0.000398</td>
+      <td>0.007719</td>
+      <td>0.000640</td>
+      <td>0.004947</td>
+      <td>0.001061</td>
       <td>1634</td>
       <td>7129.653205</td>
       <td>0.026777</td>
@@ -7247,10 +7230,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>1</th>
       <td>0</td>
       <td>20</td>
-      <td>0.007463</td>
-      <td>0.000483</td>
-      <td>0.004165</td>
-      <td>0.000392</td>
+      <td>0.007478</td>
+      <td>0.000510</td>
+      <td>0.004164</td>
+      <td>0.000399</td>
       <td>1222</td>
       <td>5513.247691</td>
       <td>5.698385</td>
@@ -7271,10 +7254,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>2</th>
       <td>0</td>
       <td>20</td>
-      <td>0.007494</td>
-      <td>0.000497</td>
-      <td>0.004142</td>
-      <td>0.000384</td>
+      <td>0.007540</td>
+      <td>0.000545</td>
+      <td>0.004156</td>
+      <td>0.000385</td>
       <td>1247</td>
       <td>7800.377619</td>
       <td>0.019382</td>
@@ -7295,10 +7278,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>3</th>
       <td>0</td>
       <td>20</td>
-      <td>0.007594</td>
-      <td>0.000669</td>
-      <td>0.004122</td>
-      <td>0.000377</td>
+      <td>0.007422</td>
+      <td>0.000493</td>
+      <td>0.004145</td>
+      <td>0.000365</td>
       <td>213</td>
       <td>4809.419015</td>
       <td>0.013707</td>
@@ -7319,10 +7302,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>4</th>
       <td>0</td>
       <td>20</td>
-      <td>0.007455</td>
-      <td>0.000428</td>
-      <td>0.004131</td>
-      <td>0.000383</td>
+      <td>0.007555</td>
+      <td>0.000142</td>
+      <td>0.004113</td>
+      <td>0.000378</td>
       <td>1042</td>
       <td>6273.270093</td>
       <td>0.003919</td>
@@ -7367,10 +7350,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>155</th>
       <td>5</td>
       <td>640</td>
-      <td>0.025949</td>
-      <td>0.000139</td>
-      <td>0.007582</td>
-      <td>0.000154</td>
+      <td>0.025557</td>
+      <td>0.000159</td>
+      <td>0.007565</td>
+      <td>0.000319</td>
       <td>729</td>
       <td>4943.400650</td>
       <td>0.092454</td>
@@ -7391,10 +7374,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>156</th>
       <td>5</td>
       <td>640</td>
-      <td>0.025058</td>
-      <td>0.000185</td>
-      <td>0.007690</td>
-      <td>0.000030</td>
+      <td>0.024733</td>
+      <td>0.000181</td>
+      <td>0.007662</td>
+      <td>0.000171</td>
       <td>1383</td>
       <td>2705.246646</td>
       <td>0.173979</td>
@@ -7415,10 +7398,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>157</th>
       <td>5</td>
       <td>640</td>
-      <td>0.024404</td>
-      <td>0.000158</td>
-      <td>0.007395</td>
-      <td>0.000048</td>
+      <td>0.023960</td>
+      <td>0.000166</td>
+      <td>0.007263</td>
+      <td>0.000074</td>
       <td>440</td>
       <td>5315.613738</td>
       <td>0.179730</td>
@@ -7439,10 +7422,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>158</th>
       <td>6</td>
       <td>1280</td>
-      <td>0.075977</td>
-      <td>0.001048</td>
-      <td>0.014697</td>
-      <td>0.000263</td>
+      <td>0.072839</td>
+      <td>0.000907</td>
+      <td>0.013930</td>
+      <td>0.000392</td>
       <td>729</td>
       <td>4943.400650</td>
       <td>0.092454</td>
@@ -7463,10 +7446,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>159</th>
       <td>6</td>
       <td>1280</td>
-      <td>0.074428</td>
-      <td>0.000556</td>
-      <td>0.017656</td>
-      <td>0.000208</td>
+      <td>0.069586</td>
+      <td>0.000911</td>
+      <td>0.015747</td>
+      <td>0.000477</td>
       <td>1383</td>
       <td>2705.246646</td>
       <td>0.173979</td>
@@ -7953,17 +7936,17 @@ The expected grade among the best of 10 tests is : 0.32
       <td>0.650000</td>
       <td>0.650000</td>
       <td>0.650000</td>
-      <td>0.65000</td>
       <td>0.650000</td>
       <td>0.650000</td>
-      <td>0.65000</td>
+      <td>0.650000</td>
+      <td>0.650000</td>
       <td>0.650000</td>
       <td>...</td>
       <td>0.550000</td>
       <td>5.500000e-01</td>
       <td>5.500000e-01</td>
       <td>5.500000e-01</td>
-      <td>0.55000</td>
+      <td>0.550000</td>
       <td>0.550000</td>
       <td>0.550000</td>
       <td>5.500000e-01</td>
@@ -7977,17 +7960,17 @@ The expected grade among the best of 10 tests is : 0.32
       <td>0.100000</td>
       <td>1.000000</td>
       <td>10.000000</td>
-      <td>100.00000</td>
+      <td>100.000000</td>
       <td>1000.000000</td>
       <td>10000.000000</td>
-      <td>100000.00000</td>
+      <td>100000.000000</td>
       <td>1000000.000000</td>
       <td>...</td>
       <td>0.100000</td>
       <td>1.000000e-01</td>
       <td>1.000000e-09</td>
       <td>1.000000e-10</td>
-      <td>0.10000</td>
+      <td>0.100000</td>
       <td>0.100000</td>
       <td>0.100000</td>
       <td>1.000000e-01</td>
@@ -8001,17 +7984,17 @@ The expected grade among the best of 10 tests is : 0.32
       <td>0.010000</td>
       <td>0.010000</td>
       <td>0.010000</td>
-      <td>0.01000</td>
       <td>0.010000</td>
       <td>0.010000</td>
-      <td>0.01000</td>
+      <td>0.010000</td>
+      <td>0.010000</td>
       <td>0.010000</td>
       <td>...</td>
       <td>100000.000000</td>
       <td>1.000000e+07</td>
       <td>1.000000e+09</td>
       <td>1.000000e+09</td>
-      <td>1.00000</td>
+      <td>1.000000</td>
       <td>1000.000000</td>
       <td>10.000000</td>
       <td>1.000000e+09</td>
@@ -8020,27 +8003,27 @@ The expected grade among the best of 10 tests is : 0.32
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>1.698337e-02</td>
-      <td>0.013919</td>
-      <td>0.014004</td>
-      <td>0.016906</td>
-      <td>0.018636</td>
-      <td>0.01379</td>
-      <td>0.014257</td>
-      <td>0.013898</td>
-      <td>0.01487</td>
-      <td>0.013564</td>
+      <td>1.851020e-02</td>
+      <td>0.016931</td>
+      <td>0.013565</td>
+      <td>0.013585</td>
+      <td>0.014057</td>
+      <td>0.014386</td>
+      <td>0.014006</td>
+      <td>0.013872</td>
+      <td>0.015639</td>
+      <td>0.013778</td>
       <td>...</td>
-      <td>0.014273</td>
-      <td>1.465983e-02</td>
-      <td>1.889024e-02</td>
-      <td>1.421657e-02</td>
-      <td>0.01955</td>
-      <td>0.013739</td>
-      <td>0.015333</td>
-      <td>1.378779e-02</td>
-      <td>0.014031</td>
-      <td>1.531730e-02</td>
+      <td>0.013967</td>
+      <td>1.341777e-02</td>
+      <td>1.515350e-02</td>
+      <td>1.364970e-02</td>
+      <td>0.016729</td>
+      <td>0.014622</td>
+      <td>0.013753</td>
+      <td>1.364956e-02</td>
+      <td>0.013445</td>
+      <td>1.566672e-02</td>
     </tr>
   </tbody>
 </table>
@@ -8219,6 +8202,24 @@ The expected grade among the best of 10 tests is : 0.32
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="07_linear-models.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 7: Linear Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../102-Varada-lectures/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Section 102</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
