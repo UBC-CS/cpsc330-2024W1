@@ -77,6 +77,8 @@ parts:
         title: Lecture 6
       - url: "https://firasm.github.io/cpsc330-slides/slides-07"
         title: Lecture 7
+      - url: "https://firasm.github.io/cpsc330-slides/slides-08"
+        title: Lecture 8
 
 - caption: Attribution
   chapters: 
