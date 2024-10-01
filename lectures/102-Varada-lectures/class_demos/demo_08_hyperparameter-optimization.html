@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lecture 8: Hyperparameter Optimization and Optimization Bias &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
+    <title>Lectures 8: Class demo &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
   
   
   
@@ -18,54 +18,52 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/extra.css?v=6df0ab2b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/notes/08_hyperparameter-optimization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/102-Varada-lectures/class_demos/demo_08_hyperparameter-optimization';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 9: Classification metrics" href="09_classification-metrics.html" />
-    <link rel="prev" title="Lecture 7: Linear Models" href="07_linear-models.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -97,7 +95,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -128,6 +126,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -146,7 +146,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../README.html">
+<a class="navbar-brand logo" href="../../../README.html">
   
   
   
@@ -157,8 +157,8 @@
       
     
     
-    <img src="../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
-    <script>document.write(`<img src="../../_static/UBC-CS-logo.png" class="logo__image only-dark" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>`);</script>
+    <img src="../../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+    <script>document.write(`<img src="../../../_static/UBC-CS-logo.png" class="logo__image only-dark" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>`);</script>
   
   
 </a></div>
@@ -178,40 +178,40 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../README.html">
+                <a class="reference internal" href="../../../README.html">
                     UBC CPSC 330: Applied Machine Learning (2024W1)
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Things you should know</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../docs/README.html">CPSC 330 Documents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../learning-objectives.html">Course Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">CPSC 330 Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../learning-objectives.html">Course Learning Objectives</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-01.html">Lecture 1</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-02.html">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-03.html">Lecture 3</a></li>
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-07.html">Lecture 7</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
@@ -234,7 +234,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">LICENSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../LICENSE.html">LICENSE</a></li>
 </ul>
 
     </div>
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="../../_sources/lectures/notes/08_hyperparameter-optimization.ipynb" target="_blank"
+      <li><a href="../../../_sources/lectures/102-Varada-lectures/class_demos/demo_08_hyperparameter-optimization.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 8: Hyperparameter Optimization and Optimization Bias</h1>
+    <h1>Lectures 8: Class demo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,24 +398,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-announcements-and-lo">Imports, Announcements, and LO</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-optimization-motivation">Hyperparameter optimization motivation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameters-the-problem">Hyperparameters: the problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-ways-to-pick-hyperparameters">Some ways to pick hyperparameters:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-hyperparameter-optimization">Manual hyperparameter optimization</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-hyperparameter-optimization">Automated hyperparameter optimization</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exhaustive-grid-search-sklearn-model-selection-gridsearchcv">Exhaustive grid search: <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.GridSearchCV</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-jobs-1"><code class="docutils literal notranslate"><span class="pre">n_jobs=-1</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-syntax">The <code class="docutils literal notranslate"><span class="pre">__</span></code> syntax</a></li>
@@ -435,33 +418,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fancier-methods">(Optional) Fancier methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-8-1">(iClicker) Exercise 8.1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-class-discussion-hyperparameter-optimization">Questions for class discussion (hyperparameter optimization)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-overfitting-of-the-validation-set">Optimization bias/Overfitting of the validation set</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-of-the-validation-error">Overfitting of the validation error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-of-parameter-learning">Optimization bias of parameter learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-of-hyper-parameter-learning">Optimization bias of hyper-parameter learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-example-1-optimization-bias">(Optional) Example 1: Optimization bias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-example-2-optimization-bias">(Optional) Example 2: Optimization bias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-on-the-spotify-dataset">Optimization bias on the Spotify dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-of-the-validation-data">Overfitting of the validation data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-a-test-set">Why do we need a test set?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-test-score-is-much-lower-than-cv-score">When test score is much lower than CV score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#large-datasets-solve-many-of-these-problems">Large datasets solve many of these problems</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-2">Exercise 8.2</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-comments-and-summary">Final comments and summary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Automated hyperparameter optimization</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-readings-and-resources">Optional readings and resources</a></li>
 </ul>
             </nav>
         </div>
@@ -473,20 +429,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><img alt="" src="../../_images/330-banner.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="lecture-8-hyperparameter-optimization-and-optimization-bias">
-<h1>Lecture 8: Hyperparameter Optimization and Optimization Bias<a class="headerlink" href="#lecture-8-hyperparameter-optimization-and-optimization-bias" title="Link to this heading">#</a></h1>
-<p>UBC 2024-25</p>
-<section id="imports-announcements-and-lo">
-<h2>Imports, Announcements, and LO<a class="headerlink" href="#imports-announcements-and-lo" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="lectures-8-class-demo">
+<h1>Lectures 8: Class demo<a class="headerlink" href="#lectures-8-class-demo" title="Link to this heading">#</a></h1>
 <section id="imports">
-<h3>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h3>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">mglearn</span>
@@ -504,7 +456,7 @@ document.write(`
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/&quot;</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;data/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -519,87 +471,6 @@ document.write(`
 </div>
 </div>
 <p><br><br></p>
-</section>
-</section>
-<section id="announcements">
-<h2>Announcements<a class="headerlink" href="#announcements" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>HW3 was due last night.</p></li>
-<li><p>HW4 has been released. (Due next week Tuesday, Oct 10th at 11:59 p.m.)</p></li>
-</ul>
-<section id="learning-outcomes">
-<h3>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h3>
-<p>From this lecture, you will be able to</p>
-<ul class="simple">
-<li><p>explain the need for hyperparameter optimization</p></li>
-<li><p>carry out hyperparameter optimization using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>’s <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> and <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code></p></li>
-<li><p>explain different hyperparameters of <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code></p></li>
-<li><p>explain the importance of selecting a good range for the values.</p></li>
-<li><p>explain optimization bias</p></li>
-<li><p>identify and reason when to trust and not trust reported accuracies</p></li>
-</ul>
-<p><br><br><br><br></p>
-</section>
-</section>
-<section id="hyperparameter-optimization-motivation">
-<h2>Hyperparameter optimization motivation<a class="headerlink" href="#hyperparameter-optimization-motivation" title="Link to this heading">#</a></h2>
-<section id="motivation">
-<h3>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Remember that the fundamental goal of supervised machine learning is to generalize beyond what we see in the training examples.</p></li>
-<li><p>We have been using data splitting and cross-validation to provide a framework to approximate generalization error.</p></li>
-<li><p>With this framework, we can improve the model’s generalization performance by tuning model hyperparameters using cross-validation on the training set.</p></li>
-</ul>
-</section>
-<section id="hyperparameters-the-problem">
-<h3>Hyperparameters: the problem<a class="headerlink" href="#hyperparameters-the-problem" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>In order to improve the generalization performance, finding the best values for the important hyperparameters of a model is necessary for almost all models and datasets.</p></li>
-<li><p>Picking good hyperparameters is important because if we don’t do it, we might end up with an underfit or overfit model.</p></li>
-</ul>
-</section>
-<section id="some-ways-to-pick-hyperparameters">
-<h3>Some ways to pick hyperparameters:<a class="headerlink" href="#some-ways-to-pick-hyperparameters" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Manual or expert knowledge or heuristics based optimization</p></li>
-<li><p>Data-driven or automated optimization</p></li>
-</ul>
-<section id="manual-hyperparameter-optimization">
-<h4>Manual hyperparameter optimization<a class="headerlink" href="#manual-hyperparameter-optimization" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Advantage: we may have some intuition about what might work.</p>
-<ul>
-<li><p>E.g. if I’m massively overfitting, try decreasing <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> or <code class="docutils literal notranslate"><span class="pre">C</span></code>.</p></li>
-</ul>
-</li>
-<li><p>Disadvantages</p>
-<ul>
-<li><p>it takes a lot of work</p></li>
-<li><p>not reproducible</p></li>
-<li><p>in very complicated cases, our intuition might be worse than a data-driven approach</p></li>
-</ul>
-</li>
-</ul>
-</section>
-</section>
-<section id="automated-hyperparameter-optimization">
-<h3>Automated hyperparameter optimization<a class="headerlink" href="#automated-hyperparameter-optimization" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Formulate the hyperparamter optimization as a one big search problem.</p></li>
-<li><p>Often we have many hyperparameters of different types: Categorical, integer, and continuous.</p></li>
-<li><p>Often, the search space is quite big and systematic search for optimal values is infeasible.</p></li>
-</ul>
-<p>In homework assignments, we have been carrying out hyperparameter search by exhaustively trying different possible combinations of the hyperparameters of interest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_grid_search_overview</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/600a97e891723204956ad3711e6df6df6a2779385bd0a4c4d4a73fd5f8f1b79e.png" src="../../_images/600a97e891723204956ad3711e6df6df6a2779385bd0a4c4d4a73fd5f8f1b79e.png" />
-</div>
-</div>
 <p>Let’s look at an example of tuning <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> of the <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> on the Spotify dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -817,7 +688,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7296982866373093
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7297002096032921
 </pre></div>
 </div>
 </div>
@@ -1293,8 +1164,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.072946
-score_time     0.018608
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.075050
+score_time     0.021316
 test_score     0.734011
 train_score    0.828891
 dtype: float64
@@ -1486,7 +1357,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/915bdacd0413afc63d8bf23296330e2410a855343da3cc36398eed75bde4c28b.png" src="../../_images/915bdacd0413afc63d8bf23296330e2410a855343da3cc36398eed75bde4c28b.png" />
+<img alt="../../../_images/915bdacd0413afc63d8bf23296330e2410a855343da3cc36398eed75bde4c28b.png" src="../../../_images/915bdacd0413afc63d8bf23296330e2410a855343da3cc36398eed75bde4c28b.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1995,7 +1866,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/600a97e891723204956ad3711e6df6df6a2779385bd0a4c4d4a73fd5f8f1b79e.png" src="../../_images/600a97e891723204956ad3711e6df6df6a2779385bd0a4c4d4a73fd5f8f1b79e.png" />
+<img alt="../../../_images/600a97e891723204956ad3711e6df6df6a2779385bd0a4c4d4a73fd5f8f1b79e.png" src="../../../_images/600a97e891723204956ad3711e6df6df6a2779385bd0a4c4d4a73fd5f8f1b79e.png" />
 </div>
 </div>
 <p>In this lecture we are going to talk about two such most commonly used automated optimizations methods from <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
@@ -2005,7 +1876,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </ul>
 <p>The “CV” stands for cross-validation; these methods have built-in cross-validation.</p>
 <p><br><br><br><br></p>
-</section>
 </section>
 <section id="exhaustive-grid-search-sklearn-model-selection-gridsearchcv">
 <h2>Exhaustive grid search: <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"><code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.GridSearchCV</span></code></a><a class="headerlink" href="#exhaustive-grid-search-sklearn-model-selection-gridsearchcv" title="Link to this heading">#</a></h2>
@@ -2052,7 +1922,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Carry out the search </span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
@@ -2244,99 +2114,99 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.072043</td>
-      <td>0.070898</td>
-      <td>0.068214</td>
-      <td>0.068775</td>
-      <td>0.07639</td>
-      <td>0.068891</td>
-      <td>0.068498</td>
-      <td>0.070195</td>
-      <td>0.07418</td>
-      <td>0.072396</td>
+      <td>0.070488</td>
+      <td>0.074547</td>
+      <td>0.074278</td>
+      <td>0.062537</td>
+      <td>0.074374</td>
+      <td>0.072435</td>
+      <td>0.065448</td>
+      <td>0.072872</td>
+      <td>0.067061</td>
+      <td>0.06907</td>
       <td>...</td>
-      <td>0.114214</td>
-      <td>0.103023</td>
-      <td>0.104596</td>
-      <td>0.099802</td>
-      <td>0.090473</td>
-      <td>0.122668</td>
-      <td>0.114079</td>
-      <td>0.101832</td>
-      <td>0.097184</td>
-      <td>0.096858</td>
+      <td>0.097219</td>
+      <td>0.104748</td>
+      <td>0.113021</td>
+      <td>0.090745</td>
+      <td>0.103302</td>
+      <td>0.140133</td>
+      <td>0.119666</td>
+      <td>0.0976</td>
+      <td>0.104541</td>
+      <td>0.114808</td>
     </tr>
     <tr>
       <th>std_fit_time</th>
-      <td>0.00871</td>
-      <td>0.007818</td>
-      <td>0.005708</td>
-      <td>0.006904</td>
-      <td>0.007362</td>
-      <td>0.004556</td>
-      <td>0.002146</td>
-      <td>0.006667</td>
-      <td>0.011617</td>
-      <td>0.003027</td>
+      <td>0.009113</td>
+      <td>0.003406</td>
+      <td>0.017692</td>
+      <td>0.003953</td>
+      <td>0.015134</td>
+      <td>0.028529</td>
+      <td>0.008108</td>
+      <td>0.004905</td>
+      <td>0.003023</td>
+      <td>0.002615</td>
       <td>...</td>
-      <td>0.00691</td>
-      <td>0.00715</td>
-      <td>0.003998</td>
-      <td>0.009082</td>
-      <td>0.008377</td>
-      <td>0.006244</td>
-      <td>0.001682</td>
-      <td>0.004402</td>
-      <td>0.012252</td>
-      <td>0.013157</td>
+      <td>0.007619</td>
+      <td>0.006074</td>
+      <td>0.01415</td>
+      <td>0.014083</td>
+      <td>0.037953</td>
+      <td>0.043352</td>
+      <td>0.013742</td>
+      <td>0.00249</td>
+      <td>0.009245</td>
+      <td>0.016003</td>
     </tr>
     <tr>
       <th>mean_score_time</th>
-      <td>0.018505</td>
-      <td>0.016815</td>
-      <td>0.017427</td>
-      <td>0.013888</td>
-      <td>0.015056</td>
-      <td>0.016372</td>
-      <td>0.016607</td>
-      <td>0.020403</td>
-      <td>0.016263</td>
-      <td>0.017837</td>
+      <td>0.018695</td>
+      <td>0.022122</td>
+      <td>0.014773</td>
+      <td>0.01891</td>
+      <td>0.017152</td>
+      <td>0.018041</td>
+      <td>0.017026</td>
+      <td>0.016887</td>
+      <td>0.014861</td>
+      <td>0.016604</td>
       <td>...</td>
-      <td>0.018558</td>
-      <td>0.021281</td>
-      <td>0.022686</td>
-      <td>0.022433</td>
-      <td>0.018846</td>
-      <td>0.017308</td>
-      <td>0.019163</td>
-      <td>0.023511</td>
-      <td>0.021862</td>
-      <td>0.018077</td>
+      <td>0.01706</td>
+      <td>0.01791</td>
+      <td>0.026422</td>
+      <td>0.017182</td>
+      <td>0.019926</td>
+      <td>0.014549</td>
+      <td>0.016981</td>
+      <td>0.02279</td>
+      <td>0.029125</td>
+      <td>0.020277</td>
     </tr>
     <tr>
       <th>std_score_time</th>
-      <td>0.003472</td>
-      <td>0.001769</td>
-      <td>0.002835</td>
-      <td>0.001412</td>
-      <td>0.001585</td>
-      <td>0.001347</td>
-      <td>0.001423</td>
-      <td>0.004057</td>
-      <td>0.002675</td>
-      <td>0.00496</td>
+      <td>0.001884</td>
+      <td>0.005615</td>
+      <td>0.001516</td>
+      <td>0.003801</td>
+      <td>0.00404</td>
+      <td>0.005077</td>
+      <td>0.003229</td>
+      <td>0.001521</td>
+      <td>0.001951</td>
+      <td>0.001903</td>
       <td>...</td>
-      <td>0.00234</td>
-      <td>0.003083</td>
-      <td>0.001679</td>
-      <td>0.005834</td>
-      <td>0.005767</td>
-      <td>0.001236</td>
-      <td>0.00548</td>
-      <td>0.007544</td>
-      <td>0.002159</td>
-      <td>0.002704</td>
+      <td>0.003858</td>
+      <td>0.002434</td>
+      <td>0.00553</td>
+      <td>0.002079</td>
+      <td>0.004836</td>
+      <td>0.002081</td>
+      <td>0.002232</td>
+      <td>0.001813</td>
+      <td>0.011285</td>
+      <td>0.00487</td>
     </tr>
     <tr>
       <th>param_columntransformer__countvectorizer__max_features</th>
@@ -2853,99 +2723,99 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.084288</td>
-      <td>0.089313</td>
-      <td>0.078243</td>
-      <td>0.075747</td>
-      <td>0.094863</td>
-      <td>0.06405</td>
-      <td>0.098152</td>
-      <td>0.099869</td>
-      <td>0.114214</td>
-      <td>0.092123</td>
+      <td>0.0822</td>
+      <td>0.082909</td>
+      <td>0.065398</td>
+      <td>0.069129</td>
+      <td>0.085947</td>
+      <td>0.075554</td>
+      <td>0.097762</td>
+      <td>0.101345</td>
+      <td>0.097219</td>
+      <td>0.092316</td>
       <td>...</td>
-      <td>0.08613</td>
-      <td>0.085693</td>
-      <td>0.08116</td>
-      <td>0.080165</td>
-      <td>0.083615</td>
-      <td>0.079282</td>
-      <td>0.077803</td>
-      <td>0.072595</td>
-      <td>0.078552</td>
-      <td>0.072043</td>
+      <td>0.079115</td>
+      <td>0.083425</td>
+      <td>0.081989</td>
+      <td>0.070408</td>
+      <td>0.076156</td>
+      <td>0.077311</td>
+      <td>0.074999</td>
+      <td>0.07386</td>
+      <td>0.088884</td>
+      <td>0.070488</td>
     </tr>
     <tr>
       <th>std_fit_time</th>
-      <td>0.016602</td>
-      <td>0.015819</td>
-      <td>0.006106</td>
-      <td>0.00369</td>
-      <td>0.062043</td>
-      <td>0.004305</td>
-      <td>0.009305</td>
-      <td>0.009512</td>
-      <td>0.00691</td>
-      <td>0.00332</td>
+      <td>0.014577</td>
+      <td>0.004185</td>
+      <td>0.005631</td>
+      <td>0.006754</td>
+      <td>0.01568</td>
+      <td>0.031008</td>
+      <td>0.003629</td>
+      <td>0.006037</td>
+      <td>0.007619</td>
+      <td>0.005344</td>
       <td>...</td>
-      <td>0.008153</td>
-      <td>0.002783</td>
-      <td>0.006435</td>
-      <td>0.007655</td>
-      <td>0.005423</td>
-      <td>0.003757</td>
-      <td>0.003885</td>
-      <td>0.004293</td>
-      <td>0.003933</td>
-      <td>0.00871</td>
+      <td>0.001567</td>
+      <td>0.003017</td>
+      <td>0.002351</td>
+      <td>0.007108</td>
+      <td>0.0103</td>
+      <td>0.00314</td>
+      <td>0.013363</td>
+      <td>0.003446</td>
+      <td>0.011732</td>
+      <td>0.009113</td>
     </tr>
     <tr>
       <th>mean_score_time</th>
-      <td>0.017185</td>
-      <td>0.023666</td>
-      <td>0.017927</td>
-      <td>0.015372</td>
-      <td>0.01784</td>
+      <td>0.015095</td>
+      <td>0.017957</td>
+      <td>0.015302</td>
+      <td>0.017258</td>
+      <td>0.012958</td>
       <td>0.013629</td>
-      <td>0.015755</td>
-      <td>0.018243</td>
-      <td>0.018558</td>
-      <td>0.014503</td>
+      <td>0.015418</td>
+      <td>0.0173</td>
+      <td>0.01706</td>
+      <td>0.014041</td>
       <td>...</td>
-      <td>0.021721</td>
-      <td>0.019446</td>
-      <td>0.019574</td>
-      <td>0.016598</td>
-      <td>0.018653</td>
-      <td>0.021746</td>
-      <td>0.018789</td>
-      <td>0.019012</td>
-      <td>0.019396</td>
-      <td>0.018505</td>
+      <td>0.019035</td>
+      <td>0.019277</td>
+      <td>0.020265</td>
+      <td>0.023277</td>
+      <td>0.016918</td>
+      <td>0.016682</td>
+      <td>0.017734</td>
+      <td>0.01878</td>
+      <td>0.018488</td>
+      <td>0.018695</td>
     </tr>
     <tr>
       <th>std_score_time</th>
-      <td>0.003479</td>
-      <td>0.006861</td>
-      <td>0.003633</td>
-      <td>0.00146</td>
-      <td>0.00667</td>
-      <td>0.002123</td>
-      <td>0.003421</td>
-      <td>0.005126</td>
-      <td>0.00234</td>
-      <td>0.001492</td>
+      <td>0.001458</td>
+      <td>0.001163</td>
+      <td>0.00157</td>
+      <td>0.004557</td>
+      <td>0.000737</td>
+      <td>0.000952</td>
+      <td>0.001932</td>
+      <td>0.000574</td>
+      <td>0.003858</td>
+      <td>0.001541</td>
       <td>...</td>
-      <td>0.003483</td>
-      <td>0.002045</td>
-      <td>0.000678</td>
-      <td>0.002692</td>
-      <td>0.001467</td>
-      <td>0.005196</td>
-      <td>0.002197</td>
-      <td>0.000354</td>
-      <td>0.001057</td>
-      <td>0.003472</td>
+      <td>0.00248</td>
+      <td>0.00065</td>
+      <td>0.000962</td>
+      <td>0.004663</td>
+      <td>0.002446</td>
+      <td>0.003736</td>
+      <td>0.004673</td>
+      <td>0.001862</td>
+      <td>0.003155</td>
+      <td>0.001884</td>
     </tr>
     <tr>
       <th>param_columntransformer__countvectorizer__max_features</th>
@@ -3456,14 +3326,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.726583</td>
       <td>0.726573</td>
       <td>...</td>
-      <td>0.50775</td>
+      <td>0.507750</td>
+      <td>0.507750</td>
+      <td>0.507750</td>
+      <td>0.507750</td>
+      <td>0.507750</td>
+      <td>0.507750</td>
       <td>0.507750</td>
       <td>0.50775</td>
-      <td>0.507750</td>
-      <td>0.507750</td>
-      <td>0.507750</td>
-      <td>0.507750</td>
-      <td>0.507750</td>
       <td>0.507750</td>
       <td>0.507750</td>
     </tr>
@@ -3480,14 +3350,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>2000.000000</td>
       <td>400.000000</td>
       <td>...</td>
-      <td>1000.00000</td>
       <td>1000.000000</td>
-      <td>1000.00000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
       <td>400.000000</td>
       <td>400.000000</td>
       <td>400.000000</td>
       <td>400.000000</td>
-      <td>400.000000</td>
+      <td>400.00000</td>
       <td>1000.000000</td>
       <td>100.000000</td>
     </tr>
@@ -3504,14 +3374,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.100000</td>
       <td>0.100000</td>
       <td>...</td>
-      <td>0.10000</td>
+      <td>0.100000</td>
       <td>0.010000</td>
-      <td>0.00100</td>
+      <td>0.001000</td>
       <td>0.001000</td>
       <td>0.010000</td>
       <td>0.100000</td>
       <td>1.000000</td>
-      <td>10.000000</td>
+      <td>10.00000</td>
       <td>100.000000</td>
       <td>0.001000</td>
     </tr>
@@ -3528,40 +3398,40 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>10.000000</td>
       <td>10.000000</td>
       <td>...</td>
-      <td>0.00100</td>
+      <td>0.001000</td>
+      <td>0.001000</td>
+      <td>0.001000</td>
+      <td>0.001000</td>
+      <td>0.001000</td>
+      <td>0.001000</td>
       <td>0.001000</td>
       <td>0.00100</td>
-      <td>0.001000</td>
-      <td>0.001000</td>
-      <td>0.001000</td>
-      <td>0.001000</td>
-      <td>0.001000</td>
       <td>0.001000</td>
       <td>0.001000</td>
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.084288</td>
-      <td>0.089313</td>
-      <td>0.078243</td>
-      <td>0.075747</td>
-      <td>0.094863</td>
-      <td>0.064050</td>
-      <td>0.098152</td>
-      <td>0.099869</td>
-      <td>0.114214</td>
-      <td>0.092123</td>
+      <td>0.082200</td>
+      <td>0.082909</td>
+      <td>0.065398</td>
+      <td>0.069129</td>
+      <td>0.085947</td>
+      <td>0.075554</td>
+      <td>0.097762</td>
+      <td>0.101345</td>
+      <td>0.097219</td>
+      <td>0.092316</td>
       <td>...</td>
-      <td>0.08613</td>
-      <td>0.085693</td>
-      <td>0.08116</td>
-      <td>0.080165</td>
-      <td>0.083615</td>
-      <td>0.079282</td>
-      <td>0.077803</td>
-      <td>0.072595</td>
-      <td>0.078552</td>
-      <td>0.072043</td>
+      <td>0.079115</td>
+      <td>0.083425</td>
+      <td>0.081989</td>
+      <td>0.070408</td>
+      <td>0.076156</td>
+      <td>0.077311</td>
+      <td>0.074999</td>
+      <td>0.07386</td>
+      <td>0.088884</td>
+      <td>0.070488</td>
     </tr>
   </tbody>
 </table>
@@ -4117,7 +3987,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0734084070b5457d5229557330a6046f84af1b0283b05464b26a352f46dd7927.png" src="../../_images/0734084070b5457d5229557330a6046f84af1b0283b05464b26a352f46dd7927.png" />
+<img alt="../../../_images/0734084070b5457d5229557330a6046f84af1b0283b05464b26a352f46dd7927.png" src="../../../_images/0734084070b5457d5229557330a6046f84af1b0283b05464b26a352f46dd7927.png" />
 </div>
 </div>
 <ul class="simple">
@@ -4167,7 +4037,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/97f31a737f66f771539a5f193857ec97ba530936b4ff8cf3a959a3eeb5928c1a.png" src="../../_images/97f31a737f66f771539a5f193857ec97ba530936b4ff8cf3a959a3eeb5928c1a.png" />
+<img alt="../../../_images/97f31a737f66f771539a5f193857ec97ba530936b4ff8cf3a959a3eeb5928c1a.png" src="../../../_images/97f31a737f66f771539a5f193857ec97ba530936b4ff8cf3a959a3eeb5928c1a.png" />
 </div>
 </div>
 </section>
@@ -4206,7 +4076,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9d4eeb6400a4b4c6f05f634db0be598ee7ceb53f9654ea20198622111deb9c7c.png" src="../../_images/9d4eeb6400a4b4c6f05f634db0be598ee7ceb53f9654ea20198622111deb9c7c.png" />
+<img alt="../../../_images/9d4eeb6400a4b4c6f05f634db0be598ee7ceb53f9654ea20198622111deb9c7c.png" src="../../../_images/9d4eeb6400a4b4c6f05f634db0be598ee7ceb53f9654ea20198622111deb9c7c.png" />
 </div>
 </div>
 <p>It seems like we are getting even better cross-validation results with <code class="docutils literal notranslate"><span class="pre">C</span></code> = 2.0 and <code class="docutils literal notranslate"><span class="pre">gamma</span></code> = 0.1</p>
@@ -4220,7 +4090,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8dbd54a5832162aaa1988fc913c344c936895202ee66ab62796f0e4eb7b84ce9.png" src="../../_images/8dbd54a5832162aaa1988fc913c344c936895202ee66ab62796f0e4eb7b84ce9.png" />
+<img alt="../../../_images/8dbd54a5832162aaa1988fc913c344c936895202ee66ab62796f0e4eb7b84ce9.png" src="../../../_images/8dbd54a5832162aaa1988fc913c344c936895202ee66ab62796f0e4eb7b84ce9.png" />
 </div>
 </div>
 <p>That’s good! We are finding some more options for <code class="docutils literal notranslate"><span class="pre">C</span></code> where the accuracy is 0.75.
@@ -4852,31 +4722,31 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>9</th>
       <th>10</th>
       <th>...</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
-      <th>83</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
+      <th>81</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>mean_test_score</th>
       <td>0.745178</td>
-      <td>0.744565</td>
       <td>0.743324</td>
       <td>0.743323</td>
       <td>0.743321</td>
-      <td>0.742703</td>
-      <td>0.742088</td>
+      <td>0.742709</td>
       <td>0.742084</td>
-      <td>0.741463</td>
+      <td>0.742078</td>
+      <td>0.741461</td>
       <td>0.740844</td>
+      <td>0.739605</td>
       <td>...</td>
       <td>0.508371</td>
       <td>0.508371</td>
@@ -4892,24 +4762,24 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>param_columntransformer__countvectorizer__max_features</th>
       <td>100.000000</td>
-      <td>400.000000</td>
       <td>2000.000000</td>
       <td>200.000000</td>
       <td>2000.000000</td>
       <td>2000.000000</td>
-      <td>2000.000000</td>
       <td>800.000000</td>
       <td>1000.000000</td>
+      <td>400.000000</td>
       <td>800.000000</td>
+      <td>2000.000000</td>
       <td>...</td>
-      <td>2000.000000</td>
-      <td>1000.000000</td>
-      <td>1000.000000</td>
+      <td>200.000000</td>
+      <td>400.000000</td>
+      <td>800.000000</td>
+      <td>100.000000</td>
+      <td>800.000000</td>
       <td>800.000000</td>
       <td>400.000000</td>
       <td>2000.000000</td>
-      <td>1000.000000</td>
-      <td>100.000000</td>
       <td>200.000000</td>
       <td>100.000000</td>
     </tr>
@@ -4940,50 +4810,50 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>param_svc__C</th>
       <td>3.000000</td>
-      <td>3.000000</td>
       <td>2.200000</td>
       <td>2.600000</td>
       <td>2.000000</td>
-      <td>2.400000</td>
-      <td>2.600000</td>
       <td>2.800000</td>
+      <td>2.800000</td>
+      <td>2.000000</td>
+      <td>2.200000</td>
       <td>3.000000</td>
       <td>3.000000</td>
       <td>...</td>
-      <td>2.600000</td>
+      <td>3.000000</td>
       <td>2.400000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>2.800000</td>
       <td>2.200000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>2.800000</td>
-      <td>3.000000</td>
-      <td>2.000000</td>
+      <td>2.600000</td>
+      <td>2.200000</td>
       <td>2.400000</td>
-      <td>2.800000</td>
+      <td>2.400000</td>
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.059588</td>
-      <td>0.070081</td>
-      <td>0.097763</td>
-      <td>0.065169</td>
-      <td>0.098663</td>
-      <td>0.098559</td>
-      <td>0.095018</td>
-      <td>0.089294</td>
-      <td>0.092072</td>
-      <td>0.087128</td>
+      <td>0.064695</td>
+      <td>0.095643</td>
+      <td>0.071192</td>
+      <td>0.090349</td>
+      <td>0.094431</td>
+      <td>0.093057</td>
+      <td>0.076544</td>
+      <td>0.077556</td>
+      <td>0.090426</td>
+      <td>0.093606</td>
       <td>...</td>
-      <td>0.107718</td>
-      <td>0.093893</td>
-      <td>0.095177</td>
-      <td>0.088543</td>
-      <td>0.087668</td>
-      <td>0.094725</td>
-      <td>0.093051</td>
-      <td>0.080084</td>
-      <td>0.078740</td>
-      <td>0.066605</td>
+      <td>0.090439</td>
+      <td>0.086478</td>
+      <td>0.087588</td>
+      <td>0.074046</td>
+      <td>0.086142</td>
+      <td>0.085839</td>
+      <td>0.079105</td>
+      <td>0.095217</td>
+      <td>0.081297</td>
+      <td>0.088838</td>
     </tr>
   </tbody>
 </table>
@@ -5025,7 +4895,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/163b2a492062c79567a7e2b32e080103b266f4ba67b15f2a79e495b7867d83c3.png" src="../../_images/163b2a492062c79567a7e2b32e080103b266f4ba67b15f2a79e495b7867d83c3.png" />
+<img alt="../../../_images/163b2a492062c79567a7e2b32e080103b266f4ba67b15f2a79e495b7867d83c3.png" src="../../../_images/163b2a492062c79567a7e2b32e080103b266f4ba67b15f2a79e495b7867d83c3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5041,7 +4911,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/afd9ff3f202e3d6c465d5e1105b0130703055b037f281baef28b034a1e97dc8e.png" src="../../_images/afd9ff3f202e3d6c465d5e1105b0130703055b037f281baef28b034a1e97dc8e.png" />
+<img alt="../../../_images/afd9ff3f202e3d6c465d5e1105b0130703055b037f281baef28b034a1e97dc8e.png" src="../../../_images/afd9ff3f202e3d6c465d5e1105b0130703055b037f281baef28b034a1e97dc8e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5057,7 +4927,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/52f3e99da14c8061beb7fa7821848919963f45d156fcb42b37b5ac0b09cd4f72.png" src="../../_images/52f3e99da14c8061beb7fa7821848919963f45d156fcb42b37b5ac0b09cd4f72.png" />
+<img alt="../../../_images/52f3e99da14c8061beb7fa7821848919963f45d156fcb42b37b5ac0b09cd4f72.png" src="../../../_images/52f3e99da14c8061beb7fa7821848919963f45d156fcb42b37b5ac0b09cd4f72.png" />
 </div>
 </div>
 <p><br><br></p>
@@ -5972,9 +5842,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                               (&#x27;passthrough&#x27;,
                                                                                &#x27;pass...
                    n_iter=100, n_jobs=-1,
-                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x1577111f0&gt;,
-                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x168921100&gt;,
-                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x16888d4c0&gt;},
+                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x14e4f6330&gt;,
+                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2f95e0&gt;,
+                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2ec080&gt;},
                    return_train_score=True)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-69" type="checkbox" ><label for="sk-estimator-id-69" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;RandomizedSearchCV<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.model_selection.RandomizedSearchCV.html">?<span>Documentation for RandomizedSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>RandomizedSearchCV(estimator=Pipeline(steps=[(&#x27;columntransformer&#x27;,
                                               ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                                                StandardScaler(),
@@ -5994,9 +5864,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                               (&#x27;passthrough&#x27;,
                                                                                &#x27;pass...
                    n_iter=100, n_jobs=-1,
-                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x1577111f0&gt;,
-                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x168921100&gt;,
-                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x16888d4c0&gt;},
+                   param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x14e4f6330&gt;,
+                                        &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2f95e0&gt;,
+                                        &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2ec080&gt;},
                    return_train_score=True)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-70" type="checkbox" ><label for="sk-estimator-id-70" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">best_estimator_: Pipeline</label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;columntransformer&#x27;,
                  ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                   StandardScaler(),
@@ -6196,27 +6066,27 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.112441</td>
-      <td>0.095345</td>
-      <td>0.099729</td>
-      <td>0.115183</td>
-      <td>0.303790</td>
-      <td>0.112490</td>
-      <td>0.098950</td>
-      <td>0.169421</td>
-      <td>0.117379</td>
-      <td>0.133210</td>
+      <td>0.107609</td>
+      <td>0.097630</td>
+      <td>0.092132</td>
+      <td>0.110489</td>
+      <td>0.311937</td>
+      <td>0.100352</td>
+      <td>0.094458</td>
+      <td>0.181518</td>
+      <td>0.139178</td>
+      <td>0.134714</td>
       <td>...</td>
-      <td>0.099454</td>
-      <td>0.096722</td>
-      <td>0.092670</td>
-      <td>0.093787</td>
-      <td>0.106764</td>
-      <td>0.100105</td>
-      <td>0.092729</td>
-      <td>0.106996</td>
-      <td>0.091243</td>
-      <td>0.097707</td>
+      <td>0.109116</td>
+      <td>0.101306</td>
+      <td>0.098516</td>
+      <td>0.099077</td>
+      <td>0.085989</td>
+      <td>0.097149</td>
+      <td>0.095546</td>
+      <td>0.102740</td>
+      <td>0.088951</td>
+      <td>0.097453</td>
     </tr>
   </tbody>
 </table>
@@ -6238,7 +6108,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 <section id="id1">
 <h3>Advantages of <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p><img alt="" src="../../_images/randomsearch_bergstra.png" /></p>
+<p><img alt="" src="../../../_images/randomsearch_bergstra.png" /></p>
 <p>Source: <a class="reference external" href="http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf">Bergstra and Bengio, Random Search for Hyper-Parameter Optimization, JMLR 2012</a>.</p>
 <ul class="simple">
 <li><p>The yellow on the left shows how your scores are going to change when you vary the unimportant hyperparameter.</p></li>
@@ -6273,8 +6143,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
-  _data = np.array(data, dtype=dtype, copy=copy,
-/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
   _data = np.array(data, dtype=dtype, copy=copy,
 /Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/numpy/ma/core.py:2820: RuntimeWarning: invalid value encountered in cast
   _data = np.array(data, dtype=dtype, copy=copy,
@@ -6706,9 +6574,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                                   &#x27;p...
                                                 (&#x27;svc&#x27;, SVC())]),
                       factor=2,
-                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x1577111f0&gt;,
-                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x168921100&gt;,
-                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x16888d4c0&gt;},
+                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x14e4f6330&gt;,
+                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2f95e0&gt;,
+                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2ec080&gt;},
                       random_state=123)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-81" type="checkbox" ><label for="sk-estimator-id-81" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;HalvingRandomSearchCV<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.model_selection.HalvingRandomSearchCV.html">?<span>Documentation for HalvingRandomSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>HalvingRandomSearchCV(estimator=Pipeline(steps=[(&#x27;columntransformer&#x27;,
                                                  ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                                                   StandardScaler(),
@@ -6729,9 +6597,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                                   &#x27;p...
                                                 (&#x27;svc&#x27;, SVC())]),
                       factor=2,
-                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x1577111f0&gt;,
-                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x168921100&gt;,
-                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x16888d4c0&gt;},
+                      param_distributions={&#x27;columntransformer__countvectorizer__max_features&#x27;: &lt;scipy.stats._distn_infrastructure.rv_discrete_frozen object at 0x14e4f6330&gt;,
+                                           &#x27;svc__C&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2f95e0&gt;,
+                                           &#x27;svc__gamma&#x27;: &lt;scipy.stats._distn_infrastructure.rv_continuous_frozen object at 0x14e2ec080&gt;},
                       random_state=123)</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-82" type="checkbox" ><label for="sk-estimator-id-82" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">best_estimator_: Pipeline</label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;columntransformer&#x27;,
                  ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
                                                   StandardScaler(),
@@ -6819,10 +6687,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>0</th>
       <td>0</td>
       <td>20</td>
-      <td>0.003529</td>
-      <td>0.000339</td>
-      <td>0.002003</td>
-      <td>0.000489</td>
+      <td>0.004175</td>
+      <td>0.001148</td>
+      <td>0.001907</td>
+      <td>0.000452</td>
       <td>1634</td>
       <td>7129.653205</td>
       <td>0.026777</td>
@@ -6843,10 +6711,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>1</th>
       <td>0</td>
       <td>20</td>
-      <td>0.003038</td>
-      <td>0.000201</td>
-      <td>0.001629</td>
-      <td>0.000163</td>
+      <td>0.003048</td>
+      <td>0.000202</td>
+      <td>0.001664</td>
+      <td>0.000170</td>
       <td>1222</td>
       <td>5513.247691</td>
       <td>5.698385</td>
@@ -6867,10 +6735,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>2</th>
       <td>0</td>
       <td>20</td>
-      <td>0.003015</td>
-      <td>0.000181</td>
-      <td>0.001616</td>
-      <td>0.000145</td>
+      <td>0.003073</td>
+      <td>0.000186</td>
+      <td>0.001692</td>
+      <td>0.000157</td>
       <td>1247</td>
       <td>7800.377619</td>
       <td>0.019382</td>
@@ -6891,10 +6759,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>3</th>
       <td>0</td>
       <td>20</td>
-      <td>0.003014</td>
-      <td>0.000206</td>
-      <td>0.001608</td>
-      <td>0.000137</td>
+      <td>0.003190</td>
+      <td>0.000361</td>
+      <td>0.001612</td>
+      <td>0.000149</td>
       <td>213</td>
       <td>4809.419015</td>
       <td>0.013707</td>
@@ -6915,10 +6783,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>4</th>
       <td>0</td>
       <td>20</td>
-      <td>0.002999</td>
-      <td>0.000210</td>
-      <td>0.001620</td>
-      <td>0.000151</td>
+      <td>0.003233</td>
+      <td>0.000140</td>
+      <td>0.001787</td>
+      <td>0.000268</td>
       <td>1042</td>
       <td>6273.270093</td>
       <td>0.003919</td>
@@ -6963,10 +6831,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>155</th>
       <td>5</td>
       <td>640</td>
-      <td>0.015003</td>
-      <td>0.000114</td>
-      <td>0.003563</td>
-      <td>0.000067</td>
+      <td>0.014979</td>
+      <td>0.000235</td>
+      <td>0.003566</td>
+      <td>0.000045</td>
       <td>729</td>
       <td>4943.400650</td>
       <td>0.092454</td>
@@ -6987,10 +6855,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>156</th>
       <td>5</td>
       <td>640</td>
-      <td>0.014481</td>
-      <td>0.000147</td>
-      <td>0.003748</td>
-      <td>0.000077</td>
+      <td>0.014514</td>
+      <td>0.000105</td>
+      <td>0.003732</td>
+      <td>0.000058</td>
       <td>1383</td>
       <td>2705.246646</td>
       <td>0.173979</td>
@@ -7011,10 +6879,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>157</th>
       <td>5</td>
       <td>640</td>
-      <td>0.013863</td>
-      <td>0.000166</td>
-      <td>0.003528</td>
-      <td>0.000065</td>
+      <td>0.013842</td>
+      <td>0.000135</td>
+      <td>0.003545</td>
+      <td>0.000075</td>
       <td>440</td>
       <td>5315.613738</td>
       <td>0.179730</td>
@@ -7035,10 +6903,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>158</th>
       <td>6</td>
       <td>1280</td>
-      <td>0.046945</td>
-      <td>0.000348</td>
-      <td>0.007563</td>
-      <td>0.000294</td>
+      <td>0.049132</td>
+      <td>0.005149</td>
+      <td>0.007976</td>
+      <td>0.000982</td>
       <td>729</td>
       <td>4943.400650</td>
       <td>0.092454</td>
@@ -7059,10 +6927,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>159</th>
       <td>6</td>
       <td>1280</td>
-      <td>0.046216</td>
-      <td>0.000370</td>
-      <td>0.009132</td>
-      <td>0.000159</td>
+      <td>0.046734</td>
+      <td>0.000635</td>
+      <td>0.009305</td>
+      <td>0.000106</td>
       <td>1383</td>
       <td>2705.246646</td>
       <td>0.173979</td>
@@ -7120,658 +6988,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <li><p><a class="reference external" href="https://github.com/HIPS/Spearmint">spearmint</a></p></li>
 <li><p><a class="reference external" href="https://github.com/rmcantin/bayesopt">BayesOpt</a></p></li>
 </ul>
-</section>
-<section id="questions-for-you">
-<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
-<section id="iclicker-exercise-8-1">
-<h3>(iClicker) Exercise 8.1<a class="headerlink" href="#iclicker-exercise-8-1" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
-<p><strong>Select all of the following statements which are TRUE.</strong></p>
-<ul class="simple">
-<li><p>(A) If you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.</p></li>
-<li><p>(B) Grid search is guaranteed to find the best hyperparameter values.</p></li>
-<li><p>(C) It is possible to get different hyperparameters in different runs of <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code>.</p></li>
-</ul>
-</section>
-<section id="questions-for-class-discussion-hyperparameter-optimization">
-<h3>Questions for class discussion (hyperparameter optimization)<a class="headerlink" href="#questions-for-class-discussion-hyperparameter-optimization" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Suppose you have 10 hyperparameters, each with 4 possible values. If you run <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> with this parameter grid, how many cross-validation experiments will be carried out?</p></li>
-<li><p>Suppose you have 10 hyperparameters and each takes 4 values. If you run <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code> with this parameter grid with <code class="docutils literal notranslate"><span class="pre">n_iter=20</span></code>, how many cross-validation experiments will be carried out?</p></li>
-</ul>
 <p><br><br><br><br></p>
-</section>
-</section>
-<section id="optimization-bias-overfitting-of-the-validation-set">
-<h2>Optimization bias/Overfitting of the validation set<a class="headerlink" href="#optimization-bias-overfitting-of-the-validation-set" title="Link to this heading">#</a></h2>
-<section id="overfitting-of-the-validation-error">
-<h3>Overfitting of the validation error<a class="headerlink" href="#overfitting-of-the-validation-error" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Why do we need to evaluate the model on the test set in the end?</p></li>
-<li><p>Why not just use cross-validation on the whole dataset?</p></li>
-<li><p>While carrying out hyperparameter optimization, we usually try over many possibilities.</p></li>
-<li><p>If our dataset is small and if your validation set is hit too many times, we suffer from <strong>optimization bias</strong> or <strong>overfitting the validation set</strong>.</p></li>
-</ul>
-</section>
-<section id="optimization-bias-of-parameter-learning">
-<h3>Optimization bias of parameter learning<a class="headerlink" href="#optimization-bias-of-parameter-learning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Overfitting of the training error</p></li>
-<li><p>An example:</p>
-<ul>
-<li><p>During training, we could search over tons of different decision trees.</p></li>
-<li><p>So we can get “lucky” and find a tree with low training error by chance.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="optimization-bias-of-hyper-parameter-learning">
-<h3>Optimization bias of hyper-parameter learning<a class="headerlink" href="#optimization-bias-of-hyper-parameter-learning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Overfitting of the validation error</p></li>
-<li><p>An example:</p>
-<ul>
-<li><p>Here, we might optimize the validation error over 1000 values of <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>.</p></li>
-<li><p>One of the 1000 trees might have low validation error by chance.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="optional-example-1-optimization-bias">
-<h3>(Optional) Example 1: Optimization bias<a class="headerlink" href="#optional-example-1-optimization-bias" title="Link to this heading">#</a></h3>
-<p>Consider a multiple-choice (a,b,c,d) “test” with 10 questions:</p>
-<ul class="simple">
-<li><p>If you choose answers randomly, expected grade is 25% (no bias).</p></li>
-<li><p>If you fill out two tests randomly and pick the best, expected grade is 33%.</p>
-<ul>
-<li><p>Optimization bias of ~8%.</p></li>
-</ul>
-</li>
-<li><p>If you take the best among 10 random tests, expected grade is ~47%.</p></li>
-<li><p>If you take the best among 100, expected grade is ~62%.</p></li>
-<li><p>If you take the best among 1000, expected grade is ~73%.</p></li>
-<li><p>If you take the best among 10000, expected grade is ~82%.</p>
-<ul>
-<li><p>You have so many “chances” that you expect to do well.</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>But on new questions the “random choice” accuracy is still 25%.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (Optional) Code attribution: Rodolfo Lourenzutti</span>
-<span class="n">number_tests</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">ntests</span> <span class="ow">in</span> <span class="n">number_tests</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">ntests</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="s2">&quot;The expected grade among the best of </span><span class="si">%d</span><span class="s2"> tests is : </span><span class="si">%0.2f</span><span class="s2">&quot;</span>
-        <span class="o">%</span> <span class="p">(</span><span class="n">ntests</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">)</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The expected grade among the best of 1 tests is : 0.25
-The expected grade among the best of 2 tests is : 0.33
-The expected grade among the best of 10 tests is : 0.47
-The expected grade among the best of 100 tests is : 0.62
-The expected grade among the best of 1000 tests is : 0.73
-The expected grade among the best of 10000 tests is : 0.83
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="optional-example-2-optimization-bias">
-<h3>(Optional) Example 2: Optimization bias<a class="headerlink" href="#optional-example-2-optimization-bias" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>If we instead used a 100-question test then:</p>
-<ul>
-<li><p>Expected grade from best over 1 randomly-filled test is 25%.</p></li>
-<li><p>Expected grade from best over 2 randomly-filled test is ~27%.</p></li>
-<li><p>Expected grade from best over 10 randomly-filled test is ~32%.</p></li>
-<li><p>Expected grade from best over 100 randomly-filled test is ~36%.</p></li>
-<li><p>Expected grade from best over 1000 randomly-filled test is ~40%.</p></li>
-<li><p>Expected grade from best over 10000 randomly-filled test is ~43%.</p></li>
-</ul>
-</li>
-<li><p>The optimization bias <strong>grows with the number of things we try</strong>.</p>
-<ul>
-<li><p>“Complexity” of the set of models we search over.</p></li>
-</ul>
-</li>
-<li><p>But, optimization bias <strong>shrinks quickly with the number of examples</strong>.</p>
-<ul>
-<li><p>But it’s still non-zero and growing if you over-use your validation set!</p></li>
-</ul>
-</li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (Optional) Code attribution: Rodolfo Lourenzutti</span>
-<span class="n">number_tests</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">ntests</span> <span class="ow">in</span> <span class="n">number_tests</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">ntests</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="s2">&quot;The expected grade among the best of </span><span class="si">%d</span><span class="s2"> tests is : </span><span class="si">%0.2f</span><span class="s2">&quot;</span>
-        <span class="o">%</span> <span class="p">(</span><span class="n">ntests</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">)</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The expected grade among the best of 1 tests is : 0.25
-The expected grade among the best of 2 tests is : 0.27
-The expected grade among the best of 10 tests is : 0.32
-The expected grade among the best of 100 tests is : 0.36
-The expected grade among the best of 1000 tests is : 0.40
-The expected grade among the best of 10000 tests is : 0.43
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="optimization-bias-on-the-spotify-dataset">
-<h3>Optimization bias on the Spotify dataset<a class="headerlink" href="#optimization-bias-on-the-spotify-dataset" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_tiny</span><span class="p">,</span> <span class="n">X_test_big</span><span class="p">,</span> <span class="n">y_train_tiny</span><span class="p">,</span> <span class="n">y_test_big</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">X_spotify</span><span class="p">,</span> <span class="n">y_spotify</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_tiny</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20, 14)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_tiny</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>acousticness</th>
-      <th>danceability</th>
-      <th>duration_ms</th>
-      <th>energy</th>
-      <th>instrumentalness</th>
-      <th>key</th>
-      <th>liveness</th>
-      <th>loudness</th>
-      <th>mode</th>
-      <th>speechiness</th>
-      <th>tempo</th>
-      <th>time_signature</th>
-      <th>valence</th>
-      <th>song_title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>130</th>
-      <td>0.055100</td>
-      <td>0.547</td>
-      <td>251093</td>
-      <td>0.643</td>
-      <td>0.000000</td>
-      <td>1</td>
-      <td>0.2670</td>
-      <td>-8.904</td>
-      <td>1</td>
-      <td>0.2270</td>
-      <td>143.064</td>
-      <td>4.0</td>
-      <td>0.1870</td>
-      <td>My Sub (Pt. 2: The Jackin') - Album Version (Edited)</td>
-    </tr>
-    <tr>
-      <th>1687</th>
-      <td>0.000353</td>
-      <td>0.420</td>
-      <td>210240</td>
-      <td>0.929</td>
-      <td>0.000747</td>
-      <td>7</td>
-      <td>0.1220</td>
-      <td>-3.899</td>
-      <td>0</td>
-      <td>0.1210</td>
-      <td>127.204</td>
-      <td>4.0</td>
-      <td>0.3180</td>
-      <td>Chop Suey!</td>
-    </tr>
-    <tr>
-      <th>871</th>
-      <td>0.314000</td>
-      <td>0.430</td>
-      <td>193427</td>
-      <td>0.734</td>
-      <td>0.000286</td>
-      <td>9</td>
-      <td>0.0808</td>
-      <td>-10.043</td>
-      <td>0</td>
-      <td>0.1020</td>
-      <td>133.992</td>
-      <td>4.0</td>
-      <td>0.0537</td>
-      <td>Able to See Me</td>
-    </tr>
-    <tr>
-      <th>1123</th>
-      <td>0.082100</td>
-      <td>0.725</td>
-      <td>246653</td>
-      <td>0.711</td>
-      <td>0.000000</td>
-      <td>10</td>
-      <td>0.0931</td>
-      <td>-4.544</td>
-      <td>1</td>
-      <td>0.0335</td>
-      <td>93.003</td>
-      <td>4.0</td>
-      <td>0.4760</td>
-      <td>Mi Tesoro (feat. Nicky Jam)</td>
-    </tr>
-    <tr>
-      <th>1396</th>
-      <td>0.286000</td>
-      <td>0.616</td>
-      <td>236960</td>
-      <td>0.387</td>
-      <td>0.000000</td>
-      <td>9</td>
-      <td>0.2770</td>
-      <td>-6.079</td>
-      <td>0</td>
-      <td>0.0335</td>
-      <td>81.856</td>
-      <td>4.0</td>
-      <td>0.4700</td>
-      <td>All in Vain</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> <span class="n">SVC</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
-
-<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;svc__gamma&quot;</span><span class="p">:</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-    <span class="s2">&quot;svc__C&quot;</span><span class="p">:</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-<span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grid size: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">.</span><span class="n">values</span><span class="p">())))))</span>
-<span class="n">param_grid</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grid size: 900
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;svc__gamma&#39;: array([1.e-20, 1.e-19, 1.e-18, 1.e-17, 1.e-16, 1.e-15, 1.e-14, 1.e-13,
-        1.e-12, 1.e-11, 1.e-10, 1.e-09, 1.e-08, 1.e-07, 1.e-06, 1.e-05,
-        1.e-04, 1.e-03, 1.e-02, 1.e-01, 1.e+00, 1.e+01, 1.e+02, 1.e+03,
-        1.e+04, 1.e+05, 1.e+06, 1.e+07, 1.e+08, 1.e+09]),
- &#39;svc__C&#39;: array([1.e-20, 1.e-19, 1.e-18, 1.e-17, 1.e-16, 1.e-15, 1.e-14, 1.e-13,
-        1.e-12, 1.e-11, 1.e-10, 1.e-09, 1.e-08, 1.e-07, 1.e-06, 1.e-05,
-        1.e-04, 1.e-03, 1.e-02, 1.e-01, 1.e+00, 1.e+01, 1.e+02, 1.e+03,
-        1.e+04, 1.e+05, 1.e+06, 1.e+07, 1.e+08, 1.e+09])}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_search</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span>
-    <span class="n">pipe</span><span class="p">,</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span>
-<span class="p">)</span>
-<span class="n">random_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_tiny</span><span class="p">,</span> <span class="n">y_train_tiny</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">random_search</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)[</span>
-    <span class="p">[</span>
-        <span class="s2">&quot;mean_test_score&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;param_svc__gamma&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;param_svc__C&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;mean_fit_time&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;rank_test_score&quot;</span><span class="p">,</span>
-    <span class="p">]</span>
-<span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;rank_test_score&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>rank_test_score</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>1</th>
-      <th>...</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>888</th>
-      <th>900</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>mean_test_score</th>
-      <td>6.500000e-01</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.650000</td>
-      <td>0.65000</td>
-      <td>...</td>
-      <td>0.550000</td>
-      <td>5.500000e-01</td>
-      <td>5.500000e-01</td>
-      <td>5.500000e-01</td>
-      <td>0.550000</td>
-      <td>0.550000</td>
-      <td>0.55000</td>
-      <td>5.500000e-01</td>
-      <td>0.550000</td>
-      <td>5.000000e-01</td>
-    </tr>
-    <tr>
-      <th>param_svc__gamma</th>
-      <td>1.000000e-20</td>
-      <td>0.010000</td>
-      <td>0.100000</td>
-      <td>1.000000</td>
-      <td>10.000000</td>
-      <td>100.000000</td>
-      <td>1000.000000</td>
-      <td>10000.000000</td>
-      <td>100000.000000</td>
-      <td>1000000.00000</td>
-      <td>...</td>
-      <td>0.100000</td>
-      <td>1.000000e-01</td>
-      <td>1.000000e-09</td>
-      <td>1.000000e-10</td>
-      <td>0.100000</td>
-      <td>0.100000</td>
-      <td>0.10000</td>
-      <td>1.000000e-01</td>
-      <td>0.100000</td>
-      <td>1.000000e-09</td>
-    </tr>
-    <tr>
-      <th>param_svc__C</th>
-      <td>1.000000e-20</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.010000</td>
-      <td>0.01000</td>
-      <td>...</td>
-      <td>100000.000000</td>
-      <td>1.000000e+07</td>
-      <td>1.000000e+09</td>
-      <td>1.000000e+09</td>
-      <td>1.000000</td>
-      <td>1000.000000</td>
-      <td>10.00000</td>
-      <td>1.000000e+09</td>
-      <td>1000000.000000</td>
-      <td>1.000000e+08</td>
-    </tr>
-    <tr>
-      <th>mean_fit_time</th>
-      <td>1.603684e-02</td>
-      <td>0.004466</td>
-      <td>0.006652</td>
-      <td>0.005735</td>
-      <td>0.005734</td>
-      <td>0.004959</td>
-      <td>0.004919</td>
-      <td>0.004952</td>
-      <td>0.006012</td>
-      <td>0.00461</td>
-      <td>...</td>
-      <td>0.005335</td>
-      <td>5.973482e-03</td>
-      <td>5.087996e-03</td>
-      <td>5.748749e-03</td>
-      <td>0.004496</td>
-      <td>0.004714</td>
-      <td>0.00767</td>
-      <td>5.098629e-03</td>
-      <td>0.006055</td>
-      <td>4.384613e-03</td>
-    </tr>
-  </tbody>
-</table>
-<p>4 rows × 900 columns</p>
-</div></div></div>
-</div>
-<p>Given the results: one might claim that we found a model that performs with 0.8 accuracy on our dataset.</p>
-<ul class="simple">
-<li><p>Do we really believe that 0.80 is a good estimate of our test data?</p></li>
-<li><p>Do we really believe that <code class="docutils literal notranslate"><span class="pre">gamma</span></code>=0.0 and C=1_000_000_000 are the best hyperparameters?</p></li>
-</ul>
-<ul class="simple">
-<li><p>Let’s find out the test score with this best model.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_search</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5024752475247525
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>The results above are overly optimistic.</p>
-<ul>
-<li><p>because our training data is very small and so our validation splits in cross validation would be small.</p></li>
-<li><p>because of the small dataset and the fact that we hit the small validation set 900 times and it’s possible that we got lucky on the validation set!</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>As we suspected, the best cross-validation score is not a good estimate of our test data; it is overly optimistic.</p></li>
-<li><p>We can trust this test score because the test set is of good size.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test_big</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1997, 14)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="overfitting-of-the-validation-data">
-<h3>Overfitting of the validation data<a class="headerlink" href="#overfitting-of-the-validation-data" title="Link to this heading">#</a></h3>
-<p>The following plot demonstrates what happens during overfitting of the validation data.</p>
-<center>
-<img src='../img/optimization-bias.png' width="600">
-</center>
-<p><a class="reference external" href="https://amueller.github.io/COMS4995-s20/slides/aml-03-supervised-learning/#20">Source</a></p>
-<ul class="simple">
-<li><p>Thus, not only can we not trust the cv scores, we also cannot trust cv’s ability to choose of the best hyperparameters.</p></li>
-</ul>
-</section>
-<section id="why-do-we-need-a-test-set">
-<h3>Why do we need a test set?<a class="headerlink" href="#why-do-we-need-a-test-set" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>This is why we need a test set.</p></li>
-<li><p>The frustrating part is that if our dataset is small then our test set is also small 😔.</p></li>
-<li><p>But we don’t have a lot of better alternatives, unfortunately, if we have a small dataset.</p></li>
-</ul>
-</section>
-<section id="when-test-score-is-much-lower-than-cv-score">
-<h3>When test score is much lower than CV score<a class="headerlink" href="#when-test-score-is-much-lower-than-cv-score" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>What to do if your test score is much lower than your cross-validation score:</p>
-<ul>
-<li><p>Try simpler models and use the test set a couple of times; it’s not the end of the world.</p></li>
-<li><p>Communicate this clearly when you report the results.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="large-datasets-solve-many-of-these-problems">
-<h3>Large datasets solve many of these problems<a class="headerlink" href="#large-datasets-solve-many-of-these-problems" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>With infinite amounts of training data, overfitting would not be a problem and you could have your test score = your train score.</p>
-<ul>
-<li><p>Overfitting happens because you only see a bit of data and you learn patterns that are overly specific to your sample.</p></li>
-<li><p>If you saw “all” the data, then the notion of “overly specific” would not apply.</p></li>
-</ul>
-</li>
-<li><p>So, more data will make your test score better and robust.</p></li>
-</ul>
-</section>
-</section>
-<section id="id2">
-<h2>❓❓ Questions for you<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>Attribution: From Mark Schmidt’s notes</p>
-<section id="exercise-8-2">
-<h3>Exercise 8.2<a class="headerlink" href="#exercise-8-2" title="Link to this heading">#</a></h3>
-<p>Would you trust the model?</p>
-<ul class="simple">
-<li><p>You have a dataset and you give me 1/10th of it. The dataset given to me is rather small and so I split it into 96% train and 4% validation split. I carry out hyperparameter optimization using a single 4% validation split and report validation accuracy of 0.97. Would it classify the rest of the data with similar accuracy?</p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>Probably</p></li>
-<li><p>Probably not</p></li>
-</ol>
-</section>
-</section>
-<section id="final-comments-and-summary">
-<h2>Final comments and summary<a class="headerlink" href="#final-comments-and-summary" title="Link to this heading">#</a></h2>
-<section id="id3">
-<h3>Automated hyperparameter optimization<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Advantages</p>
-<ul>
-<li><p>reduce human effort</p></li>
-<li><p>less prone to error and improve reproducibility</p></li>
-<li><p>data-driven approaches may be effective</p></li>
-</ul>
-</li>
-<li><p>Disadvantages</p>
-<ul>
-<li><p>may be hard to incorporate intuition</p></li>
-<li><p>be careful about overfitting on the validation set</p></li>
-</ul>
-</li>
-</ul>
-<p>Often, especially on typical datasets, we get back <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>’s default hyperparameter values. This means that the defaults are well chosen by <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> developers!</p>
-<ul class="simple">
-<li><p>The problem of finding the best values for the important hyperparameters is tricky because</p>
-<ul>
-<li><p>You may have a lot of them (e.g. deep learning).</p></li>
-<li><p>You may have multiple hyperparameters which may interact with each other in unexpected ways.</p></li>
-</ul>
-</li>
-<li><p>The best settings depend on the specific data/problem.</p></li>
-</ul>
-</section>
-</section>
-<section id="optional-readings-and-resources">
-<h2>Optional readings and resources<a class="headerlink" href="#optional-readings-and-resources" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="http://www.robotics.stanford.edu/~ang/papers/cv-final.pdf">Preventing “overfitting” of cross-validation data</a> by Andrew Ng</p></li>
-</ul>
 </section>
 </section>
 
@@ -7788,7 +7005,7 @@ The expected grade among the best of 10000 tests is : 0.43
         },
         kernelOptions: {
             name: "conda-env-cpsc330-py",
-            path: "./lectures/notes"
+            path: "./lectures/102-Varada-lectures/class_demos"
         },
         predefinedOutput: true
     }
@@ -7805,24 +7022,6 @@ The expected grade among the best of 10000 tests is : 0.43
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="07_linear-models.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lecture 7: Linear Models</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="09_classification-metrics.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 9: Classification metrics</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -7839,24 +7038,7 @@ The expected grade among the best of 10000 tests is : 0.43
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-announcements-and-lo">Imports, Announcements, and LO</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-optimization-motivation">Hyperparameter optimization motivation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameters-the-problem">Hyperparameters: the problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-ways-to-pick-hyperparameters">Some ways to pick hyperparameters:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-hyperparameter-optimization">Manual hyperparameter optimization</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-hyperparameter-optimization">Automated hyperparameter optimization</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exhaustive-grid-search-sklearn-model-selection-gridsearchcv">Exhaustive grid search: <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.GridSearchCV</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-jobs-1"><code class="docutils literal notranslate"><span class="pre">n_jobs=-1</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-syntax">The <code class="docutils literal notranslate"><span class="pre">__</span></code> syntax</a></li>
@@ -7876,33 +7058,6 @@ The expected grade among the best of 10000 tests is : 0.43
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fancier-methods">(Optional) Fancier methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-8-1">(iClicker) Exercise 8.1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-class-discussion-hyperparameter-optimization">Questions for class discussion (hyperparameter optimization)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-overfitting-of-the-validation-set">Optimization bias/Overfitting of the validation set</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-of-the-validation-error">Overfitting of the validation error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-of-parameter-learning">Optimization bias of parameter learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-of-hyper-parameter-learning">Optimization bias of hyper-parameter learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-example-1-optimization-bias">(Optional) Example 1: Optimization bias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-example-2-optimization-bias">(Optional) Example 2: Optimization bias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-bias-on-the-spotify-dataset">Optimization bias on the Spotify dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-of-the-validation-data">Overfitting of the validation data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-a-test-set">Why do we need a test set?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-test-score-is-much-lower-than-cv-score">When test score is much lower than CV score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#large-datasets-solve-many-of-these-problems">Large datasets solve many of these problems</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-2">Exercise 8.2</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-comments-and-summary">Final comments and summary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Automated hyperparameter optimization</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-readings-and-resources">Optional readings and resources</a></li>
 </ul>
   </nav></div>
 
@@ -7951,8 +7106,8 @@ By Varada Kolhatkar
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
