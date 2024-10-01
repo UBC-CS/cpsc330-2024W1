@@ -692,36 +692,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002718</td>
-      <td>0.001981</td>
+      <td>0.002767</td>
+      <td>0.002054</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.002225</td>
-      <td>0.001845</td>
+      <td>0.002245</td>
+      <td>0.001841</td>
       <td>0.504</td>
       <td>0.50325</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.002205</td>
-      <td>0.001854</td>
+      <td>0.002285</td>
+      <td>0.001858</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.002196</td>
-      <td>0.001851</td>
+      <td>0.002368</td>
+      <td>0.001969</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.002224</td>
-      <td>0.001862</td>
+      <td>0.002278</td>
+      <td>0.001865</td>
       <td>0.503</td>
       <td>0.50350</td>
     </tr>
@@ -770,36 +770,36 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.564201</td>
-      <td>0.166283</td>
+      <td>2.288357</td>
+      <td>0.153587</td>
       <td>0.828</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.481709</td>
-      <td>0.157447</td>
+      <td>1.248155</td>
+      <td>0.188430</td>
       <td>0.830</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.526951</td>
-      <td>0.167837</td>
+      <td>1.444898</td>
+      <td>0.160630</td>
       <td>0.848</td>
       <td>0.99975</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.125292</td>
-      <td>0.156298</td>
+      <td>1.388544</td>
+      <td>0.190197</td>
       <td>0.833</td>
       <td>1.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.164614</td>
-      <td>0.176642</td>
+      <td>1.086405</td>
+      <td>0.178393</td>
       <td>0.840</td>
       <td>0.99975</td>
     </tr>
@@ -829,150 +829,69 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">scores_dict</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">pipe_lr</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                         <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                        <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">scores_dict</span><span class="p">[</span><span class="s2">&quot;mean_train_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s2">&quot;train_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">scores_dict</span><span class="p">[</span><span class="s2">&quot;mean_cv_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s2">&quot;test_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/_param_validation.py:213,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">213</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="k">except</span> <span class="n">InvalidParameterError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="c1"># When the function is just a wrapper around an estimator, we allow</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="c1"># the function to delegate validation to the estimator, but we replace</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># the name of the estimator by the name of the function in the error</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="c1"># message to avoid confusion.</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="sa">r</span><span class="s2">&quot;parameter of \w+ must be&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="sa">f</span><span class="s2">&quot;parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2"> must be&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:423,</span> in <span class="ni">cross_validate</span><span class="nt">(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, params, pre_dispatch, return_train_score, return_estimator, return_indices, error_score)</span>
-<span class="g g-Whitespace">    </span><span class="mi">420</span> <span class="c1"># We clone the estimator to make sure that all the folds are</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span> <span class="c1"># independent, and that it is pickle-able.</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span> <span class="n">parallel</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">pre_dispatch</span><span class="o">=</span><span class="n">pre_dispatch</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">423</span> <span class="n">results</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">424</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_fit_and_score</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span>         <span class="n">clone</span><span class="p">(</span><span class="n">estimator</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>         <span class="n">scorer</span><span class="o">=</span><span class="n">scorers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">429</span>         <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span>         <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span>         <span class="n">parameters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>         <span class="n">fit_params</span><span class="o">=</span><span class="n">routed_params</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span>         <span class="n">score_params</span><span class="o">=</span><span class="n">routed_params</span><span class="o">.</span><span class="n">scorer</span><span class="o">.</span><span class="n">score</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span>         <span class="n">return_train_score</span><span class="o">=</span><span class="n">return_train_score</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>         <span class="n">return_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">return_estimator</span><span class="o">=</span><span class="n">return_estimator</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span>         <span class="n">error_score</span><span class="o">=</span><span class="n">error_score</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="k">for</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">indices</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="n">_warn_or_raise_about_fit_failures</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">error_score</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span> <span class="c1"># For callable scoring, the return type is only know after calling. If the</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="c1"># return type is a dictionary, the error scores can now be inserted with</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="c1"># the correct key.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">74</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/parallel.py:1918,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1916</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sequential_output</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1917</span>     <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1918</span>     <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1920</span> <span class="c1"># Let&#39;s create an ID that uniquely identifies the current call. If the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1921</span> <span class="c1"># call is interrupted early and that the same instance is immediately</span>
-<span class="g g-Whitespace">   </span><span class="mi">1922</span> <span class="c1"># re-used, this id will be used to prevent workers that were</span>
-<span class="g g-Whitespace">   </span><span class="mi">1923</span> <span class="c1"># concurrently finalizing a task from the previous call to run the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1924</span> <span class="c1"># callback.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1925</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/parallel.py:1847,</span> in <span class="ni">Parallel._get_sequential_output</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1845</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_batches</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">1846</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="ne">-&gt; </span><span class="mi">1847</span> <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1848</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_completed_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">1849</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_progress</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/parallel.py:136,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">136</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:910,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
-<span class="g g-Whitespace">    </span><span class="mi">907</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;fit_error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">909</span> <span class="n">fit_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
-<span class="ne">--&gt; </span><span class="mi">910</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">_score</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">911</span>     <span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">scorer</span><span class="p">,</span> <span class="n">score_params_test</span><span class="p">,</span> <span class="n">error_score</span>
-<span class="g g-Whitespace">    </span><span class="mi">912</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">913</span> <span class="n">score_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">-</span> <span class="n">fit_time</span>
-<span class="g g-Whitespace">    </span><span class="mi">914</span> <span class="k">if</span> <span class="n">return_train_score</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:971,</span> in <span class="ni">_score</span><span class="nt">(estimator, X_test, y_test, scorer, score_params, error_score)</span>
-<span class="g g-Whitespace">    </span><span class="mi">969</span>         <span class="n">scores</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">971</span>         <span class="n">scores</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">972</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">973</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">_MultimetricScorer</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">974</span>         <span class="c1"># If `_MultimetricScorer` raises exception, the `error_score`</span>
-<span class="g g-Whitespace">    </span><span class="mi">975</span>         <span class="c1"># parameter is equal to &quot;raise&quot;.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/metrics/_scorer.py:455,</span> in <span class="ni">_PassthroughScorer.__call__</span><span class="nt">(self, estimator, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Method that wraps estimator.score&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">455</span>     <span class="k">return</span> <span class="n">estimator</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py:1000,</span> in <span class="ni">Pipeline.score</span><span class="nt">(self, X, y, sample_weight, **params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_routing_enabled</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span>     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1000</span>         <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>     <span class="n">score_params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span>     <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1417,</span> in <span class="ni">CountVectorizer.transform</span><span class="nt">(self, raw_documents)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1414</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_vocabulary</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1416</span> <span class="c1"># use the same matrix-building strategy as fit_transform</span>
-<span class="ne">-&gt; </span><span class="mi">1417</span> <span class="n">_</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_vocab</span><span class="p">(</span><span class="n">raw_documents</span><span class="p">,</span> <span class="n">fixed_vocab</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1419</span>     <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:1259,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1257</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">raw_documents</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span>     <span class="n">feature_counter</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">-&gt; </span><span class="mi">1259</span>     <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">analyze</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span>             <span class="n">feature_idx</span> <span class="o">=</span> <span class="n">vocabulary</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/feature_extraction/text.py:110,</span> in <span class="ni">_analyze</span><span class="nt">(doc, analyzer, tokenizer, ngrams, preprocessor, decoder, stop_words)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">ngrams</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">if</span> <span class="n">stop_words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>mean_train_scores</th>
+      <th>mean_cv_scores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.001</td>
+      <td>0.82615</td>
+      <td>0.7864</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.010</td>
+      <td>0.91795</td>
+      <td>0.8322</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.100</td>
+      <td>0.98570</td>
+      <td>0.8422</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.000</td>
+      <td>0.99980</td>
+      <td>0.8340</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.000</td>
+      <td>1.00000</td>
+      <td>0.8256</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>100.000</td>
+      <td>1.00000</td>
+      <td>0.8312</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1002,7 +921,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-2 {
+<div class="output text_html"><style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: black;
   --sklearn-color-line: gray;
@@ -1032,15 +951,15 @@ Name: count, dtype: int64
   }
 }
 
-#sk-container-id-2 {
+#sk-container-id-1 {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-2 pre {
+#sk-container-id-1 pre {
   padding: 0;
 }
 
-#sk-container-id-2 input.sk-hidden--visually {
+#sk-container-id-1 input.sk-hidden--visually {
   border: 0;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -1052,7 +971,7 @@ Name: count, dtype: int64
   width: 1px;
 }
 
-#sk-container-id-2 div.sk-dashed-wrapped {
+#sk-container-id-1 div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -1060,7 +979,7 @@ Name: count, dtype: int64
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-2 div.sk-container {
+#sk-container-id-1 div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -1070,7 +989,7 @@ Name: count, dtype: int64
   position: relative;
 }
 
-#sk-container-id-2 div.sk-text-repr-fallback {
+#sk-container-id-1 div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -1086,14 +1005,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-2 div.sk-parallel-item::after {
+#sk-container-id-1 div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-2 div.sk-parallel {
+#sk-container-id-1 div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1101,28 +1020,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-2 div.sk-parallel-item {
+#sk-container-id-1 div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-2 div.sk-parallel-item:first-child::after {
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-2 div.sk-parallel-item:last-child::after {
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-2 div.sk-parallel-item:only-child::after {
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-2 div.sk-serial {
+#sk-container-id-1 div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1140,14 +1059,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-2 div.sk-toggleable {
+#sk-container-id-1 div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-2 label.sk-toggleable__label {
+#sk-container-id-1 label.sk-toggleable__label {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -1157,7 +1076,7 @@ clickable and can be expanded/collapsed.
   text-align: center;
 }
 
-#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -1165,13 +1084,13 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-2 div.sk-toggleable__content {
+#sk-container-id-1 div.sk-toggleable__content {
   max-height: 0;
   max-width: 0;
   overflow: hidden;
@@ -1180,12 +1099,12 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-2 div.sk-toggleable__content.fitted {
+#sk-container-id-1 div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-2 div.sk-toggleable__content pre {
+#sk-container-id-1 div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -1193,79 +1112,79 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
   max-height: 200px;
   max-width: 100%;
   overflow: auto;
 }
 
-#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-2 div.sk-label label.sk-toggleable__label,
-#sk-container-id-2 div.sk-label label {
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-2 div.sk-label label {
+#sk-container-id-1 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
   display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-2 div.sk-label-container {
+#sk-container-id-1 div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-2 div.sk-estimator {
+#sk-container-id-1 div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -1275,18 +1194,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-2 div.sk-estimator.fitted {
+#sk-container-id-1 div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-2 div.sk-estimator:hover {
+#sk-container-id-1 div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-2 div.sk-estimator.fitted:hover {
+#sk-container-id-1 div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -1373,7 +1292,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-2 a.estimator_doc_link {
+#sk-container-id-1 a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
@@ -1388,31 +1307,31 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-2 a.estimator_doc_link.fitted {
+#sk-container-id-1 a.estimator_doc_link.fitted {
   /* fitted */
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-2 a.estimator_doc_link:hover {
+#sk-container-id-1 a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;countvectorizer&#x27;,
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;countvectorizer&#x27;,
                  CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)),
                 (&#x27;logisticregression&#x27;,
-                 LogisticRegression(C=0.1, max_iter=1000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;countvectorizer&#x27;,
+                 LogisticRegression(C=0.1, max_iter=1000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;countvectorizer&#x27;,
                  CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)),
                 (&#x27;logisticregression&#x27;,
-                 LogisticRegression(C=0.1, max_iter=1000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;CountVectorizer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></label><div class="sk-toggleable__content fitted"><pre>CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression(C=0.1, max_iter=1000)</pre></div> </div></div></div></div></div></div></div></div>
+                 LogisticRegression(C=0.1, max_iter=1000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;CountVectorizer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></label><div class="sk-toggleable__content fitted"><pre>CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression(C=0.1, max_iter=1000)</pre></div> </div></div></div></div></div></div></div></div>
 </div>
 </section>
 <section id="examining-learned-coefficients">
@@ -1608,7 +1527,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8c8a8c8a98cd03d190bc577cda8cbd61b11265a73ce49c91aa6aa85397b13f99.png" src="../../../_images/8c8a8c8a98cd03d190bc577cda8cbd61b11265a73ce49c91aa6aa85397b13f99.png" />
+<img alt="../../../_images/b7be216010f0c1d3fe0929ff9a20fcb10e962cd8bdbacf00f6d94ab8d7723cc0.png" src="../../../_images/b7be216010f0c1d3fe0929ff9a20fcb10e962cd8bdbacf00f6d94ab8d7723cc0.png" />
 </div>
 </div>
 <p>Let’s explore prediction of the following new review.</p>
@@ -1767,7 +1686,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../../../_images/ee88b881e2305cbcc91a4fce3e95ea667f80da1b7652ba3ed23c308d26b9eaf3.png" src="../../../_images/ee88b881e2305cbcc91a4fce3e95ea667f80da1b7652ba3ed23c308d26b9eaf3.png" />
+</div></div><img alt="../../../_images/7322051007b822285267ff512d7efba0ea92ffee6d40fdf5cc8d81121a418ba0.png" src="../../../_images/7322051007b822285267ff512d7efba0ea92ffee6d40fdf5cc8d81121a418ba0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1840,7 +1759,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../../../_images/cdd6549fe2538985e9724f7e4b6a35387b45f26779b3fdf8807c30df77e43273.png" src="../../../_images/cdd6549fe2538985e9724f7e4b6a35387b45f26779b3fdf8807c30df77e43273.png" />
+</div></div><img alt="../../../_images/4ec8f6180cfe07eb2d3d1fc256cfd886e08ca976a18da4ef5d17e0b448b0d398.png" src="../../../_images/4ec8f6180cfe07eb2d3d1fc256cfd886e08ca976a18da4ef5d17e0b448b0d398.png" />
 </div>
 </div>
 <p><br><br><br><br></p>
@@ -1974,7 +1893,7 @@ Prediction probability: 1.0000
   </tbody>
 </table>
 <p>160 rows × 1 columns</p>
-</div></div><img alt="../../../_images/b01624a4d72e74b5248e724a060d4c1f4bd89e62fcf9b732ca514f8f0144f867.png" src="../../../_images/b01624a4d72e74b5248e724a060d4c1f4bd89e62fcf9b732ca514f8f0144f867.png" />
+</div></div><img alt="../../../_images/741cff8aebdf4f4714e6e13d84c9cdd6716e3e09bc50e6ebd802304d3ff7f0b6.png" src="../../../_images/741cff8aebdf4f4714e6e13d84c9cdd6716e3e09bc50e6ebd802304d3ff7f0b6.png" />
 </div>
 </div>
 <p>The review has both positive and negative words but the words with <strong>positive</strong> coefficients win in this case!</p>
@@ -2105,7 +2024,7 @@ Prediction probability: 1.0000
   </tbody>
 </table>
 <p>283 rows × 1 columns</p>
-</div></div><img alt="../../../_images/3c1655870b972c5aea0aec056308d11ecb378d9d6b40fa0aefe750e3a71516d1.png" src="../../../_images/3c1655870b972c5aea0aec056308d11ecb378d9d6b40fa0aefe750e3a71516d1.png" />
+</div></div><img alt="../../../_images/4d248ee1d7c6ab917242e2b332034f6dccdded8e64618bfa953361fa4ace5c57.png" src="../../../_images/4d248ee1d7c6ab917242e2b332034f6dccdded8e64618bfa953361fa4ace5c57.png" />
 </div>
 </div>
 <p>The review has both positive and negative words but the words with negative coefficients win in this case!</p>
