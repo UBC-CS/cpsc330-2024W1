@@ -15,7 +15,7 @@ repository:
 # some cells (for eg grid search) take a long time so this extends the timeout
 
 execute:  
-  execute_notebooks: "cache"
+  execute_notebooks: "off"
   timeout: 100
 
 sphinx:
