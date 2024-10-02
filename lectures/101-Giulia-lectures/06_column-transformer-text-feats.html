@@ -528,6 +528,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/gtoti/Documents/GitHub/cpsc330-2024W1/lectures/code/utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="learning-outcomes">
@@ -5999,48 +6005,48 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:982: UserWarning: Scoring failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:982: UserWarning: Scoring failed. The score on this train-test partition for these parameters will be set to nan. Details: 
 Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py&quot;, line 971, in _score
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/model_selection/_validation.py&quot;, line 971, in _score
     scores = scorer(estimator, X_test, y_test, **score_params)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/metrics/_scorer.py&quot;, line 455, in __call__
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/metrics/_scorer.py&quot;, line 455, in __call__
     return estimator.score(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1000, in score
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1000, in score
     Xt = transform.transform(Xt)
          ^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 316, in wrapped
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 313, in wrapped
     data_to_wrap = f(self, X, *args, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 1076, in transform
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 1076, in transform
     Xs = self._call_func_on_transformers(
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 885, in _call_func_on_transformers
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 885, in _call_func_on_transformers
     return Parallel(n_jobs=self.n_jobs)(jobs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 74, in __call__
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 74, in __call__
     return super().__call__(iterable_with_config)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1918, in __call__
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1918, in __call__
     return output if self.return_generator else list(output)
                                                 ^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1847, in _get_sequential_output
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1847, in _get_sequential_output
     res = func(*args, **kwargs)
           ^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 136, in __call__
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 136, in __call__
     return self.function(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1290, in _transform_one
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1290, in _transform_one
     res = transformer.transform(X, **params.transform)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 316, in wrapped
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 313, in wrapped
     data_to_wrap = f(self, X, *args, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 1024, in transform
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 1024, in transform
     X_int, X_mask = self._transform(
                     ^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 214, in _transform
+  File &quot;/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 214, in _transform
     raise ValueError(msg)
 ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during transform
 
@@ -6074,36 +6080,36 @@ ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during tran
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009063</td>
-      <td>0.005029</td>
+      <td>0.022843</td>
+      <td>0.007053</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007405</td>
-      <td>0.003923</td>
+      <td>0.007415</td>
+      <td>0.004665</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007220</td>
-      <td>0.003762</td>
+      <td>0.006810</td>
+      <td>0.003359</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007192</td>
-      <td>0.003764</td>
+      <td>0.006406</td>
+      <td>0.003220</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007057</td>
-      <td>0.005174</td>
+      <td>0.006502</td>
+      <td>0.014327</td>
       <td>NaN</td>
       <td>1.000000</td>
     </tr>
@@ -6661,36 +6667,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009056</td>
-      <td>0.004767</td>
+      <td>0.023539</td>
+      <td>0.007130</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007247</td>
-      <td>0.003811</td>
+      <td>0.010100</td>
+      <td>0.005064</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007091</td>
-      <td>0.003776</td>
+      <td>0.007705</td>
+      <td>0.003428</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007243</td>
-      <td>0.003784</td>
+      <td>0.006245</td>
+      <td>0.002968</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007086</td>
-      <td>0.003782</td>
+      <td>0.005798</td>
+      <td>0.003030</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -7368,36 +7374,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.010772</td>
-      <td>0.004882</td>
+      <td>0.032727</td>
+      <td>0.007776</td>
       <td>1.00</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.008378</td>
-      <td>0.004475</td>
+      <td>0.011305</td>
+      <td>0.005460</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.008119</td>
-      <td>0.004435</td>
+      <td>0.008532</td>
+      <td>0.004124</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.008111</td>
-      <td>0.004377</td>
+      <td>0.006721</td>
+      <td>0.003442</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.008019</td>
-      <td>0.004412</td>
+      <td>0.006613</td>
+      <td>0.003734</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -9151,8 +9157,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.004 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.002)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
@@ -9669,15 +9675,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.004 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.002)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.254 (+/- 0.020)</td>
+      <td>0.038 (+/- 0.026)</td>
+      <td>0.198 (+/- 0.015)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
@@ -9731,24 +9737,31 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.004 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.002)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.254 (+/- 0.020)</td>
+      <td>0.038 (+/- 0.026)</td>
+      <td>0.198 (+/- 0.015)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>7.833 (+/- 0.027)</td>
-      <td>1.958 (+/- 0.004)</td>
+      <td>14.411 (+/- 0.238)</td>
+      <td>4.922 (+/- 0.025)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
+    </tr>
+    <tr>
+      <th>imp + scaling + ohe + SVR (C=10000)</th>
+      <td>13.175 (+/- 0.092)</td>
+      <td>4.902 (+/- 0.074)</td>
+      <td>0.708 (+/- 0.011)</td>
+      <td>0.713 (+/- 0.017)</td>
     </tr>
   </tbody>
 </table>
@@ -9801,29 +9814,29 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.004 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.002)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.254 (+/- 0.020)</td>
+      <td>0.038 (+/- 0.026)</td>
+      <td>0.198 (+/- 0.015)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>7.833 (+/- 0.027)</td>
-      <td>1.958 (+/- 0.004)</td>
+      <td>14.411 (+/- 0.238)</td>
+      <td>4.922 (+/- 0.025)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (C=10000)</th>
-      <td>7.216 (+/- 0.022)</td>
-      <td>1.958 (+/- 0.003)</td>
+      <td>13.175 (+/- 0.092)</td>
+      <td>4.902 (+/- 0.074)</td>
       <td>0.708 (+/- 0.011)</td>
       <td>0.713 (+/- 0.017)</td>
     </tr>
@@ -10359,8 +10372,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Compressed Sparse Row sparse matrix of dtype &#39;int64&#39;
-	with 71 stored elements and shape (6, 61)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;6x61 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+	with 71 stored elements in Compressed Sparse Row format&gt;
 </pre></div>
 </div>
 </div>

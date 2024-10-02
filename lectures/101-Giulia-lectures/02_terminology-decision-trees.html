@@ -538,12 +538,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/cpsc330-2024W1/cpsc330-2024W1/lectures/code/utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
-</pre></div>
-</div>
-</div>
 </div>
 <p><br><br></p>
 </section>
@@ -599,97 +593,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21, 8)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="recap-supervised-machine-learning">
@@ -720,94 +623,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>So the first step in training a supervised machine learning model is separating <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <div class="cell docutils container">
@@ -818,102 +633,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        A+
-1    not A+
-2    not A+
-3        A+
-4        A+
-Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
@@ -974,83 +697,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>A+</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,83 +706,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>82</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>92</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1144,279 +713,10 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>0</td>
-      <td>70</td>
-      <td>73</td>
-      <td>68</td>
-      <td>74</td>
-      <td>71</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1</td>
-      <td>0</td>
-      <td>80</td>
-      <td>88</td>
-      <td>89</td>
-      <td>88</td>
-      <td>91</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0</td>
-      <td>1</td>
-      <td>95</td>
-      <td>93</td>
-      <td>69</td>
-      <td>79</td>
-      <td>75</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0</td>
-      <td>0</td>
-      <td>97</td>
-      <td>90</td>
-      <td>94</td>
-      <td>99</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1</td>
-      <td>1</td>
-      <td>95</td>
-      <td>95</td>
-      <td>94</td>
-      <td>94</td>
-      <td>85</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0</td>
-      <td>1</td>
-      <td>98</td>
-      <td>86</td>
-      <td>95</td>
-      <td>95</td>
-      <td>78</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1</td>
-      <td>1</td>
-      <td>95</td>
-      <td>88</td>
-      <td>93</td>
-      <td>92</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>1</td>
-      <td>1</td>
-      <td>98</td>
-      <td>96</td>
-      <td>96</td>
-      <td>99</td>
-      <td>100</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0</td>
-      <td>1</td>
-      <td>95</td>
-      <td>94</td>
-      <td>96</td>
-      <td>95</td>
-      <td>100</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0</td>
-      <td>1</td>
-      <td>95</td>
-      <td>90</td>
-      <td>93</td>
-      <td>95</td>
-      <td>70</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>1</td>
-      <td>0</td>
-      <td>92</td>
-      <td>85</td>
-      <td>67</td>
-      <td>94</td>
-      <td>92</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>0</td>
-      <td>0</td>
-      <td>75</td>
-      <td>91</td>
-      <td>93</td>
-      <td>86</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>1</td>
-      <td>0</td>
-      <td>86</td>
-      <td>89</td>
-      <td>65</td>
-      <td>86</td>
-      <td>87</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>1</td>
-      <td>1</td>
-      <td>91</td>
-      <td>93</td>
-      <td>90</td>
-      <td>88</td>
-      <td>82</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>94</td>
-      <td>87</td>
-      <td>81</td>
-      <td>89</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>1</td>
-      <td>1</td>
-      <td>96</td>
-      <td>92</td>
-      <td>92</td>
-      <td>96</td>
-      <td>87</td>
-      <td>A+</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_df</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21, 8)
 </pre></div>
 </div>
 </div>
@@ -1436,139 +736,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>price</th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>lat</th>
-      <th>long</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>221900.0</td>
-      <td>3</td>
-      <td>1.00</td>
-      <td>1180</td>
-      <td>5650</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>1180</td>
-      <td>0</td>
-      <td>1955</td>
-      <td>0</td>
-      <td>98178</td>
-      <td>47.5112</td>
-      <td>-122.257</td>
-      <td>1340</td>
-      <td>5650</td>
-    </tr>
-    <tr>
-      <td>538000.0</td>
-      <td>3</td>
-      <td>2.25</td>
-      <td>2570</td>
-      <td>7242</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>2170</td>
-      <td>400</td>
-      <td>1951</td>
-      <td>1991</td>
-      <td>98125</td>
-      <td>47.7210</td>
-      <td>-122.319</td>
-      <td>1690</td>
-      <td>7639</td>
-    </tr>
-    <tr>
-      <td>180000.0</td>
-      <td>2</td>
-      <td>1.00</td>
-      <td>770</td>
-      <td>10000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>6</td>
-      <td>770</td>
-      <td>0</td>
-      <td>1933</td>
-      <td>0</td>
-      <td>98028</td>
-      <td>47.7379</td>
-      <td>-122.233</td>
-      <td>2720</td>
-      <td>8062</td>
-    </tr>
-    <tr>
-      <td>604000.0</td>
-      <td>4</td>
-      <td>3.00</td>
-      <td>1960</td>
-      <td>5000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>7</td>
-      <td>1050</td>
-      <td>910</td>
-      <td>1965</td>
-      <td>0</td>
-      <td>98136</td>
-      <td>47.5208</td>
-      <td>-122.393</td>
-      <td>1360</td>
-      <td>5000</td>
-    </tr>
-    <tr>
-      <td>510000.0</td>
-      <td>3</td>
-      <td>2.00</td>
-      <td>1680</td>
-      <td>8080</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1680</td>
-      <td>0</td>
-      <td>1987</td>
-      <td>0</td>
-      <td>98074</td>
-      <td>47.6168</td>
-      <td>-122.045</td>
-      <td>1800</td>
-      <td>7503</td>
-    </tr>
-  </tbody>
-</table></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1578,168 +745,10 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>lat</th>
-      <th>long</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3</td>
-      <td>1.00</td>
-      <td>1180</td>
-      <td>5650</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>1180</td>
-      <td>0</td>
-      <td>1955</td>
-      <td>0</td>
-      <td>98178</td>
-      <td>47.5112</td>
-      <td>-122.257</td>
-      <td>1340</td>
-      <td>5650</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>2.25</td>
-      <td>2570</td>
-      <td>7242</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>7</td>
-      <td>2170</td>
-      <td>400</td>
-      <td>1951</td>
-      <td>1991</td>
-      <td>98125</td>
-      <td>47.7210</td>
-      <td>-122.319</td>
-      <td>1690</td>
-      <td>7639</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>1.00</td>
-      <td>770</td>
-      <td>10000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>6</td>
-      <td>770</td>
-      <td>0</td>
-      <td>1933</td>
-      <td>0</td>
-      <td>98028</td>
-      <td>47.7379</td>
-      <td>-122.233</td>
-      <td>2720</td>
-      <td>8062</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>3.00</td>
-      <td>1960</td>
-      <td>5000</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>7</td>
-      <td>1050</td>
-      <td>910</td>
-      <td>1965</td>
-      <td>0</td>
-      <td>98136</td>
-      <td>47.5208</td>
-      <td>-122.393</td>
-      <td>1360</td>
-      <td>5000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3</td>
-      <td>2.00</td>
-      <td>1680</td>
-      <td>8080</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1680</td>
-      <td>0</td>
-      <td>1987</td>
-      <td>0</td>
-      <td>98074</td>
-      <td>47.6168</td>
-      <td>-122.045</td>
-      <td>1800</td>
-      <td>7503</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    221900.0
-1    538000.0
-2    180000.0
-3    604000.0
-4    510000.0
-Name: price, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1760,11 +769,6 @@ Name: price, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21613, 18)
 </pre></div>
 </div>
 </div>
@@ -1819,106 +823,10 @@ Name: price, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_df</span><span class="p">[</span><span class="s1">&#39;quiz2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quiz2
-not A+    11
-A+        10
-Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1961,94 +869,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>not A+</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>A+</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>A+</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="create-x-and-y">
@@ -2106,14 +926,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;,
-       &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;,
-       &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;,
-       &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;], dtype=&#39;&lt;U6&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="score-your-model">
@@ -2127,11 +939,6 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy of the model on the training data: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dummy_clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy of the model on the training data: 0.524
 </pre></div>
 </div>
 </div>
@@ -2154,11 +961,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The error of the model on the training data: 0.476
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="fit-predict-and-score-summary">
@@ -2176,14 +978,6 @@ Name: count, dtype: int64
 
 <span class="n">new_examples</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">92</span><span class="p">]]</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_examples</span><span class="p">)</span> <span class="c1"># Predict on some new data using the trained model</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5238095238095238
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;not A+&#39;, &#39;not A+&#39;], dtype=&#39;&lt;U6&#39;)
 </pre></div>
 </div>
 </div>
@@ -2215,11 +1009,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([86.28571429, 86.28571429])
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code> work similarly to classification. The <code class="docutils literal notranslate"><span class="pre">score</span></code> method in the context of regression returns somethings called <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score"><span class="math notranslate nohighlight">\(R^2\)</span> score</a>. (More on this in later videos.)</p>
@@ -2232,11 +1021,6 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -2331,102 +1115,10 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        A+
-1    not A+
-2    not A+
-3        A+
-4        A+
-Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
@@ -2441,11 +1133,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5238095238095238
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="decisiontreeclassifier-on-quiz2-grade-prediction-toy-dataset">
@@ -2457,11 +1144,6 @@ Name: quiz2, dtype: object
 <span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span> <span class="c1"># Create a decision tree</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_binary</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Fit a decision tree</span>
 <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_binary</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Assess the model</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9047619047619048
 </pre></div>
 </div>
 </div>
@@ -2480,9 +1162,6 @@ Name: quiz2, dtype: object
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ef39404d162636c440d60c3103951b1612f6115ab217d66dc6fe5405efca7b65.png" src="../../_images/ef39404d162636c440d60c3103951b1612f6115ab217d66dc6fe5405efca7b65.png" />
 </div>
 </div>
 </section>
@@ -2512,48 +1191,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2566,23 +1203,11 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ef39404d162636c440d60c3103951b1612f6115ab217d66dc6fe5405efca7b65.png" src="../../_images/ef39404d162636c440d60c3103951b1612f6115ab217d66dc6fe5405efca7b65.png" />
-</div>
 </div>
 <p>What’s the prediction for the new example?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_example</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A+&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -2604,9 +1229,6 @@ Name: quiz2, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fruit_tree</span><span class="p">()</span> <span class="c1"># defined in code/plotting_functions.py</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/423d37ec3fc933b25b28fe31e2c6fc3a486c1cc1c39ee34cb21c7ecd4d3674f6.png" src="../../_images/423d37ec3fc933b25b28fe31e2c6fc3a486c1cc1c39ee34cb21c7ecd4d3674f6.png" />
 </div>
 </div>
 </section>
@@ -2631,9 +1253,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/b4d218560842f93a80f7f728f2c8ca74144218d530177c33a81c8f978e3d57bc.png" src="../../_images/b4d218560842f93a80f7f728f2c8ca74144218d530177c33a81c8f978e3d57bc.png" />
-</div>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
@@ -2650,88 +1269,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2745,9 +1282,6 @@ Name: quiz2, dtype: object
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2ddc40d9c9ec0ca4763d2cb6a7fadd8b3c539091dac311ecab3163d3c4436821.png" src="../../_images/2ddc40d9c9ec0ca4763d2cb6a7fadd8b3c539091dac311ecab3163d3c4436821.png" />
 </div>
 </div>
 </section>
@@ -2775,94 +1309,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>82</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>92</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>90</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2878,103 +1324,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R^2 score on the training data: 0.989
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ml_experience</th>
-      <th>class_attendance</th>
-      <th>lab1</th>
-      <th>lab2</th>
-      <th>lab3</th>
-      <th>lab4</th>
-      <th>quiz1</th>
-      <th>quiz2</th>
-      <th>predicted_quiz2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>92</td>
-      <td>93</td>
-      <td>84</td>
-      <td>91</td>
-      <td>92</td>
-      <td>90</td>
-      <td>90.333333</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>94</td>
-      <td>90</td>
-      <td>80</td>
-      <td>83</td>
-      <td>91</td>
-      <td>84</td>
-      <td>83.000000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>78</td>
-      <td>85</td>
-      <td>83</td>
-      <td>80</td>
-      <td>80</td>
-      <td>82</td>
-      <td>83.000000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>91</td>
-      <td>94</td>
-      <td>92</td>
-      <td>91</td>
-      <td>89</td>
-      <td>92</td>
-      <td>92.000000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>77</td>
-      <td>83</td>
-      <td>90</td>
-      <td>92</td>
-      <td>85</td>
-      <td>90</td>
-      <td>90.333333</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p><br><br></p>
 </section>
@@ -3038,9 +1387,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/f66dbc546f57dabed8fef88fcd18281f40cedfb7cbdd8c17dd0f71e6ccf6cd71.png" src="../../_images/f66dbc546f57dabed8fef88fcd18281f40cedfb7cbdd8c17dd0f71e6ccf6cd71.png" />
-</div>
 </div>
 <ul class="simple">
 <li><p>With the default setting, the nodes are expanded until all leaves are “pure”.</p></li>
@@ -3074,9 +1420,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/da5b49eadf3f260f8a9b62bd28e7c11b823c692f48e85b10e63496688b8ccb02.png" src="../../_images/da5b49eadf3f260f8a9b62bd28e7c11b823c692f48e85b10e63496688b8ccb02.png" />
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code> is a <strong>hyperparameter</strong> of <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>.</p>
 </section>
@@ -3098,9 +1441,6 @@ Name: quiz2, dtype: object
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/a64de57dcd1913fb888f292ae41325b0f958cfe3b921f6ac32e293b9f44bc3b0.png" src="../../_images/a64de57dcd1913fb888f292ae41325b0f958cfe3b921f6ac32e293b9f44bc3b0.png" />
 </div>
 </div>
 </section>
@@ -3140,58 +1480,6 @@ Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lab4</th>
-      <th>quiz1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>91</td>
-      <td>92</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>83</td>
-      <td>91</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>80</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>91</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>92</td>
-      <td>85</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <section id="decision-boundary-for-max-depth-1">
 <h5>Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=1</span></code><a class="headerlink" href="#decision-boundary-for-max-depth-1" title="Link to this heading">#</a></h5>
@@ -3205,9 +1493,6 @@ Name: quiz2, dtype: object
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/7831771337fe05ae4c988f2ac5d4be2a9966a6273eee5ab115ab40d7337e6e7d.png" src="../../_images/7831771337fe05ae4c988f2ac5d4be2a9966a6273eee5ab115ab40d7337e6e7d.png" />
 </div>
 </div>
 <p>We assume geometric view of the data. Here, the red region corresponds to “not A+” class and blue region corresponds to “A+” class. And there is a line separating the red region and the blue region which is called the <strong>decision boundary</strong> of the model. Different models have different kinds of decision boundaries.
@@ -3225,9 +1510,6 @@ In decision tree models, when we are working with only two features, the decisio
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/d210074f22c13963a529ae5d74c115f70caed09774d9a766774433c478bb100f.png" src="../../_images/d210074f22c13963a529ae5d74c115f70caed09774d9a766774433c478bb100f.png" />
-</div>
 </div>
 <p>The decision boundary, i.e., the model gets a bit more complicated.</p>
 </section>
@@ -3242,9 +1524,6 @@ In decision tree models, when we are working with only two features, the decisio
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/c2b23ea34df4576e6130f083ef4d1ae70ca87c695be707ff057865d812c3f206.png" src="../../_images/c2b23ea34df4576e6130f083ef4d1ae70ca87c695be707ff057865d812c3f206.png" />
 </div>
 </div>
 <p>The decision boundary, i.e., the model gets even more complicated with <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code>.</p>
@@ -3262,101 +1541,6 @@ In decision tree models, when we are working with only two features, the decisio
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>country</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>-130.0437</td>
-      <td>55.9773</td>
-      <td>USA</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>-134.4197</td>
-      <td>58.3019</td>
-      <td>USA</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>-123.0780</td>
-      <td>48.9854</td>
-      <td>USA</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>-122.7436</td>
-      <td>48.9881</td>
-      <td>USA</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>-122.2691</td>
-      <td>48.9951</td>
-      <td>USA</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>204</th>
-      <td>-72.7218</td>
-      <td>45.3990</td>
-      <td>Canada</td>
-    </tr>
-    <tr>
-      <th>205</th>
-      <td>-66.6458</td>
-      <td>45.9664</td>
-      <td>Canada</td>
-    </tr>
-    <tr>
-      <th>206</th>
-      <td>-79.2506</td>
-      <td>42.9931</td>
-      <td>Canada</td>
-    </tr>
-    <tr>
-      <th>207</th>
-      <td>-72.9406</td>
-      <td>45.6275</td>
-      <td>Canada</td>
-    </tr>
-    <tr>
-      <th>208</th>
-      <td>-79.4608</td>
-      <td>46.3092</td>
-      <td>Canada</td>
-    </tr>
-  </tbody>
-</table>
-<p>209 rows × 3 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3379,9 +1563,6 @@ In decision tree models, when we are working with only two features, the decisio
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/cafe7948f583459784b81f96777b6b71c4cde96e86e1c75b7873fa7ab3fca844.png" src="../../_images/cafe7948f583459784b81f96777b6b71c4cde96e86e1c75b7873fa7ab3fca844.png" />
 </div>
 </div>
 <section id="real-boundary-between-canada-and-usa">
@@ -3409,9 +1590,6 @@ In decision tree models, when we are working with only two features, the decisio
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/b34b12d84c9f45fe2d425bb40b49d504179605ce5da18df301376338455cfbec.png" src="../../_images/b34b12d84c9f45fe2d425bb40b49d504179605ce5da18df301376338455cfbec.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3430,9 +1608,6 @@ In decision tree models, when we are working with only two features, the decisio
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/e57a37e01505ce2e09113f6f4c9611af60f6760c816f78bf8f638518ed76841e.png" src="../../_images/e57a37e01505ce2e09113f6f4c9611af60f6760c816f78bf8f638518ed76841e.png" />
 </div>
 </div>
 <p>So we can control the depth of the tree… why does it matter? Is a bigger tree always better?</p>

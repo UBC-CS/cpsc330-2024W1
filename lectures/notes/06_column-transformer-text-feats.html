@@ -5999,48 +5999,48 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:982: UserWarning: Scoring failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:982: UserWarning: Scoring failed. The score on this train-test partition for these parameters will be set to nan. Details: 
 Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/model_selection/_validation.py&quot;, line 971, in _score
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/model_selection/_validation.py&quot;, line 971, in _score
     scores = scorer(estimator, X_test, y_test, **score_params)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/metrics/_scorer.py&quot;, line 455, in __call__
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/metrics/_scorer.py&quot;, line 455, in __call__
     return estimator.score(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1000, in score
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1000, in score
     Xt = transform.transform(Xt)
          ^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 316, in wrapped
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 313, in wrapped
     data_to_wrap = f(self, X, *args, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 1076, in transform
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 1076, in transform
     Xs = self._call_func_on_transformers(
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 885, in _call_func_on_transformers
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py&quot;, line 885, in _call_func_on_transformers
     return Parallel(n_jobs=self.n_jobs)(jobs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 74, in __call__
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 74, in __call__
     return super().__call__(iterable_with_config)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1918, in __call__
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1918, in __call__
     return output if self.return_generator else list(output)
                                                 ^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1847, in _get_sequential_output
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/joblib/parallel.py&quot;, line 1847, in _get_sequential_output
     res = func(*args, **kwargs)
           ^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 136, in __call__
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/utils/parallel.py&quot;, line 136, in __call__
     return self.function(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1290, in _transform_one
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/pipeline.py&quot;, line 1290, in _transform_one
     res = transformer.transform(X, **params.transform)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 316, in wrapped
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/utils/_set_output.py&quot;, line 313, in wrapped
     data_to_wrap = f(self, X, *args, **kwargs)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 1024, in transform
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 1024, in transform
     X_int, X_mask = self._transform(
                     ^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 214, in _transform
+  File &quot;/Users/kvarada/miniforge3/envs/cpsc330/lib/python3.12/site-packages/sklearn/preprocessing/_encoders.py&quot;, line 214, in _transform
     raise ValueError(msg)
 ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during transform
 
@@ -6074,36 +6074,36 @@ ValueError: Found unknown categories [&#39;Biology&#39;] in column 0 during tran
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009365</td>
-      <td>0.004925</td>
+      <td>0.003923</td>
+      <td>0.001920</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007787</td>
-      <td>0.003910</td>
+      <td>0.002807</td>
+      <td>0.001922</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007330</td>
-      <td>0.003896</td>
+      <td>0.003013</td>
+      <td>0.001400</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007393</td>
-      <td>0.003861</td>
+      <td>0.002789</td>
+      <td>0.001371</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007246</td>
-      <td>0.005164</td>
+      <td>0.002858</td>
+      <td>0.007291</td>
       <td>NaN</td>
       <td>1.000000</td>
     </tr>
@@ -6661,36 +6661,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.009427</td>
-      <td>0.004464</td>
+      <td>0.004807</td>
+      <td>0.002022</td>
       <td>1.00</td>
       <td>0.937500</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.007462</td>
-      <td>0.003943</td>
+      <td>0.003146</td>
+      <td>0.001604</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.007301</td>
-      <td>0.003884</td>
+      <td>0.003115</td>
+      <td>0.001448</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.007376</td>
-      <td>0.003875</td>
+      <td>0.002788</td>
+      <td>0.001563</td>
       <td>0.75</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.007227</td>
-      <td>0.003872</td>
+      <td>0.002910</td>
+      <td>0.001466</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -7368,36 +7368,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.010400</td>
-      <td>0.005260</td>
+      <td>0.005288</td>
+      <td>0.002116</td>
       <td>1.00</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.008318</td>
-      <td>0.004549</td>
+      <td>0.003365</td>
+      <td>0.001647</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.008253</td>
-      <td>0.004614</td>
+      <td>0.003188</td>
+      <td>0.001606</td>
       <td>0.50</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.008233</td>
-      <td>0.004491</td>
+      <td>0.003086</td>
+      <td>0.001591</td>
       <td>1.00</td>
       <td>0.941176</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.008204</td>
-      <td>0.004497</td>
+      <td>0.003186</td>
+      <td>0.001715</td>
       <td>0.75</td>
       <td>1.000000</td>
     </tr>
@@ -9152,7 +9152,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>dummy</th>
       <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.000 (+/- 0.000)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
@@ -9670,14 +9670,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>dummy</th>
       <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.000 (+/- 0.000)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.254 (+/- 0.021)</td>
+      <td>0.015 (+/- 0.001)</td>
+      <td>0.115 (+/- 0.009)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
@@ -9730,21 +9730,21 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>dummy</th>
       <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.000 (+/- 0.000)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.254 (+/- 0.021)</td>
+      <td>0.015 (+/- 0.001)</td>
+      <td>0.115 (+/- 0.009)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>7.853 (+/- 0.010)</td>
-      <td>1.959 (+/- 0.002)</td>
+      <td>5.202 (+/- 0.031)</td>
+      <td>1.666 (+/- 0.055)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
     </tr>
@@ -9798,28 +9798,28 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <tr>
       <th>dummy</th>
       <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.000 (+/- 0.000)</td>
       <td>-0.001 (+/- 0.001)</td>
       <td>0.000 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + KNN</th>
-      <td>0.038 (+/- 0.001)</td>
-      <td>0.254 (+/- 0.021)</td>
+      <td>0.015 (+/- 0.001)</td>
+      <td>0.115 (+/- 0.009)</td>
       <td>0.706 (+/- 0.015)</td>
       <td>0.806 (+/- 0.015)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (default)</th>
-      <td>7.853 (+/- 0.010)</td>
-      <td>1.959 (+/- 0.002)</td>
+      <td>5.202 (+/- 0.031)</td>
+      <td>1.666 (+/- 0.055)</td>
       <td>-0.049 (+/- 0.012)</td>
       <td>-0.048 (+/- 0.001)</td>
     </tr>
     <tr>
       <th>imp + scaling + ohe + SVR (C=10000)</th>
-      <td>7.228 (+/- 0.025)</td>
-      <td>1.956 (+/- 0.004)</td>
+      <td>4.785 (+/- 0.087)</td>
+      <td>1.711 (+/- 0.134)</td>
       <td>0.708 (+/- 0.011)</td>
       <td>0.713 (+/- 0.017)</td>
     </tr>
