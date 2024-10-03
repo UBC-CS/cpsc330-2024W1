@@ -455,6 +455,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-all-the-scores-at-once">Let’s look at all the scores at once</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-9-2">iClicker Exercise 9.2</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-class-imbalance-video">Dealing with class imbalance [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-imbalance-in-training-sets">Class imbalance in training sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addressing-class-imbalance">Addressing class imbalance</a></li>
@@ -534,12 +538,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/firasm/Sync/Teaching/2024_2025/2024W1/cpsc330/cpsc330-2024W1/lectures/code/utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -602,6 +600,173 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>V1</th>
+      <th>V2</th>
+      <th>V3</th>
+      <th>V4</th>
+      <th>V5</th>
+      <th>V6</th>
+      <th>V7</th>
+      <th>V8</th>
+      <th>V9</th>
+      <th>...</th>
+      <th>V21</th>
+      <th>V22</th>
+      <th>V23</th>
+      <th>V24</th>
+      <th>V25</th>
+      <th>V26</th>
+      <th>V27</th>
+      <th>V28</th>
+      <th>Amount</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>64454</th>
+      <td>51150.0</td>
+      <td>-3.538816</td>
+      <td>3.481893</td>
+      <td>-1.827130</td>
+      <td>-0.573050</td>
+      <td>2.644106</td>
+      <td>-0.340988</td>
+      <td>2.102135</td>
+      <td>-2.939006</td>
+      <td>2.578654</td>
+      <td>...</td>
+      <td>0.530978</td>
+      <td>-0.860677</td>
+      <td>-0.201810</td>
+      <td>-1.719747</td>
+      <td>0.729143</td>
+      <td>-0.547993</td>
+      <td>-0.023636</td>
+      <td>-0.454966</td>
+      <td>1.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>37906</th>
+      <td>39163.0</td>
+      <td>-0.363913</td>
+      <td>0.853399</td>
+      <td>1.648195</td>
+      <td>1.118934</td>
+      <td>0.100882</td>
+      <td>0.423852</td>
+      <td>0.472790</td>
+      <td>-0.972440</td>
+      <td>0.033833</td>
+      <td>...</td>
+      <td>0.687055</td>
+      <td>-0.094586</td>
+      <td>0.121531</td>
+      <td>0.146830</td>
+      <td>-0.944092</td>
+      <td>-0.558564</td>
+      <td>-0.186814</td>
+      <td>-0.257103</td>
+      <td>18.49</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>79378</th>
+      <td>57994.0</td>
+      <td>1.193021</td>
+      <td>-0.136714</td>
+      <td>0.622612</td>
+      <td>0.780864</td>
+      <td>-0.823511</td>
+      <td>-0.706444</td>
+      <td>-0.206073</td>
+      <td>-0.016918</td>
+      <td>0.781531</td>
+      <td>...</td>
+      <td>-0.310405</td>
+      <td>-0.842028</td>
+      <td>0.085477</td>
+      <td>0.366005</td>
+      <td>0.254443</td>
+      <td>0.290002</td>
+      <td>-0.036764</td>
+      <td>0.015039</td>
+      <td>23.74</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>245686</th>
+      <td>152859.0</td>
+      <td>1.604032</td>
+      <td>-0.808208</td>
+      <td>-1.594982</td>
+      <td>0.200475</td>
+      <td>0.502985</td>
+      <td>0.832370</td>
+      <td>-0.034071</td>
+      <td>0.234040</td>
+      <td>0.550616</td>
+      <td>...</td>
+      <td>0.519029</td>
+      <td>1.429217</td>
+      <td>-0.139322</td>
+      <td>-1.293663</td>
+      <td>0.037785</td>
+      <td>0.061206</td>
+      <td>0.005387</td>
+      <td>-0.057296</td>
+      <td>156.52</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>60943</th>
+      <td>49575.0</td>
+      <td>-2.669614</td>
+      <td>-2.734385</td>
+      <td>0.662450</td>
+      <td>-0.059077</td>
+      <td>3.346850</td>
+      <td>-2.549682</td>
+      <td>-1.430571</td>
+      <td>-0.118450</td>
+      <td>0.469383</td>
+      <td>...</td>
+      <td>-0.228329</td>
+      <td>-0.370643</td>
+      <td>-0.211544</td>
+      <td>-0.300837</td>
+      <td>-1.174590</td>
+      <td>0.573818</td>
+      <td>0.388023</td>
+      <td>0.161782</td>
+      <td>57.50</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,8 +1127,8 @@ memory usage: 48.7 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.007252
-score_time     0.001363
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.007255
+score_time     0.001173
 test_score     0.998302
 train_score    0.998302
 dtype: float64
@@ -1010,8 +1175,8 @@ Name: proportion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.082478
-score_time     0.002983
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time       0.087354
+score_time     0.003120
 test_score     0.999183
 train_score    0.999221
 dtype: float64
@@ -1582,8 +1747,8 @@ weighted avg       0.85      0.80      0.78         5
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.163271</td>
-      <td>0.022020</td>
+      <td>0.137663</td>
+      <td>0.020506</td>
       <td>0.999122</td>
       <td>0.999335</td>
       <td>0.700855</td>
@@ -1595,8 +1760,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>1</th>
-      <td>0.137349</td>
-      <td>0.019380</td>
+      <td>0.194280</td>
+      <td>0.020622</td>
       <td>0.999223</td>
       <td>0.999317</td>
       <td>0.735043</td>
@@ -1608,8 +1773,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>2</th>
-      <td>0.133367</td>
-      <td>0.020118</td>
+      <td>0.142338</td>
+      <td>0.020421</td>
       <td>0.999298</td>
       <td>0.999210</td>
       <td>0.754386</td>
@@ -1621,8 +1786,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>3</th>
-      <td>0.158231</td>
-      <td>0.020251</td>
+      <td>0.133659</td>
+      <td>0.020944</td>
       <td>0.999172</td>
       <td>0.999254</td>
       <td>0.697248</td>
@@ -1634,8 +1799,8 @@ weighted avg       0.85      0.80      0.78         5
     </tr>
     <tr>
       <th>4</th>
-      <td>0.130882</td>
-      <td>0.019979</td>
+      <td>0.127280</td>
+      <td>0.018421</td>
       <td>0.999147</td>
       <td>0.999185</td>
       <td>0.696429</td>
@@ -2533,12 +2698,12 @@ if (window.Jupyter !== undefined) {
   } catch(err) {
   }
 }
-</script><div class="output text_html"><div id='e31f3375-0ece-47d8-a80e-ce6e9d9baab6'>
-  <div id="f3f818fd-535f-4399-94ab-0eecc0520aaf" data-root-id="e31f3375-0ece-47d8-a80e-ce6e9d9baab6" style="display: contents;"></div>
+</script><div class="output text_html"><div id='99abfd26-a0e4-45f0-8b3c-43d4d8af9e5f'>
+  <div id="fa9ac86e-e568-434e-b706-7a56dfca4a5f" data-root-id="99abfd26-a0e4-45f0-8b3c-43d4d8af9e5f" style="display: contents;"></div>
 </div>
 <script type="application/javascript">(function(root) {
-  var docs_json = {"0be7a468-6618-4a64-b35f-fa1b01930b5e":{"version":"3.5.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"e31f3375-0ece-47d8-a80e-ce6e9d9baab6"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"479248f5-5315-4218-81d4-cc00ee68ebd7","attributes":{"plot_id":"e31f3375-0ece-47d8-a80e-ce6e9d9baab6","comm_id":"2a5b04751ff94687a05d7ee3949ad8cb","client_comm_id":"b398344ffdb84b52bd960f34474d1758"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1"},{"type":"model","name":"JSComponent1"},{"type":"model","name":"ReactComponent1"},{"type":"model","name":"AnyWidgetComponent1"},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}};
-  var render_items = [{"docid":"0be7a468-6618-4a64-b35f-fa1b01930b5e","roots":{"e31f3375-0ece-47d8-a80e-ce6e9d9baab6":"f3f818fd-535f-4399-94ab-0eecc0520aaf"},"root_ids":["e31f3375-0ece-47d8-a80e-ce6e9d9baab6"]}];
+  var docs_json = {"aeb13f0e-41cf-4336-8c84-0cc7f843a384":{"version":"3.5.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"99abfd26-a0e4-45f0-8b3c-43d4d8af9e5f"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"8c9a78a0-a58e-48b8-8537-352f9bbeba50","attributes":{"plot_id":"99abfd26-a0e4-45f0-8b3c-43d4d8af9e5f","comm_id":"1abc2f08254844fb9a4c26da5e9cd423","client_comm_id":"2d56ec226fd148b0a4800480d168cbda"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1"},{"type":"model","name":"JSComponent1"},{"type":"model","name":"ReactComponent1"},{"type":"model","name":"AnyWidgetComponent1"},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}};
+  var render_items = [{"docid":"aeb13f0e-41cf-4336-8c84-0cc7f843a384","roots":{"99abfd26-a0e4-45f0-8b3c-43d4d8af9e5f":"fa9ac86e-e568-434e-b706-7a56dfca4a5f"},"root_ids":["99abfd26-a0e4-45f0-8b3c-43d4d8af9e5f"]}];
   var docs = Object.values(docs_json)
   if (!docs) {
     return
@@ -2602,12 +2767,12 @@ if (window.Jupyter !== undefined) {
       }
     }, 25, root)
   }
-})(window);</script></div><div class="output text_html"><div id='e96beef9-7474-4b4c-a1ef-972d6a946b25'>
-  <div id="a2c08483-9d37-4332-bb60-99bd800befcf" data-root-id="e96beef9-7474-4b4c-a1ef-972d6a946b25" style="display: contents;"></div>
+})(window);</script></div><div class="output text_html"><div id='a50556d9-4ee0-4ab2-8ebb-c962d50a9657'>
+  <div id="fab606ad-ba1c-4704-b84b-87b7315c20ca" data-root-id="a50556d9-4ee0-4ab2-8ebb-c962d50a9657" style="display: contents;"></div>
 </div>
 <script type="application/javascript">(function(root) {
-  var docs_json = {"995653bf-d76c-46e8-bc19-89fca20ef1ec":{"version":"3.5.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.layout.Column","id":"e96beef9-7474-4b4c-a1ef-972d6a946b25","attributes":{"name":"Column00123","tags":["embedded"],"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"b791b8fd-a557-4e05-8029-31b28b64fb55","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/css/loading.css"}},{"type":"object","name":"ImportedStyleSheet","id":"e5e6912d-c401-47b5-aec2-1a350c2fa7b0","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/css/listpanel.css"}},{"type":"object","name":"ImportedStyleSheet","id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/bundled/theme/default.css"}},{"type":"object","name":"ImportedStyleSheet","id":"a49631f4-788c-4a13-824c-c32f17fad36f","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/bundled/theme/native.css"}}],"margin":0,"align":"start","children":[{"type":"object","name":"panel.models.layout.Column","id":"35e4b9ea-aab6-4699-81d3-0aeeb3124d5c","attributes":{"name":"Column00128","stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"b791b8fd-a557-4e05-8029-31b28b64fb55"},{"id":"e5e6912d-c401-47b5-aec2-1a350c2fa7b0"},{"id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac"},{"id":"a49631f4-788c-4a13-824c-c32f17fad36f"}],"margin":0,"align":"start","children":[{"type":"object","name":"panel.models.layout.Column","id":"997d19a1-b854-4a0a-b637-c33f2aa12d9d","attributes":{"name":"Column00138","stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"b791b8fd-a557-4e05-8029-31b28b64fb55"},{"id":"e5e6912d-c401-47b5-aec2-1a350c2fa7b0"},{"id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac"},{"id":"a49631f4-788c-4a13-824c-c32f17fad36f"}],"margin":0,"align":"start","children":[{"type":"object","name":"Div","id":"656787bc-ea09-4189-8ba4-8c3918594423","attributes":{"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"b791b8fd-a557-4e05-8029-31b28b64fb55"},{"id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac"},{"id":"a49631f4-788c-4a13-824c-c32f17fad36f"}],"margin":[5,0,0,10],"align":"start","text":"<b>0.521</b>"}},{"type":"object","name":"Slider","id":"bba99282-8e87-4622-b7c4-91288bcfa833","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"type":"object","name":"CustomJS","id":"32bfcf7a-cdd3-45cf-9971-3b12941e59a6","attributes":{"args":{"type":"map","entries":[["source",{"id":"bba99282-8e87-4622-b7c4-91288bcfa833"}],["target",{"id":"656787bc-ea09-4189-8ba4-8c3918594423"}]]},"code":"\n    var labels = ['<b>0</b>', '<b>0.0521</b>', '<b>0.104</b>', '<b>0.156</b>', '<b>0.208</b>', '<b>0.261</b>', '<b>0.313</b>', '<b>0.365</b>', '<b>0.417</b>', '<b>0.469</b>', '<b>0.521</b>', '<b>0.573</b>', '<b>0.625</b>', '<b>0.677</b>', '<b>0.729</b>', '<b>0.782</b>', '<b>0.834</b>', '<b>0.886</b>', '<b>0.938</b>', '<b>0.99</b>']\n    target.text = labels[source.value]\n    "}},{"type":"object","name":"CustomJS","id":"aa47bc43-9063-4359-b485-036b544cf13b","attributes":{"code":"\nvar state = null\nfor (var root of cb_obj.document.roots()) {\n  if (root.id == '139d81cf-4c56-464d-bde6-302220913fd0') {\n    state = root;\n    break;\n  }\n}\nif (!state) { return; }\nstate.set_state(cb_obj, cb_obj.value)\n"}}]]]},"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"b791b8fd-a557-4e05-8029-31b28b64fb55"},{"id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac"},{"id":"a49631f4-788c-4a13-824c-c32f17fad36f"}],"margin":[0,10,5,10],"align":"start","show_value":false,"tooltips":false,"start":0,"end":19,"value":10}}]}}]}},{"type":"object","name":"Row","id":"cd20bfe8-b70f-4287-8900-e1e51eea773b","attributes":{"name":"Row00127","stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"b791b8fd-a557-4e05-8029-31b28b64fb55"},{"id":"e5e6912d-c401-47b5-aec2-1a350c2fa7b0"},{"id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac"},{"id":"a49631f4-788c-4a13-824c-c32f17fad36f"}],"margin":0,"align":"start","children":[{"type":"object","name":"panel.models.markup.JSON","id":"f61d2f61-8fcc-4555-9fc1-7c68ecadff65","attributes":{"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"b791b8fd-a557-4e05-8029-31b28b64fb55"},{"type":"object","name":"ImportedStyleSheet","id":"dec6e9dd-de85-462a-b70d-34d38211f984","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/css/json.css"}},{"id":"252c39e4-5b97-4479-8fa2-1ad5328c81ac"},{"id":"a49631f4-788c-4a13-824c-c32f17fad36f"}],"margin":[5,10],"align":"start","text":"{\"threshold\": 0.5211, \"Precision\": 0.8873, \"recall\": 0.6176}"}}]}}]}},{"type":"object","name":"panel.models.state.State","id":"139d81cf-4c56-464d-bde6-302220913fd0","attributes":{"state":{"type":"map","entries":[[19,{"type":"map","entries":[["header","{\"msgid\": \"ac62b76b-57a0-46a1-a6a8-61cc7110f736\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.99</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.99, \\\"Precision\\\": 0.8947, \\\"recall\\\": 0.3333}\"}]}"]]}],[18,{"type":"map","entries":[["header","{\"msgid\": \"b4dd0ac9-ce75-43fa-9fd9-a9448dbfd6a1\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.938</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.9379, \\\"Precision\\\": 0.8868, \\\"recall\\\": 0.4608}\"}]}"]]}],[17,{"type":"map","entries":[["header","{\"msgid\": \"2c5cdc85-8102-4d5b-bbaf-832af25a37dd\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.886</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.8858, \\\"Precision\\\": 0.8929, \\\"recall\\\": 0.4902}\"}]}"]]}],[16,{"type":"map","entries":[["header","{\"msgid\": \"13d03f47-e0eb-4a2b-a165-926661b542ea\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.834</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.8337, \\\"Precision\\\": 0.9032, \\\"recall\\\": 0.549}\"}]}"]]}],[15,{"type":"map","entries":[["header","{\"msgid\": \"ffd4a9c7-7323-4c8d-bf02-bf421c130015\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.782</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.7816, \\\"Precision\\\": 0.8906, \\\"recall\\\": 0.5588}\"}]}"]]}],[14,{"type":"map","entries":[["header","{\"msgid\": \"0e6839f9-840e-4c8c-bf46-cca91fd059ce\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.729</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.7295, \\\"Precision\\\": 0.8923, \\\"recall\\\": 0.5686}\"}]}"]]}],[13,{"type":"map","entries":[["header","{\"msgid\": \"d34483fa-17c4-4b74-a898-13167bc8d9a0\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.677</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.6774, \\\"Precision\\\": 0.8955, \\\"recall\\\": 0.5882}\"}]}"]]}],[12,{"type":"map","entries":[["header","{\"msgid\": \"a2c28f66-4b5e-431f-8a47-b4429a8f25d1\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.625</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.6253, \\\"Precision\\\": 0.8841, \\\"recall\\\": 0.598}\"}]}"]]}],[11,{"type":"map","entries":[["header","{\"msgid\": \"095aa989-d0e3-4675-af2f-a9bdda9fbd6f\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.573</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.5732, \\\"Precision\\\": 0.8857, \\\"recall\\\": 0.6078}\"}]}"]]}],[10,{"type":"map","entries":[["header","{\"msgid\": \"a6fdb49c-f9fe-4faf-99c7-8405706135f0\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.521</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.5211, \\\"Precision\\\": 0.8873, \\\"recall\\\": 0.6176}\"}]}"]]}],[9,{"type":"map","entries":[["header","{\"msgid\": \"6795d218-a586-45b5-93b0-ae819bdcad42\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.469</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.4689, \\\"Precision\\\": 0.8649, \\\"recall\\\": 0.6275}\"}]}"]]}],[8,{"type":"map","entries":[["header","{\"msgid\": \"7fc43a70-77dc-4ff8-8b8b-904bebf4221a\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.417</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.4168, \\\"Precision\\\": 0.8533, \\\"recall\\\": 0.6275}\"}]}"]]}],[7,{"type":"map","entries":[["header","{\"msgid\": \"991cffcb-e148-4537-a8ec-bdc128550bab\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.365</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.3647, \\\"Precision\\\": 0.8571, \\\"recall\\\": 0.6471}\"}]}"]]}],[6,{"type":"map","entries":[["header","{\"msgid\": \"3b1960cc-1f2f-45df-8a3a-1054d29ea870\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.313</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.3126, \\\"Precision\\\": 0.8023, \\\"recall\\\": 0.6765}\"}]}"]]}],[5,{"type":"map","entries":[["header","{\"msgid\": \"5602f63b-28aa-4909-b524-83ff09c71415\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.261</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.2605, \\\"Precision\\\": 0.7889, \\\"recall\\\": 0.6961}\"}]}"]]}],[4,{"type":"map","entries":[["header","{\"msgid\": \"f7d2dca6-e2ac-41ac-81a3-7f47b319d8f0\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.208</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.2084, \\\"Precision\\\": 0.7872, \\\"recall\\\": 0.7255}\"}]}"]]}],[3,{"type":"map","entries":[["header","{\"msgid\": \"effe3410-d50e-426e-9aa4-4726da1d08c7\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.156</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.1563, \\\"Precision\\\": 0.7917, \\\"recall\\\": 0.7451}\"}]}"]]}],[2,{"type":"map","entries":[["header","{\"msgid\": \"c53665c3-9cab-4153-a7d3-87902523874e\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.104</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.1042, \\\"Precision\\\": 0.7778, \\\"recall\\\": 0.7549}\"}]}"]]}],[1,{"type":"map","entries":[["header","{\"msgid\": \"460e49e1-1a52-4e1a-af5f-4a1f9d2163d3\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0.0521</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.0521, \\\"Precision\\\": 0.7364, \\\"recall\\\": 0.7941}\"}]}"]]}],[0,{"type":"map","entries":[["header","{\"msgid\": \"d0fe4e66-c4dc-4fe4-b8b3-22ba64f180b7\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"656787bc-ea09-4189-8ba4-8c3918594423\"},\"attr\":\"text\",\"new\":\"<b>0</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"f61d2f61-8fcc-4555-9fc1-7c68ecadff65\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.0, \\\"Precision\\\": 0.0017, \\\"recall\\\": 1.0}\"}]}"]]}]]},"widgets":{"type":"map","entries":[["bba99282-8e87-4622-b7c4-91288bcfa833",0]]},"values":[10]}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1"},{"type":"model","name":"JSComponent1"},{"type":"model","name":"ReactComponent1"},{"type":"model","name":"AnyWidgetComponent1"},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}};
-  var render_items = [{"docid":"995653bf-d76c-46e8-bc19-89fca20ef1ec","roots":{"e96beef9-7474-4b4c-a1ef-972d6a946b25":"a2c08483-9d37-4332-bb60-99bd800befcf"},"root_ids":["e96beef9-7474-4b4c-a1ef-972d6a946b25"]}];
+  var docs_json = {"cedb3421-fa1e-4585-bd50-38b5356f682b":{"version":"3.5.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.layout.Column","id":"a50556d9-4ee0-4ab2-8ebb-c962d50a9657","attributes":{"name":"Column00123","tags":["embedded"],"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"ba199767-29cd-4933-8912-b50a52a2e11a","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/css/loading.css"}},{"type":"object","name":"ImportedStyleSheet","id":"7a36ee56-3267-4b8e-8759-6c3d703cf148","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/css/listpanel.css"}},{"type":"object","name":"ImportedStyleSheet","id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/bundled/theme/default.css"}},{"type":"object","name":"ImportedStyleSheet","id":"1e2d295e-c98a-474b-b7cc-4738392fab4a","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/bundled/theme/native.css"}}],"margin":0,"align":"start","children":[{"type":"object","name":"panel.models.layout.Column","id":"84eecec2-537b-4323-8a93-e7f895fcde8c","attributes":{"name":"Column00128","stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"ba199767-29cd-4933-8912-b50a52a2e11a"},{"id":"7a36ee56-3267-4b8e-8759-6c3d703cf148"},{"id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4"},{"id":"1e2d295e-c98a-474b-b7cc-4738392fab4a"}],"margin":0,"align":"start","children":[{"type":"object","name":"panel.models.layout.Column","id":"6bc1afe5-a9bc-43e4-b8e4-568da7e03a87","attributes":{"name":"Column00138","stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"ba199767-29cd-4933-8912-b50a52a2e11a"},{"id":"7a36ee56-3267-4b8e-8759-6c3d703cf148"},{"id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4"},{"id":"1e2d295e-c98a-474b-b7cc-4738392fab4a"}],"margin":0,"align":"start","children":[{"type":"object","name":"Div","id":"330100db-83b3-4db4-b4ad-35241908ee33","attributes":{"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"ba199767-29cd-4933-8912-b50a52a2e11a"},{"id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4"},{"id":"1e2d295e-c98a-474b-b7cc-4738392fab4a"}],"margin":[5,0,0,10],"align":"start","text":"<b>0.521</b>"}},{"type":"object","name":"Slider","id":"bc730d14-a65e-47b9-96fa-ae6e25514d88","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"type":"object","name":"CustomJS","id":"b62f8513-21e0-41e2-bd2e-681ce7ecdf36","attributes":{"args":{"type":"map","entries":[["source",{"id":"bc730d14-a65e-47b9-96fa-ae6e25514d88"}],["target",{"id":"330100db-83b3-4db4-b4ad-35241908ee33"}]]},"code":"\n    var labels = ['<b>0</b>', '<b>0.0521</b>', '<b>0.104</b>', '<b>0.156</b>', '<b>0.208</b>', '<b>0.261</b>', '<b>0.313</b>', '<b>0.365</b>', '<b>0.417</b>', '<b>0.469</b>', '<b>0.521</b>', '<b>0.573</b>', '<b>0.625</b>', '<b>0.677</b>', '<b>0.729</b>', '<b>0.782</b>', '<b>0.834</b>', '<b>0.886</b>', '<b>0.938</b>', '<b>0.99</b>']\n    target.text = labels[source.value]\n    "}},{"type":"object","name":"CustomJS","id":"77d21e94-e8d0-4a31-80f6-e7e3bb11cb85","attributes":{"code":"\nvar state = null\nfor (var root of cb_obj.document.roots()) {\n  if (root.id == '65c78d8d-f478-4bc1-bc62-f3b54f358063') {\n    state = root;\n    break;\n  }\n}\nif (!state) { return; }\nstate.set_state(cb_obj, cb_obj.value)\n"}}]]]},"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"ba199767-29cd-4933-8912-b50a52a2e11a"},{"id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4"},{"id":"1e2d295e-c98a-474b-b7cc-4738392fab4a"}],"margin":[0,10,5,10],"align":"start","show_value":false,"tooltips":false,"start":0,"end":19,"value":10}}]}}]}},{"type":"object","name":"Row","id":"38936e92-63b7-4438-a0f4-090ce2d8505e","attributes":{"name":"Row00127","stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"ba199767-29cd-4933-8912-b50a52a2e11a"},{"id":"7a36ee56-3267-4b8e-8759-6c3d703cf148"},{"id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4"},{"id":"1e2d295e-c98a-474b-b7cc-4738392fab4a"}],"margin":0,"align":"start","children":[{"type":"object","name":"panel.models.markup.JSON","id":"b34061c2-9aea-4d20-80b2-2720ce5946ac","attributes":{"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"id":"ba199767-29cd-4933-8912-b50a52a2e11a"},{"type":"object","name":"ImportedStyleSheet","id":"2320d81b-ed05-42ff-b987-1f84da5a0d5e","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.0/dist/css/json.css"}},{"id":"f2d946d1-6c56-40ae-81a6-b77dff3257c4"},{"id":"1e2d295e-c98a-474b-b7cc-4738392fab4a"}],"margin":[5,10],"align":"start","text":"{\"threshold\": 0.5211, \"Precision\": 0.8873, \"recall\": 0.6176}"}}]}}]}},{"type":"object","name":"panel.models.state.State","id":"65c78d8d-f478-4bc1-bc62-f3b54f358063","attributes":{"state":{"type":"map","entries":[[19,{"type":"map","entries":[["header","{\"msgid\": \"c8e7c9ca-1687-47c3-a57f-1cb5fe9e2597\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.99</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.99, \\\"Precision\\\": 0.8947, \\\"recall\\\": 0.3333}\"}]}"]]}],[18,{"type":"map","entries":[["header","{\"msgid\": \"241a776c-e03d-4bdd-a40b-bba90f354754\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.938</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.9379, \\\"Precision\\\": 0.8868, \\\"recall\\\": 0.4608}\"}]}"]]}],[17,{"type":"map","entries":[["header","{\"msgid\": \"0ddf14b9-6ded-4e28-a462-0256dc558361\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.886</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.8858, \\\"Precision\\\": 0.8929, \\\"recall\\\": 0.4902}\"}]}"]]}],[16,{"type":"map","entries":[["header","{\"msgid\": \"2280efe7-017d-4689-bc5c-a50dbaa8bf73\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.834</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.8337, \\\"Precision\\\": 0.9032, \\\"recall\\\": 0.549}\"}]}"]]}],[15,{"type":"map","entries":[["header","{\"msgid\": \"5a1d5e5e-ea90-4f93-a051-5ac3aacc8198\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.782</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.7816, \\\"Precision\\\": 0.8906, \\\"recall\\\": 0.5588}\"}]}"]]}],[14,{"type":"map","entries":[["header","{\"msgid\": \"a4143699-e0db-4c45-9415-4a6ee7ead016\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.729</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.7295, \\\"Precision\\\": 0.8923, \\\"recall\\\": 0.5686}\"}]}"]]}],[13,{"type":"map","entries":[["header","{\"msgid\": \"387dbd15-2f66-48fa-975d-6cb3e1866d1b\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.677</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.6774, \\\"Precision\\\": 0.8955, \\\"recall\\\": 0.5882}\"}]}"]]}],[12,{"type":"map","entries":[["header","{\"msgid\": \"ee933b07-7a25-46ca-8d9c-561bf9974c89\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.625</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.6253, \\\"Precision\\\": 0.8841, \\\"recall\\\": 0.598}\"}]}"]]}],[11,{"type":"map","entries":[["header","{\"msgid\": \"e0fd30c9-5caf-4cf3-96ef-e28256c9a2c3\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.573</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.5732, \\\"Precision\\\": 0.8857, \\\"recall\\\": 0.6078}\"}]}"]]}],[10,{"type":"map","entries":[["header","{\"msgid\": \"c07ff461-c715-42ff-a5fd-c8a9a4a1cb3c\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.521</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.5211, \\\"Precision\\\": 0.8873, \\\"recall\\\": 0.6176}\"}]}"]]}],[9,{"type":"map","entries":[["header","{\"msgid\": \"91d629d7-d800-44d9-b535-26c5b358048c\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.469</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.4689, \\\"Precision\\\": 0.8649, \\\"recall\\\": 0.6275}\"}]}"]]}],[8,{"type":"map","entries":[["header","{\"msgid\": \"04ba4fca-921c-41cf-a609-5cf269de54de\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.417</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.4168, \\\"Precision\\\": 0.8533, \\\"recall\\\": 0.6275}\"}]}"]]}],[7,{"type":"map","entries":[["header","{\"msgid\": \"51da7bcb-1080-4f10-a5b8-a274a413b263\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.365</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.3647, \\\"Precision\\\": 0.8571, \\\"recall\\\": 0.6471}\"}]}"]]}],[6,{"type":"map","entries":[["header","{\"msgid\": \"4e2d5010-4752-4ac9-ac30-5c4492490fa2\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.313</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.3126, \\\"Precision\\\": 0.8023, \\\"recall\\\": 0.6765}\"}]}"]]}],[5,{"type":"map","entries":[["header","{\"msgid\": \"eac91c8d-ae12-4634-8e9b-f8644a04e5a2\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.261</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.2605, \\\"Precision\\\": 0.7889, \\\"recall\\\": 0.6961}\"}]}"]]}],[4,{"type":"map","entries":[["header","{\"msgid\": \"c32b791a-a8fa-4cfd-93d3-5b9bd984a0d2\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.208</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.2084, \\\"Precision\\\": 0.7872, \\\"recall\\\": 0.7255}\"}]}"]]}],[3,{"type":"map","entries":[["header","{\"msgid\": \"c389bbe9-f366-4190-a11c-b71916ca25d6\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.156</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.1563, \\\"Precision\\\": 0.7917, \\\"recall\\\": 0.7451}\"}]}"]]}],[2,{"type":"map","entries":[["header","{\"msgid\": \"47539b14-00c7-4186-af26-1901c3565dd9\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.104</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.1042, \\\"Precision\\\": 0.7778, \\\"recall\\\": 0.7549}\"}]}"]]}],[1,{"type":"map","entries":[["header","{\"msgid\": \"916673d6-be35-4520-a31a-522e9395645a\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0.0521</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.0521, \\\"Precision\\\": 0.7364, \\\"recall\\\": 0.7941}\"}]}"]]}],[0,{"type":"map","entries":[["header","{\"msgid\": \"58a58d2b-2e7d-4f04-abd3-8815281093e7\", \"msgtype\": \"PATCH-DOC\"}"],["metadata","{\"use_buffers\": false}"],["content","{\"events\":[{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"330100db-83b3-4db4-b4ad-35241908ee33\"},\"attr\":\"text\",\"new\":\"<b>0</b>\"},{\"kind\":\"ModelChanged\",\"model\":{\"id\":\"b34061c2-9aea-4d20-80b2-2720ce5946ac\"},\"attr\":\"text\",\"new\":\"{\\\"threshold\\\": 0.0, \\\"Precision\\\": 0.0017, \\\"recall\\\": 1.0}\"}]}"]]}]]},"widgets":{"type":"map","entries":[["bc730d14-a65e-47b9-96fa-ae6e25514d88",0]]},"values":[10]}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1"},{"type":"model","name":"JSComponent1"},{"type":"model","name":"ReactComponent1"},{"type":"model","name":"AnyWidgetComponent1"},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}};
+  var render_items = [{"docid":"cedb3421-fa1e-4585-bd50-38b5356f682b","roots":{"a50556d9-4ee0-4ab2-8ebb-c962d50a9657":"fab606ad-ba1c-4704-b84b-87b7315c20ca"},"root_ids":["a50556d9-4ee0-4ab2-8ebb-c962d50a9657"]}];
   var docs = Object.values(docs_json)
   if (!docs) {
     return
@@ -3742,12 +3907,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Precision&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Recall&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6dfd6df7472cacdc1588e9324e3de4714a52060b95acaf58f58ac8818df5de97.png" src="../../_images/6dfd6df7472cacdc1588e9324e3de4714a52060b95acaf58f58ac8818df5de97.png" />
+<img alt="../../_images/ab00f557f82ec8a0e01259587cfeb51c4e66f5f20b6ef0426df97e613b1bc210.png" src="../../_images/ab00f557f82ec8a0e01259587cfeb51c4e66f5f20b6ef0426df97e613b1bc210.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3899,12 +4064,12 @@ $<span class="math notranslate nohighlight">\( TPR = \frac{TP}{TP + FN}\)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;False positive rate&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;True positive rate (Recall)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3a5d2c79a9d5347fdeeacc3bfce0613f2233233a44347807ca3958c611d848cf.png" src="../../_images/3a5d2c79a9d5347fdeeacc3bfce0613f2233233a44347807ca3958c611d848cf.png" />
+<img alt="../../_images/ac4f88c1bd4d5958edcfae1dd8fe4f6de2fa5638034319229378e6648d18e884.png" src="../../_images/ac4f88c1bd4d5958edcfae1dd8fe4f6de2fa5638034319229378e6648d18e884.png" />
 </div>
 </div>
 <section id="area-under-the-curve-auc">
@@ -3966,8 +4131,8 @@ AUC for SVC: 0.938
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.137789
-score_time                0.034087
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.135884
+score_time                0.035238
 test_accuracy             0.999192
 test_f1                   0.716792
 test_recall               0.601712
@@ -3987,6 +4152,20 @@ dtype: float64
 <p class="admonition-title">See also</p>
 <p>Check out how to plot ROC with cross-validation <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc_crossval.html">here</a>.</p>
 </div>
+</section>
+</section>
+<section id="id2">
+<h2>❓❓ Questions for you<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="iclicker-exercise-9-2">
+<h3>iClicker Exercise 9.2<a class="headerlink" href="#iclicker-exercise-9-2" title="Link to this heading">#</a></h3>
+<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
+<p><strong>Select all of the following statements which are TRUE.</strong></p>
+<ul class="simple">
+<li><p>(A) If we increase the classification threshold, both true and false positives are likely to decrease.</p></li>
+<li><p>(B) If we increase the classification threshold, both true and false negatives are likely to decrease.</p></li>
+<li><p>(C) Lowering the classification threshold generally increases the model’s recall.</p></li>
+<li><p>(D) Raising the classification threshold can improve the precision of the model if it effectively reduces the number of false positives without significantly affecting true positives.</p></li>
+</ul>
 <p><br><br><br><br></p>
 </section>
 </section>
@@ -4294,13 +4473,13 @@ If ‘balanced’, class weights will be given by n_samples / (n_classes * np.bi
   <tbody>
     <tr>
       <th>fit_time</th>
-      <td>0.143426</td>
-      <td>0.267212</td>
+      <td>0.142831</td>
+      <td>0.257157</td>
     </tr>
     <tr>
       <th>score_time</th>
-      <td>0.033901</td>
-      <td>0.033838</td>
+      <td>0.032544</td>
+      <td>0.032983</td>
     </tr>
     <tr>
       <th>test_accuracy</th>
@@ -4458,10 +4637,10 @@ Resampled dataset shape Counter({0: 100, 1: 100})
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.021408
-score_time                0.009966
-test_roc_auc              0.962397
-test_average_precision    0.385728
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.017562
+score_time                0.009044
+test_roc_auc              0.964483
+test_average_precision    0.432914
 dtype: float64
 </pre></div>
 </div>
@@ -4508,10 +4687,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.642247
-score_time                0.010106
-test_roc_auc              0.961653
-test_average_precision    0.715265
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.649182
+score_time                0.009760
+test_roc_auc              0.961251
+test_average_precision    0.713363
 dtype: float64
 </pre></div>
 </div>
@@ -4568,10 +4747,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.842036
-score_time                0.005668
-test_roc_auc              0.962863
-test_average_precision    0.736199
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit_time                  0.820503
+score_time                0.005733
+test_roc_auc              0.962839
+test_average_precision    0.734406
 dtype: float64
 </pre></div>
 </div>
@@ -5344,16 +5523,16 @@ weighted avg       0.81      0.76      0.77      8711
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-env-cpsc330-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-env-cpsc330-py",
             path: "./lectures/notes"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
 
                 </article>
               
@@ -5450,6 +5629,10 @@ weighted avg       0.81      0.76      0.77      8711
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#receiver-operating-characteristic-roc-curve">Receiver Operating Characteristic (ROC) curve</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-curve-auc">Area under the curve (AUC)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-all-the-scores-at-once">Let’s look at all the scores at once</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-9-2">iClicker Exercise 9.2</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-class-imbalance-video">Dealing with class imbalance [video]</a><ul class="nav section-nav flex-column">
