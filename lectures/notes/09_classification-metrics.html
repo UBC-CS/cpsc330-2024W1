@@ -2899,10 +2899,10 @@ if (window.Jupyter !== undefined) {
 <li><p>The top-right would be a perfect classifier (precision = recall = 1).</p></li>
 </ul>
 <ul class="simple">
-<li><p>The threshold is not shown here, but it’s going from 0 (upper-left) to 1 (lower right).</p></li>
-<li><p>At a threshold of 0 (upper left), we are classifying everything  as “fraud”.</p></li>
-<li><p>Raising the threshold increases the precision but at the expense of lowering the recall.</p></li>
-<li><p>At the extreme right, where the threshold is 1, we get into the situation where all the examples classified as “fraud” are actually “fraud”; we have no false positives.</p></li>
+<li><p>The threshold is not shown here, but it’s going from 1 (upper-left) to 0 (lower right).</p></li>
+<li><p>At a threshold of 0 (lower right), we are classifying everything  as “fraud”. So there are many false positives.</p></li>
+<li><p>Increasing the threshold increases the precision but at the expense of lowering the recall.</p></li>
+<li><p>At the extreme left, where the threshold is 1, we get into the situation where all the examples classified as “fraud” are actually “fraud”; we have no false positives.</p></li>
 <li><p>Here we have a high precision but lower recall.</p></li>
 <li><p>Usually the goal is to keep recall high as precision goes up.</p></li>
 </ul>
