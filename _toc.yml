@@ -43,6 +43,8 @@ parts:
       - file: lectures/101-Giulia-lectures/06_column-transformer-text-feats.ipynb
       - file: lectures/101-Giulia-lectures/07_linear-models.ipynb
       - file: lectures/101-Giulia-lectures/08_hyperparameter-optimization.ipynb
+      - file: lectures/101-Giulia-lectures/09_classification-metrics.ipynb
+      - file: lectures/101-Giulia-lectures/10_regression-metrics.ipynb  
       
 
   - file: lectures/102-Varada-lectures/README
@@ -72,25 +74,25 @@ parts:
         
   - file: lectures/103-Firas-lectures/README
     sections:
-      - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
+      - file: lectures/103-Firas-lectures/lec1
         title: Lecture 1
-      - url: "https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees"
+      - file: lectures/103-Firas-lectures/lec2
         title: Lecture 2
-      - url: "https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals"
+      - file: lectures/103-Firas-lectures/lec3
         title: Lecture 3
-      - url: "https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF"
+      - file: lectures/103-Firas-lectures/lec4
         title: Lecture 4
-      - url: "https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines"
+      - file: lectures/103-Firas-lectures/lec5
         title: Lecture 5
-      - url: "https://firasm.github.io/cpsc330-slides/slides-06"
+      - file: lectures/103-Firas-lectures/lec6
         title: Lecture 6
-      - url: "https://firasm.github.io/cpsc330-slides/slides-07"
+      - file: lectures/103-Firas-lectures/lec7
         title: Lecture 7
-      - url: "https://firasm.github.io/cpsc330-slides/slides-08"
+      - file: lectures/103-Firas-lectures/lec8
         title: Lecture 8
-      - url: "https://firasm.github.io/cpsc330-slides/slides-09"
+      - file: lectures/103-Firas-lectures/lec9
         title: Lecture 9
-      - url: "https://firasm.github.io/cpsc330-slides/slides-11"
+      - file: lectures/103-Firas-lectures/lec11
         title: Lecture 11
 
 - caption: Attribution
