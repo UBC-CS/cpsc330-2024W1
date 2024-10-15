@@ -30,6 +30,7 @@ parts:
   - file: lectures/notes/08_hyperparameter-optimization.ipynb
   - file: lectures/notes/09_classification-metrics.ipynb
   - file: lectures/notes/10_regression-metrics.ipynb  
+  - file: lectures/notes/12_ensembles.ipynb  
   
 - caption: Section slides
   chapters:
