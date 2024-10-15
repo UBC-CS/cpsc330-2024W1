@@ -49,28 +49,28 @@ parts:
 
   - file: lectures/102-Varada-lectures/README
     sections:
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-01.html"
+      - file: lectures/102-Varada-lectures/lec1
         title: Lecture 1
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-02.html"
+      - file: lectures/102-Varada-lectures/lec2
         title: Lecture 2
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-03.html"
+      - file: lectures/102-Varada-lectures/lec3
         title: Lecture 3
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-04.html"
-        title: Lecture 4 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-05.html"
-        title: Lecture 5 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-06.html"
-        title: Lecture 6 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-07.html"
-        title: Lecture 7 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-08.html"
-        title: Lecture 8 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-09.html"
-        title: Lecture 9 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-10.html"
-        title: Lecture 10 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-11.html"
-        title: Lecture 11         
+      - file: lectures/102-Varada-lectures/lec4
+        title: Lecture 4
+      - file: lectures/102-Varada-lectures/lec5
+        title: Lecture 5
+      - file: lectures/102-Varada-lectures/lec6
+        title: Lecture 6
+      - file: lectures/102-Varada-lectures/lec7
+        title: Lecture 7
+      - file: lectures/102-Varada-lectures/lec8
+        title: Lecture 8
+      - file: lectures/102-Varada-lectures/lec9
+        title: Lecture 9
+      - file: lectures/102-Varada-lectures/lec10
+        title: Lecture 10
+      - file: lectures/102-Varada-lectures/lec11
+        title: Lecture 1`
         
   - file: lectures/103-Firas-lectures/README
     sections:
