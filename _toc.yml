@@ -107,6 +107,8 @@ parts:
         title: Lecture 12
       - url: "https://firasm.github.io/cpsc330-slides/slides-13"
         title: Lecture 13
+      - url: "https://firasm.github.io/cpsc330-slides/slides-14"
+        title: Lecture 14
 
 - caption: Attribution
   chapters: 
