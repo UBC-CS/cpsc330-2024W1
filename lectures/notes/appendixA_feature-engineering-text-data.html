@@ -1,0 +1,2257 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Appendix A: Demo of feature engineering for text data &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/notes/appendixA_feature-engineering-text-data';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+    <script>document.write(`<img src="../../_static/UBC-CS-logo.png" class="logo__image only-dark" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    UBC CPSC 330: Applied Machine Learning (2024W1)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Things you should know</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/README.html">CPSC 330 Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-objectives.html">Course Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_ensembles.html">Lecture 12: Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_feat-importances.html">Lecture 13: Feature importances and model transparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_feature-engineering-selection.html">Lecture 14: Feature engineering and feature selection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-01.html">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-02.html">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-03.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-04.html">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-05.html">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-06.html">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-07.html">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-08.html">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-09.html">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-10.html">Lecture 10</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-11.html">Lecture 11</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-06">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-07">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-08">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-09">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-11">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-12">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-13">Lecture 13</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">LICENSE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/UBC-CS/cpsc330-2024W1" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/notes/appendixA_feature-engineering-text-data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Appendix A: Demo of feature engineering for text data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import">Import</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummy-classifier">Dummy classifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bag-of-words-model">Bag-of-words model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-further-improve-the-scores">Is it possible to further improve the scores?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacy">spaCy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-from-a-project">An example from a project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-feature-engineering-for-our-problem">Simple feature engineering for our problem.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="appendix-a-demo-of-feature-engineering-for-text-data">
+<h1>Appendix A: Demo of feature engineering for text data<a class="headerlink" href="#appendix-a-demo-of-feature-engineering-for-text-data" title="Link to this heading">#</a></h1>
+<section id="import">
+<h2>Import<a class="headerlink" href="#import" title="Link to this heading">#</a></h2>
+<p>We will be using <a class="reference external" href="https://www.kaggle.com/code/kerneler/starter-covid-19-nlp-text-d3a3baa6-e/data">Covid tweets</a> dataset for this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s1">&#39;Corona_NLP_test.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sentiment
+Negative              1041
+Positive               947
+Neutral                619
+Extremely Positive     599
+Extremely Negative     592
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>UserName</th>
+      <th>ScreenName</th>
+      <th>Location</th>
+      <th>TweetAt</th>
+      <th>OriginalTweet</th>
+      <th>Sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1927</th>
+      <td>1928</td>
+      <td>46880</td>
+      <td>Seattle, WA</td>
+      <td>13-03-2020</td>
+      <td>While I don't like all of Amazon's choices, to...</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>1068</th>
+      <td>1069</td>
+      <td>46021</td>
+      <td>NaN</td>
+      <td>13-03-2020</td>
+      <td>Me: shit buckets, its time to do the weekly s...</td>
+      <td>Negative</td>
+    </tr>
+    <tr>
+      <th>803</th>
+      <td>804</td>
+      <td>45756</td>
+      <td>The Outer Limits</td>
+      <td>12-03-2020</td>
+      <td>@SecPompeo @realDonaldTrump You mean the plan ...</td>
+      <td>Neutral</td>
+    </tr>
+    <tr>
+      <th>2846</th>
+      <td>2847</td>
+      <td>47799</td>
+      <td>Flagstaff, AZ</td>
+      <td>15-03-2020</td>
+      <td>@lauvagrande People who are sick arent panic ...</td>
+      <td>Extremely Negative</td>
+    </tr>
+    <tr>
+      <th>3768</th>
+      <td>3769</td>
+      <td>48721</td>
+      <td>Montreal, Canada</td>
+      <td>16-03-2020</td>
+      <td>Coronavirus Panic: Toilet Paper Is the People...</td>
+      <td>Negative</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1122</th>
+      <td>1123</td>
+      <td>46075</td>
+      <td>NaN</td>
+      <td>13-03-2020</td>
+      <td>Photos of our local grocery store shelveswher...</td>
+      <td>Extremely Positive</td>
+    </tr>
+    <tr>
+      <th>1346</th>
+      <td>1347</td>
+      <td>46299</td>
+      <td>Toronto</td>
+      <td>13-03-2020</td>
+      <td>Just went to the the grocery store (Highland F...</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>3454</th>
+      <td>3455</td>
+      <td>48407</td>
+      <td>Houston, TX</td>
+      <td>16-03-2020</td>
+      <td>Real talk though. Am I the only one spending h...</td>
+      <td>Neutral</td>
+    </tr>
+    <tr>
+      <th>3437</th>
+      <td>3438</td>
+      <td>48390</td>
+      <td>Washington, DC</td>
+      <td>16-03-2020</td>
+      <td>The supermarket business is booming! #COVID2019</td>
+      <td>Neutral</td>
+    </tr>
+    <tr>
+      <th>3582</th>
+      <td>3583</td>
+      <td>48535</td>
+      <td>St James' Park, Newcastle</td>
+      <td>16-03-2020</td>
+      <td>Evening All Here s the story on the and the im...</td>
+      <td>Positive</td>
+    </tr>
+  </tbody>
+</table>
+<p>3038 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;UserName&#39;, &#39;ScreenName&#39;, &#39;Location&#39;, &#39;TweetAt&#39;, &#39;OriginalTweet&#39;,
+       &#39;Sentiment&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;Location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Location
+United States                     63
+London, England                   37
+Los Angeles, CA                   30
+New York, NY                      29
+Washington, DC                    29
+                                  ..
+Suburb of Chicago                  1
+philippines                        1
+Dont ask for freedom, take it.     1
+Windsor Heights, IA                1
+St James&#39; Park, Newcastle          1
+Name: count, Length: 1441, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[[</span><span class="s1">&#39;OriginalTweet&#39;</span><span class="p">,</span> <span class="s1">&#39;Location&#39;</span><span class="p">]],</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;Sentiment&#39;</span><span class="p">]</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[[</span><span class="s1">&#39;OriginalTweet&#39;</span><span class="p">,</span> <span class="s1">&#39;Location&#39;</span><span class="p">]],</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;Sentiment&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sentiment
+Negative              852
+Positive              743
+Neutral               501
+Extremely Negative    472
+Extremely Positive    470
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scoring_metrics</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_std_cross_val_scores</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns mean and std of cross validation</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model :</span>
+<span class="sd">        scikit-learn model</span>
+<span class="sd">    X_train : numpy array or pandas DataFrame</span>
+<span class="sd">        X in the training data</span>
+<span class="sd">    y_train :</span>
+<span class="sd">        y in the training data</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">        pandas Series with mean scores from cross_validation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">mean_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">std_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">out_col</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mean_scores</span><span class="p">)):</span>
+        <span class="n">out_col</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">&quot;%0.3f (+/- %0.3f)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean_scores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">std_scores</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">out_col</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">mean_scores</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dummy-classifier">
+<h3>Dummy classifier<a class="headerlink" href="#dummy-classifier" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dummy</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">()</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">&quot;dummy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
+    <span class="n">dummy</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring_metrics</span>
+<span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/b3/g26r0dcx4b35vf3nk31216hc0000gr/T/ipykernel_13054/4158382658.py:26: FutureWarning:
+
+Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fit_time</th>
+      <th>score_time</th>
+      <th>test_score</th>
+      <th>train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dummy</th>
+      <td>0.001 (+/- 0.001)</td>
+      <td>0.001 (+/- 0.001)</td>
+      <td>0.280 (+/- 0.001)</td>
+      <td>0.280 (+/- 0.000)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="bag-of-words-model">
+<h3>Bag-of-words model<a class="headerlink" href="#bag-of-words-model" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">),</span> 
+                     <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">&quot;logistic regression&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
+    <span class="n">pipe</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;OriginalTweet&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring_metrics</span>
+<span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/b3/g26r0dcx4b35vf3nk31216hc0000gr/T/ipykernel_13054/4158382658.py:26: FutureWarning:
+
+Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fit_time</th>
+      <th>score_time</th>
+      <th>test_score</th>
+      <th>train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dummy</th>
+      <td>0.001 (+/- 0.001)</td>
+      <td>0.001 (+/- 0.001)</td>
+      <td>0.280 (+/- 0.001)</td>
+      <td>0.280 (+/- 0.000)</td>
+    </tr>
+    <tr>
+      <th>logistic regression</th>
+      <td>0.278 (+/- 0.019)</td>
+      <td>0.008 (+/- 0.000)</td>
+      <td>0.414 (+/- 0.012)</td>
+      <td>0.999 (+/- 0.000)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="is-it-possible-to-further-improve-the-scores">
+<h3>Is it possible to further improve the scores?<a class="headerlink" href="#is-it-possible-to-further-improve-the-scores" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>How about adding new features based on our intuitions? Let’s extract our own features that might be useful for this prediction task. In other words, let’s carry out <strong>feature engineering</strong>.</p></li>
+<li><p>The code below adds some very basic length-related and sentiment features. We will be using a popular library called <code class="docutils literal notranslate"><span class="pre">nltk</span></code> for this exercise. If you have successfully created the course <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment on your machine, you should already have this package in the environment.</p></li>
+</ul>
+<ul class="simple">
+<li><p>How do we extract interesting information from text?</p></li>
+<li><p>We use <strong>pre-trained models</strong>!</p></li>
+</ul>
+<ul class="simple">
+<li><p>A couple of popular libraries which include such pre-trained models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nltk</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">anaconda</span> <span class="n">nltk</span> 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>spaCy</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">spacy</span>
+</pre></div>
+</div>
+<p>For emoji support:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">spacymoji</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You also need to download the language model which contains all the pre-trained models. For that run the following in your course <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment or here.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="c1"># !python -m spacy download en_core_web_md</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;punkt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /Users/kvarada/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;vader_lexicon&quot;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;punkt&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nltk.sentiment.vader</span> <span class="kn">import</span> <span class="n">SentimentIntensityAnalyzer</span>
+
+<span class="n">sid</span> <span class="o">=</span> <span class="n">SentimentIntensityAnalyzer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     /Users/kvarada/nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+[nltk_data] Downloading package punkt to /Users/kvarada/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;CPSC 330 students are smart, sweet, and funny.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sid</span><span class="o">.</span><span class="n">polarity_scores</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;neg&#39;: 0.0, &#39;neu&#39;: 0.368, &#39;pos&#39;: 0.632, &#39;compound&#39;: 0.8225}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;CPSC 330 students are tired because of all the hard work they have been doing.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sid</span><span class="o">.</span><span class="n">polarity_scores</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;neg&#39;: 0.249, &#39;neu&#39;: 0.751, &#39;pos&#39;: 0.0, &#39;compound&#39;: -0.5106}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="spacy">
+<h3><a class="reference external" href="https://spacy.io/">spaCy</a><a class="headerlink" href="#spacy" title="Link to this heading">#</a></h3>
+<p>A useful package for text processing and feature extraction</p>
+<ul class="simple">
+<li><p>Active development: https://github.com/explosion/spaCy</p></li>
+<li><p>Interactive lessons by Ines Montani: https://course.spacy.io/en/</p></li>
+<li><p>Good documentation, easy to use, and customizable.</p></li>
+</ul>
+<p>To run the code below, you have to download the pretrained model in the course environment.</p>
+<blockquote>
+<div><p>python -m spacy download en_core_web_md</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_md&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Dolly Parton is a gift to us all. </span>
+<span class="s2">From writing all-time great songs like “Jolene” and “I Will Always Love You”, </span>
+<span class="s2">to great performances in films like 9 to 5, to helping fund a COVID-19 vaccine, </span>
+<span class="s2">she’s given us so much. Now, Netflix bring us Dolly Parton’s Christmas on the Square, </span>
+<span class="s2">an original musical that stars Christine Baranski as a Scrooge-like landowner </span>
+<span class="s2">who threatens to evict an entire town on Christmas Eve to make room for a new mall. </span>
+<span class="s2">Directed and choreographed by the legendary Debbie Allen and counting Jennifer Lewis </span>
+<span class="s2">and Parton herself amongst its cast, Christmas on the Square seems like the perfect movie</span>
+<span class="s2">to save Christmas 2020. 😻 👍🏿&quot;&quot;&quot;</span>
+
+<span class="c1"># [Adapted from here.](https://thepopbreak.com/2020/11/22/dolly-partons-christmas-on-the-square-review-not-quite-a-christmas-miracle/)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Spacy extracts all interesting information from text with this call.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sample_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at part-of-speech tags.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([(</span><span class="n">token</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">pos_</span><span class="p">)</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">][:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(Dolly, &#39;PROPN&#39;), (Parton, &#39;PROPN&#39;), (is, &#39;AUX&#39;), (a, &#39;DET&#39;), (gift, &#39;NOUN&#39;), (to, &#39;ADP&#39;), (us, &#39;PRON&#39;), (all, &#39;PRON&#39;), (., &#39;PUNCT&#39;), (
+, &#39;SPACE&#39;), (From, &#39;ADP&#39;), (writing, &#39;VERB&#39;), (all, &#39;DET&#39;), (-, &#39;PUNCT&#39;), (time, &#39;NOUN&#39;), (great, &#39;ADJ&#39;), (songs, &#39;NOUN&#39;), (like, &#39;ADP&#39;), (“, &#39;PUNCT&#39;), (Jolene, &#39;PROPN&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Often we want to know who did what to whom.</p></li>
+<li><p><strong>Named entities</strong> give you this information.</p></li>
+<li><p>What are named entities in the text?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
+
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span class="tex2jax_ignore"><div class="entities" style="line-height: 2.5; direction: ltr">
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Dolly Parton
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+ is a gift to us all. <br>From writing all-time great songs like “
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Jolene
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+” and “I Will Always Love You”, <br>to great performances in films like 
+<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    9 to 5
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
+</mark>
+, to helping fund a COVID-19 vaccine, <br>she’s given us so much. Now, 
+<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Netflix
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
+</mark>
+ bring us 
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Dolly Parton
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+’s 
+<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Christmas
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
+</mark>
+ on the 
+<mark class="entity" style="background: #9cc9cc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Square
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">FAC</span>
+</mark>
+, <br>an original musical that stars 
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Christine Baranski
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+ as a Scrooge-like landowner <br>who threatens to evict an entire town on 
+<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Christmas Eve
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
+</mark>
+ to make room for a new mall. <br>Directed and choreographed by the legendary 
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Debbie Allen
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+ and counting 
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Jennifer Lewis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+ <br>and 
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Parton
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+ herself amongst its cast, 
+<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Christmas
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
+</mark>
+ on the 
+<mark class="entity" style="background: #9cc9cc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Square
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">FAC</span>
+</mark>
+ seems like the perfect movie<br>to save 
+<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Christmas 2020
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
+</mark>
+. 😻 👍🏿</div></span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Named entities:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ORG means: &quot;</span><span class="p">,</span> <span class="n">spacy</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;ORG&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">PERSON means: &quot;</span><span class="p">,</span> <span class="n">spacy</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;PERSON&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DATE means: &quot;</span><span class="p">,</span> <span class="n">spacy</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;DATE&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Named entities:
+ [(&#39;Dolly Parton&#39;, &#39;PERSON&#39;), (&#39;Jolene&#39;, &#39;PERSON&#39;), (&#39;9 to 5&#39;, &#39;DATE&#39;), (&#39;Netflix&#39;, &#39;ORG&#39;), (&#39;Dolly Parton&#39;, &#39;PERSON&#39;), (&#39;Christmas&#39;, &#39;DATE&#39;), (&#39;Square&#39;, &#39;FAC&#39;), (&#39;Christine Baranski&#39;, &#39;PERSON&#39;), (&#39;Christmas Eve&#39;, &#39;DATE&#39;), (&#39;Debbie Allen&#39;, &#39;PERSON&#39;), (&#39;Jennifer Lewis&#39;, &#39;PERSON&#39;), (&#39;Parton&#39;, &#39;PERSON&#39;), (&#39;Christmas&#39;, &#39;DATE&#39;), (&#39;Square&#39;, &#39;FAC&#39;), (&#39;Christmas 2020&#39;, &#39;DATE&#39;)]
+
+ORG means:  Companies, agencies, institutions, etc.
+
+PERSON means:  People, including fictional
+
+DATE means:  Absolute or relative dates or periods
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="an-example-from-a-project">
+<h3>An example from a project<a class="headerlink" href="#an-example-from-a-project" title="Link to this heading">#</a></h3>
+<p>Goal: Extract and visualize inter-corporate relationships from disclosed annual 10-K reports of public companies.</p>
+<p><a class="reference external" href="https://www.bbc.com/news/business-39875417">Source for the text below.</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Heavy hitters, including Microsoft and Google, &quot;</span>
+    <span class="s2">&quot;are competing for customers in cloud services with the likes of IBM and Salesforce.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Named entities:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span class="tex2jax_ignore"><div class="entities" style="line-height: 2.5; direction: ltr">Heavy hitters, including 
+<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Microsoft
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
+</mark>
+ and 
+<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Google
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
+</mark>
+, are competing for customers in cloud services with the likes of 
+<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    IBM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
+</mark>
+ and 
+<mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Salesforce
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span>
+</mark>
+.</div></span></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Named entities:
+ [(&#39;Microsoft&#39;, &#39;ORG&#39;), (&#39;Google&#39;, &#39;ORG&#39;), (&#39;IBM&#39;, &#39;ORG&#39;), (&#39;Salesforce&#39;, &#39;PRODUCT&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want emoji identification support install <a class="reference external" href="https://pypi.org/project/spacymoji/"><code class="docutils literal notranslate"><span class="pre">spacymoji</span></code></a> in the course environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">spacymoji</span>
+</pre></div>
+</div>
+<p>After installing <code class="docutils literal notranslate"><span class="pre">spacymoji</span></code>, if it’s still complaining about module not found, my guess is that you do not have <code class="docutils literal notranslate"><span class="pre">pip</span></code> installed in your <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment. Go to your course <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment install <code class="docutils literal notranslate"><span class="pre">pip</span></code> and install the <code class="docutils literal notranslate"><span class="pre">spacymoji</span></code> package in the environment using the <code class="docutils literal notranslate"><span class="pre">pip</span></code> you just installed in the current environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pip</span>
+<span class="n">YOUR_MINICONDA_PATH</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">cpsc330</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pip</span> <span class="n">install</span> <span class="n">spacymoji</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacymoji</span> <span class="kn">import</span> <span class="n">Emoji</span>
+
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;emoji&quot;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does the text have any emojis? If yes, extract the description.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sample_text</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">emoji</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;😻&#39;, 138, &#39;smiling cat with heart-eyes&#39;),
+ (&#39;👍🏿&#39;, 139, &#39;thumbs up dark skin tone&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="simple-feature-engineering-for-our-problem">
+<h2>Simple feature engineering for our problem.<a class="headerlink" href="#simple-feature-engineering-for-our-problem" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">en_core_web_md</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">en_core_web_md</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">spacymoji</span> <span class="kn">import</span> <span class="n">Emoji</span>
+
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;emoji&quot;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_relative_length</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">TWITTER_ALLOWED_CHARS</span><span class="o">=</span><span class="mf">280.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the relative length of text.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ------</span>
+<span class="sd">    text: (str)</span>
+<span class="sd">    the input text</span>
+
+<span class="sd">    Keyword arguments:</span>
+<span class="sd">    ------</span>
+<span class="sd">    TWITTER_ALLOWED_CHARS: (float)</span>
+<span class="sd">    the denominator for finding relative length</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    relative length of text: (float)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">/</span> <span class="n">TWITTER_ALLOWED_CHARS</span>
+
+
+<span class="k">def</span> <span class="nf">get_length_in_words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the length of the text in words.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ------</span>
+<span class="sd">    text: (str)</span>
+<span class="sd">    the input text</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    length of tokenized text: (int)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">get_sentiment</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the compound score representing the sentiment: -1 (most extreme negative) and +1 (most extreme positive)</span>
+<span class="sd">    The compound score is a normalized score calculated by summing the valence scores of each word in the lexicon.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ------</span>
+<span class="sd">    text: (str)</span>
+<span class="sd">    the input text</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    sentiment of the text: (str)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">sid</span><span class="o">.</span><span class="n">polarity_scores</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scores</span><span class="p">[</span><span class="s2">&quot;compound&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_avg_word_length</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the average word length of the given text.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    text -- (str)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">has_emoji</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the average word length of the given text.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    text -- (str)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">has_emoji</span> <span class="k">else</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt_tab&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt_tab to
+[nltk_data]     /Users/kvarada/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_words</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_length_in_words</span><span class="p">))</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">vader_sentiment</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_sentiment</span><span class="p">))</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">rel_char_len</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_relative_length</span><span class="p">))</span>
+
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_words</span><span class="o">=</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_length_in_words</span><span class="p">))</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">vader_sentiment</span><span class="o">=</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_sentiment</span><span class="p">))</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">rel_char_len</span><span class="o">=</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_relative_length</span><span class="p">))</span>
+
+
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">average_word_length</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_avg_word_length</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">average_word_length</span><span class="o">=</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_avg_word_length</span><span class="p">))</span>
+
+<span class="c1"># whether all letters are uppercase or not (all_caps)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">all_caps</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">all_caps</span><span class="o">=</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">has_emoji</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">has_emoji</span><span class="p">))</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">has_emoji</span><span class="o">=</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;OriginalTweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">has_emoji</span><span class="p">))</span>
+
+<span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>UserName</th>
+      <th>ScreenName</th>
+      <th>Location</th>
+      <th>TweetAt</th>
+      <th>OriginalTweet</th>
+      <th>Sentiment</th>
+      <th>n_words</th>
+      <th>vader_sentiment</th>
+      <th>rel_char_len</th>
+      <th>average_word_length</th>
+      <th>all_caps</th>
+      <th>has_emoji</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1927</th>
+      <td>1928</td>
+      <td>46880</td>
+      <td>Seattle, WA</td>
+      <td>13-03-2020</td>
+      <td>While I don't like all of Amazon's choices, to...</td>
+      <td>Positive</td>
+      <td>31</td>
+      <td>-0.1053</td>
+      <td>0.589286</td>
+      <td>5.640000</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1068</th>
+      <td>1069</td>
+      <td>46021</td>
+      <td>NaN</td>
+      <td>13-03-2020</td>
+      <td>Me: shit buckets, its time to do the weekly s...</td>
+      <td>Negative</td>
+      <td>52</td>
+      <td>-0.2500</td>
+      <td>0.932143</td>
+      <td>4.636364</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>803</th>
+      <td>804</td>
+      <td>45756</td>
+      <td>The Outer Limits</td>
+      <td>12-03-2020</td>
+      <td>@SecPompeo @realDonaldTrump You mean the plan ...</td>
+      <td>Neutral</td>
+      <td>44</td>
+      <td>0.0000</td>
+      <td>0.910714</td>
+      <td>6.741935</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2846</th>
+      <td>2847</td>
+      <td>47799</td>
+      <td>Flagstaff, AZ</td>
+      <td>15-03-2020</td>
+      <td>@lauvagrande People who are sick arent panic ...</td>
+      <td>Extremely Negative</td>
+      <td>46</td>
+      <td>-0.8481</td>
+      <td>0.907143</td>
+      <td>5.023810</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3768</th>
+      <td>3769</td>
+      <td>48721</td>
+      <td>Montreal, Canada</td>
+      <td>16-03-2020</td>
+      <td>Coronavirus Panic: Toilet Paper Is the People...</td>
+      <td>Negative</td>
+      <td>21</td>
+      <td>-0.5106</td>
+      <td>0.500000</td>
+      <td>9.846154</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3038, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;all_caps&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sentiment&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;vader_sentiment&#39;</span><span class="p">,</span> 
+                    <span class="s1">&#39;rel_char_len&#39;</span><span class="p">,</span> 
+                    <span class="s1">&#39;average_word_length&#39;</span><span class="p">]</span>
+<span class="n">passthrough_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all_caps&#39;</span><span class="p">,</span> <span class="s1">&#39;has_emoji&#39;</span><span class="p">]</span> 
+<span class="n">text_feature</span> <span class="o">=</span> <span class="s1">&#39;OriginalTweet&#39;</span>
+<span class="n">drop_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UserName&#39;</span><span class="p">,</span> <span class="s1">&#39;ScreenName&#39;</span><span class="p">,</span> <span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="s1">&#39;TweetAt&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preprocessor</span> <span class="o">=</span> <span class="n">make_column_transformer</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">numeric_features</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;passthrough&quot;</span><span class="p">,</span> <span class="n">passthrough_features</span><span class="p">),</span> 
+    <span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">),</span> <span class="n">text_feature</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;drop&quot;</span><span class="p">,</span> <span class="n">drop_features</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessor</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">&quot;LR (more feats)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
+    <span class="n">pipe</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring_metrics</span>
+<span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/b3/g26r0dcx4b35vf3nk31216hc0000gr/T/ipykernel_13054/4158382658.py:26: FutureWarning:
+
+Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fit_time</th>
+      <th>score_time</th>
+      <th>test_score</th>
+      <th>train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dummy</th>
+      <td>0.001 (+/- 0.001)</td>
+      <td>0.001 (+/- 0.001)</td>
+      <td>0.280 (+/- 0.001)</td>
+      <td>0.280 (+/- 0.000)</td>
+    </tr>
+    <tr>
+      <th>logistic regression</th>
+      <td>0.278 (+/- 0.019)</td>
+      <td>0.008 (+/- 0.000)</td>
+      <td>0.414 (+/- 0.012)</td>
+      <td>0.999 (+/- 0.000)</td>
+    </tr>
+    <tr>
+      <th>LR (more feats)</th>
+      <td>0.246 (+/- 0.015)</td>
+      <td>0.009 (+/- 0.000)</td>
+      <td>0.690 (+/- 0.007)</td>
+      <td>0.998 (+/- 0.001)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-3 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-3 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-3 pre {
+  padding: 0;
+}
+
+#sk-container-id-3 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-3 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-3 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-3 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-3 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-3 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-3 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-3 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-3 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-3 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-3 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-3 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-3 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-3 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-3 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-3 div.sk-label label.sk-toggleable__label,
+#sk-container-id-3 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-3 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-3 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-3 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-3 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-3 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-3 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-3 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-3 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-3 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;columntransformer&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
+                                                  StandardScaler(),
+                                                  [&#x27;vader_sentiment&#x27;,
+                                                   &#x27;rel_char_len&#x27;,
+                                                   &#x27;average_word_length&#x27;]),
+                                                 (&#x27;passthrough&#x27;, &#x27;passthrough&#x27;,
+                                                  [&#x27;all_caps&#x27;, &#x27;has_emoji&#x27;]),
+                                                 (&#x27;countvectorizer&#x27;,
+                                                  CountVectorizer(stop_words=&#x27;english&#x27;),
+                                                  &#x27;OriginalTweet&#x27;),
+                                                 (&#x27;drop&#x27;, &#x27;drop&#x27;,
+                                                  [&#x27;UserName&#x27;, &#x27;ScreenName&#x27;,
+                                                   &#x27;Location&#x27;, &#x27;TweetAt&#x27;])])),
+                (&#x27;logisticregression&#x27;, LogisticRegression(max_iter=1000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-14" type="checkbox" ><label for="sk-estimator-id-14" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;columntransformer&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;,
+                                                  StandardScaler(),
+                                                  [&#x27;vader_sentiment&#x27;,
+                                                   &#x27;rel_char_len&#x27;,
+                                                   &#x27;average_word_length&#x27;]),
+                                                 (&#x27;passthrough&#x27;, &#x27;passthrough&#x27;,
+                                                  [&#x27;all_caps&#x27;, &#x27;has_emoji&#x27;]),
+                                                 (&#x27;countvectorizer&#x27;,
+                                                  CountVectorizer(stop_words=&#x27;english&#x27;),
+                                                  &#x27;OriginalTweet&#x27;),
+                                                 (&#x27;drop&#x27;, &#x27;drop&#x27;,
+                                                  [&#x27;UserName&#x27;, &#x27;ScreenName&#x27;,
+                                                   &#x27;Location&#x27;, &#x27;TweetAt&#x27;])])),
+                (&#x27;logisticregression&#x27;, LogisticRegression(max_iter=1000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-15" type="checkbox" ><label for="sk-estimator-id-15" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;columntransformer: ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for columntransformer: ColumnTransformer</span></a></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;standardscaler&#x27;, StandardScaler(),
+                                 [&#x27;vader_sentiment&#x27;, &#x27;rel_char_len&#x27;,
+                                  &#x27;average_word_length&#x27;]),
+                                (&#x27;passthrough&#x27;, &#x27;passthrough&#x27;,
+                                 [&#x27;all_caps&#x27;, &#x27;has_emoji&#x27;]),
+                                (&#x27;countvectorizer&#x27;,
+                                 CountVectorizer(stop_words=&#x27;english&#x27;),
+                                 &#x27;OriginalTweet&#x27;),
+                                (&#x27;drop&#x27;, &#x27;drop&#x27;,
+                                 [&#x27;UserName&#x27;, &#x27;ScreenName&#x27;, &#x27;Location&#x27;,
+                                  &#x27;TweetAt&#x27;])])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-16" type="checkbox" ><label for="sk-estimator-id-16" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">standardscaler</label><div class="sk-toggleable__content fitted"><pre>[&#x27;vader_sentiment&#x27;, &#x27;rel_char_len&#x27;, &#x27;average_word_length&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-17" type="checkbox" ><label for="sk-estimator-id-17" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-18" type="checkbox" ><label for="sk-estimator-id-18" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">passthrough</label><div class="sk-toggleable__content fitted"><pre>[&#x27;all_caps&#x27;, &#x27;has_emoji&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-19" type="checkbox" ><label for="sk-estimator-id-19" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">passthrough</label><div class="sk-toggleable__content fitted"><pre>passthrough</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-20" type="checkbox" ><label for="sk-estimator-id-20" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">countvectorizer</label><div class="sk-toggleable__content fitted"><pre>OriginalTweet</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-21" type="checkbox" ><label for="sk-estimator-id-21" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;CountVectorizer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></label><div class="sk-toggleable__content fitted"><pre>CountVectorizer(stop_words=&#x27;english&#x27;)</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-22" type="checkbox" ><label for="sk-estimator-id-22" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">drop</label><div class="sk-toggleable__content fitted"><pre>[&#x27;UserName&#x27;, &#x27;ScreenName&#x27;, &#x27;Location&#x27;, &#x27;TweetAt&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-23" type="checkbox" ><label for="sk-estimator-id-23" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">drop</label><div class="sk-toggleable__content fitted"><pre>drop</pre></div> </div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-24" type="checkbox" ><label for="sk-estimator-id-24" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression(max_iter=1000)</pre></div> </div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv_feats</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;columntransformer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">named_transformers_</span><span class="p">[</span><span class="s1">&#39;countvectorizer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feat_names</span> <span class="o">=</span> <span class="n">numeric_features</span> <span class="o">+</span> <span class="n">passthrough_features</span> <span class="o">+</span> <span class="n">cv_feats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coefs</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;logisticregression&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="n">feat_names</span><span class="p">,</span>
+        <span class="s2">&quot;coefficients&quot;</span><span class="p">:</span> <span class="n">coefs</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;coefficients&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>features</th>
+      <th>coefficients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>vader_sentiment</td>
+      <td>-6.167241</td>
+    </tr>
+    <tr>
+      <th>11331</th>
+      <td>won</td>
+      <td>-1.384111</td>
+    </tr>
+    <tr>
+      <th>2551</th>
+      <td>coronapocalypse</td>
+      <td>-0.817034</td>
+    </tr>
+    <tr>
+      <th>2214</th>
+      <td>closed</td>
+      <td>-0.754165</td>
+    </tr>
+    <tr>
+      <th>8661</th>
+      <td>retail</td>
+      <td>-0.729109</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9862</th>
+      <td>stupid</td>
+      <td>1.157157</td>
+    </tr>
+    <tr>
+      <th>3299</th>
+      <td>don</td>
+      <td>1.162007</td>
+    </tr>
+    <tr>
+      <th>4879</th>
+      <td>hell</td>
+      <td>1.312696</td>
+    </tr>
+    <tr>
+      <th>3129</th>
+      <td>die</td>
+      <td>1.365420</td>
+    </tr>
+    <tr>
+      <th>7504</th>
+      <td>panic</td>
+      <td>1.539459</td>
+    </tr>
+  </tbody>
+</table>
+<p>11664 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>We get some improvements with our engineered features!</p>
+<p><br><br><br><br></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-cpsc330-py"
+        },
+        kernelOptions: {
+            name: "conda-env-cpsc330-py",
+            path: "./lectures/notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import">Import</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummy-classifier">Dummy classifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bag-of-words-model">Bag-of-words model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-further-improve-the-scores">Is it possible to further improve the scores?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacy">spaCy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-from-a-project">An example from a project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-feature-engineering-for-our-problem">Simple feature engineering for our problem.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Varada Kolhatkar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
