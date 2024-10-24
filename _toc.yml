@@ -33,6 +33,7 @@ parts:
   - file: lectures/notes/12_ensembles.ipynb
   - file: lectures/notes/13_feat-importances.ipynb
   - file: lectures/notes/14_feature-engineering-selection.ipynb
+  - file: lectures/notes/appendixA_feature-engineering-text-data.ipynb
   
 - caption: Section slides
   chapters:
@@ -74,7 +75,12 @@ parts:
         title: Lecture 10 
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-11.html"
         title: Lecture 11         
-        
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-12.html"
+        title: Lecture 12  
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-13.html"
+        title: Lecture 13
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-14.html"
+        title: Lecture 14                
   - file: lectures/103-Firas-lectures/README
     sections:
       - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
