@@ -33,6 +33,8 @@ parts:
   - file: lectures/notes/12_ensembles.ipynb
   - file: lectures/notes/13_feat-importances.ipynb
   - file: lectures/notes/14_feature-engineering-selection.ipynb
+  - file: lectures/notes/15_K-Means.ipynb
+  - file: lectures/notes/16_DBSCAN-hierarchical.ipynb  
   - file: lectures/notes/appendixA_feature-engineering-text-data.ipynb
   
 - caption: Section slides
