@@ -671,7 +671,6 @@ document.write(`
 </div>
 </div>
 <ul class="simple">
-<li><p>GMM is able to capture the clusters but K-Means is not doing a great job.</p></li>
 <li><p>Can we do better than this?</p></li>
 <li><p>Another clustering algorithm called DBSCAN is able to tackle some of these cases.</p></li>
 </ul>
@@ -2295,7 +2294,7 @@ min_samples: 5 eps: 3.000000  cluster: [0 0 0 0 0 0 0 0 0 0 0 0]
 <ul class="simple">
 <li><p>(A) In hierarchical clustering we do not have to worry about initialization.</p></li>
 <li><p>(B) Hierarchical clustering can only be applied to smaller datasets because dendrograms are hard to visualize for large datasets.</p></li>
-<li><p>(C) In all the clustering methods we have seen (K-Means, GMMs, DBSCAN, hierarchical clustering), there is a way to decide the granularity of clustering (i.e., how many clusters to pick).</p></li>
+<li><p>(C) In all the clustering methods we have seen (K-Means, DBSCAN, hierarchical clustering), there is a way to decide the granularity of clustering (i.e., how many clusters to pick).</p></li>
 <li><p>(D) To get robust clustering we can naively ensemble cluster labels (e.g., pick the most popular label) produced by different clustering methods.</p></li>
 <li><p>(E) If you have a high Silhouette score and very clean and robust clusters, it means that the algorithm has captured the semantic meaning in the data of our interest.</p></li>
 </ul>
