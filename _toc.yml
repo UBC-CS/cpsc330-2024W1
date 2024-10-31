@@ -83,6 +83,10 @@ parts:
         title: Lecture 13
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-14.html"
         title: Lecture 14                
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-15.html"
+        title: Lecture 15                
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-16.html"
+        title: Lecture 16                        
   - file: lectures/103-Firas-lectures/README
     sections:
       - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
