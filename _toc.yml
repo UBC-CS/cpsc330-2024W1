@@ -119,22 +119,22 @@ parts:
         title: Lecture 15
       - url: "https://firasm.github.io/cpsc330-slides/slides-16"
         title: Lecture 16
-      - url: "https://firasm.github.io/cpsc330-slides/slides-17"
-        title: Lecture 17
-      - url: "https://firasm.github.io/cpsc330-slides/slides-18"
-        title: Lecture 18
-      - url: "https://firasm.github.io/cpsc330-slides/slides-19"
-        title: Lecture 19
-      - url: "https://firasm.github.io/cpsc330-slides/slides-20"
-        title: Lecture 20
-      - url: "https://firasm.github.io/cpsc330-slides/slides-21"
-        title: Lecture 21
-      - url: "https://firasm.github.io/cpsc330-slides/slides-22"
-        title: Lecture 22
-      - url: "https://firasm.github.io/cpsc330-slides/slides-23"
-        title: Lecture 23
-      - url: "https://firasm.github.io/cpsc330-slides/slides-24"
-        title: Lecture 24
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-17"
+      #   title: Lecture 17
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-18"
+      #   title: Lecture 18
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-19"
+      #   title: Lecture 19
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-20"
+      #   title: Lecture 20
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-21"
+      #   title: Lecture 21
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-22"
+      #   title: Lecture 22
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-23"
+      #   title: Lecture 23
+      # - url: "https://firasm.github.io/cpsc330-slides/slides-24"
+      #   title: Lecture 24
 - caption: Attribution
   chapters: 
   - file: attribution
