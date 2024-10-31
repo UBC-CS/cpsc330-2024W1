@@ -1433,6 +1433,7 @@ def plot_X_dendrogram(X, linkage_array, font_size=14, label_n_clusters=False, ti
     plt.xlabel("Examples")
     plt.ylabel("Cluster distance");     
     
+    
 def hc_truncation_toy_demo(linkage_array):
     # Credit: adapted from here: https://stackoverflow.com/questions/66180002/scipy-cluster-hierarchy-dendrogram-exactly-what-does-truncate-mode-level-do
     fig, ax_rows = plt.subplots(ncols=5, nrows=2, sharey=True, figsize=(14, 5))
