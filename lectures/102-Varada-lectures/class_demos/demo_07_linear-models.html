@@ -1,0 +1,2189 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lectures 7: Class demo &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/102-Varada-lectures/class_demos/demo_07_linear-models';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+    <script>document.write(`<img src="../../../_static/UBC-CS-logo.png" class="logo__image only-dark" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../README.html">
+                    UBC CPSC 330: Applied Machine Learning (2024W1)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Things you should know</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">CPSC 330 Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../learning-objectives.html">Course Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/12_ensembles.html">Lecture 12: Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/13_feat-importances.html">Lecture 13: Feature importances and model transparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/14_feature-engineering-selection.html">Lecture 14: Feature engineering and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/15_K-Means.html">Lecture 15: K-Means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/16_DBSCAN-hierarchical.html">Lecture 16: More Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/17_recommender-systems.html">Lecture 17: Recommender Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/appendixA_feature-engineering-text-data.html">Appendix A: Demo of feature engineering for text data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-01.html">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-02.html">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-03.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-04.html">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-05.html">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-06.html">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-07.html">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-08.html">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-09.html">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-10.html">Lecture 10</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-11.html">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-12.html">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-13.html">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-14.html">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-15.html">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-16.html">Lecture 16</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-06">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-07">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-08">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-09">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-11">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-12">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-13">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-14">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-15">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-16">Lecture 16</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../LICENSE.html">LICENSE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/UBC-CS/cpsc330-2024W1" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lectures/102-Varada-lectures/class_demos/demo_07_linear-models.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lectures 7: Class demo</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-model-interpretation-of-linear-classifiers">Demo: Model interpretation of linear classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-vocabulary">Examining the vocabulary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-building-on-the-dataset">Model building on the dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-learned-coefficients">Examining learned coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-positive-review">Most positive review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-negative-review">Most negative review</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-for-you-to-ponder-on">Question for you to ponder on</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lectures-7-class-demo">
+<h1>Lectures 7: Class demo<a class="headerlink" href="#lectures-7-class-demo" title="Link to this heading">#</a></h1>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">mglearn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">plotting_functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sklearn.dummy</span> <span class="kn">import</span> <span class="n">DummyClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">cross_validate</span><span class="p">,</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;data/&quot;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="demo-model-interpretation-of-linear-classifiers">
+<h2>Demo: Model interpretation of linear classifiers<a class="headerlink" href="#demo-model-interpretation-of-linear-classifiers" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>One of the primary advantage of linear classifiers is their ability to interpret models.</p></li>
+<li><p>For example, with the sign and magnitude of learned coefficients we could answer questions such as which features are driving the prediction to which direction.</p></li>
+</ul>
+<ul class="simple">
+<li><p>We’ll demonstrate this by training <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> on the famous <a class="reference external" href="https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews">IMDB movie review</a> dataset. The dataset is a bit large for demonstration purposes. So I am going to put a big portion of it in the test split to speed things up.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imdb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;imdb_master.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
+<span class="n">imdb_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>review</th>
+      <th>sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>One of the other reviewers has mentioned that after watching just 1 Oz episode you'll be hooked. They are right, as this is exactly what happened with me.&lt;br /&gt;&lt;br /&gt;The first thing that struck me...</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A wonderful little production. &lt;br /&gt;&lt;br /&gt;The filming technique is very unassuming- very old-time-BBC fashion and gives a comforting, and sometimes discomforting, sense of realism to the entire p...</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>I thought this was a wonderful way to spend time on a too hot summer weekend, sitting in the air conditioned theater and watching a light-hearted comedy. The plot is simplistic, but the dialogue i...</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Basically there's a family where a little boy (Jake) thinks there's a zombie in his closet &amp; his parents are fighting all the time.&lt;br /&gt;&lt;br /&gt;This movie is slower than a soap opera... and suddenl...</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Petter Mattei's "Love in the Time of Money" is a visually stunning film to watch. Mr. Mattei offers us a vivid portrait about human relations. This is a movie that seems to be telling us what mone...</td>
+      <td>positive</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s clean up the data a bit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">replace_tags</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://\S*&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">doc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imdb_df</span><span class="p">[</span><span class="s2">&quot;review_pp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imdb_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">replace_tags</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Are we breaking the Golden rule here?</p>
+<p>Let’s split the data and create bag of words representation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">imdb_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review_pp&quot;</span><span class="p">],</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;sentiment&quot;</span><span class="p">]</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review_pp&quot;</span><span class="p">],</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;sentiment&quot;</span><span class="p">]</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5000, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">)</span>
+<span class="n">bow</span> <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">bow</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Compressed Sparse Row sparse matrix of dtype &#39;int64&#39;
+	with 439384 stored elements and shape (5000, 38867)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="examining-the-vocabulary">
+<h3>Examining the vocabulary<a class="headerlink" href="#examining-the-vocabulary" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The vocabulary (mapping from feature indices to actual words) can be obtained using <code class="docutils literal notranslate"><span class="pre">get_feature_names_out()</span></code> on the <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code> object.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vocab</span> <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vocab</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># first few words</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;00&#39;, &#39;000&#39;, &#39;007&#39;, &#39;0079&#39;, &#39;0080&#39;, &#39;0083&#39;, &#39;00pm&#39;, &#39;00s&#39;, &#39;01&#39;,
+       &#39;0126&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vocab</span><span class="p">[</span><span class="mi">2000</span><span class="p">:</span><span class="mi">2010</span><span class="p">]</span>  <span class="c1"># some middle words</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;apprehensive&#39;, &#39;apprentice&#39;, &#39;approach&#39;, &#39;approached&#39;,
+       &#39;approaches&#39;, &#39;approaching&#39;, &#39;appropriate&#39;, &#39;appropriated&#39;,
+       &#39;appropriately&#39;, &#39;approval&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vocab</span><span class="p">[::</span><span class="mi">500</span><span class="p">]</span>  <span class="c1"># words with a step of 500</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;00&#39;, &#39;aaja&#39;, &#39;affection&#39;, &#39;ambrosine&#39;, &#39;apprehensive&#39;, &#39;attract&#39;,
+       &#39;barbara&#39;, &#39;bereavement&#39;, &#39;blore&#39;, &#39;brazenly&#39;, &#39;businessman&#39;,
+       &#39;carrel&#39;, &#39;chatterjee&#39;, &#39;claudio&#39;, &#39;commanding&#39;, &#39;consumed&#39;,
+       &#39;cramped&#39;, &#39;cynic&#39;, &#39;defining&#39;, &#39;deviates&#39;, &#39;displaced&#39;,
+       &#39;dramatized&#39;, &#39;edie&#39;, &#39;enforced&#39;, &#39;evolving&#39;, &#39;fanatically&#39;,
+       &#39;fingertips&#39;, &#39;formal&#39;, &#39;gaffers&#39;, &#39;giogio&#39;, &#39;gravitas&#39;,
+       &#39;halliday&#39;, &#39;heist&#39;, &#39;hoot&#39;, &#39;iliad&#39;, &#39;infiltrate&#39;, &#39;investment&#39;,
+       &#39;jobson&#39;, &#39;kidnappee&#39;, &#39;landsbury&#39;, &#39;licentious&#39;, &#39;lousiest&#39;,
+       &#39;malã&#39;, &#39;maã&#39;, &#39;mice&#39;, &#39;molla&#39;, &#39;museum&#39;, &#39;newtonian&#39;,
+       &#39;obsessiveness&#39;, &#39;outbursts&#39;, &#39;parapsychologist&#39;, &#39;perpetuates&#39;,
+       &#39;plasters&#39;, &#39;powers&#39;, &#39;property&#39;, &#39;rabies&#39;, &#39;reclined&#39;, &#39;renters&#39;,
+       &#39;ridiculous&#39;, &#39;rube&#39;, &#39;sayid&#39;, &#39;select&#39;, &#39;shivers&#39;, &#39;skinheads&#39;,
+       &#39;sohail&#39;, &#39;spot&#39;, &#39;stomaches&#39;, &#39;suitcase&#39;, &#39;syrupy&#39;, &#39;terrorist&#39;,
+       &#39;tolerance&#39;, &#39;triangular&#39;, &#39;unbidden&#39;, &#39;unrevealed&#39;, &#39;verneuil&#39;,
+       &#39;walrus&#39;, &#39;wilcox&#39;, &#39;xxxxviii&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sentiment
+positive    2517
+negative    2483
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-building-on-the-dataset">
+<h3>Model building on the dataset<a class="headerlink" href="#model-building-on-the-dataset" title="Link to this heading">#</a></h3>
+<p>First let’s try <code class="docutils literal notranslate"><span class="pre">DummyClassifier</span></code> on the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dummy</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">()</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">dummy</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fit_time</th>
+      <th>score_time</th>
+      <th>test_score</th>
+      <th>train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.032334</td>
+      <td>0.002575</td>
+      <td>0.504</td>
+      <td>0.50325</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.002154</td>
+      <td>0.001422</td>
+      <td>0.504</td>
+      <td>0.50325</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.001573</td>
+      <td>0.001386</td>
+      <td>0.503</td>
+      <td>0.50350</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.001617</td>
+      <td>0.001429</td>
+      <td>0.503</td>
+      <td>0.50350</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.001399</td>
+      <td>0.001153</td>
+      <td>0.503</td>
+      <td>0.50350</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We have a balanced dataset. So the <code class="docutils literal notranslate"><span class="pre">DummyClassifier</span></code> score is around 0.5.</p>
+<p>Now let’s try logistic regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+    <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">),</span>
+    <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fit_time</th>
+      <th>score_time</th>
+      <th>test_score</th>
+      <th>train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.446221</td>
+      <td>0.058952</td>
+      <td>0.828</td>
+      <td>0.99975</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.414545</td>
+      <td>0.061613</td>
+      <td>0.830</td>
+      <td>0.99975</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.431959</td>
+      <td>0.059685</td>
+      <td>0.848</td>
+      <td>0.99975</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.401264</td>
+      <td>0.058604</td>
+      <td>0.833</td>
+      <td>1.00000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.400344</td>
+      <td>0.058320</td>
+      <td>0.840</td>
+      <td>0.99975</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Seems like we are overfitting. Let’s optimize the hyperparameter <code class="docutils literal notranslate"><span class="pre">C</span></code> of LR and <code class="docutils literal notranslate"><span class="pre">max_features</span></code> of <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s2">&quot;mean_train_scores&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+    <span class="s2">&quot;mean_cv_scores&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">scores_dict</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]:</span>
+    <span class="n">pipe_lr</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">),</span>
+                        <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">)</span>
+                       <span class="p">)</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">scores_dict</span><span class="p">[</span><span class="s2">&quot;mean_train_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s2">&quot;train_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="n">scores_dict</span><span class="p">[</span><span class="s2">&quot;mean_cv_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s2">&quot;test_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores_dict</span><span class="p">)</span>
+<span class="n">results_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>mean_train_scores</th>
+      <th>mean_cv_scores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.001</td>
+      <td>0.82615</td>
+      <td>0.7864</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.010</td>
+      <td>0.91795</td>
+      <td>0.8322</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.100</td>
+      <td>0.98570</td>
+      <td>0.8422</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.000</td>
+      <td>0.99980</td>
+      <td>0.8340</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.000</td>
+      <td>1.00000</td>
+      <td>0.8256</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>100.000</td>
+      <td>1.00000</td>
+      <td>0.8312</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_C</span> <span class="o">=</span> <span class="n">results_df</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">][</span><span class="n">results_df</span><span class="p">[</span><span class="s2">&quot;mean_cv_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;The maximum validation score is </span><span class="si">%0.3f</span><span class="s2"> at C = </span><span class="si">%0.2f</span><span class="s2"> &quot;</span>
+    <span class="o">%</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s2">&quot;mean_cv_scores&quot;</span><span class="p">]),</span>
+        <span class="n">optimized_C</span><span class="p">,</span>
+    <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The maximum validation score is 0.842 at C = 0.10 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">),</span>
+                        <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="mf">0.10</span><span class="p">)</span>
+                       <span class="p">)</span>
+<span class="n">pipe_lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-2 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-2 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-2 pre {
+  padding: 0;
+}
+
+#sk-container-id-2 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-2 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-2 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-2 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-2 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-2 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-2 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-2 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-2 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-2 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-2 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-2 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-2 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-2 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-2 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;countvectorizer&#x27;,
+                 CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)),
+                (&#x27;logisticregression&#x27;,
+                 LogisticRegression(C=0.1, max_iter=1000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;countvectorizer&#x27;,
+                 CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)),
+                (&#x27;logisticregression&#x27;,
+                 LogisticRegression(C=0.1, max_iter=1000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;CountVectorizer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></label><div class="sk-toggleable__content fitted"><pre>CountVectorizer(max_features=10000, stop_words=&#x27;english&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression(C=0.1, max_iter=1000)</pre></div> </div></div></div></div></div></div></div></div>
+</div>
+</section>
+<section id="examining-learned-coefficients">
+<h3>Examining learned coefficients<a class="headerlink" href="#examining-learned-coefficients" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The learned coefficients are exposed by the <code class="docutils literal notranslate"><span class="pre">coef_</span></code> attribute of <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">LogisticRegression</a> object.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get feature names</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">pipe_lr</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;countvectorizer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># Get coefficients </span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">pipe_lr</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;logisticregression&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_coeff_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">coeffs</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coefficient&quot;</span><span class="p">])</span>
+<span class="n">word_coeff_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>00</th>
+      <td>0.058621</td>
+    </tr>
+    <tr>
+      <th>000</th>
+      <td>0.075009</td>
+    </tr>
+    <tr>
+      <th>007</th>
+      <td>0.005351</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.184220</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>-0.067604</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>zone</th>
+      <td>0.000927</td>
+    </tr>
+    <tr>
+      <th>zoo</th>
+      <td>-0.069953</td>
+    </tr>
+    <tr>
+      <th>zorro</th>
+      <td>0.041716</td>
+    </tr>
+    <tr>
+      <th>zu</th>
+      <td>0.072167</td>
+    </tr>
+    <tr>
+      <th>zucco</th>
+      <td>-0.055508</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 1 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Let’s sort the coefficients in descending order.</p></li>
+<li><p>Interpretation</p>
+<ul>
+<li><p>if <span class="math notranslate nohighlight">\(w_j &gt; 0\)</span> then increasing <span class="math notranslate nohighlight">\(x_{ij}\)</span> moves us toward predicting <span class="math notranslate nohighlight">\(+1\)</span>.</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(w_j &lt; 0\)</span> then increasing <span class="math notranslate nohighlight">\(x_{ij}\)</span> moves us toward predicting <span class="math notranslate nohighlight">\(-1\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_coeff_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Coefficient&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>excellent</th>
+      <td>0.794894</td>
+    </tr>
+    <tr>
+      <th>amazing</th>
+      <td>0.622091</td>
+    </tr>
+    <tr>
+      <th>perfect</th>
+      <td>0.608633</td>
+    </tr>
+    <tr>
+      <th>wonderful</th>
+      <td>0.571676</td>
+    </tr>
+    <tr>
+      <th>great</th>
+      <td>0.535896</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>waste</th>
+      <td>-0.683588</td>
+    </tr>
+    <tr>
+      <th>terrible</th>
+      <td>-0.719606</td>
+    </tr>
+    <tr>
+      <th>boring</th>
+      <td>-0.725668</td>
+    </tr>
+    <tr>
+      <th>awful</th>
+      <td>-0.872302</td>
+    </tr>
+    <tr>
+      <th>worst</th>
+      <td>-1.134270</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 1 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>The coefficients make sense!</p></li>
+</ul>
+<p>Let’s visualize the top 20 features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">visualize_coefficients</span><span class="p">(</span><span class="n">coeffs</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">n_top_features</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/8c8a8c8a98cd03d190bc577cda8cbd61b11265a73ce49c91aa6aa85397b13f99.png" src="../../../_images/8c8a8c8a98cd03d190bc577cda8cbd61b11265a73ce49c91aa6aa85397b13f99.png" />
+</div>
+</div>
+<p>Let’s explore prediction of the following new review.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fake_reviews</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;It got a bit boring at times but the direction was excellent and the acting was flawless. Overall I enjoyed the movie and I highly recommend it!&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;The plot was shallower than a kiddie pool in a drought, but hey, at least we now know emojis should stick to texting and avoid the big screen.&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get prediction probability scores of the fake review.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">fake_reviews</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;positive&#39;, &#39;negative&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get prediction probabilities for fake reviews </span>
+<span class="n">pipe_lr</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">fake_reviews</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.17333954, 0.82666046],
+       [0.68822214, 0.31177786]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">classes_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;negative&#39;, &#39;positive&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can find which of the vocabulary words are present in this review:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_coeff_example</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">review</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">n_top_feats</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>
+    <span class="n">feat_vec</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;countvectorizer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">review</span><span class="p">])</span>
+    <span class="n">words_in_ex</span> <span class="o">=</span> <span class="n">feat_vec</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="n">ex_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">coeffs</span><span class="p">[</span><span class="n">words_in_ex</span><span class="p">],</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">feature_names</span><span class="p">)[</span><span class="n">words_in_ex</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coefficient&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">mglearn</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">visualize_coefficients</span><span class="p">(</span>
+    <span class="n">coeffs</span><span class="p">[</span><span class="n">words_in_ex</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">feature_names</span><span class="p">)[</span><span class="n">words_in_ex</span><span class="p">],</span> <span class="n">n_top_features</span><span class="o">=</span><span class="n">n_top_feats</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ex_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coefficient&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_coeff_example</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">fake_reviews</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It got a bit boring at times but the direction was excellent and the acting was flawless. Overall I enjoyed the movie and I highly recommend it!
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>excellent</th>
+      <td>0.794894</td>
+    </tr>
+    <tr>
+      <th>overall</th>
+      <td>0.417289</td>
+    </tr>
+    <tr>
+      <th>enjoyed</th>
+      <td>0.416470</td>
+    </tr>
+    <tr>
+      <th>highly</th>
+      <td>0.328111</td>
+    </tr>
+    <tr>
+      <th>bit</th>
+      <td>0.327412</td>
+    </tr>
+    <tr>
+      <th>times</th>
+      <td>0.227090</td>
+    </tr>
+    <tr>
+      <th>recommend</th>
+      <td>0.172985</td>
+    </tr>
+    <tr>
+      <th>flawless</th>
+      <td>0.066854</td>
+    </tr>
+    <tr>
+      <th>movie</th>
+      <td>-0.033348</td>
+    </tr>
+    <tr>
+      <th>got</th>
+      <td>-0.087397</td>
+    </tr>
+    <tr>
+      <th>direction</th>
+      <td>-0.138571</td>
+    </tr>
+    <tr>
+      <th>acting</th>
+      <td>-0.194883</td>
+    </tr>
+    <tr>
+      <th>boring</th>
+      <td>-0.725668</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../../../_images/ee88b881e2305cbcc91a4fce3e95ea667f80da1b7652ba3ed23c308d26b9eaf3.png" src="../../../_images/ee88b881e2305cbcc91a4fce3e95ea667f80da1b7652ba3ed23c308d26b9eaf3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_coeff_example</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">fake_reviews</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The plot was shallower than a kiddie pool in a drought, but hey, at least we now know emojis should stick to texting and avoid the big screen.
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>know</th>
+      <td>0.225363</td>
+    </tr>
+    <tr>
+      <th>stick</th>
+      <td>0.020377</td>
+    </tr>
+    <tr>
+      <th>kiddie</th>
+      <td>-0.042543</td>
+    </tr>
+    <tr>
+      <th>screen</th>
+      <td>-0.057418</td>
+    </tr>
+    <tr>
+      <th>big</th>
+      <td>-0.059373</td>
+    </tr>
+    <tr>
+      <th>hey</th>
+      <td>-0.066556</td>
+    </tr>
+    <tr>
+      <th>pool</th>
+      <td>-0.090659</td>
+    </tr>
+    <tr>
+      <th>plot</th>
+      <td>-0.254875</td>
+    </tr>
+    <tr>
+      <th>avoid</th>
+      <td>-0.457039</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../../../_images/cdd6549fe2538985e9724f7e4b6a35387b45f26779b3fdf8807c30df77e43273.png" src="../../../_images/cdd6549fe2538985e9724f7e4b6a35387b45f26779b3fdf8807c30df77e43273.png" />
+</div>
+</div>
+<p><br><br><br><br></p>
+</section>
+<section id="most-positive-review">
+<h3>Most positive review<a class="headerlink" href="#most-positive-review" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Remember that you can look at the probabilities (confidence) of the classifier’s prediction using the <code class="docutils literal notranslate"><span class="pre">model.predict_proba</span></code> method.</p></li>
+<li><p>Can we find the reviews where our classifier is most certain or least certain?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only get probabilities associated with pos class</span>
+<span class="n">pos_probs</span> <span class="o">=</span> <span class="n">pipe_lr</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)[</span>
+    <span class="p">:,</span> <span class="mi">1</span>
+<span class="p">]</span>  <span class="c1"># only get probabilities associated with pos class</span>
+<span class="n">pos_probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.97581663, 0.27576982, 0.93402132, ..., 0.75329946, 0.87516818,
+       0.00630932])
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s the index of the example where the classifier is most certain (highest <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> score for positive)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_positive_id</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pos_probs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True target: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">most_positive_id</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted target: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">most_positive_id</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediction probability: </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pos_probs</span><span class="p">[</span><span class="n">most_positive_id</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True target: positive
+
+Predicted target: positive
+
+Prediction probability: 1.0000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s examine the features associated with the review.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_coeff_example</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">most_positive_id</span><span class="p">],</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is an awesome Amicus horror anthology, with 3 great stories, and fantastic performances!, only the last story disappoints. All the characters are awesome, and the film is quite chilling and suspenseful, plus Peter Cushing and Christopher Lee are simply amazing in this!. It&#39;s very underrated and my favorite story has to be the 3rd one &quot;Sweets To The Sweet&quot;, plus all the characters are very likable. Some of it&#39;s predictable, and the last story was incredibly disappointing and rather bland!, however the ending was really cool!. This is an awesome Amicus horror anthology, with 3 great stories, and fantastic performances, only the last story disappoints!, i say it&#39;s must see!.  1st Story (&quot;Method for Murder&quot;). This is an awesome story, with plenty of suspense, and the killer Dominic is really creepy, and it&#39;s very well acted as well!. This was the perfect way to start off with a story, and for the most part it&#39;s unpredictable, plus the double twist ending is shocking, and quite creepy!. Grade A  2nd Story. (&quot;Waxworks&quot;). This is a solid story all around, with wonderful performances, however the ending is quite predictable, but it&#39;s still creepy, and has quite a bit of suspense, Peter Cushing did an amazing job, and i couldn&#39;t believe how young Joss Ackland was, i really enjoyed this story!. Grade B  3rd Story (&quot;Sweets to the Sweet&quot;). This is the Best story here, as it&#39;s extremely creepy, and unpredictable throughout, it also has a nice twist as well!. Christopher Lee did an amazing job, and Chloe Franks did a wonderful job as the young daughter, plus the ending is quite shocking!. I don&#39;t want to spoil it for you, but it&#39;s one of the best horror stories i have seen!. Grade A+  4th Story (&quot;The Cloak&quot;). This is a terrible story that&#39;s really weak and unfunny Jon Pertwee annoyed me, however the ending surprised me a little bit, and Ingrid Pitt was great as always, however it&#39;s just dull, and has been done before many times, plus where was the creativity??. Grade D  The Direction is great!. Peter Duffell does a great job here, with awesome camera work, great angles, adding some creepy atmosphere, and keeping the film at a very fast pace!.  The Acting is awesome!. John Bryans is great here, as the narrator, he had some great lines, i just wished he had more screen time. John Bennett is very good as the Det., and was quite intense, he was especially good at the end!, i liked him lots. Denholm Elliott is excellent as Charles, he was vulnerable, showed fear, was very likable, and i loved his facial expressions, he rocked!. Joanna Dunham is stunningly gorgeous!, and did great with what she had to do as the wife, she also had great chemistry with Denholm Elliott !. Tom Adams is incredibly creepy as Dominic, he was creepy looking, and got the job done extremely well!. Peter Cushing is amazing as always, and is amazing here, he is likable, focused, charming, and as always, had a ton of class! (Cushing Rules!!). Joss Ackland is fantastic as always, and looked so young here, i barely recognized him, his accent wasn&#39;t so thick, and played a different role i loved it! (Ackland rules). Wolfe Morris is creepy here, and did what he had to do well.Christopher Lee is amazing as always and is amazing here, he is incredibly intense, very focused, and as always had that great intense look on his face, he was especially amazing at the end! (Lee Rules!!). Chloe Franks is adorable as the daughter, she is somewhat creepy, and gave one of the best child performances i have ever seen!, i loved her.Nyree Dawn Porter is beautiful and was excellent as the babysitter, i liked her lots!. Jon Pertwee annoyed me here, and was quite bland, and completely unfunny, he also had no chemistry with Ingrid Pitt!. Ingrid Pitt is beautiful , and does her usual Vampire thing and does it well!.   Rest of the cast do fine. Overall a must see!. **** out of 5
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>excellent</th>
+      <td>0.794894</td>
+    </tr>
+    <tr>
+      <th>amazing</th>
+      <td>0.622091</td>
+    </tr>
+    <tr>
+      <th>perfect</th>
+      <td>0.608633</td>
+    </tr>
+    <tr>
+      <th>wonderful</th>
+      <td>0.571676</td>
+    </tr>
+    <tr>
+      <th>great</th>
+      <td>0.535896</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>accent</th>
+      <td>-0.347124</td>
+    </tr>
+    <tr>
+      <th>couldn</th>
+      <td>-0.374866</td>
+    </tr>
+    <tr>
+      <th>disappointing</th>
+      <td>-0.383650</td>
+    </tr>
+    <tr>
+      <th>dull</th>
+      <td>-0.501351</td>
+    </tr>
+    <tr>
+      <th>terrible</th>
+      <td>-0.719606</td>
+    </tr>
+  </tbody>
+</table>
+<p>160 rows × 1 columns</p>
+</div></div><img alt="../../../_images/b01624a4d72e74b5248e724a060d4c1f4bd89e62fcf9b732ca514f8f0144f867.png" src="../../../_images/b01624a4d72e74b5248e724a060d4c1f4bd89e62fcf9b732ca514f8f0144f867.png" />
+</div>
+</div>
+<p>The review has both positive and negative words but the words with <strong>positive</strong> coefficients win in this case!</p>
+</section>
+<section id="most-negative-review">
+<h3>Most negative review<a class="headerlink" href="#most-negative-review" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neg_probs</span> <span class="o">=</span> <span class="n">pipe_lr</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)[</span>
+    <span class="p">:,</span> <span class="mi">0</span>
+<span class="p">]</span>  <span class="c1"># only get probabilities associated with neg class</span>
+<span class="n">neg_probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.02418337, 0.72423018, 0.06597868, ..., 0.24670054, 0.12483182,
+       0.99369068])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_negative_id</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">neg_probs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Review: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">most_negative_id</span><span class="p">]]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True target: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">most_negative_id</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted target: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">most_negative_id</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediction probability: </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">neg_probs</span><span class="p">[</span><span class="n">most_negative_id</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Review: 13452    Zombi 3 starts as a group of heavily armed men steal a experimental chemical developed to reanimate the dead, while trying to escape the man is shot at &amp; the metal container holding the chemical i...
+Name: review_pp, dtype: object
+
+True target: negative
+
+Predicted target: negative
+
+Prediction probability: 1.0000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_coeff_example</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">most_negative_id</span><span class="p">],</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zombi 3 starts as a group of heavily armed men steal a experimental chemical developed to reanimate the dead, while trying to escape the man is shot at &amp; the metal container holding the chemical is breached. The man gets some of the green chemical on a wound on his hand which soon after turns him into a flesh eating cannibalistic zombie. Within hours the surrounding area is crawling with the flesh easting undead on the look out for fresh victims, Kenny (Deran Sarafian) &amp; his army buddies find themselves in big trouble as they stop to help Patricia (Beatrice Ring) &amp; her friend Lia (Deborah Bergammi) who has been pecked by zombie birds (!). General Morton is in charge of the situation &amp; has to stop the zombie plague from spread throughout the whole world! But will he &amp; his men succeed?  This Italian produced film was to be directed by Italian zombie gore film auteur Lucio Fulci but the story goes he suffered a stroke &amp; therefore couldn&#39;t finish the film so producer Franco Gaudenzi asked second unit director Bruno Mattei &amp; writer Claudio Fragasso to step in &amp; complete the film. Apparently Mattei &amp; Fragasso did more than just finish it they actually disregarded a lot of the footage Fulci shot &amp; added a lot of their own &amp; Zombi 3 ended up as nearly a straight 50/50 split. The script by Fragasso is an absolute mess, none of it is well thought out &amp; is just as stupid as it gets. The scenes of zombie birds attacking people are not only technically inept but the whole idea is just absurd. The zombies themselves have no consistency whatsoever, look at the scene where Patricia is on the bridge &amp; the zombies are slow as they shuffle along but then look at the scene earlier on where she was attacked by the zombie with the machete because that one runs around like it&#39;s on steroids, then for no reasonable explanation about 10 minutes before the film finishes the zombies suddenly develop the ability to speak which also looks daft. There are so many things wrong with Zombi 3, scene after scene of terribly thought out &amp; ineptly directed action, awful character&#39;s &amp; really dull broken English dialogue which doesn&#39;t make sense half the time. Then there&#39;s the embarrassing scene where the zombie head inside the fridge suddenly develops the ability to fly through the air &amp; bite someones neck, the scene when the guy&#39;s in white contamination suits at the end are about to kill Kenny &amp; Roger but instead of using their automatic rifles they decide to try &amp; kill them by hand, even when Kenny picks up a gun himself they still refuse to use their rifles &amp; when Kenny starts to shoot them all they still refuse to use their rifles &amp; it&#39;s one of the most ineptly handled scenes ever put to film &amp; then there&#39;s the end where Kenny takes off in the helicopter but can&#39;t rest it down on the ground for literally a few seconds to pick his buddy up &amp; then a load of zombies suddenly spring up from under some piles of grass, what? Since when did zombies hide themselves yet alone under piles of grass? This all may sound &#39;fun&#39; but believe me it&#39;s not, it&#39;s a really bad film that is just boring, repetitive &amp; simply doesn&#39;t work on any level as a piece of entertainment except for a few unintentional laughs.  It&#39;s hard to know who was responsible for what exactly but none of the footage is particularly well shot. It has a bland lifeless feel about it &amp; for some reason the makers have tried to bath every scene in mist, the problem is they clearly only had one fog machine &amp; you can see that at one corner of the screen the mist is noticeably thicker as it is coming straight out of the machine &amp; thinning out as it disperses across the scene. Since a lot of it is set during the day it doesn&#39;t add any sort of atmosphere whatsoever &amp; when they do get it right &amp; the mist is evenly spread across the screen it just looks like they shot the scene on a foggy day! The direction is poor with no consistency &amp; it just looks &amp; feels bottom of the barrel stuff. Even the blood &amp; gore isn&#39;t up to much, there&#39;s a gory hand severing at the start, a scene when something rips out of a pregnant woman&#39;s stomach, a legless woman (what actually took her legs off in the pool by the way &amp; why didn&#39;t it take the legs off the guy who jumped in to save her?) &amp; a few OK looking zombies is as gory as it gets. For anyone hoping to see a gore fest the likes of which Fulci regularly served up during the late 70&#39;s &amp; early 80&#39;s will be very disappointed, there aren&#39;t any decent feeding scenes, no intestines, no stand out &#39;head shots&#39; &amp; very little gore at all.  Technically the film is poor, the special effects are cheap looking, the cinematography is dull, the music is terrible, the locations are bland &amp; it has rock bottom production values. This was actually shot in the Philippines to keep the cost down to a minimum. The entire film is obviously dubbed, the acting still looks awful though &amp; the English version seems to have been written by someone who doesn&#39;t understand the language that well.  Zombi 3 is not a sequel to Fulci&#39;s classic zombie gore fest Zombi 2 (1979), it has nothing to do with it at all apart from the cash-in title. I&#39;m sorry but Zombi 3 is an amateurish mess of a film, it&#39;s boring, it makes no sense, it&#39;s not funny enough to be entertaining &amp; it lacks any decent gore. One to avoid.
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fun</th>
+      <td>0.387537</td>
+    </tr>
+    <tr>
+      <th>makes</th>
+      <td>0.374170</td>
+    </tr>
+    <tr>
+      <th>entertaining</th>
+      <td>0.336846</td>
+    </tr>
+    <tr>
+      <th>late</th>
+      <td>0.264844</td>
+    </tr>
+    <tr>
+      <th>escape</th>
+      <td>0.237104</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>bad</th>
+      <td>-0.585101</td>
+    </tr>
+    <tr>
+      <th>poor</th>
+      <td>-0.632143</td>
+    </tr>
+    <tr>
+      <th>terrible</th>
+      <td>-0.719606</td>
+    </tr>
+    <tr>
+      <th>boring</th>
+      <td>-0.725668</td>
+    </tr>
+    <tr>
+      <th>awful</th>
+      <td>-0.872302</td>
+    </tr>
+  </tbody>
+</table>
+<p>283 rows × 1 columns</p>
+</div></div><img alt="../../../_images/3c1655870b972c5aea0aec056308d11ecb378d9d6b40fa0aefe750e3a71516d1.png" src="../../../_images/3c1655870b972c5aea0aec056308d11ecb378d9d6b40fa0aefe750e3a71516d1.png" />
+</div>
+</div>
+<p>The review has both positive and negative words but the words with negative coefficients win in this case!</p>
+</section>
+</section>
+<section id="questions-for-you">
+<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
+<section id="question-for-you-to-ponder-on">
+<h3>Question for you to ponder on<a class="headerlink" href="#question-for-you-to-ponder-on" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Is it possible to identify most important features using <span class="math notranslate nohighlight">\(k\)</span>-NNs? What about decision trees?</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-cpsc330-py"
+        },
+        kernelOptions: {
+            name: "conda-env-cpsc330-py",
+            path: "./lectures/102-Varada-lectures/class_demos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-model-interpretation-of-linear-classifiers">Demo: Model interpretation of linear classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-vocabulary">Examining the vocabulary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-building-on-the-dataset">Model building on the dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-learned-coefficients">Examining learned coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-positive-review">Most positive review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-negative-review">Most negative review</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-for-you-to-ponder-on">Question for you to ponder on</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Varada Kolhatkar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
