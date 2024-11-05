@@ -1,0 +1,3707 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lecture 17: Class demo &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/102-Varada-lectures/class_demos/demo_17-recommender-systems';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+    <script>document.write(`<img src="../../../_static/UBC-CS-logo.png" class="logo__image only-dark" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../README.html">
+                    UBC CPSC 330: Applied Machine Learning (2024W1)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Things you should know</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">CPSC 330 Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../learning-objectives.html">Course Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/12_ensembles.html">Lecture 12: Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/13_feat-importances.html">Lecture 13: Feature importances and model transparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/14_feature-engineering-selection.html">Lecture 14: Feature engineering and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/15_K-Means.html">Lecture 15: K-Means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/16_DBSCAN-hierarchical.html">Lecture 16: More Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/17_recommender-systems.html">Lecture 17: Recommender Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/appendixA_feature-engineering-text-data.html">Appendix A: Demo of feature engineering for text data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-01.html">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-02.html">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-03.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-04.html">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-05.html">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-06.html">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-07.html">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-08.html">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-09.html">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-10.html">Lecture 10</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-11.html">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-12.html">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-13.html">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-14.html">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-15.html">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-16.html">Lecture 16</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-06">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-07">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-08">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-09">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-11">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-12">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-13">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-14">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-15">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-16">Lecture 16</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../LICENSE.html">LICENSE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/UBC-CS/cpsc330-2024W1" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lectures/102-Varada-lectures/class_demos/demo_17-recommender-systems.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 17: Class demo</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes <a name="lo"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommender-systems-intro-and-motivation">Recommender systems intro and motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-recommender-system">What is a recommender system?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-care-about-recommendation-systems">Why should we care about recommendation systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-and-main-approaches">Data and main approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommender-systems-problem">Recommender systems problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-formulation">Problem formulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-utility-matrix">Creating utility matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-approaches">Baseline Approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-average-baseline">Global average baseline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbours-imputation"><span class="math notranslate nohighlight">\(k\)</span>-nearest neighbours imputation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17-1-select-all-of-the-following-statements-which-are-true-iclicker">Exercise 17.1 Select all of the following statements which are <strong>True</strong> (iClicker)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-class-discussion">Questions for class discussion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-based-filtering">Content-based filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movie-features">Movie features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-user-profiles">Building user profiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-approach-to-rating-prediction">Supervised approach to rating prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-utility-matrix-with-content-based-filtering">Completing the utility matrix with content-based filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-comments-on-content-based-filtering">Miscellaneous comments on content-based filtering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise 17.1 Select all of the following statements which are <strong>True</strong> (iClicker)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-error-rate-in-recommendation-systems">Beyond error rate in recommendation systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-comments-and-summary">Final comments and summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-the-problem-of-recommender-systems">Formulating the problem of recommender systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-cover">What did we cover?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder">Reminder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-17-class-demo">
+<h1>Lecture 17: Class demo<a class="headerlink" href="#lecture-17-class-demo" title="Link to this heading">#</a></h1>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">plotting_functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">plotting_functions_unsup</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span><span class="p">,</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+
+<span class="c1"># plt.style.use(&quot;seaborn&quot;)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;data/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-outcomes">
+<h2>Learning outcomes <a name="lo"></a><a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<p>From this lecture, students are expected to be able to:</p>
+<ul class="simple">
+<li><p>State the problem of recommender systems.</p></li>
+<li><p>Describe components of a utility matrix.</p></li>
+<li><p>Create a utility matrix given ratings data.</p></li>
+<li><p>Describe a common approach to evaluate recommender systems.</p></li>
+<li><p>Implement some baseline approaches to complete the utility matrix.</p></li>
+<li><p>Explain the idea of collaborative filtering.</p></li>
+<li><p>Formulate the rating prediction problem as a supervised machine learning problem.</p></li>
+<li><p>Create a content-based filter given ratings data and item features to predict missing ratings in the utility matrix.</p></li>
+<li><p>Explain some serious consequences of recommendation systems.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="recommender-systems-intro-and-motivation">
+<h2>Recommender systems intro and motivation<a class="headerlink" href="#recommender-systems-intro-and-motivation" title="Link to this heading">#</a></h2>
+<section id="what-is-a-recommender-system">
+<h3>What is a recommender system?<a class="headerlink" href="#what-is-a-recommender-system" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A recommender or a recommendation system <strong>recommends</strong> a particular product or service to users they are likely to consume.</p></li>
+</ul>
+<p><img alt="" src="../../../_images/recommendation_system.png" /></p>
+<!-- <img src="img/recommendation_system.png" alt="" height="900" width="900">  -->
+<p><strong>Example: Recommender Systems</strong></p>
+<ul class="simple">
+<li><p>A user goes to Amazon to buy products.</p></li>
+<li><p>Amazon has some information about the user. They also have information about other users buying similar products.</p></li>
+<li><p>What should they recommend to the user, so that they buy more products?</p></li>
+<li><p>There’s no “right” answer (no label).</p></li>
+<li><p>The whole idea is to understand user behavior in order to recommend them products they are likely to consume.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="why-should-we-care-about-recommendation-systems">
+<h3>Why should we care about recommendation systems?<a class="headerlink" href="#why-should-we-care-about-recommendation-systems" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Almost everything we buy or consume today is in some way or the other influenced by recommendation systems.</p>
+<ul>
+<li><p>Music (Spotify), videos (YouTube), news, books and products (Amazon), movies (Netflix), jokes, restaurants, dating , friends (Facebook), professional connections (LinkedIn)</p></li>
+</ul>
+</li>
+<li><p>Recommendation systems are at the core of the success of many companies such as Amazon and <a class="reference external" href="https://help.netflix.com/en/node/100639">Netflix</a>.</p></li>
+</ul>
+<p><img alt="" src="../../../_images/reco-examples.png" /></p>
+<ul class="simple">
+<li><p>Recommendation systems are often presented as powerful tools that significantly <strong>reduce the effort users need to put in finding items</strong>, effectively mitigating the problem of information overload.</p></li>
+<li><p>This is more or less true in many contexts. Consider, for instance, the experience of shopping an umbrella on Amazon without the help of recommendations or any specific ranking of products.</p></li>
+<li><p>In the absence of a recommendation system, users would be faced with the daunting task of sifting through thousands of available products to find the one that best suits their needs.</p></li>
+</ul>
+<p><img alt="" src="../../../_images/info-overload.png" /></p>
+<ul class="simple">
+<li><p>That said, we should always be mindful of the drawbacks of relying heavily on recommender systems.</p></li>
+<li><p>For example, these systems tend to recommend articles and products that are similar to those a user has previously interacted with or those their friends like.</p></li>
+<li><p>While this can improve user experience by presenting more of what the system predicts the user will like, it can also lead to a phenomenon known as <strong>“filter bubbles”</strong>.</p></li>
+<li><p>This effect <strong>narrows a user’s exposure to diverse viewpoints and information</strong>. Such a narrowing of perspective can be detrimental, particularly in the context of scientific research or political discourse, where exposure to a wide range of perspectives is crucial.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="data-and-main-approaches">
+<h3>Data and main approaches<a class="headerlink" href="#data-and-main-approaches" title="Link to this heading">#</a></h3>
+<p><strong>What kind of data we need to build recommendation systems?</strong></p>
+<ul class="simple">
+<li><p>Customer purchase history data (We worked with it last week.)</p></li>
+<li><p><strong>User-item interactions</strong> (e.g., ratings or clicks) (most common)</p></li>
+<li><p><strong>Features related to items or users</strong></p></li>
+</ul>
+<p><strong>Main approaches</strong></p>
+<ul class="simple">
+<li><p>Collaborative filtering</p>
+<ul>
+<li><p>“Unsupervised” learning</p></li>
+<li><p>We only have labels <span class="math notranslate nohighlight">\(y_{ij}\)</span> (rating of user <span class="math notranslate nohighlight">\(i\)</span> for item <span class="math notranslate nohighlight">\(j\)</span>).</p></li>
+<li><p>We learn latent features.</p></li>
+</ul>
+</li>
+<li><p><strong>Content-based recommenders</strong> (today’s focus)</p>
+<ul>
+<li><p>Supervised learning</p></li>
+<li><p>Extract features <span class="math notranslate nohighlight">\(x_i\)</span> of users and/or items building a model to predict rating <span class="math notranslate nohighlight">\(y_i\)</span> given <span class="math notranslate nohighlight">\(x_i\)</span>.</p></li>
+<li><p>Apply model to predict for new users/items.</p></li>
+</ul>
+</li>
+<li><p>Hybrid</p>
+<ul>
+<li><p>Combining collaborative filtering with content-based filtering</p></li>
+</ul>
+</li>
+</ul>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="recommender-systems-problem">
+<h2>Recommender systems problem<a class="headerlink" href="#recommender-systems-problem" title="Link to this heading">#</a></h2>
+<section id="problem-formulation">
+<h3>Problem formulation<a class="headerlink" href="#problem-formulation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Most often the data for recommender systems come in as <strong>interactions</strong> between a set of items and a set of users.</p></li>
+<li><p>We have two entities: <span class="math notranslate nohighlight">\(N\)</span> <strong>users</strong> and <span class="math notranslate nohighlight">\(M\)</span> <strong>items</strong>.</p></li>
+<li><p><strong>Users</strong> are consumers.</p></li>
+<li><p><strong>Items</strong> are the products or services offered.</p>
+<ul>
+<li><p>E.g., movies (Netflix), books (Amazon), songs (spotify), people (tinder)</p></li>
+</ul>
+</li>
+<li><p>A <strong>utility matrix</strong> is the matrix that captures <strong>interactions</strong> between <span class="math notranslate nohighlight">\(N\)</span> <strong>users</strong> and <span class="math notranslate nohighlight">\(M\)</span> <strong>items</strong>.</p></li>
+<li><p>The interaction may come in different forms:</p>
+<ul>
+<li><p>ratings, clicks, purchases</p></li>
+</ul>
+</li>
+<li><p>Below is a toy utility matrix. Here <span class="math notranslate nohighlight">\(N\)</span> = 6 and <span class="math notranslate nohighlight">\(M\)</span> = 5.</p></li>
+<li><p>Each entry <span class="math notranslate nohighlight">\(y_{ij}\)</span> (<span class="math notranslate nohighlight">\(i^{th}\)</span> row and <span class="math notranslate nohighlight">\(j^{th}\)</span> column) denotes the rating given by the user <span class="math notranslate nohighlight">\(i\)</span> to item <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+<li><p>We represent users in terms of items and items in terms of users.</p></li>
+</ul>
+<p><img alt="" src="../../../_images/utility_matrix.png" /></p>
+<!-- <img src="img/utility_matrix.png" alt="" height="900" width="900">  -->
+<ul class="simple">
+<li><p>The utility matrix is very sparse because usually users only interact with a few items.</p></li>
+<li><p>For example:</p>
+<ul>
+<li><p>all Netflix users will have rated only a small percentage of content available on Netflix</p></li>
+<li><p>all amazon clients will have rated only a small fraction of items among all items available on Amazon</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>What do we predict?</strong></p>
+<p>Given a utility matrix of <span class="math notranslate nohighlight">\(N\)</span> users and <span class="math notranslate nohighlight">\(M\)</span> items, <strong>complete the utility matrix</strong>. In other words, <strong>predict missing values in the matrix</strong>.</p>
+<ul class="simple">
+<li><p>Once we have predicted ratings, we can recommend items to users they are likely to rate higher.</p></li>
+<li><p>Note: rating prediction <span class="math notranslate nohighlight">\(\neq\)</span> Classification or regression</p></li>
+</ul>
+<p><strong>In classification or regression:</strong></p>
+<ul class="simple">
+<li><p>We have <span class="math notranslate nohighlight">\(X\)</span> and targets for some rows in <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+<li><p>We want to predict the last column (target column).</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 
+\checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; \checkmark\\
+\checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; \checkmark\\
+\checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; \checkmark\\
+\checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; ?\\
+\checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; ?\\
+\checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; ?\\
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>In rating prediction</strong></p>
+<ul class="simple">
+<li><p>Ratings data has many missing values in the utility matrix. There is no special target column. We want to predict the missing entries in the matrix.</p></li>
+<li><p>Since our goal is to <strong>predict</strong> ratings, usually the utility matrix is referred to as <span class="math notranslate nohighlight">\(Y\)</span> matrix.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 
+? &amp; ? &amp; \checkmark  &amp; ? &amp; \checkmark\\
+\checkmark &amp; ? &amp; ?  &amp; ? &amp; ?\\
+? &amp; \checkmark &amp; \checkmark  &amp; ? &amp; \checkmark\\
+? &amp; ? &amp; ?  &amp; ? &amp; ?\\
+? &amp; ? &amp; ? &amp; \checkmark &amp; ?\\
+? &amp; \checkmark &amp; \checkmark  &amp; ? &amp; \checkmark
+\end{bmatrix}
+\end{split}\]</div>
+<p><br><br></p>
+</section>
+<section id="creating-utility-matrix">
+<h3>Creating utility matrix<a class="headerlink" href="#creating-utility-matrix" title="Link to this heading">#</a></h3>
+<p>Let’s work with the following toy example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toy_ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;toy_ratings.csv&quot;</span><span class="p">)</span>
+<span class="n">toy_ratings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>movie_id</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sam</td>
+      <td>Lion King</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sam</td>
+      <td>Jerry Maguire</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Sam</td>
+      <td>Roman Holidays</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sam</td>
+      <td>Downfall</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Eva</td>
+      <td>Titanic</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Eva</td>
+      <td>Jerry Maguire</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Eva</td>
+      <td>Inception</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Eva</td>
+      <td>Man on Wire</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Eva</td>
+      <td>The Social Dilemma</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Pat</td>
+      <td>Titanic</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Pat</td>
+      <td>Lion King</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Pat</td>
+      <td>Bambi</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Pat</td>
+      <td>Cast Away</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Pat</td>
+      <td>Jerry Maguire</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Pat</td>
+      <td>Downfall</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Pat</td>
+      <td>A Beautiful Mind</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Jim</td>
+      <td>Titanic</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Jim</td>
+      <td>Lion King</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Jim</td>
+      <td>The Social Dilemma</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Jim</td>
+      <td>Malcolm x</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Jim</td>
+      <td>Man on Wire</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_key</span> <span class="o">=</span> <span class="s2">&quot;user_id&quot;</span>
+<span class="n">item_key</span> <span class="o">=</span> <span class="s2">&quot;movie_id&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">item_key</span><span class="o">=</span><span class="s2">&quot;movie_id&quot;</span><span class="p">,</span> <span class="n">user_key</span><span class="o">=</span><span class="s2">&quot;user_id&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of ratings:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ratings</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average rating:  </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">])))</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="n">user_key</span><span class="p">]))</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="n">item_key</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of users (N): </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">N</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of items (M): </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">M</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fraction non-nan ratings: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ratings</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">M</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span>
+
+
+<span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="n">get_stats</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of ratings: 21
+Average rating:  3.524
+Number of users (N): 4
+Number of items (M): 12
+Fraction non-nan ratings: 0.438
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Let’s construct utility matrix with <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">users</span></code> rows and <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">items</span></code> columns from the ratings data.</p></li>
+</ul>
+<blockquote>
+<div><p>Note we are constructing a non-sparse matrix for demonstration purpose here. In real life it’s recommended that you work with sparse matrices.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">user_key</span><span class="p">]),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))))</span>
+<span class="n">item_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">item_key</span><span class="p">]),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">))))</span>
+<span class="n">user_inverse_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">user_key</span><span class="p">])))</span>
+<span class="n">item_inverse_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">item_key</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Why do we need all these mappers?</p>
+<ul>
+<li><p>We want to store the rating for user <span class="math notranslate nohighlight">\(i\)</span> and item <span class="math notranslate nohighlight">\(j\)</span> at <span class="math notranslate nohighlight">\(Y[i,j]\)</span> location in the utility matrix.</p></li>
+<li><p>So we define <code class="docutils literal notranslate"><span class="pre">user_mapper</span></code> and <code class="docutils literal notranslate"><span class="pre">item_mapper</span></code> which map user and item ids to indices.</p></li>
+<li><p>Once we have predicted ratings for users and items, we want to be able to map it to the original user and item ids so that we recommend the right product to the right user.</p></li>
+<li><p>So we have <code class="docutils literal notranslate"><span class="pre">user_inverse_mapper</span></code> and <code class="docutils literal notranslate"><span class="pre">item_inverse_mapper</span></code> which map indices to original user and item ids.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_key</span> <span class="o">=</span> <span class="s2">&quot;user_id&quot;</span>
+<span class="n">item_key</span> <span class="o">=</span> <span class="s2">&quot;movie_id&quot;</span>
+<span class="n">user_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">user_key</span><span class="p">]),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))))</span>
+<span class="n">item_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">item_key</span><span class="p">]),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">))))</span>
+<span class="n">user_inverse_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">user_key</span><span class="p">])))</span>
+<span class="n">item_inverse_mapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">[</span><span class="n">item_key</span><span class="p">])))</span>
+
+<span class="k">def</span> <span class="nf">create_Y_from_ratings</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">))</span>
+    <span class="n">Y</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">user_mapper</span><span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="n">user_key</span><span class="p">]]</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">item_mapper</span><span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="n">item_key</span><span class="p">]]</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">Y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_mat</span> <span class="o">=</span> <span class="n">create_Y_from_ratings</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">Y_mat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">Y_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">create_Y_from_ratings</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">utility_mat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">item_mapper</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">user_mapper</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">utility_mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A Beautiful Mind</th>
+      <th>Bambi</th>
+      <th>Cast Away</th>
+      <th>Downfall</th>
+      <th>Inception</th>
+      <th>Jerry Maguire</th>
+      <th>Lion King</th>
+      <th>Malcolm x</th>
+      <th>Man on Wire</th>
+      <th>Roman Holidays</th>
+      <th>The Social Dilemma</th>
+      <th>Titanic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Eva</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Jim</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Pat</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Sam</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Rows represent users.</p></li>
+<li><p>Columns represent items (movies in our case).</p></li>
+<li><p>Each cell gives the rating given by the user to the corresponding movie.</p></li>
+<li><p>Users are features for movies and movies are features for users.</p></li>
+<li><p>Our goal is to predict missing entries in the utility matrix.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="evaluation">
+<h3>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We’ll try a number of methods to fill in the missing entries in the utility matrix.</p></li>
+<li><p>Although there is no notion of “accurate” recommendations, we need a way to evaluate our predictions so that we’ll be able to compare different methods.</p></li>
+<li><p>Although we are doing unsupervised learning, we’ll split the data and evaluate our predictions as follows.</p></li>
+</ul>
+<p><strong>Data splitting</strong></p>
+<ul class="simple">
+<li><p>We split the ratings into train and validation sets.</p></li>
+<li><p>It’s easier to split the ratings data instead of splitting the utility matrix.</p></li>
+<li><p>Don’t worry about <code class="docutils literal notranslate"><span class="pre">y</span></code>; we’re not really going to use it.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">toy_ratings</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">toy_ratings</span><span class="p">[</span><span class="n">user_key</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_valid</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_valid</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((16, 3), (5, 3))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will create utility matrices for train and validation splits.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_mat</span> <span class="o">=</span> <span class="n">create_Y_from_ratings</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">valid_mat</span> <span class="o">=</span> <span class="n">create_Y_from_ratings</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">valid_mat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((4, 12), (4, 12))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">M</span><span class="p">))</span> <span class="c1"># Fraction of non-nan entries in the train set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3333333333333333
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">M</span><span class="p">))</span> <span class="c1"># Fraction of non-nan entries in the valid set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.10416666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">valid_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">train_mat</span></code> has only ratings from the train set and <code class="docutils literal notranslate"><span class="pre">valid_mat</span></code> has only ratings from the valid set.</p></li>
+<li><p>During training we assume that we do not have access to some of the available ratings. We predict these ratings and evaluate them against ratings in the validation set.</p></li>
+</ul>
+<p><strong>Questions for you</strong></p>
+<ul class="simple">
+<li><p>How do train and validation utility matrices differ?</p></li>
+<li><p>Why are utility matrices for train and validation sets are of the same shape?
+<br><br></p></li>
+</ul>
+<ul class="simple">
+<li><p>Now that we have train and validation sets, how do we evaluate our predictions?</p></li>
+<li><p>You can calculate the error between actual ratings and predicted ratings with metrics of your choice.</p>
+<ul>
+<li><p>Most common ones are MSE or RMSE.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">error</span></code> function below calculates RMSE and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> function prints train and validation RMSE.</p></li>
+<li><p>Lower RMSE <span class="math notranslate nohighlight">\(\rightarrow\)</span> predicted ratings are closer to the actual ratings</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the root mean squared error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">((</span><span class="n">X1</span> <span class="o">-</span> <span class="n">X2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">pred_X</span><span class="p">,</span> <span class="n">train_X</span><span class="p">,</span> <span class="n">valid_X</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;Global average&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> train RMSE: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">error</span><span class="p">(</span><span class="n">pred_X</span><span class="p">,</span> <span class="n">train_X</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> valid RMSE: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">error</span><span class="p">(</span><span class="n">pred_X</span><span class="p">,</span> <span class="n">valid_X</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="baseline-approaches">
+<h2>Baseline Approaches<a class="headerlink" href="#baseline-approaches" title="Link to this heading">#</a></h2>
+<p>Let’s first try some simple approaches to predict missing entries.</p>
+<ol class="arabic simple">
+<li><p>Global average baseline</p></li>
+<li><p>Per-user average baseline</p></li>
+<li><p>Per-item average baseline</p></li>
+<li><p>Average of 2 and 3</p>
+<ul class="simple">
+<li><p>Take an average of per-user and per-item averages.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html"><span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours imputation</a></p></li>
+</ol>
+<p>I’ll show you 1. and 5. You’ll explore 2., 3., and 4. in the lab.</p>
+<section id="global-average-baseline">
+<h3>Global average baseline<a class="headerlink" href="#global-average-baseline" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Let’s examine RMSE of the global average baseline.</p></li>
+<li><p>In this baseline we predict everything as the global average rating.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">train_mat</span><span class="p">)</span>
+<span class="n">pred_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">train_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">+</span> <span class="n">avg</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pred_g</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+      <td>3.4375</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evaluate</span><span class="p">(</span><span class="n">pred_g</span><span class="p">,</span> <span class="n">train_mat</span><span class="p">,</span> <span class="n">valid_mat</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;Global average&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Global average train RMSE: 1.41
+Global average valid RMSE: 0.83
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="k-nearest-neighbours-imputation">
+<h3><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html"><span class="math notranslate nohighlight">\(k\)</span>-nearest neighbours imputation</a><a class="headerlink" href="#k-nearest-neighbours-imputation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Can we try <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbours type imputation?</p></li>
+<li><p>Impute missing values using the mean value from <span class="math notranslate nohighlight">\(k\)</span> nearest neighbours found in the training set.</p></li>
+<li><p>Calculate distances between examples using features where neither value is missing.</p></li>
+</ul>
+<p><img alt="" src="lectures/102-Varada-lectures/img/utility_matrix.png" /></p>
+<!-- <img src="img/utility_matrix.png" alt="" height="900" width="900">  --><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">KNNImputer</span>
+
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">KNNImputer</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">keep_empty_features</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_mat_imp</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_mat_imp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>1.5</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>1.5</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evaluate</span><span class="p">(</span><span class="n">train_mat_imp</span><span class="p">,</span> <span class="n">train_mat</span><span class="p">,</span> <span class="n">valid_mat</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;KNN imputer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNN imputer train RMSE: 0.00
+KNN imputer valid RMSE: 1.48
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>We can look at the nearest neighbours of a query item.</p></li>
+</ul>
+<p><br><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_mat_imp</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>1.5</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>1.5</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Question</strong></p>
+<ul class="simple">
+<li><p>Instead of imputation, what would be the consequences if we replace <code class="docutils literal notranslate"><span class="pre">NaN</span></code> with zeros so that we can calculate distances between vectors?</p></li>
+</ul>
+<p>Once you have predictions, you can sort them based on ratings and recommend items with highest ratings.</p>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="questions-for-you">
+<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
+<section id="exercise-17-1-select-all-of-the-following-statements-which-are-true-iclicker">
+<h3>Exercise 17.1 Select all of the following statements which are <strong>True</strong> (iClicker)<a class="headerlink" href="#exercise-17-1-select-all-of-the-following-statements-which-are-true-iclicker" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>(A) In the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.</p></li>
+<li><p>(B) RMSE perfectly captures what we want to measure in the context of recommendation systems.</p></li>
+<li><p>(C) It would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.</p></li>
+<li><p>(D) In KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item.</p></li>
+</ul>
+<p><br><br><br><br></p>
+</section>
+<section id="questions-for-class-discussion">
+<h3>Questions for class discussion<a class="headerlink" href="#questions-for-class-discussion" title="Link to this heading">#</a></h3>
+<p>Discuss how clustering might be applied to the problem of item recommendation:</p>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="content-based-filtering">
+<h2>Content-based filtering<a class="headerlink" href="#content-based-filtering" title="Link to this heading">#</a></h2>
+<hr><ul class="simple">
+<li><p>What if a new item or a new user shows up?</p>
+<ul>
+<li><p>You won’t have any ratings information for that item or user</p></li>
+</ul>
+</li>
+<li><p>Content-based filtering is suitable to predict ratings for new items and new users.</p></li>
+<li><p>Content-based filtering is a <strong>supervised machine learning</strong> approach to recommender systems.</p></li>
+<li><p>In KNN imputation (an example of collaborative filtering) we assumed that we only have ratings data.</p></li>
+<li><p>Usually, there is some information available about items and users.</p></li>
+<li><p>Examples</p>
+<ul>
+<li><p>Netflix can describe movies as action, romance, comedy, documentaries.</p></li>
+<li><p>Netflix has some demographic and preference information on users.</p></li>
+<li><p>Amazon could describe books according to topics: math, languages, history.</p></li>
+<li><p>Tinder could describe people according to age, location, employment.</p></li>
+</ul>
+</li>
+<li><p>Can we use this information to predict ratings in the utility matrix?</p>
+<ul>
+<li><p>Yes! Using content-based filtering!</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Overview</strong></p>
+<p>In content-based filtering,</p>
+<ul class="simple">
+<li><p>We assume that we are given item or user feature.</p></li>
+<li><p>Given movie information, for instance, we <strong>create user profile for each user</strong>.</p></li>
+<li><p>We treat ratings prediction problem as <strong>a set of regression problems</strong> and build regression model for each user.</p></li>
+<li><p>Once we have trained regression models for each user, we <strong>complete the utility matrix by predicting ratings for each user</strong> using their corresponding models.</p></li>
+</ul>
+<p><img alt="" src="lectures/102-Varada-lectures/img/content-based-filtering.png" /></p>
+<p>Let’s look into each of these steps one by one with a toy example.</p>
+<section id="movie-features">
+<h3>Movie features<a class="headerlink" href="#movie-features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Suppose we also have movie features. In particular, suppose we have information about the genre of each movie.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movie_feats_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;toy_movie_feats.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">movie_feats_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A Beautiful Mind</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Bambi</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Cast Away</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Downfall</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Inception</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jerry Maguire</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Lion King</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Malcolm x</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Man on Wire</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Roman Holidays</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>The Social Dilemma</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Titanic</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">movie_feats_df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">Z</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>How can we use these features to predict missing ratings?</p></li>
+<li><p>Using the ratings data and movie features:</p>
+<ul>
+<li><p>Build <strong>profiles for different users</strong>.</p></li>
+<li><p>Train a <strong>supervised machine learning model for each user</strong>.</p></li>
+<li><p>Predict ratings using the trained models</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Let’s consider an example user <strong>Pat</strong>.</p></li>
+<li><p>We don’t know anything about Pat but we know her ratings to movies.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utility_mat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Pat&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Beautiful Mind      3.0
+Bambi                 4.0
+Cast Away             3.0
+Downfall              2.0
+Inception            NaN 
+Jerry Maguire         5.0
+Lion King             4.0
+Malcolm x            NaN 
+Man on Wire          NaN 
+Roman Holidays       NaN 
+The Social Dilemma   NaN 
+Titanic               3.0
+Name: Pat, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>We also know about movies and their features.</p></li>
+<li><p>If Pat gave a high rating to <em>Lion King</em>, it means that she liked the features of the movie.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movie_feats_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Lion King&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Action         0
+Romance        0
+Drama          1
+Comedy         0
+Children       1
+Documentary    0
+Name: Lion King, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="building-user-profiles">
+<h3>Building user profiles<a class="headerlink" href="#building-user-profiles" title="Link to this heading">#</a></h3>
+<p>For each user <span class="math notranslate nohighlight">\(i\)</span> create a user profile as follows.</p>
+<ul class="simple">
+<li><p>Consider all movies rated by <span class="math notranslate nohighlight">\(i\)</span> and create <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> for the user:</p>
+<ul>
+<li><p>Each row in <code class="docutils literal notranslate"><span class="pre">X</span></code> contains the movie features of movie <span class="math notranslate nohighlight">\(j\)</span> rated by <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>Each value in <code class="docutils literal notranslate"><span class="pre">y</span></code> is the corresponding rating given to the movie <span class="math notranslate nohighlight">\(j\)</span> by user <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Fit a regression model using <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>Apply the model to predict ratings for new items!</p></li>
+</ul>
+<p>As an example, let’s build a profile for pat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which movies are rated by Pat? </span>
+
+<span class="n">movies_rated_by_pat</span> <span class="o">=</span> <span class="n">toy_ratings</span><span class="p">[</span><span class="n">toy_ratings</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Pat&#39;</span><span class="p">][[</span><span class="s1">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]]</span>
+<span class="n">movies_rated_by_pat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_id</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>Titanic</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Lion King</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Bambi</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Cast Away</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Jerry Maguire</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Downfall</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>A Beautiful Mind</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get feature vectors of movies rated by Pat. </span>
+
+<span class="n">pat_X</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pat_y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="n">movies_rated_by_pat</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Get the id of this movie rated by Pat       </span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">item_mapper</span><span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;movie_id&#39;</span><span class="p">]]</span>
+    
+    <span class="c1"># Get the feature vector for the movie </span>
+    <span class="n">pat_X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Z</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
+    
+    <span class="c1"># Get the rating for the movie</span>
+    <span class="n">pat_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pat_X</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">movies_rated_by_pat</span><span class="p">[</span><span class="s1">&#39;movie_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">movie_feats_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Titanic</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Lion King</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Bambi</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Cast Away</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jerry Maguire</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Downfall</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>A Beautiful Mind</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pat_y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 4, 3, 5, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to how we created <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> for Pat above, the function below builds <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> for all users.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="k">def</span> <span class="nf">get_lr_data_per_user</span><span class="p">(</span><span class="n">ratings_df</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">lr_y</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">lr_X</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">lr_items</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">ratings_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">user_mapper</span><span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="n">user_key</span><span class="p">]]</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">item_mapper</span><span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="n">item_key</span><span class="p">]]</span>
+        <span class="n">lr_X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Z</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
+        <span class="n">lr_y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">])</span>
+        <span class="n">lr_items</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">lr_X</span><span class="p">:</span>
+        <span class="n">lr_X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lr_X</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+        <span class="n">lr_y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lr_y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">lr_X</span><span class="p">,</span> <span class="n">lr_y</span><span class="p">,</span> <span class="n">lr_items</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">movie_feats_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X_train_usr</span><span class="p">,</span> <span class="n">y_train_usr</span><span class="p">,</span> <span class="n">rated_items</span> <span class="o">=</span> <span class="n">get_lr_data_per_user</span><span class="p">(</span><span class="n">toy_ratings</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_usr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>defaultdict(list,
+            {3: array([[0, 0, 1, 0, 1, 0],
+                    [0, 1, 1, 1, 0, 0],
+                    [0, 1, 1, 1, 0, 0],
+                    [0, 0, 0, 0, 0, 1]]),
+             0: array([[0, 1, 1, 0, 0, 0],
+                    [0, 1, 1, 1, 0, 0],
+                    [1, 0, 1, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 1],
+                    [0, 0, 0, 0, 0, 1]]),
+             2: array([[0, 1, 1, 0, 0, 0],
+                    [0, 0, 1, 0, 1, 0],
+                    [0, 0, 1, 0, 1, 0],
+                    [0, 1, 1, 0, 0, 0],
+                    [0, 1, 1, 1, 0, 0],
+                    [0, 0, 0, 0, 0, 1],
+                    [0, 1, 1, 0, 0, 0]]),
+             1: array([[0, 1, 1, 0, 0, 0],
+                    [0, 0, 1, 0, 1, 0],
+                    [0, 0, 0, 0, 0, 1],
+                    [0, 0, 0, 0, 0, 1],
+                    [0, 0, 0, 0, 0, 1]])})
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do you think the shape of <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> for all users would be the same?</p>
+<p><strong>Examining user profiles</strong></p>
+<ul class="simple">
+<li><p>Let’s examine some user profiles.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_user_profile</span><span class="p">(</span><span class="n">user_name</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X_train_usr</span><span class="p">[</span><span class="n">user_mapper</span><span class="p">[</span><span class="n">user_name</span><span class="p">]]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_train_usr</span><span class="p">[</span><span class="n">user_mapper</span><span class="p">[</span><span class="n">user_name</span><span class="p">]]</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">rated_items</span><span class="p">[</span><span class="n">user_mapper</span><span class="p">[</span><span class="n">user_name</span><span class="p">]]</span>
+    <span class="n">movie_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">item_inverse_mapper</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Profile for user: &quot;</span><span class="p">,</span> <span class="n">user_name</span><span class="p">)</span>
+    <span class="n">profile_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">movie_feats_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">movie_names</span><span class="p">)</span>
+    <span class="n">profile_df</span><span class="p">[</span><span class="s2">&quot;ratings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">profile_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_user_profile</span><span class="p">(</span><span class="s2">&quot;Pat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Profile for user:  Pat
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+      <th>ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Titanic</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Lion King</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Bambi</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Cast Away</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Jerry Maguire</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Downfall</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>A Beautiful Mind</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Pat seems to like Children’s movies and movies with Comedy.</p></li>
+<li><p>Seems like she’s not so much into romantic movies.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_user_profile</span><span class="p">(</span><span class="s2">&quot;Eva&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Profile for user:  Eva
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+      <th>ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Titanic</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Jerry Maguire</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Inception</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Man on Wire</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>The Social Dilemma</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Eva hasn’t rated many movies. There are not many rows.</p></li>
+<li><p>Eva seems to like documentaries and action movies.</p></li>
+<li><p>Seems like she’s not so much into romantic movies.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="supervised-approach-to-rating-prediction">
+<h3>Supervised approach to rating prediction<a class="headerlink" href="#supervised-approach-to-rating-prediction" title="Link to this heading">#</a></h3>
+<p>Given <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> for each user, we can now build a regression model for each user.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+
+
+<span class="k">def</span> <span class="nf">train_for_usr</span><span class="p">(</span><span class="n">user_name</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">Ridge</span><span class="p">()):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X_train_usr</span><span class="p">[</span><span class="n">user_mapper</span><span class="p">[</span><span class="n">user_name</span><span class="p">]]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_train_usr</span><span class="p">[</span><span class="n">user_mapper</span><span class="p">[</span><span class="n">user_name</span><span class="p">]]</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+
+<span class="k">def</span> <span class="nf">predict_for_usr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">movie_names</span><span class="p">):</span>
+    <span class="n">feat_vecs</span> <span class="o">=</span> <span class="n">movie_feats_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movie_names</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat_vecs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">preds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A regression model for Pat</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="s2">&quot;Pat&quot;</span>
+<span class="n">pat_model</span> <span class="o">=</span> <span class="n">train_for_usr</span><span class="p">(</span><span class="n">user_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Since we are training ridge model, we can examine the coefficients</p></li>
+<li><p>What are the regression weights learned for Pat?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;Coefficients for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">user_name</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pat_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">movie_feats_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficients for Pat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Action</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Romance</th>
+      <td>-0.020833</td>
+    </tr>
+    <tr>
+      <th>Drama</th>
+      <td>0.437500</td>
+    </tr>
+    <tr>
+      <th>Comedy</th>
+      <td>0.854167</td>
+    </tr>
+    <tr>
+      <th>Children</th>
+      <td>0.458333</td>
+    </tr>
+    <tr>
+      <th>Documentary</th>
+      <td>-0.437500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>How would Pat rate some movies she hasn’t seen?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies_to_pred</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Roman Holidays&quot;</span><span class="p">,</span> <span class="s2">&quot;Malcolm x&quot;</span><span class="p">]</span>
+<span class="n">pred_df</span> <span class="o">=</span> <span class="n">movie_feats_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies_to_pred</span><span class="p">]</span>
+<span class="n">pred_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Roman Holidays</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Malcolm x</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="s2">&quot;Pat&quot;</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">predict_for_usr</span><span class="p">(</span><span class="n">pat_model</span><span class="p">,</span> <span class="n">movies_to_pred</span><span class="p">)</span>
+<span class="n">pred_df</span><span class="p">[</span><span class="n">user_name</span> <span class="o">+</span> <span class="s2">&quot;&#39;s predicted ratings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">preds</span>
+<span class="n">pred_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+      <th>Pat's predicted ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Roman Holidays</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4.145833</td>
+    </tr>
+    <tr>
+      <th>Malcolm x</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2.437500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>A regression model for Eva</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="s2">&quot;Eva&quot;</span>
+<span class="n">eva_model</span> <span class="o">=</span> <span class="n">train_for_usr</span><span class="p">(</span><span class="n">user_name</span><span class="p">)</span>
+<span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;Coefficients for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">user_name</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">eva_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">movie_feats_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficients for Eva</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Action</th>
+      <td>0.333333</td>
+    </tr>
+    <tr>
+      <th>Romance</th>
+      <td>-1.000000</td>
+    </tr>
+    <tr>
+      <th>Drama</th>
+      <td>-0.666667</td>
+    </tr>
+    <tr>
+      <th>Comedy</th>
+      <td>-0.666667</td>
+    </tr>
+    <tr>
+      <th>Children</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Documentary</th>
+      <td>0.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>What are the predicted ratings for Eva for a list of movies?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_name</span> <span class="o">=</span> <span class="s2">&quot;Eva&quot;</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">predict_for_usr</span><span class="p">(</span><span class="n">eva_model</span><span class="p">,</span> <span class="n">movies_to_pred</span><span class="p">)</span>
+<span class="n">pred_df</span><span class="p">[</span><span class="n">user_name</span> <span class="o">+</span> <span class="s2">&quot;&#39;s predicted ratings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">preds</span>
+<span class="n">pred_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Action</th>
+      <th>Romance</th>
+      <th>Drama</th>
+      <th>Comedy</th>
+      <th>Children</th>
+      <th>Documentary</th>
+      <th>Pat's predicted ratings</th>
+      <th>Eva's predicted ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Roman Holidays</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4.145833</td>
+      <td>1.666667</td>
+    </tr>
+    <tr>
+      <th>Malcolm x</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2.437500</td>
+      <td>4.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><br><br></p>
+</section>
+<section id="completing-the-utility-matrix-with-content-based-filtering">
+<h3>Completing the utility matrix with content-based filtering<a class="headerlink" href="#completing-the-utility-matrix-with-content-based-filtering" title="Link to this heading">#</a></h3>
+<p>Here is the original utility matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utility_mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A Beautiful Mind</th>
+      <th>Bambi</th>
+      <th>Cast Away</th>
+      <th>Downfall</th>
+      <th>Inception</th>
+      <th>Jerry Maguire</th>
+      <th>Lion King</th>
+      <th>Malcolm x</th>
+      <th>Man on Wire</th>
+      <th>Roman Holidays</th>
+      <th>The Social Dilemma</th>
+      <th>Titanic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Eva</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Jim</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Pat</th>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Sam</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Using predictions per user, we can fill in missing entries in the utility matrix.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+
+<span class="n">models</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">pred_lin_reg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">models</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">()</span>
+    <span class="n">models</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_usr</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">y_train_usr</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">pred_lin_reg</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pred_lin_reg</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">item_mapper</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">user_mapper</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A Beautiful Mind</th>
+      <th>Bambi</th>
+      <th>Cast Away</th>
+      <th>Downfall</th>
+      <th>Inception</th>
+      <th>Jerry Maguire</th>
+      <th>Lion King</th>
+      <th>Malcolm x</th>
+      <th>Man on Wire</th>
+      <th>Roman Holidays</th>
+      <th>The Social Dilemma</th>
+      <th>Titanic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Eva</th>
+      <td>2.333333</td>
+      <td>3.333333</td>
+      <td>2.333333</td>
+      <td>4.666667</td>
+      <td>3.666667</td>
+      <td>1.666667</td>
+      <td>3.333333</td>
+      <td>4.666667</td>
+      <td>4.666667</td>
+      <td>1.666667</td>
+      <td>4.666667</td>
+      <td>2.333333</td>
+    </tr>
+    <tr>
+      <th>Jim</th>
+      <td>2.575000</td>
+      <td>3.075000</td>
+      <td>2.575000</td>
+      <td>4.450000</td>
+      <td>3.150000</td>
+      <td>2.575000</td>
+      <td>3.075000</td>
+      <td>4.450000</td>
+      <td>4.450000</td>
+      <td>2.575000</td>
+      <td>4.450000</td>
+      <td>2.575000</td>
+    </tr>
+    <tr>
+      <th>Pat</th>
+      <td>3.291667</td>
+      <td>3.770833</td>
+      <td>3.291667</td>
+      <td>2.437500</td>
+      <td>3.312500</td>
+      <td>4.145833</td>
+      <td>3.770833</td>
+      <td>2.437500</td>
+      <td>2.437500</td>
+      <td>4.145833</td>
+      <td>2.437500</td>
+      <td>3.291667</td>
+    </tr>
+    <tr>
+      <th>Sam</th>
+      <td>3.810811</td>
+      <td>3.675676</td>
+      <td>3.810811</td>
+      <td>1.783784</td>
+      <td>3.351351</td>
+      <td>4.270270</td>
+      <td>3.675676</td>
+      <td>1.783784</td>
+      <td>1.783784</td>
+      <td>4.270270</td>
+      <td>1.783784</td>
+      <td>3.810811</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>In this toy example, we assumed access to item features. Frequently, we also have access to user features, including demographic information.</p></li>
+<li><p>With this data, we can construct item profiles similar to user profiles and train a unique regression model for each item.</p></li>
+<li><p>These models enable us to predict ratings for each item individually.</p></li>
+<li><p>Typically, the final rating is derived from a weighted average that combines the ratings suggested by both item features and user features.</p></li>
+</ul>
+<ul class="simple">
+<li><p>In this toy example, we assumed that we had item features. Often we also have access to user features such as their demographic information.</p></li>
+<li><p>When such information is available, we can create item profiles similar to user profiles and train a regression model per item.</p></li>
+<li><p>We can then predict ratings for each item using these models.</p></li>
+<li><p>Often a weighted average of ratings given by item features and user features is used as the final rating.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="miscellaneous-comments-on-content-based-filtering">
+<h3>Miscellaneous comments on content-based filtering<a class="headerlink" href="#miscellaneous-comments-on-content-based-filtering" title="Link to this heading">#</a></h3>
+<p><strong>Fine-tuning your regression models</strong></p>
+<ul class="simple">
+<li><p>The feature matrix for movies can contain different types of features.</p>
+<ul>
+<li><p>Example: Plot of the movie (text features), actors (categorical features), year of the movie, budget and revenue of the movie (numerical features).</p></li>
+<li><p>You’ll apply our usual preprocessing techniques to these features.</p></li>
+</ul>
+</li>
+<li><p>If you have enough data, you could also carry out hyperparameter tuning with cross-validation for each model.</p></li>
+<li><p>Finally, although we have been talking about linear models above, you can use any regression model of your choice.</p></li>
+</ul>
+<p><strong>Advantages of content-based filtering</strong></p>
+<ul class="simple">
+<li><p>We don’t need many users to provide ratings for an item.</p></li>
+<li><p>Each user is modeled separately, so you might be able to capture uniqueness of taste.</p></li>
+<li><p>Since you can obtain the features of the items, you can immediately recommend new items.</p>
+<ul>
+<li><p>This would not have been possible with collaborative filtering.</p></li>
+</ul>
+</li>
+<li><p>Recommendations are more interpretable (if you use linear models)</p>
+<ul>
+<li><p>You can explain to the user why you are recommending an item because you have learned weights.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Disadvantages of content-based filtering</strong></p>
+<ul class="simple">
+<li><p>Feature acquisition and feature engineering</p>
+<ul>
+<li><p>What features should we use to explain the difference in ratings?</p></li>
+<li><p>Obtaining those features for each item might be very expensive.</p></li>
+</ul>
+</li>
+<li><p>Less diversity: hardly recommend an item outside the user’s profile.</p></li>
+</ul>
+</section>
+</section>
+<section id="id1">
+<h2>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Exercise 17.1 Select all of the following statements which are <strong>True</strong> (iClicker)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>(A) In content-based filtering we leverage available item features in addition to similarity between users.</p></li>
+<li><p>(B) In content-based filtering you represent each user in terms of <strong>known</strong> features of items.</p></li>
+<li><p>(C) In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.</p></li>
+<li><p>(D) In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.
+<br><br><br><br></p></li>
+</ul>
+<p><br><br></p>
+</section>
+</section>
+<section id="beyond-error-rate-in-recommendation-systems">
+<h2>Beyond error rate in recommendation systems<a class="headerlink" href="#beyond-error-rate-in-recommendation-systems" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>If a system gives the best RMSE it doesn’t necessarily mean that it’s going to give best recommendations.</p></li>
+<li><p>In recommendation systems we do not have ground truth in the sense that there is no notion of “perfect” recommendations.</p></li>
+<li><p>Training your model and evaluating it offline is not ideal.</p></li>
+<li><p>Other aspects such as simplicity, interpretation, code maintainability are equally (if not more) important than best validation error.</p></li>
+<li><p>Winning system of Netflix Challenge was never adopted.</p>
+<ul>
+<li><p>Big mess of ensembles was not really maintainable</p></li>
+</ul>
+</li>
+<li><p>There are other considerations.</p></li>
+</ul>
+<p><strong>Diversity</strong></p>
+<p>Are these good recommendations?</p>
+<p>You are looking at <a class="reference external" href="https://www.amazon.ca/Sillbird-Education-Building-Science-Experiment/dp/B07XRN6TJ8">Education Solar Robot Toy</a>, are these good recommendations?</p>
+<p><img alt="" src="../../../_images/reco-diversity.png" /></p>
+<p>Now suppose you’ve recently bought Education Solar Robot Toy and rated them highly. Are these good recommendations now?</p>
+<ul class="simple">
+<li><p>Not really. Even though you really liked the item you don’t need similar items anymore.</p></li>
+<li><p><strong>Diversity</strong> is about how different are the recommendations.</p>
+<ul>
+<li><p>Another example: Even if you really really like Star Wars, you might want non-Star-Wars suggestions.</p></li>
+</ul>
+</li>
+<li><p>But be careful. We need a balance here.</p></li>
+</ul>
+<p><strong>Freshness</strong></p>
+<p>Are these good recommendations?</p>
+<p><img alt="" src="../../../_images/freshness.png" /></p>
+<ul class="simple">
+<li><p>Some of these books don’t have many ratings but it might be a good idea to recommend “fresh” things.</p></li>
+<li><p><strong>Freshness</strong>: people tend to get more excited about new/surprising things.</p></li>
+</ul>
+<p><strong>Trust</strong></p>
+<ul class="simple">
+<li><p>But again you need a balance here. What would happen if you keep surprising users all the time?</p></li>
+<li><p>There might be <strong>trust</strong> issues.</p></li>
+<li><p>Another aspect of trust is explaining your recommendation, i.e., telling the user why you made a recommendation. This gives the user an opportunity to understand why your recommendations could be interesting to them.</p></li>
+<li><p><a class="reference external" href="https://www.linkedin.com/pulse/injecting-gpt-4s-reasoning-recommendation-algorithms-peter-gostev/">Injecting GPT-4’s reasoning into recommendation systems</a></p></li>
+</ul>
+<p><strong>Persistence</strong>:</p>
+<ul class="simple">
+<li><p>How long should recommendations last?</p></li>
+<li><p>If the user does not click on a recommendation for a while, should it remain a recommendation?</p></li>
+</ul>
+<p><strong>Social recommendation</strong>:</p>
+<ul class="simple">
+<li><p>What did your friends watch?</p></li>
+<li><p>Many recommenders	are	now	connected to social	networks.</p></li>
+<li><p>“Login using you Facebook	account”.</p></li>
+<li><p>Often, people	like similar movies	to their friends.</p></li>
+<li><p>If we get a new user, then recommendations are based on friend’s preferences.</p></li>
+</ul>
+<p><br><br><br><br></p>
+<section id="final-comments-and-summary">
+<h3>Final comments and summary<a class="headerlink" href="#final-comments-and-summary" title="Link to this heading">#</a></h3>
+</section>
+<section id="formulating-the-problem-of-recommender-systems">
+<h3>Formulating the problem of recommender systems<a class="headerlink" href="#formulating-the-problem-of-recommender-systems" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We are given ratings data.</p></li>
+<li><p>We use this data to create <strong>utility matrix</strong> which encodes interactions between users and items.</p></li>
+<li><p>The utility matrix has many missing entries.</p></li>
+<li><p>We defined recommendation systems problem as <strong>matrix completion problem</strong>.</p></li>
+</ul>
+</section>
+<section id="what-did-we-cover">
+<h3>What did we cover?<a class="headerlink" href="#what-did-we-cover" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>There is a big world of recommendation systems out there. We talked about a basic traditional approache to recommender systems.</p>
+<ul>
+<li><p>content-based filtering</p></li>
+</ul>
+</li>
+<li><p>Another common approach we did not cover is collaborative filtering.</p></li>
+</ul>
+<p>If you want to know more advanced approaches to recommender systems, watch this 4-hour summer school tutorial by Xavier Amatriain, Research/Engineering Director &#64; Netflix.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=bLhq63ygoU8">Part1</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=mRToFXlNBpQ">Part2</a></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Evaluation<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We split the data similar to supervised systems.</p></li>
+<li><p>We evaluate recommendation systems using traditional regression metrics such as MSE or RMSE.</p></li>
+<li><p>But real evaluation of recommender system can be very tricky because there is no ground truth.</p></li>
+<li><p>We have been using RMSE due to the lack of a better measure.</p></li>
+<li><p>What we actually want to measure is the interest that our user has in the recommended items.</p></li>
+</ul>
+</section>
+<section id="reminder">
+<h3>Reminder<a class="headerlink" href="#reminder" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Recommendation systems can have terrible consequences, especially in the context of politics and extremism.</p></li>
+<li><p>They can cause the phenomenon called “filter bubbles”.</p></li>
+<li><p>Ask hard and uncomfortable questions to yourself (and to your employer if possible) before implementing and deploying a recommendation system.</p></li>
+</ul>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=z0dx-YckFko">Collaborative filtering for recommendation systems in Python, by N. Hug</a></p></li>
+<li><p><a class="reference external" href="https://www.ted.com/talks/barry_schwartz_the_paradox_of_choice">An interesting talk: The paradox of choice</a></p></li>
+<li><p><a class="reference external" href="https://help.netflix.com/en/node/100639">How Netflix’s Recommendations System Works</a></p></li>
+<li><p><a class="reference external" href="https://learning.oreilly.com/library/view/hands-on-recommendation-systems/9781788993753/">Hands on Recommendation Systems with Python</a></p></li>
+</ul>
+<p><br><br><br><br></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-cpsc330-py"
+        },
+        kernelOptions: {
+            name: "conda-env-cpsc330-py",
+            path: "./lectures/102-Varada-lectures/class_demos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes <a name="lo"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommender-systems-intro-and-motivation">Recommender systems intro and motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-recommender-system">What is a recommender system?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-care-about-recommendation-systems">Why should we care about recommendation systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-and-main-approaches">Data and main approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommender-systems-problem">Recommender systems problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-formulation">Problem formulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-utility-matrix">Creating utility matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-approaches">Baseline Approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-average-baseline">Global average baseline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbours-imputation"><span class="math notranslate nohighlight">\(k\)</span>-nearest neighbours imputation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17-1-select-all-of-the-following-statements-which-are-true-iclicker">Exercise 17.1 Select all of the following statements which are <strong>True</strong> (iClicker)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-class-discussion">Questions for class discussion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-based-filtering">Content-based filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movie-features">Movie features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-user-profiles">Building user profiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-approach-to-rating-prediction">Supervised approach to rating prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-utility-matrix-with-content-based-filtering">Completing the utility matrix with content-based filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-comments-on-content-based-filtering">Miscellaneous comments on content-based filtering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise 17.1 Select all of the following statements which are <strong>True</strong> (iClicker)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-error-rate-in-recommendation-systems">Beyond error rate in recommendation systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-comments-and-summary">Final comments and summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-the-problem-of-recommender-systems">Formulating the problem of recommender systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-cover">What did we cover?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder">Reminder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Varada Kolhatkar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
