@@ -1099,47 +1099,6 @@ def plot_silhouette_dist(w, h):
     plt.ylabel("X2", fontdict={'fontsize': w})
     plt.title("Distances for silhouette", fontdict={'fontsize': w+h})
 
-
-def Gaussian_mixture_1d(ϕ1, ϕ2, fig, μ1=0.0, μ2=5.0, Σ1=1, Σ2=3):
-    """
-    Plot a Gaussian Mixture with two components. 
-    
-    Parameters:
-    -----------
-    μ1: float
-       the mean of the first Gaussian
-    μ2: float
-       the mean of the second Gaussian 
-    Σ1: float
-       the variance of the first Gaussian
-    Σ2: float
-       the variance of the second Gaussian
-    ϕ1: float > 0
-       the weight of the first component
-    ϕ2: float > 0
-       the weight of the second component
-    w: int
-       The width of the plot
-    h: int
-       the height of the plot       
-    """
-
-    # Creating the DataFrame
-    data = pd.DataFrame({'x': np.arange(np.min([μ1 - 4*Σ1, μ2 - 4*Σ2]), np.max([μ1 + 4*Σ1, μ2 + 4*Σ2]), 1/1000)})
-    data['f1(x|mu1,Sigma1)'] = scipy.stats.norm.pdf(data['x'], μ1, Σ1)
-    data['f2(x|mu2,Sigma2)'] = scipy.stats.norm.pdf(data['x'], μ2, Σ2)
-    data['mixture'] = ϕ1 * data['f1(x|mu1,Sigma1)'] + ϕ2 * data['f2(x|mu2,Sigma2)']
-
-
-    ## Plotting
-    plt.plot('x', 'mixture', data=data, linewidth=4, label='Mixture')
-    plt.plot('x', 'f1(x|mu1,Sigma1)', linestyle='--', linewidth=3, alpha = .50, data=data, color='green', label=f'$f_1(x|\mu_1={μ1},\Sigma_1={Σ1})$')
-    plt.plot('x', 'f2(x|mu2,Sigma2)', linestyle='--', linewidth=3, alpha = .50, data=data, color='red', label=f'$f_2(x|\mu_2={μ2},\Sigma_2={Σ2})$')
-    plt.legend(fontsize=10)
-    plt.title(f'Gaussian Mixture: $\pi_1$ = {ϕ1} and $\pi_2$ = {ϕ2}', fontdict={'fontsize':12})
-    plt.close()    
-    return fig
-
 def plot_kmeans_circles(kmeans, X, n_clusters=3, ax=None):
     km_labels = kmeans.fit_predict(X)
     centers = kmeans.cluster_centers_
@@ -1592,5 +1551,24 @@ def plot_sup_x_unsup(data, w, h):
 #     ax.set_xticklabels(ax.get_xticks(), fontdict={'fontsize': w + h})
 #     ax.set_yticklabels(ax.get_yticks(), fontdict={'fontsize': w + h})
     
+def plot_lda_w_vectors(W, component_labels, feature_names, width=800, height=600): 
     
-            
+    fig = px.imshow(
+        W,
+        y=component_labels,
+        x=feature_names,
+        color_continuous_scale="viridis",
+    )
+
+    fig.update_layout(
+        xaxis_title="Features",
+        yaxis_title="Principal Components",
+        xaxis = {'side': 'top',  'tickangle':300}, 
+    )
+    fig.update_layout(
+        autosize=False,
+        width=width,
+        height=height,
+    )    
+
+    return fig
