@@ -54,7 +54,8 @@ parts:
       - file: lectures/101-Giulia-lectures/10_regression-metrics.ipynb
       - url: "https://firasm.github.io/cpsc330-slides/slides-17"
         title: Lecture 17
-      
+      - url: "https://firasm.github.io/cpsc330-slides/slides-18"
+        title: Lecture 18
 
   - file: lectures/102-Varada-lectures/README
     sections:
@@ -124,8 +125,8 @@ parts:
         title: Lecture 16
       - url: "https://firasm.github.io/cpsc330-slides/slides-17"
         title: Lecture 17
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-18"
-      #   title: Lecture 18
+      - url: "https://firasm.github.io/cpsc330-slides/slides-18"
+        title: Lecture 18
       # - url: "https://firasm.github.io/cpsc330-slides/slides-19"
       #   title: Lecture 19
       # - url: "https://firasm.github.io/cpsc330-slides/slides-20"
