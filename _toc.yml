@@ -52,6 +52,11 @@ parts:
       - file: lectures/101-Giulia-lectures/08_hyperparameter-optimization.ipynb
       - file: lectures/101-Giulia-lectures/09_classification-metrics.ipynb
       - file: lectures/101-Giulia-lectures/10_regression-metrics.ipynb
+      - file: lectures/101-Giulia-lectures/12_ensembles.ipynb
+      - file: lectures/101-Giulia-lectures/13_feat-importances.ipynb
+      - file: lectures/101-Giulia-lectures/14_feature-engineering-selection.ipynb
+      - file: lectures/101-Giulia-lectures/15_K-Means.ipynb
+      - file: lectures/101-Giulia-lectures/16_DBSCAN-hierarchical.ipynb
       - url: "https://firasm.github.io/cpsc330-slides/slides-17"
         title: Lecture 17
       - url: "https://firasm.github.io/cpsc330-slides/slides-18"
