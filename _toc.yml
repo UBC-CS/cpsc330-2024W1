@@ -57,80 +57,86 @@ parts:
       - file: lectures/101-Giulia-lectures/14_feature-engineering-selection.ipynb
       - file: lectures/101-Giulia-lectures/15_K-Means.ipynb
       - file: lectures/101-Giulia-lectures/16_DBSCAN-hierarchical.ipynb
-      - url: "https://firasm.github.io/cpsc330-slides/slides-17"
+      - file: lectures/103-Firas-lectures/lec17
         title: Lecture 17
-      - url: "https://firasm.github.io/cpsc330-slides/slides-18"
+      - file: lectures/103-Firas-lectures/lec18
         title: Lecture 18
 
   - file: lectures/102-Varada-lectures/README
     sections:
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-01.html"
+    sections:
+      - file: lectures/102-Varada-lectures/lec1
         title: Lecture 1
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-02.html"
+      - file: lectures/102-Varada-lectures/lec2
         title: Lecture 2
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-03.html"
+      - file: lectures/102-Varada-lectures/lec3
         title: Lecture 3
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-04.html"
-        title: Lecture 4 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-05.html"
-        title: Lecture 5 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-06.html"
-        title: Lecture 6 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-07.html"
-        title: Lecture 7 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-08.html"
-        title: Lecture 8 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-09.html"
-        title: Lecture 9 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-10.html"
-        title: Lecture 10 
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-11.html"
-        title: Lecture 11         
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-12.html"
-        title: Lecture 12  
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-13.html"
+      - file: lectures/102-Varada-lectures/lec4
+        title: Lecture 4
+      - file: lectures/102-Varada-lectures/lec5
+        title: Lecture 5
+      - file: lectures/102-Varada-lectures/lec6
+        title: Lecture 6
+      - file: lectures/102-Varada-lectures/lec7
+        title: Lecture 7
+      - file: lectures/102-Varada-lectures/lec8
+        title: Lecture 8
+      - file: lectures/102-Varada-lectures/lec9
+        title: Lecture 9
+      - file: lectures/102-Varada-lectures/lec10
+        title: Lecture 10
+      - file: lectures/102-Varada-lectures/lec11
+        title: Lecture 11
+      - file: lectures/103-Varada-lectures/lec12
+        title: Lecture 12
+      - file: lectures/103-Varada-lectures/lec13
         title: Lecture 13
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-14.html"
-        title: Lecture 14                
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-15.html"
-        title: Lecture 15                
-      - url: "https://kvarada.github.io/cpsc330-slides/lecture-16.html"
-        title: Lecture 16                        
+      - file: lectures/103-Varada-lectures/lec14
+        title: Lecture 14
+      - file: lectures/103-Varada-lectures/lec15
+        title: Lecture 15
+      - file: lectures/103-Varada-lectures/lec16
+        title: Lecture 16
+      - file: lectures/103-Varada-lectures/lec17
+        title: Lecture 17
+      - file: lectures/103-Varada-lectures/lec18
+        title: Lecture 18
+
   - file: lectures/103-Firas-lectures/README
     sections:
-      - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
+      - file: lectures/103-Firas-lectures/lec1
         title: Lecture 1
-      - url: "https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees"
+      - file: lectures/103-Firas-lectures/lec2
         title: Lecture 2
-      - url: "https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals"
+      - file: lectures/103-Firas-lectures/lec3
         title: Lecture 3
-      - url: "https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF"
+      - file: lectures/103-Firas-lectures/lec4
         title: Lecture 4
-      - url: "https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines"
+      - file: lectures/103-Firas-lectures/lec5
         title: Lecture 5
-      - url: "https://firasm.github.io/cpsc330-slides/slides-06"
+      - file: lectures/103-Firas-lectures/lec6
         title: Lecture 6
-      - url: "https://firasm.github.io/cpsc330-slides/slides-07"
+      - file: lectures/103-Firas-lectures/lec7
         title: Lecture 7
-      - url: "https://firasm.github.io/cpsc330-slides/slides-08"
+      - file: lectures/103-Firas-lectures/lec8
         title: Lecture 8
-      - url: "https://firasm.github.io/cpsc330-slides/slides-09"
+      - file: lectures/103-Firas-lectures/lec9
         title: Lecture 9
-      - url: "https://firasm.github.io/cpsc330-slides/slides-11"
+      - file: lectures/103-Firas-lectures/lec11
         title: Lecture 11
-      - url: "https://firasm.github.io/cpsc330-slides/slides-12"
+      - file: lectures/103-Firas-lectures/lec12
         title: Lecture 12
-      - url: "https://firasm.github.io/cpsc330-slides/slides-13"
+      - file: lectures/103-Firas-lectures/lec13
         title: Lecture 13
-      - url: "https://firasm.github.io/cpsc330-slides/slides-14"
+      - file: lectures/103-Firas-lectures/lec14
         title: Lecture 14
-      - url: "https://firasm.github.io/cpsc330-slides/slides-15"
+      - file: lectures/103-Firas-lectures/lec15
         title: Lecture 15
-      - url: "https://firasm.github.io/cpsc330-slides/slides-16"
+      - file: lectures/103-Firas-lectures/lec16
         title: Lecture 16
-      - url: "https://firasm.github.io/cpsc330-slides/slides-17"
+      - file: lectures/103-Firas-lectures/lec17
         title: Lecture 17
-      - url: "https://firasm.github.io/cpsc330-slides/slides-18"
+      - file: lectures/103-Firas-lectures/lec18
         title: Lecture 18
       # - url: "https://firasm.github.io/cpsc330-slides/slides-19"
       #   title: Lecture 19
