@@ -64,7 +64,6 @@ parts:
 
   - file: lectures/102-Varada-lectures/README
     sections:
-    sections:
       - file: lectures/102-Varada-lectures/lec1
         title: Lecture 1
       - file: lectures/102-Varada-lectures/lec2
