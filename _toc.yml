@@ -86,19 +86,19 @@ parts:
         title: Lecture 10
       - file: lectures/102-Varada-lectures/lec11
         title: Lecture 11
-      - file: lectures/103-Varada-lectures/lec12
+      - file: lectures/102-Varada-lectures/lec12
         title: Lecture 12
-      - file: lectures/103-Varada-lectures/lec13
+      - file: lectures/102-Varada-lectures/lec13
         title: Lecture 13
-      - file: lectures/103-Varada-lectures/lec14
+      - file: lectures/102-Varada-lectures/lec14
         title: Lecture 14
-      - file: lectures/103-Varada-lectures/lec15
+      - file: lectures/102-Varada-lectures/lec15
         title: Lecture 15
-      - file: lectures/103-Varada-lectures/lec16
+      - file: lectures/102-Varada-lectures/lec16
         title: Lecture 16
-      - file: lectures/103-Varada-lectures/lec17
+      - file: lectures/102-Varada-lectures/lec17
         title: Lecture 17
-      - file: lectures/103-Varada-lectures/lec18
+      - file: lectures/102-Varada-lectures/lec18
         title: Lecture 18
 
   - file: lectures/103-Firas-lectures/README
