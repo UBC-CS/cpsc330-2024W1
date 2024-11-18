@@ -38,6 +38,7 @@ parts:
   - file: lectures/notes/17_recommender-systems.ipynb
   - file: lectures/notes/18_natural-language-processing.ipynb
   - file: lectures/notes/19_intro_to_computer_vision.ipynb
+  - file: lecture/notes/20_time-series.ipynb
   - file: lectures/notes/appendixB_multiclass-strategies.ipynb
 - caption: Section slides
   chapters:
