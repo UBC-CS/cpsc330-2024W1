@@ -94,6 +94,22 @@ parts:
         title: Lecture 15                
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-16.html"
         title: Lecture 16                        
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-17.html"
+        title: Lecture 17                        
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-18.html"
+        title: Lecture 18                        
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-19.html"
+        title: Lecture 19                        
+    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-20.html"
+    #   title: Lecture 20                        
+    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-21.html"
+    #   title: Lecture 21                        
+    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-22.html"
+    #   title: Lecture 22                        
+    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-23.html"
+    #   title: Lecture 23                        
+    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-24.html"
+    #   title: Lecture 24                                
   - file: lectures/103-Firas-lectures/README
     sections:
       - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
