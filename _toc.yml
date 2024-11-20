@@ -146,8 +146,8 @@ parts:
         title: Lecture 17
       - url: "https://firasm.github.io/cpsc330-slides/slides-18"
         title: Lecture 18
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-19"
-      #   title: Lecture 19
+      - url: "https://firasm.github.io/cpsc330-slides/slides-19"
+        title: Lecture 19
       # - url: "https://firasm.github.io/cpsc330-slides/slides-20"
       #   title: Lecture 20
       # - url: "https://firasm.github.io/cpsc330-slides/slides-21"
