@@ -605,6 +605,7 @@ Freq: 3h, Name: one, dtype: int64
 </ul>
 </li>
 </ul>
+<p><br><br></p>
 <ul class="simple">
 <li><p>We have a time-ordered sequence of data points.</p></li>
 <li><p>This type of data is distinctive because it is inherently sequential, with an intrinsic order based on time.</p></li>
@@ -1013,7 +1014,8 @@ Test-set R^2: -0.04
 <ul class="simple">
 <li><p>The predictions on the training data and training score are pretty good</p></li>
 <li><p>But for the test data, a constant line is predicted …</p></li>
-<li><p>What’s going on?</p></li>
+<li><p>What’s going on?
+<br><br><br><br></p></li>
 </ul>
 <ul class="simple">
 <li><p>The model is based on only one feature: POSIX time feature.</p></li>
@@ -2418,11 +2420,11 @@ Test-set R^2: 0.37
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train-set R^2: 0.95
-Test-set R^2: 0.68
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train-set R^2: 0.94
+Test-set R^2: 0.70
 </pre></div>
 </div>
-<img alt="../../_images/619c308e8631cfec0d09a582f386e52b2efd985d26a191d6b38b8f3a0746c427.png" src="../../_images/619c308e8631cfec0d09a582f386e52b2efd985d26a191d6b38b8f3a0746c427.png" />
+<img alt="../../_images/4462a95a882f81fb98b7b7c92629cbab79ab619fa88758ede2c4eac5f2902f1a.png" src="../../_images/4462a95a882f81fb98b7b7c92629cbab79ab619fa88758ede2c4eac5f2902f1a.png" />
 </div>
 </div>
 <p>The results are better than <code class="docutils literal notranslate"><span class="pre">Ridge</span></code> with lag features but they are not as good as the results with our previously engineered features. How about combining lag-based features and the previously extracted features?</p>
@@ -2442,10 +2444,10 @@ Test-set R^2: 0.68
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train-set R^2: 0.96
-Test-set R^2: 0.79
+Test-set R^2: 0.78
 </pre></div>
 </div>
-<img alt="../../_images/4e2f7dbb5fdae597a8a0978213fa96037e1b92cceaf23aa163f11234e7566fd3.png" src="../../_images/4e2f7dbb5fdae597a8a0978213fa96037e1b92cceaf23aa163f11234e7566fd3.png" />
+<img alt="../../_images/007d58f774db2311914fe909b2ddc64f6ba4a964d837a100c5dde8ecafd1e5a4.png" src="../../_images/007d58f774db2311914fe909b2ddc64f6ba4a964d837a100c5dde8ecafd1e5a4.png" />
 </div>
 </div>
 <p>Some improvement but we are getting better results without the lag features in this case.</p>
@@ -2538,36 +2540,36 @@ Test-set R^2: 0.79
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.001107</td>
-      <td>0.000664</td>
+      <td>0.000869</td>
+      <td>0.000271</td>
       <td>0.642676</td>
       <td>0.873182</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000860</td>
-      <td>0.000236</td>
+      <td>0.000737</td>
+      <td>0.000256</td>
       <td>0.828405</td>
       <td>0.874305</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000529</td>
-      <td>0.000183</td>
+      <td>0.000575</td>
+      <td>0.000192</td>
       <td>0.773851</td>
       <td>0.901262</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000523</td>
-      <td>0.000210</td>
+      <td>0.000471</td>
+      <td>0.000190</td>
       <td>0.696712</td>
       <td>0.889429</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000599</td>
-      <td>0.000183</td>
+      <td>0.000498</td>
+      <td>0.000177</td>
       <td>0.892733</td>
       <td>0.863889</td>
     </tr>
@@ -5898,40 +5900,64 @@ Name: Date, Length: 142193, dtype: datetime64[ns]
 <p>Do we have equally spaced measurements?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">rain_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Location&#39;</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-30s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> 
-        <span class="k">break</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_time_spacing_distribution</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;Adelaide&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots the distribution of time spacing for a given region.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">        df (pd.DataFrame): The input DataFrame with columns &#39;Location&#39; and &#39;Date&#39;.</span>
+<span class="sd">        region (str): The region (e.g., location) to analyze.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Ensure &#39;Date&#39; is in datetime format</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+    
+    <span class="c1"># Filter data for the given region</span>
+    <span class="n">region_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">region_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No data available for region: </span><span class="si">{</span><span class="n">region</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="c1"># Calculate time differences</span>
+    <span class="n">time_diffs</span> <span class="o">=</span> <span class="n">region_data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    
+    <span class="c1"># Count the frequency of each time difference</span>
+    <span class="n">value_counts</span> <span class="o">=</span> <span class="n">time_diffs</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+    
+    <span class="c1"># Display value counts</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time spacing counts for </span><span class="si">{</span><span class="n">region</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="n">value_counts</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the bar chart</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">value_counts</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">value_counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time Difference Distribution for </span><span class="si">{</span><span class="n">region</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time Difference (days)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_spacing_distribution</span><span class="p">(</span><span class="n">rain_df</span><span class="p">,</span> <span class="s1">&#39;Sydney&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Adelaide&#39;,)                  Date
-1 days     3016
-2 days       42
-3 days       24
-4 days        4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time spacing counts for Sydney:
+Date
+1 days     3327
+2 days        5
+3 days        1
+29 days       1
 31 days       1
 32 days       1
-29 days       1
-Name: count, dtype: int64
-
-
-
-
-(&#39;Albany&#39;,)                    Date
-1 days     2993
-2 days       15
-3 days        4
-31 days       1
-33 days       1
-29 days       1
 Name: count, dtype: int64
 </pre></div>
 </div>
+<img alt="../../_images/255ee5b7d36bcfd13a539fb27f34f18b5af5cce49b5367bbe3a4ff281ebed2e8.png" src="../../_images/255ee5b7d36bcfd13a539fb27f34f18b5af5cce49b5367bbe3a4ff281ebed2e8.png" />
 </div>
 </div>
 <p>The typical spacing seems to be 1 day for each location but there are several exceptions. We seem to have several missing measurements.</p>
@@ -6711,324 +6737,6 @@ Test score: 0.84
 <li><p>We can carry out cross-validation using <a class="reference external" href="https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split"><code class="docutils literal notranslate"><span class="pre">TimeSeriesSplit</span></code></a>.</p></li>
 <li><p>However, things are actually more complicated here because this dataset has <strong>multiple time series</strong>, one per location.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>MinTemp</th>
-      <th>MaxTemp</th>
-      <th>Rainfall</th>
-      <th>Evaporation</th>
-      <th>Sunshine</th>
-      <th>WindGustDir</th>
-      <th>WindGustSpeed</th>
-      <th>WindDir9am</th>
-      <th>...</th>
-      <th>Humidity9am</th>
-      <th>Humidity3pm</th>
-      <th>Pressure9am</th>
-      <th>Pressure3pm</th>
-      <th>Cloud9am</th>
-      <th>Cloud3pm</th>
-      <th>Temp9am</th>
-      <th>Temp3pm</th>
-      <th>RainToday</th>
-      <th>RainTomorrow</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2008-12-01</td>
-      <td>Albury</td>
-      <td>13.4</td>
-      <td>22.9</td>
-      <td>0.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>W</td>
-      <td>44.0</td>
-      <td>W</td>
-      <td>...</td>
-      <td>71.0</td>
-      <td>22.0</td>
-      <td>1007.7</td>
-      <td>1007.1</td>
-      <td>8.0</td>
-      <td>NaN</td>
-      <td>16.9</td>
-      <td>21.8</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2008-12-02</td>
-      <td>Albury</td>
-      <td>7.4</td>
-      <td>25.1</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>WNW</td>
-      <td>44.0</td>
-      <td>NNW</td>
-      <td>...</td>
-      <td>44.0</td>
-      <td>25.0</td>
-      <td>1010.6</td>
-      <td>1007.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>17.2</td>
-      <td>24.3</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2008-12-03</td>
-      <td>Albury</td>
-      <td>12.9</td>
-      <td>25.7</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>WSW</td>
-      <td>46.0</td>
-      <td>W</td>
-      <td>...</td>
-      <td>38.0</td>
-      <td>30.0</td>
-      <td>1007.6</td>
-      <td>1008.7</td>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>21.0</td>
-      <td>23.2</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2008-12-04</td>
-      <td>Albury</td>
-      <td>9.2</td>
-      <td>28.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NE</td>
-      <td>24.0</td>
-      <td>SE</td>
-      <td>...</td>
-      <td>45.0</td>
-      <td>16.0</td>
-      <td>1017.6</td>
-      <td>1012.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>18.1</td>
-      <td>26.5</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2008-12-05</td>
-      <td>Albury</td>
-      <td>17.5</td>
-      <td>32.3</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>W</td>
-      <td>41.0</td>
-      <td>ENE</td>
-      <td>...</td>
-      <td>82.0</td>
-      <td>33.0</td>
-      <td>1010.8</td>
-      <td>1006.0</td>
-      <td>7.0</td>
-      <td>8.0</td>
-      <td>17.8</td>
-      <td>29.7</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>144729</th>
-      <td>2015-06-26</td>
-      <td>Uluru</td>
-      <td>3.8</td>
-      <td>18.3</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>E</td>
-      <td>39.0</td>
-      <td>ESE</td>
-      <td>...</td>
-      <td>73.0</td>
-      <td>37.0</td>
-      <td>1031.5</td>
-      <td>1027.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.8</td>
-      <td>17.2</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>144730</th>
-      <td>2015-06-27</td>
-      <td>Uluru</td>
-      <td>2.5</td>
-      <td>17.1</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>E</td>
-      <td>41.0</td>
-      <td>ESE</td>
-      <td>...</td>
-      <td>69.0</td>
-      <td>40.0</td>
-      <td>1029.9</td>
-      <td>1026.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7.0</td>
-      <td>15.7</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>144731</th>
-      <td>2015-06-28</td>
-      <td>Uluru</td>
-      <td>4.5</td>
-      <td>19.6</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>ENE</td>
-      <td>35.0</td>
-      <td>ESE</td>
-      <td>...</td>
-      <td>69.0</td>
-      <td>39.0</td>
-      <td>1028.7</td>
-      <td>1025.0</td>
-      <td>NaN</td>
-      <td>3.0</td>
-      <td>8.9</td>
-      <td>18.0</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>144732</th>
-      <td>2015-06-29</td>
-      <td>Uluru</td>
-      <td>7.6</td>
-      <td>22.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>ESE</td>
-      <td>33.0</td>
-      <td>SE</td>
-      <td>...</td>
-      <td>67.0</td>
-      <td>37.0</td>
-      <td>1027.2</td>
-      <td>1023.8</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>11.7</td>
-      <td>21.5</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>144733</th>
-      <td>2015-06-30</td>
-      <td>Uluru</td>
-      <td>6.8</td>
-      <td>21.1</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>ESE</td>
-      <td>35.0</td>
-      <td>ESE</td>
-      <td>...</td>
-      <td>81.0</td>
-      <td>35.0</td>
-      <td>1028.6</td>
-      <td>1025.2</td>
-      <td>3.0</td>
-      <td>NaN</td>
-      <td>10.6</td>
-      <td>20.2</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
-<p>107502 rows × 23 columns</p>
-</div></div></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="s2">&quot;Location&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
