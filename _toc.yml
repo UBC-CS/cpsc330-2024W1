@@ -40,7 +40,7 @@ parts:
   - file: lectures/notes/19_intro_to_computer-vision.ipynb
   - file: lectures/notes/20_time-series.ipynb
   - file: lectures/notes/21_survival-analysis.ipynb  
-- file: lectures/notes/22_communication.ipynb    
+  - file: lectures/notes/22_communication.ipynb    
   - file: lectures/notes/appendixA_feature-engineering-text-data.ipynb
   - file: lectures/notes/appendixB_multiclass-strategies.ipynb
 - caption: Section slides
@@ -102,10 +102,10 @@ parts:
         title: Lecture 18                        
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-19.html"
         title: Lecture 19                        
-    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-20.html"
-    #   title: Lecture 20                        
-    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-21.html"
-    #   title: Lecture 21                        
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-20.html"
+        title: Lecture 20                        
+    #  - url: "https://kvarada.github.io/cpsc330-slides/lecture-21.html"
+    #    title: Lecture 21                        
     # - url: "https://kvarada.github.io/cpsc330-slides/lecture-22.html"
     #   title: Lecture 22                        
     # - url: "https://kvarada.github.io/cpsc330-slides/lecture-23.html"
