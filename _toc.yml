@@ -104,8 +104,8 @@ parts:
         title: Lecture 19                        
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-20.html"
         title: Lecture 20                        
-    #  - url: "https://kvarada.github.io/cpsc330-slides/lecture-21.html"
-    #    title: Lecture 21                        
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-21.html"
+        title: Lecture 21                        
     # - url: "https://kvarada.github.io/cpsc330-slides/lecture-22.html"
     #   title: Lecture 22                        
     # - url: "https://kvarada.github.io/cpsc330-slides/lecture-23.html"
