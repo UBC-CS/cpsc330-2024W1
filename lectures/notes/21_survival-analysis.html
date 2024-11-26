@@ -517,19 +517,9 @@
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
 
-<span class="c1"># does lifelines try to mess with this?</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">10</span>
-
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
 <span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;data/&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lifelines</span>
 </pre></div>
 </div>
 </div>
@@ -600,8 +590,9 @@
 <ul class="simple">
 <li><p>Customer churn, also known as customer attrition, refers to the phenomenon where customers or subscribers stop doing business with a company or service.</p></li>
 <li><p>The bar-chart below is showing the monthly subscriber churn rates for various streaming services.</p></li>
+<li><p>Is a smaller or larger attrition rate considered more desirable?</p></li>
 </ul>
-<p><img alt="" src="../../_images/subscriber-churn.png" /></p>
+<a class="reference internal image-reference" href="../../_images/subscriber-churn.png"><img alt="../../_images/subscriber-churn.png" src="../../_images/subscriber-churn.png" style="width: 600px; height: 600px;" /></a>
 <ul class="simple">
 <li><p>Imagine that you are working for a subscription-based telecom company.</p></li>
 <li><p>They want to predict when a specific customer will churn so that they can come up with
@@ -962,7 +953,7 @@ memory usage: 1.1+ MB
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">53</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;TotalCharges&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;TotalCharges&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
 <span class="nn">File ~/miniforge3/envs/cpsc330/lib/python3.12/site-packages/pandas/core/generic.py:6643,</span> in <span class="ni">NDFrame.astype</span><span class="nt">(self, dtype, copy, errors)</span>
@@ -1207,23 +1198,23 @@ memory usage: 907.8+ KB
       <th>tenure</th>
       <th>MonthlyCharges</th>
       <th>TotalCharges</th>
-      <th>InternetService_DSL</th>
-      <th>InternetService_Fiber optic</th>
-      <th>InternetService_No</th>
-      <th>gender_Female</th>
-      <th>gender_Male</th>
-      <th>OnlineBackup_No</th>
-      <th>OnlineBackup_No internet service</th>
-      <th>...</th>
-      <th>StreamingMovies_No</th>
-      <th>StreamingMovies_No internet service</th>
-      <th>StreamingMovies_Yes</th>
-      <th>DeviceProtection_No</th>
-      <th>DeviceProtection_No internet service</th>
-      <th>DeviceProtection_Yes</th>
       <th>Contract_Month-to-month</th>
       <th>Contract_One year</th>
       <th>Contract_Two year</th>
+      <th>StreamingMovies_No</th>
+      <th>StreamingMovies_No internet service</th>
+      <th>StreamingMovies_Yes</th>
+      <th>PaperlessBilling_No</th>
+      <th>...</th>
+      <th>gender_Male</th>
+      <th>OnlineBackup_No</th>
+      <th>OnlineBackup_No internet service</th>
+      <th>OnlineBackup_Yes</th>
+      <th>PhoneService_No</th>
+      <th>PhoneService_Yes</th>
+      <th>MultipleLines_No</th>
+      <th>MultipleLines_No phone service</th>
+      <th>MultipleLines_Yes</th>
       <th>SeniorCitizen</th>
     </tr>
   </thead>
@@ -1236,8 +1227,8 @@ memory usage: 907.8+ KB
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
@@ -1246,10 +1237,10 @@ memory usage: 907.8+ KB
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -1262,15 +1253,15 @@ memory usage: 907.8+ KB
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
+      <td>1.0</td>
       <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1281,17 +1272,17 @@ memory usage: 907.8+ KB
       <td>-0.148349</td>
       <td>1.133562</td>
       <td>0.226789</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -1305,23 +1296,23 @@ memory usage: 907.8+ KB
       <td>-1.248999</td>
       <td>0.458524</td>
       <td>-0.950696</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
       <td>...</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -1329,22 +1320,22 @@ memory usage: 907.8+ KB
       <td>0.993065</td>
       <td>-0.183179</td>
       <td>0.433814</td>
-      <td>1.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -1417,8 +1408,8 @@ memory usage: 907.8+ KB
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.003 (+/- 0.001)</td>
-      <td>0.002 (+/- 0.000)</td>
+      <td>0.012 (+/- 0.011)</td>
+      <td>0.015 (+/- 0.009)</td>
       <td>0.741 (+/- 0.000)</td>
       <td>0.741 (+/- 0.000)</td>
     </tr>
@@ -1489,15 +1480,15 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.003 (+/- 0.001)</td>
-      <td>0.002 (+/- 0.000)</td>
+      <td>0.012 (+/- 0.011)</td>
+      <td>0.015 (+/- 0.009)</td>
       <td>0.741 (+/- 0.000)</td>
       <td>0.741 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>logistic regression</th>
-      <td>0.022 (+/- 0.009)</td>
-      <td>0.004 (+/- 0.001)</td>
+      <td>0.026 (+/- 0.006)</td>
+      <td>0.007 (+/- 0.005)</td>
       <td>0.804 (+/- 0.014)</td>
       <td>0.808 (+/- 0.002)</td>
     </tr>
@@ -1570,23 +1561,23 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.003 (+/- 0.001)</td>
-      <td>0.002 (+/- 0.000)</td>
+      <td>0.012 (+/- 0.011)</td>
+      <td>0.015 (+/- 0.009)</td>
       <td>0.741 (+/- 0.000)</td>
       <td>0.741 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>logistic regression</th>
-      <td>0.022 (+/- 0.009)</td>
-      <td>0.004 (+/- 0.001)</td>
+      <td>0.026 (+/- 0.006)</td>
+      <td>0.007 (+/- 0.005)</td>
       <td>0.804 (+/- 0.014)</td>
       <td>0.808 (+/- 0.002)</td>
     </tr>
     <tr>
       <th>random forest</th>
-      <td>0.260 (+/- 0.012)</td>
-      <td>0.014 (+/- 0.000)</td>
-      <td>0.789 (+/- 0.010)</td>
+      <td>0.262 (+/- 0.007)</td>
+      <td>0.015 (+/- 0.001)</td>
+      <td>0.794 (+/- 0.010)</td>
       <td>0.998 (+/- 0.000)</td>
     </tr>
   </tbody>
@@ -1600,16 +1591,14 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3526,  386],
-       [ 730,  640]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3520,  392],
+       [ 743,  627]])
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
 <li><p>Random forest is not improving the scores.</p></li>
-</ul>
-<ul class="simple">
 <li><p>We might decide to do hyperparamter optimization to further improve the score.</p></li>
 <li><p>But after trying out all the usual things should we be happy with the scores?</p></li>
 <li><p>Are we doing anything fundamentally wrong when we treat this problem as a binary classification?
@@ -1624,7 +1613,7 @@ Name: count, dtype: int64
 <h3>Time to event and censoring<a class="headerlink" href="#time-to-event-and-censoring" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>When we treat the problem as a binary classification problem, we predict whether a customer would churn or not at a particular point in time, when the data was collected.</p></li>
-<li><p>If a customer has not churned yet, wouldn’t it be more useful to understand when they are likely to churn so that we can offer them promotions etc?</p></li>
+<li><p>If a customer has not churned yet, wouldn’t it be more useful to understand <strong>when they are likely to churn</strong> so that we can offer them promotions etc?</p></li>
 <li><p>Here we are actually interested in <strong>the time till the event of churn occurs</strong>.</p></li>
 </ul>
 <p>There are many situations where you want to analyze <strong>the time until an event occurs</strong>. For example,</p>
@@ -1691,7 +1680,7 @@ Name: count, dtype: int64
 </div></div></div>
 </div>
 <ul class="simple">
-<li><p>The tenure column is the number of months the customer has stayed with the company.</p></li>
+<li><p>In our dataset, the tenure column is the number of months the customer has stayed with the company.</p></li>
 <li><p>But we only have information about this till the point we collected the data.</p></li>
 </ul>
 </section>
@@ -1699,8 +1688,8 @@ Name: count, dtype: int64
 <h3>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>But why is this different? Can’t you just use the techniques you learned so far (e.g., regression models) to predict the time (tenure in our case)? Take a minute to think about this.
 What could be possible scenarios for the duration column?</p>
-<p><br><br><br><br><br><br></p>
-<p>The answer would be yes if you could observe the actual time in all occurrences, but you usually cannot. Frequently, there will be some kind of <strong>censoring</strong> which will not allow you to observe the exact time that the event happened for all units/individuals that are being studied.</p>
+<p><br><br><br><br><br><br><br><br></p>
+<p>The answer would be yes if you could observe the actual time in all occurrences, but you usually cannot. Frequently, there will be some kind of <strong>censoring</strong> which will not allow you to observe the exact time that the event happened for all units/individuals that are being studied. The most common type of censoring is <strong>right censoring</strong>. It occurs when we know the event hasn’t happened yet, but we stop observing before it does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="p">[[</span><span class="s2">&quot;tenure&quot;</span><span class="p">,</span> <span class="s2">&quot;Churn&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1761,7 +1750,7 @@ What could be possible scenarios for the duration column?</p>
 </div></div></div>
 </div>
 <ul class="simple">
-<li><p>What this means is that we <strong>don’t have correct target values</strong> to train or test our model.</p></li>
+<li><p>What this means is that we <strong>don’t have correct target values</strong> to train or test our model. We have incomplete information about the event.</p></li>
 <li><p>This is a problem!</p></li>
 </ul>
 <p>Let’s consider some approaches to deal with this censoring issue.</p>
@@ -2647,7 +2636,11 @@ Name: tenure, Length: 1370, dtype: int64
 <section id="approach-3-survival-analysis">
 <h3>Approach 3: Survival analysis<a class="headerlink" href="#approach-3-survival-analysis" title="Link to this heading">#</a></h3>
 <p>Deal with this properly using <a class="reference external" href="https://en.wikipedia.org/wiki/Survival_analysis">survival analysis</a>.</p>
+<p><strong>Survival analysis</strong> is like a regression problem, but instead of predicting a target value (e.g., house price) or a probability (e.g., will someone churn?), we predict how long it takes for an event to occur, like survival time, time to failure, or time until churn.</p>
+<p>Ignoring censoring (e.g., treating it as missing data or dropping it) can bias your model:</p>
 <ul class="simple">
+<li><p>You would underestimate survival times because you’re only looking at the data where the event occurred.</p></li>
+<li><p>Models that handle censoring (like those in survival analysis) account for the fact that for some data points, you only know the lower bound of their event time.</p></li>
 <li><p>You may learn about this in a statistics course.</p></li>
 <li><p>We will use the <code class="docutils literal notranslate"><span class="pre">lifelines</span></code> package in Python and will not go into the math/stats of how it works.</p></li>
 </ul>
@@ -2741,10 +2734,26 @@ Name: tenure, Length: 1370, dtype: int64
 <section id="kaplan-meier-survival-curve">
 <h2>Kaplan-Meier survival curve<a class="headerlink" href="#kaplan-meier-survival-curve" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p>We’ll use a package called <code class="docutils literal notranslate"><span class="pre">lifelines</span></code> for survival analysis in Python. Start by installing it in the course <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">lifelines</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>We’ll start with a model called <code class="docutils literal notranslate"><span class="pre">KaplanMeierFitter</span></code> from <code class="docutils literal notranslate"><span class="pre">lifelines</span></code> package to get a Kaplan Meier curve.</p></li>
 <li><p>For this model we only use two columns: tenure and churn.</p></li>
 <li><p>We do not use any other features.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lifelines</span>
+
+<span class="c1"># does lifelines try to mess with this?</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>But before we do anything further, I want to modify our dataset slightly:</p>
 <ol class="arabic simple">
 <li><p>I’m going to drop the <code class="docutils literal notranslate"><span class="pre">TotalCharges</span></code> (yes, after all that work fixing it) because it’s a bit of a strange feature.</p></li>
@@ -2854,23 +2863,23 @@ Name: tenure, Length: 1370, dtype: int64
       <th>tenure</th>
       <th>SeniorCitizen</th>
       <th>MonthlyCharges</th>
-      <th>InternetService_DSL</th>
-      <th>InternetService_Fiber optic</th>
-      <th>InternetService_No</th>
-      <th>gender_Female</th>
-      <th>gender_Male</th>
-      <th>OnlineBackup_No</th>
-      <th>...</th>
-      <th>PaymentMethod_Mailed check</th>
-      <th>StreamingMovies_No</th>
-      <th>StreamingMovies_No internet service</th>
-      <th>StreamingMovies_Yes</th>
-      <th>DeviceProtection_No</th>
-      <th>DeviceProtection_No internet service</th>
-      <th>DeviceProtection_Yes</th>
       <th>Contract_Month-to-month</th>
       <th>Contract_One year</th>
       <th>Contract_Two year</th>
+      <th>StreamingMovies_No</th>
+      <th>StreamingMovies_No internet service</th>
+      <th>StreamingMovies_Yes</th>
+      <th>...</th>
+      <th>gender_Female</th>
+      <th>gender_Male</th>
+      <th>OnlineBackup_No</th>
+      <th>OnlineBackup_No internet service</th>
+      <th>OnlineBackup_Yes</th>
+      <th>PhoneService_No</th>
+      <th>PhoneService_Yes</th>
+      <th>MultipleLines_No</th>
+      <th>MultipleLines_No phone service</th>
+      <th>MultipleLines_Yes</th>
     </tr>
   </thead>
   <tbody>
@@ -2883,8 +2892,8 @@ Name: tenure, Length: 1370, dtype: int64
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
@@ -2893,10 +2902,10 @@ Name: tenure, Length: 1370, dtype: int64
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>5707</th>
@@ -2909,15 +2918,15 @@ Name: tenure, Length: 1370, dtype: int64
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>...</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2928,17 +2937,17 @@ Name: tenure, Length: 1370, dtype: int64
       <td>29.0</td>
       <td>0.0</td>
       <td>1.133562</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -2952,23 +2961,23 @@ Name: tenure, Length: 1370, dtype: int64
       <td>2.0</td>
       <td>1.0</td>
       <td>0.458524</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>...</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>6124</th>
@@ -2976,22 +2985,22 @@ Name: tenure, Length: 1370, dtype: int64
       <td>57.0</td>
       <td>0.0</td>
       <td>-0.183179</td>
-      <td>1.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>...</td>
       <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
     </tr>
   </tbody>
@@ -3373,90 +3382,6 @@ Name: tenure, Length: 1370, dtype: int64
       <td>0.094290</td>
     </tr>
     <tr>
-      <th>InternetService_DSL</th>
-      <td>-0.161001</td>
-      <td>0.851291</td>
-      <td>0.072286</td>
-      <td>-0.302679</td>
-      <td>-0.019324</td>
-      <td>0.738836</td>
-      <td>0.980862</td>
-      <td>0.0</td>
-      <td>-2.227289</td>
-      <td>2.592797e-02</td>
-      <td>5.269347</td>
-    </tr>
-    <tr>
-      <th>InternetService_Fiber optic</th>
-      <td>0.186869</td>
-      <td>1.205470</td>
-      <td>0.071515</td>
-      <td>0.046702</td>
-      <td>0.327037</td>
-      <td>1.047810</td>
-      <td>1.386853</td>
-      <td>0.0</td>
-      <td>2.612998</td>
-      <td>8.975172e-03</td>
-      <td>6.799845</td>
-    </tr>
-    <tr>
-      <th>InternetService_No</th>
-      <td>-0.057267</td>
-      <td>0.944342</td>
-      <td>0.100970</td>
-      <td>-0.255165</td>
-      <td>0.140631</td>
-      <td>0.774789</td>
-      <td>1.150999</td>
-      <td>0.0</td>
-      <td>-0.567169</td>
-      <td>5.705995e-01</td>
-      <td>0.809450</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>DeviceProtection_No internet service</th>
-      <td>-0.057267</td>
-      <td>0.944342</td>
-      <td>0.100970</td>
-      <td>-0.255165</td>
-      <td>0.140631</td>
-      <td>0.774789</td>
-      <td>1.150999</td>
-      <td>0.0</td>
-      <td>-0.567169</td>
-      <td>5.705995e-01</td>
-      <td>0.809450</td>
-    </tr>
-    <tr>
-      <th>DeviceProtection_Yes</th>
-      <td>-0.154556</td>
-      <td>0.856795</td>
-      <td>0.069302</td>
-      <td>-0.290385</td>
-      <td>-0.018727</td>
-      <td>0.747975</td>
-      <td>0.981447</td>
-      <td>0.0</td>
-      <td>-2.230194</td>
-      <td>2.573457e-02</td>
-      <td>5.280148</td>
-    </tr>
-    <tr>
       <th>Contract_Month-to-month</th>
       <td>0.812875</td>
       <td>2.254380</td>
@@ -3497,6 +3422,90 @@ Name: tenure, Length: 1370, dtype: int64
       <td>-9.565746</td>
       <td>1.113949e-21</td>
       <td>69.604807</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>PhoneService_No</th>
+      <td>0.014650</td>
+      <td>1.014758</td>
+      <td>0.127087</td>
+      <td>-0.234436</td>
+      <td>0.263736</td>
+      <td>0.791017</td>
+      <td>1.301784</td>
+      <td>0.0</td>
+      <td>0.115276</td>
+      <td>9.082265e-01</td>
+      <td>0.138876</td>
+    </tr>
+    <tr>
+      <th>PhoneService_Yes</th>
+      <td>-0.014650</td>
+      <td>0.985457</td>
+      <td>0.127087</td>
+      <td>-0.263736</td>
+      <td>0.234436</td>
+      <td>0.768176</td>
+      <td>1.264195</td>
+      <td>0.0</td>
+      <td>-0.115276</td>
+      <td>9.082265e-01</td>
+      <td>0.138876</td>
+    </tr>
+    <tr>
+      <th>MultipleLines_No</th>
+      <td>0.162904</td>
+      <td>1.176924</td>
+      <td>0.066166</td>
+      <td>0.033222</td>
+      <td>0.292587</td>
+      <td>1.033780</td>
+      <td>1.339889</td>
+      <td>0.0</td>
+      <td>2.462060</td>
+      <td>1.381416e-02</td>
+      <td>6.177709</td>
+    </tr>
+    <tr>
+      <th>MultipleLines_No phone service</th>
+      <td>0.014650</td>
+      <td>1.014758</td>
+      <td>0.127087</td>
+      <td>-0.234436</td>
+      <td>0.263736</td>
+      <td>0.791017</td>
+      <td>1.301784</td>
+      <td>0.0</td>
+      <td>0.115276</td>
+      <td>9.082265e-01</td>
+      <td>0.138876</td>
+    </tr>
+    <tr>
+      <th>MultipleLines_Yes</th>
+      <td>-0.171899</td>
+      <td>0.842064</td>
+      <td>0.066810</td>
+      <td>-0.302844</td>
+      <td>-0.040954</td>
+      <td>0.738715</td>
+      <td>0.959873</td>
+      <td>0.0</td>
+      <td>-2.572962</td>
+      <td>1.008322e-02</td>
+      <td>6.631899</td>
     </tr>
   </tbody>
 </table>
@@ -3848,7 +3857,7 @@ Name: Churn, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00d04ec95f8dea18197fa319ff229f0b389ec055e81e4f41141a9e3819b10bc5.png" src="../../_images/00d04ec95f8dea18197fa319ff229f0b389ec055e81e4f41141a9e3819b10bc5.png" />
+<img alt="../../_images/0adde495d4cec77595948f819e0ea15f80b2af19b07425fcf4b5aabb27947fac.png" src="../../_images/0adde495d4cec77595948f819e0ea15f80b2af19b07425fcf4b5aabb27947fac.png" />
 </div>
 </div>
 <ul class="simple">
