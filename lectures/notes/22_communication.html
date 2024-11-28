@@ -428,8 +428,6 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-22-1">(iClicker) Exercise 22.1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
@@ -441,6 +439,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-explaining-gridsearchcv-15-min">Activity: explaining <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> (15 min)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-1">Explanation 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-2">Explanation 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-introduction-to-grid-search">An introduction to Grid Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-grid-search">What is grid search?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-i-use-it">Why should I use it?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-it-work">How does it work?</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-questions">Discussion questions:</a></li>
 </ul>
 </li>
@@ -455,14 +459,14 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-and-decision-making-5-min">ML and decision-making (5 min)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decisions-involve-a-few-key-pieces">Decisions involve a few key pieces</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-and-predict-proba-20-min">Confidence and <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> (20 min)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-mean-for-us-when-we-re-trying-to-make-claims-about-our-data">What does this mean for us, when we’re trying to make claims about our data?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-have-to-do-with-applied-ml">What does this have to do with applied ML?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preferences-in-logisticregression">Preferences in <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-be-the-loss-activity-4-mins">What should be the loss? (Activity: 4 mins)</a></li>
@@ -550,20 +554,6 @@
 <li><p>Maintain a healthy skepticism of <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> scores and their possible interpretation as credences.</p></li>
 <li><p>Be careful and precise when communicating confidence to stakeholders in an ML project.</p></li>
 <li><p>Identify misleading visualizations.</p></li>
-</ul>
-</section>
-<section id="questions-for-you">
-<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
-</section>
-<section id="iclicker-exercise-22-1">
-<h2>(iClicker) Exercise 22.1<a class="headerlink" href="#iclicker-exercise-22-1" title="Link to this heading">#</a></h2>
-<p><strong>Select all of the following statements which are TRUE.</strong></p>
-<ul class="simple">
-<li><p>(A) Right censoring occurs when the endpoint of event has not been observed for all study subjects by the end of the study period.</p></li>
-<li><p>(B) Right censoring implies that the data is missing completely at random.</p></li>
-<li><p>(C) In the presence of right-censored data, binary classification models can be applied directly without any modifications or special considerations.</p></li>
-<li><p>(D) If we apply the <code class="docutils literal notranslate"><span class="pre">Ridge</span></code> regression model to predict tenure in right censored data, we are likely to underestimate it because the tenure observed in our data is shorter than what it would be in reality.</p></li>
-<li><p>(E) In survival analysis, unlike typical supervised machine learning problems, it is beneficial to make predictions on training examples where customers have not yet churned.</p></li>
 </ul>
 </section>
 <section id="recap">
@@ -716,9 +706,53 @@
 </section>
 <section id="explanation-2">
 <h3>Explanation 2<a class="headerlink" href="#explanation-2" title="Link to this heading">#</a></h3>
-<p>https://medium.com/datadriveninvestor/an-introduction-to-grid-search-ff57adcc0998</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.datadriveninvestor.com/an-introduction-to-grid-search-ff57adcc0998">Link 1</a> or</p></li>
+<li><p><a class="reference external" href="https://archive.is/20230510012326/https://medium.datadriveninvestor.com/an-introduction-to-grid-search-ff57adcc0998">Link 2</a></p></li>
+</ul>
+<p>I’m also pasting it below for easy access.</p>
 <p>~400 words, not including code.</p>
+</section>
+<section id="an-introduction-to-grid-search">
+<h3>An introduction to Grid Search<a class="headerlink" href="#an-introduction-to-grid-search" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../../_images/hyperparam_meme.png"><img alt="../../_images/hyperparam_meme.png" src="../../_images/hyperparam_meme.png" style="width: 300px; height: 200px;" /></a>
+<p>This article will explain in simple terms what grid search is and how to implement grid search using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> in python.</p>
+<section id="what-is-grid-search">
+<h4>What is grid search?<a class="headerlink" href="#what-is-grid-search" title="Link to this heading">#</a></h4>
+<p>Grid search is the process of performing hyper parameter tuning in order to determine the optimal values for a given model. This is significant as the performance of the entire model is based on the hyper parameter values specified.</p>
+</section>
+<section id="why-should-i-use-it">
+<h4>Why should I use it?<a class="headerlink" href="#why-should-i-use-it" title="Link to this heading">#</a></h4>
+<p>If you work with ML, you know what a nightmare it is to stipulate values for hyper parameters. There are libraries that have been implemented, such as <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> of the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> library, in order to automate this process and make life a little bit easier for ML enthusiasts.</p>
+</section>
+<section id="how-does-it-work">
+<h4>How does it work?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">#</a></h4>
+<p>Here’s a python implementation of grid search using <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> of the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> library.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
+<span class="n">gsc</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
+        <span class="n">estimator</span><span class="o">=</span><span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">),</span>
+        <span class="n">param_grid</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span>
+            <span class="s1">&#39;epsilon&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.0005</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+            <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>First, we need to import <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> from the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> library, a machine learning library for python. The <code class="docutils literal notranslate"><span class="pre">estimator</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> requires the model we are using for the hyper parameter tuning process. For this example, we are using the <code class="docutils literal notranslate"><span class="pre">rbf</span></code> kernel of the Support Vector Regression model(SVR). The <code class="docutils literal notranslate"><span class="pre">param_grid</span></code> parameter requires a list of parameters and the range of values for each parameter of the specified <em>estimator</em>. The most significant parameters required when working with the <code class="docutils literal notranslate"><span class="pre">rbf</span></code> kernel of the SVR model are <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma</span></code> and <code class="docutils literal notranslate"><span class="pre">epsilon</span></code>. A list of values to choose from should be given to each hyper parameter of the model. You can change these values and experiment more to see which value ranges give better performance. A <a class="reference external" href="https://medium.datadriveninvestor.com/k-fold-cross-validation-6b8518070833">cross validation process</a> is performed in order to determine the hyper parameter value set which provides the best accuracy levels.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid_result</span> <span class="o">=</span> <span class="n">gsc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">best_params</span> <span class="o">=</span> <span class="n">grid_result</span><span class="o">.</span><span class="n">best_params_</span>
+<span class="n">best_svr</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">best_params</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">],</span> <span class="n">epsilon</span><span class="o">=</span><span class="n">best_params</span><span class="p">[</span><span class="s2">&quot;epsilon&quot;</span><span class="p">],</span> <span class="n">gamma</span><span class="o">=</span><span class="n">best_params</span><span class="p">[</span><span class="s2">&quot;gamma&quot;</span><span class="p">],</span>
+                   <span class="n">coef0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">shrinking</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">tol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">cache_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We then use the best set of hyper parameter values chosen in the grid search, in the actual model as shown above.</p>
+<p>If you want to know how to use grid search and cross-validation and train and test a model check out <a class="reference external" href="https://medium.datadriveninvestor.com/a-practical-guide-to-getting-started-with-machine-learning-3a6fcc0f95aa">this article</a>.</p>
+<p>Hope this article helped you. Until next time…Adios!</p>
 <p><br><br><br><br><br><br></p>
+</section>
 </section>
 <section id="discussion-questions">
 <h3>Discussion questions:<a class="headerlink" href="#discussion-questions" title="Link to this heading">#</a></h3>
@@ -730,7 +764,8 @@
 <li><p>Each explanation has an image. Which one is more effective? What are the pros/cons?</p></li>
 <li><p>Each explanation has some sample code. Which one is more effective? What are the pros/cons?</p></li>
 </ul>
-<p>After you’re done reading, take ~5 min to consider the discussion questions above. Paste your answer to <strong>at least one</strong> of the above questions in <a class="reference external" href="https://docs.google.com/document/d/1Nqpcx4yHuVhyrDFrpxbBnduoJC4VFnvVybqzIA1aUmM/edit?usp=sharing">this Google document</a>.</p>
+<p>After you’re done reading, take ~5 min to consider the discussion questions above. Paste your answer to <strong>at least one</strong> of the above questions in <a class="reference external" href="https://shorturl.at/jruJh">this Google document</a>.</p>
+<p><br><br><br><br></p>
 </section>
 </section>
 <section id="principles-of-good-explanations-15-min">
@@ -808,8 +843,8 @@
 </section>
 <section id="ml-and-decision-making-5-min">
 <h2>ML and decision-making (5 min)<a class="headerlink" href="#ml-and-decision-making-5-min" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="questions-for-you">
+<h3>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h3>
 <p>Imagine you are tasked with developing a recommender system for YouTube. You possess data on which users clicked on which videos. After spending considerable time building a recommender system using this data, you realize it isn’t producing high-quality recommendations. What could be the reasons for this?</p>
 <p><br><br><br><br></p>
 <p>Think beyond the data that’s given to you. Questions you have to consider:</p>
@@ -880,8 +915,8 @@
 <p>Which belief is better now?</p>
 <p><strong>Conclusion: We don’t just want to be right. We want to be confident when we’re right and hesitant when we’re wrong.</strong></p>
 </section>
-<section id="id2">
-<h3>❓❓ Questions for you<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>In our final exam, imagine if, along with your answers, we ask you to also provide a confidence score for each. This would involve rating how sure you are about each answer, perhaps on a percentage scale from 0% (completely unsure) to 100% (completely sure). This method not only assesses your knowledge but also your awareness of your own understanding, potentially impacting the grading process and highlighting areas for improvement. Who supports this idea 😉?</p>
 <p><br><br><br><br><br><br><br><br></p>
 </section>
@@ -1446,36 +1481,36 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MSZoning&#39;,
- &#39;HouseStyle&#39;,
- &#39;Street&#39;,
- &#39;MiscFeature&#39;,
- &#39;Electrical&#39;,
- &#39;Foundation&#39;,
- &#39;Neighborhood&#39;,
- &#39;SaleCondition&#39;,
- &#39;Alley&#39;,
- &#39;Exterior1st&#39;,
- &#39;SaleType&#39;,
- &#39;Heating&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MoSold&#39;,
  &#39;PavedDrive&#39;,
- &#39;GarageType&#39;,
- &#39;RoofMatl&#39;,
- &#39;LandSlope&#39;,
- &#39;MoSold&#39;,
- &#39;LotConfig&#39;,
- &#39;MasVnrType&#39;,
- &#39;LandContour&#39;,
- &#39;Exterior2nd&#39;,
- &#39;MSSubClass&#39;,
- &#39;CentralAir&#39;,
+ &#39;Foundation&#39;,
+ &#39;RoofStyle&#39;,
  &#39;GarageFinish&#39;,
+ &#39;Electrical&#39;,
+ &#39;Exterior1st&#39;,
+ &#39;MasVnrType&#39;,
+ &#39;LotConfig&#39;,
+ &#39;SaleCondition&#39;,
+ &#39;SaleType&#39;,
+ &#39;Neighborhood&#39;,
+ &#39;HouseStyle&#39;,
+ &#39;Alley&#39;,
+ &#39;LandSlope&#39;,
  &#39;Condition2&#39;,
  &#39;BldgType&#39;,
- &#39;LotShape&#39;,
+ &#39;Condition1&#39;,
+ &#39;Heating&#39;,
  &#39;Utilities&#39;,
- &#39;RoofStyle&#39;,
- &#39;Condition1&#39;]
+ &#39;Street&#39;,
+ &#39;RoofMatl&#39;,
+ &#39;MiscFeature&#39;,
+ &#39;GarageType&#39;,
+ &#39;LandContour&#39;,
+ &#39;CentralAir&#39;,
+ &#39;MSSubClass&#39;,
+ &#39;MSZoning&#39;,
+ &#39;Exterior2nd&#39;,
+ &#39;LotShape&#39;]
 </pre></div>
 </div>
 </div>
@@ -1943,16 +1978,16 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                   &#x27;YearBuilt&#x27;, &#x27;YearRemodAdd&#x27;, &#x27;MasVnrArea&#x27;,
                                   &#x27;BsmtFinSF1&#x27;, &#x27;BsmtFinSF2&#x27;, &#x27;BsmtUnfSF&#x27;,
                                   &#x27;TotalBsmtSF&#x27;, &#x27;...
-                                 [&#x27;MSZoning&#x27;, &#x27;HouseStyle&#x27;, &#x27;Street&#x27;,
-                                  &#x27;MiscFeature&#x27;, &#x27;Electrical&#x27;, &#x27;Foundation&#x27;,
-                                  &#x27;Neighborhood&#x27;, &#x27;SaleCondition&#x27;, &#x27;Alley&#x27;,
-                                  &#x27;Exterior1st&#x27;, &#x27;SaleType&#x27;, &#x27;Heating&#x27;,
-                                  &#x27;PavedDrive&#x27;, &#x27;GarageType&#x27;, &#x27;RoofMatl&#x27;,
-                                  &#x27;LandSlope&#x27;, &#x27;MoSold&#x27;, &#x27;LotConfig&#x27;,
-                                  &#x27;MasVnrType&#x27;, &#x27;LandContour&#x27;, &#x27;Exterior2nd&#x27;,
-                                  &#x27;MSSubClass&#x27;, &#x27;CentralAir&#x27;, &#x27;GarageFinish&#x27;,
-                                  &#x27;Condition2&#x27;, &#x27;BldgType&#x27;, &#x27;LotShape&#x27;,
-                                  &#x27;Utilities&#x27;, &#x27;RoofStyle&#x27;, &#x27;Condition1&#x27;])])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for ColumnTransformer</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;drop&#x27;, &#x27;drop&#x27;, [&#x27;Id&#x27;]),
+                                 [&#x27;MoSold&#x27;, &#x27;PavedDrive&#x27;, &#x27;Foundation&#x27;,
+                                  &#x27;RoofStyle&#x27;, &#x27;GarageFinish&#x27;, &#x27;Electrical&#x27;,
+                                  &#x27;Exterior1st&#x27;, &#x27;MasVnrType&#x27;, &#x27;LotConfig&#x27;,
+                                  &#x27;SaleCondition&#x27;, &#x27;SaleType&#x27;, &#x27;Neighborhood&#x27;,
+                                  &#x27;HouseStyle&#x27;, &#x27;Alley&#x27;, &#x27;LandSlope&#x27;,
+                                  &#x27;Condition2&#x27;, &#x27;BldgType&#x27;, &#x27;Condition1&#x27;,
+                                  &#x27;Heating&#x27;, &#x27;Utilities&#x27;, &#x27;Street&#x27;, &#x27;RoofMatl&#x27;,
+                                  &#x27;MiscFeature&#x27;, &#x27;GarageType&#x27;, &#x27;LandContour&#x27;,
+                                  &#x27;CentralAir&#x27;, &#x27;MSSubClass&#x27;, &#x27;MSZoning&#x27;,
+                                  &#x27;Exterior2nd&#x27;, &#x27;LotShape&#x27;])])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for ColumnTransformer</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;drop&#x27;, &#x27;drop&#x27;, [&#x27;Id&#x27;]),
                                 (&#x27;pipeline-1&#x27;,
                                  Pipeline(steps=[(&#x27;simpleimputer&#x27;,
                                                   SimpleImputer(strategy=&#x27;median&#x27;)),
@@ -1963,16 +1998,16 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                   &#x27;YearBuilt&#x27;, &#x27;YearRemodAdd&#x27;, &#x27;MasVnrArea&#x27;,
                                   &#x27;BsmtFinSF1&#x27;, &#x27;BsmtFinSF2&#x27;, &#x27;BsmtUnfSF&#x27;,
                                   &#x27;TotalBsmtSF&#x27;, &#x27;...
-                                 [&#x27;MSZoning&#x27;, &#x27;HouseStyle&#x27;, &#x27;Street&#x27;,
-                                  &#x27;MiscFeature&#x27;, &#x27;Electrical&#x27;, &#x27;Foundation&#x27;,
-                                  &#x27;Neighborhood&#x27;, &#x27;SaleCondition&#x27;, &#x27;Alley&#x27;,
-                                  &#x27;Exterior1st&#x27;, &#x27;SaleType&#x27;, &#x27;Heating&#x27;,
-                                  &#x27;PavedDrive&#x27;, &#x27;GarageType&#x27;, &#x27;RoofMatl&#x27;,
-                                  &#x27;LandSlope&#x27;, &#x27;MoSold&#x27;, &#x27;LotConfig&#x27;,
-                                  &#x27;MasVnrType&#x27;, &#x27;LandContour&#x27;, &#x27;Exterior2nd&#x27;,
-                                  &#x27;MSSubClass&#x27;, &#x27;CentralAir&#x27;, &#x27;GarageFinish&#x27;,
-                                  &#x27;Condition2&#x27;, &#x27;BldgType&#x27;, &#x27;LotShape&#x27;,
-                                  &#x27;Utilities&#x27;, &#x27;RoofStyle&#x27;, &#x27;Condition1&#x27;])])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">drop</label><div class="sk-toggleable__content fitted"><pre>[&#x27;Id&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">drop</label><div class="sk-toggleable__content fitted"><pre>drop</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">pipeline-1</label><div class="sk-toggleable__content fitted"><pre>[&#x27;BedroomAbvGr&#x27;, &#x27;KitchenAbvGr&#x27;, &#x27;LotFrontage&#x27;, &#x27;LotArea&#x27;, &#x27;OverallQual&#x27;, &#x27;OverallCond&#x27;, &#x27;YearBuilt&#x27;, &#x27;YearRemodAdd&#x27;, &#x27;MasVnrArea&#x27;, &#x27;BsmtFinSF1&#x27;, &#x27;BsmtFinSF2&#x27;, &#x27;BsmtUnfSF&#x27;, &#x27;TotalBsmtSF&#x27;, &#x27;1stFlrSF&#x27;, &#x27;2ndFlrSF&#x27;, &#x27;LowQualFinSF&#x27;, &#x27;GrLivArea&#x27;, &#x27;BsmtFullBath&#x27;, &#x27;BsmtHalfBath&#x27;, &#x27;FullBath&#x27;, &#x27;HalfBath&#x27;, &#x27;TotRmsAbvGrd&#x27;, &#x27;Fireplaces&#x27;, &#x27;GarageYrBlt&#x27;, &#x27;GarageCars&#x27;, &#x27;GarageArea&#x27;, &#x27;WoodDeckSF&#x27;, &#x27;OpenPorchSF&#x27;, &#x27;EnclosedPorch&#x27;, &#x27;3SsnPorch&#x27;, &#x27;ScreenPorch&#x27;, &#x27;PoolArea&#x27;, &#x27;MiscVal&#x27;, &#x27;YrSold&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SimpleImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer(strategy=&#x27;median&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">pipeline-2</label><div class="sk-toggleable__content fitted"><pre>[&#x27;ExterQual&#x27;, &#x27;ExterCond&#x27;, &#x27;BsmtQual&#x27;, &#x27;BsmtCond&#x27;, &#x27;HeatingQC&#x27;, &#x27;KitchenQual&#x27;, &#x27;FireplaceQu&#x27;, &#x27;GarageQual&#x27;, &#x27;GarageCond&#x27;, &#x27;PoolQC&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" ><label for="sk-estimator-id-8" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SimpleImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer(strategy=&#x27;most_frequent&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" ><label for="sk-estimator-id-9" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OrdinalEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">?<span>Documentation for OrdinalEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OrdinalEncoder(categories=[[&#x27;Po&#x27;, &#x27;Fa&#x27;, &#x27;TA&#x27;, &#x27;Gd&#x27;, &#x27;Ex&#x27;],
+                                 [&#x27;MoSold&#x27;, &#x27;PavedDrive&#x27;, &#x27;Foundation&#x27;,
+                                  &#x27;RoofStyle&#x27;, &#x27;GarageFinish&#x27;, &#x27;Electrical&#x27;,
+                                  &#x27;Exterior1st&#x27;, &#x27;MasVnrType&#x27;, &#x27;LotConfig&#x27;,
+                                  &#x27;SaleCondition&#x27;, &#x27;SaleType&#x27;, &#x27;Neighborhood&#x27;,
+                                  &#x27;HouseStyle&#x27;, &#x27;Alley&#x27;, &#x27;LandSlope&#x27;,
+                                  &#x27;Condition2&#x27;, &#x27;BldgType&#x27;, &#x27;Condition1&#x27;,
+                                  &#x27;Heating&#x27;, &#x27;Utilities&#x27;, &#x27;Street&#x27;, &#x27;RoofMatl&#x27;,
+                                  &#x27;MiscFeature&#x27;, &#x27;GarageType&#x27;, &#x27;LandContour&#x27;,
+                                  &#x27;CentralAir&#x27;, &#x27;MSSubClass&#x27;, &#x27;MSZoning&#x27;,
+                                  &#x27;Exterior2nd&#x27;, &#x27;LotShape&#x27;])])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">drop</label><div class="sk-toggleable__content fitted"><pre>[&#x27;Id&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">drop</label><div class="sk-toggleable__content fitted"><pre>drop</pre></div> </div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">pipeline-1</label><div class="sk-toggleable__content fitted"><pre>[&#x27;BedroomAbvGr&#x27;, &#x27;KitchenAbvGr&#x27;, &#x27;LotFrontage&#x27;, &#x27;LotArea&#x27;, &#x27;OverallQual&#x27;, &#x27;OverallCond&#x27;, &#x27;YearBuilt&#x27;, &#x27;YearRemodAdd&#x27;, &#x27;MasVnrArea&#x27;, &#x27;BsmtFinSF1&#x27;, &#x27;BsmtFinSF2&#x27;, &#x27;BsmtUnfSF&#x27;, &#x27;TotalBsmtSF&#x27;, &#x27;1stFlrSF&#x27;, &#x27;2ndFlrSF&#x27;, &#x27;LowQualFinSF&#x27;, &#x27;GrLivArea&#x27;, &#x27;BsmtFullBath&#x27;, &#x27;BsmtHalfBath&#x27;, &#x27;FullBath&#x27;, &#x27;HalfBath&#x27;, &#x27;TotRmsAbvGrd&#x27;, &#x27;Fireplaces&#x27;, &#x27;GarageYrBlt&#x27;, &#x27;GarageCars&#x27;, &#x27;GarageArea&#x27;, &#x27;WoodDeckSF&#x27;, &#x27;OpenPorchSF&#x27;, &#x27;EnclosedPorch&#x27;, &#x27;3SsnPorch&#x27;, &#x27;ScreenPorch&#x27;, &#x27;PoolArea&#x27;, &#x27;MiscVal&#x27;, &#x27;YrSold&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SimpleImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer(strategy=&#x27;median&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">pipeline-2</label><div class="sk-toggleable__content fitted"><pre>[&#x27;ExterQual&#x27;, &#x27;ExterCond&#x27;, &#x27;BsmtQual&#x27;, &#x27;BsmtCond&#x27;, &#x27;HeatingQC&#x27;, &#x27;KitchenQual&#x27;, &#x27;FireplaceQu&#x27;, &#x27;GarageQual&#x27;, &#x27;GarageCond&#x27;, &#x27;PoolQC&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" ><label for="sk-estimator-id-8" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SimpleImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer(strategy=&#x27;most_frequent&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" ><label for="sk-estimator-id-9" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OrdinalEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">?<span>Documentation for OrdinalEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OrdinalEncoder(categories=[[&#x27;Po&#x27;, &#x27;Fa&#x27;, &#x27;TA&#x27;, &#x27;Gd&#x27;, &#x27;Ex&#x27;],
                            [&#x27;Po&#x27;, &#x27;Fa&#x27;, &#x27;TA&#x27;, &#x27;Gd&#x27;, &#x27;Ex&#x27;],
                            [&#x27;Po&#x27;, &#x27;Fa&#x27;, &#x27;TA&#x27;, &#x27;Gd&#x27;, &#x27;Ex&#x27;],
                            [&#x27;Po&#x27;, &#x27;Fa&#x27;, &#x27;TA&#x27;, &#x27;Gd&#x27;, &#x27;Ex&#x27;],
@@ -1986,7 +2021,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                            [&#x27;NA&#x27;, &#x27;Unf&#x27;, &#x27;LwQ&#x27;, &#x27;Rec&#x27;, &#x27;BLQ&#x27;, &#x27;ALQ&#x27;, &#x27;GLQ&#x27;],
                            [&#x27;Sal&#x27;, &#x27;Sev&#x27;, &#x27;Maj2&#x27;, &#x27;Maj1&#x27;, &#x27;Mod&#x27;, &#x27;Min2&#x27;, &#x27;Min1&#x27;,
                             &#x27;Typ&#x27;],
-                           [&#x27;NA&#x27;, &#x27;MnWw&#x27;, &#x27;GdWo&#x27;, &#x27;MnPrv&#x27;, &#x27;GdPrv&#x27;]])</pre></div> </div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-13" type="checkbox" ><label for="sk-estimator-id-13" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">pipeline-4</label><div class="sk-toggleable__content fitted"><pre>[&#x27;MSZoning&#x27;, &#x27;HouseStyle&#x27;, &#x27;Street&#x27;, &#x27;MiscFeature&#x27;, &#x27;Electrical&#x27;, &#x27;Foundation&#x27;, &#x27;Neighborhood&#x27;, &#x27;SaleCondition&#x27;, &#x27;Alley&#x27;, &#x27;Exterior1st&#x27;, &#x27;SaleType&#x27;, &#x27;Heating&#x27;, &#x27;PavedDrive&#x27;, &#x27;GarageType&#x27;, &#x27;RoofMatl&#x27;, &#x27;LandSlope&#x27;, &#x27;MoSold&#x27;, &#x27;LotConfig&#x27;, &#x27;MasVnrType&#x27;, &#x27;LandContour&#x27;, &#x27;Exterior2nd&#x27;, &#x27;MSSubClass&#x27;, &#x27;CentralAir&#x27;, &#x27;GarageFinish&#x27;, &#x27;Condition2&#x27;, &#x27;BldgType&#x27;, &#x27;LotShape&#x27;, &#x27;Utilities&#x27;, &#x27;RoofStyle&#x27;, &#x27;Condition1&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-14" type="checkbox" ><label for="sk-estimator-id-14" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SimpleImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer(fill_value=&#x27;missing&#x27;, strategy=&#x27;constant&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-15" type="checkbox" ><label for="sk-estimator-id-15" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OneHotEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;, sparse_output=False)</pre></div> </div></div></div></div></div></div></div></div></div></div></div></div></div>
+                           [&#x27;NA&#x27;, &#x27;MnWw&#x27;, &#x27;GdWo&#x27;, &#x27;MnPrv&#x27;, &#x27;GdPrv&#x27;]])</pre></div> </div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-13" type="checkbox" ><label for="sk-estimator-id-13" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">pipeline-4</label><div class="sk-toggleable__content fitted"><pre>[&#x27;MoSold&#x27;, &#x27;PavedDrive&#x27;, &#x27;Foundation&#x27;, &#x27;RoofStyle&#x27;, &#x27;GarageFinish&#x27;, &#x27;Electrical&#x27;, &#x27;Exterior1st&#x27;, &#x27;MasVnrType&#x27;, &#x27;LotConfig&#x27;, &#x27;SaleCondition&#x27;, &#x27;SaleType&#x27;, &#x27;Neighborhood&#x27;, &#x27;HouseStyle&#x27;, &#x27;Alley&#x27;, &#x27;LandSlope&#x27;, &#x27;Condition2&#x27;, &#x27;BldgType&#x27;, &#x27;Condition1&#x27;, &#x27;Heating&#x27;, &#x27;Utilities&#x27;, &#x27;Street&#x27;, &#x27;RoofMatl&#x27;, &#x27;MiscFeature&#x27;, &#x27;GarageType&#x27;, &#x27;LandContour&#x27;, &#x27;CentralAir&#x27;, &#x27;MSSubClass&#x27;, &#x27;MSZoning&#x27;, &#x27;Exterior2nd&#x27;, &#x27;LotShape&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-14" type="checkbox" ><label for="sk-estimator-id-14" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SimpleImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html">?<span>Documentation for SimpleImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>SimpleImputer(fill_value=&#x27;missing&#x27;, strategy=&#x27;constant&#x27;)</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-15" type="checkbox" ><label for="sk-estimator-id-15" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OneHotEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;, sparse_output=False)</pre></div> </div></div></div></div></div></div></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2041,16 +2076,16 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>MasVnrArea</th>
       <th>BsmtFinSF1</th>
       <th>...</th>
-      <th>RoofStyle_Shed</th>
-      <th>Condition1_Artery</th>
-      <th>Condition1_Feedr</th>
-      <th>Condition1_Norm</th>
-      <th>Condition1_PosA</th>
-      <th>Condition1_PosN</th>
-      <th>Condition1_RRAe</th>
-      <th>Condition1_RRAn</th>
-      <th>Condition1_RRNe</th>
-      <th>Condition1_RRNn</th>
+      <th>Exterior2nd_Plywood</th>
+      <th>Exterior2nd_Stone</th>
+      <th>Exterior2nd_Stucco</th>
+      <th>Exterior2nd_VinylSd</th>
+      <th>Exterior2nd_Wd Sdng</th>
+      <th>Exterior2nd_Wd Shng</th>
+      <th>LotShape_IR1</th>
+      <th>LotShape_IR2</th>
+      <th>LotShape_IR3</th>
+      <th>LotShape_Reg</th>
     </tr>
   </thead>
   <tbody>
@@ -2073,7 +2108,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2097,7 +2132,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2118,10 +2153,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2141,11 +2176,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2166,11 +2201,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -2218,16 +2253,16 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <th>MasVnrArea</th>
       <th>BsmtFinSF1</th>
       <th>...</th>
-      <th>RoofStyle_Shed</th>
-      <th>Condition1_Artery</th>
-      <th>Condition1_Feedr</th>
-      <th>Condition1_Norm</th>
-      <th>Condition1_PosA</th>
-      <th>Condition1_PosN</th>
-      <th>Condition1_RRAe</th>
-      <th>Condition1_RRAn</th>
-      <th>Condition1_RRNe</th>
-      <th>Condition1_RRNn</th>
+      <th>Exterior2nd_Plywood</th>
+      <th>Exterior2nd_Stone</th>
+      <th>Exterior2nd_Stucco</th>
+      <th>Exterior2nd_VinylSd</th>
+      <th>Exterior2nd_Wd Sdng</th>
+      <th>Exterior2nd_Wd Shng</th>
+      <th>LotShape_IR1</th>
+      <th>LotShape_IR2</th>
+      <th>LotShape_IR3</th>
+      <th>LotShape_Reg</th>
     </tr>
   </thead>
   <tbody>
@@ -2250,7 +2285,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2270,7 +2305,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -2278,6 +2312,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1304</th>
@@ -2301,7 +2336,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1372</th>
@@ -2325,7 +2360,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1427</th>
@@ -2341,15 +2376,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       <td>0.301838</td>
       <td>...</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -2448,7 +2483,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c447d1084794449bddc9ba41694bb4ded06814a028230ae9251f696795e54c1d.png" src="../../_images/c447d1084794449bddc9ba41694bb4ded06814a028230ae9251f696795e54c1d.png" />
+<img alt="../../_images/7df2b4b1f9c0840c3321048ab166e12dd0b22c263a653e2c9a7f5ee8fa5abb48.png" src="../../_images/7df2b4b1f9c0840c3321048ab166e12dd0b22c263a653e2c9a7f5ee8fa5abb48.png" />
 </div>
 </div>
 <p>Could you create some visualizations such that it makes</p>
@@ -2480,7 +2515,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9b70085fa5042f797cb95175ede9c6d02df8dabbee89c9a4d45f9c8552d78baf.png" src="../../_images/9b70085fa5042f797cb95175ede9c6d02df8dabbee89c9a4d45f9c8552d78baf.png" />
+<img alt="../../_images/e86072e4b1035cc8ce22f963e7f3646215db47262361f3c52cff401ba7dea6f9.png" src="../../_images/e86072e4b1035cc8ce22f963e7f3646215db47262361f3c52cff401ba7dea6f9.png" />
 </div>
 </div>
 </section>
@@ -2498,7 +2533,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/95483ca185a1f31660e4a6914743efe31c0f6da101468aeb8fd341cd888ee72d.png" src="../../_images/95483ca185a1f31660e4a6914743efe31c0f6da101468aeb8fd341cd888ee72d.png" />
+<img alt="../../_images/d843ed70803b0d659114a83ae580870cf06aac3f6a54d64efd22afbbf79493d6.png" src="../../_images/d843ed70803b0d659114a83ae580870cf06aac3f6a54d64efd22afbbf79493d6.png" />
 </div>
 </div>
 </section>
@@ -2526,7 +2561,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/55a5a22f4a9dafe058e59b315cfd4aafdbcf20d1a2e57b1b5bdbdd00b3f18356.png" src="../../_images/55a5a22f4a9dafe058e59b315cfd4aafdbcf20d1a2e57b1b5bdbdd00b3f18356.png" />
+<img alt="../../_images/38a81584800d80146e7aca5ec411c8d5df10bb490f912723f28ff4a5ee6ec44c.png" src="../../_images/38a81584800d80146e7aca5ec411c8d5df10bb490f912723f28ff4a5ee6ec44c.png" />
 </div>
 </div>
 </section>
@@ -2642,8 +2677,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-22-1">(iClicker) Exercise 22.1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
@@ -2655,6 +2688,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-explaining-gridsearchcv-15-min">Activity: explaining <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> (15 min)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-1">Explanation 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-2">Explanation 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-introduction-to-grid-search">An introduction to Grid Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-grid-search">What is grid search?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-i-use-it">Why should I use it?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-it-work">How does it work?</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-questions">Discussion questions:</a></li>
 </ul>
 </li>
@@ -2669,14 +2708,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-and-decision-making-5-min">ML and decision-making (5 min)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decisions-involve-a-few-key-pieces">Decisions involve a few key pieces</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-and-predict-proba-20-min">Confidence and <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> (20 min)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-mean-for-us-when-we-re-trying-to-make-claims-about-our-data">What does this mean for us, when we’re trying to make claims about our data?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-have-to-do-with-applied-ml">What does this have to do with applied ML?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preferences-in-logisticregression">Preferences in <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-be-the-loss-activity-4-mins">What should be the loss? (Activity: 4 mins)</a></li>
