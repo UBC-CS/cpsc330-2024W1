@@ -1,0 +1,1268 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Final exam review guiding questions &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/notes/final-exam-review-guiding-question';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix A: Demo of feature engineering for text data" href="appendixA_feature-engineering-text-data.html" />
+    <link rel="prev" title="Lecture 24: Deployment and conclusion" href="24_deployment-conclusion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+    <img src="../../_static/UBC-CS-logo.png" class="logo__image only-dark pst-js-only" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    UBC CPSC 330: Applied Machine Learning (2024W1)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Things you should know</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/README.html">CPSC 330 Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-objectives.html">Course Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_ensembles.html">Lecture 12: Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_feat-importances.html">Lecture 13: Feature importances and model transparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_feature-engineering-selection.html">Lecture 14: Feature engineering and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_K-Means.html">Lecture 15: K-Means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_DBSCAN-hierarchical.html">Lecture 16: More Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_recommender-systems.html">Lecture 17: Recommender Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_natural-language-processing.html">Lecture 18: Introduction to natural language processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_intro_to_computer-vision.html">Lecture 19: Multi-class classification and introduction to computer vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_time-series.html">Lecture 20: Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_survival-analysis.html">Lecture 21: Survival analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_communication.html">Lecture 22: Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24_deployment-conclusion.html">Lecture 24: Deployment and conclusion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Final exam review guiding questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixA_feature-engineering-text-data.html">Appendix A: Demo of feature engineering for text data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixB_multiclass-strategies.html">Appendix B: Multi-class, meta-strategies</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../101-Giulia-lectures/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-18">Lecture 18</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-01.html">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-02.html">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-03.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-04.html">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-05.html">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-06.html">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-07.html">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-08.html">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-09.html">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-10.html">Lecture 10</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-11.html">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-12.html">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-13.html">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-14.html">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-15.html">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-16.html">Lecture 16</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-17.html">Lecture 17</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-18.html">Lecture 18</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-19.html">Lecture 19</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-20.html">Lecture 20</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-21.html">Lecture 21</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-06">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-07">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-08">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-09">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-11">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-12">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-13">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-14">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-15">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-16">Lecture 16</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-18">Lecture 18</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-19">Lecture 19</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-20">Lecture 20</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">LICENSE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/UBC-CS/cpsc330-2024W1" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/notes/final-exam-review-guiding-question.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Final exam review guiding questions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-tips">Study tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-fundamentals">ML fundamentals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-cons-parameters-and-hyperparameters-of-different-ml-models">Pros, cons, parameters and hyperparameters of different ML models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-optimization">Hyperparameter optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-metrics">Evaluation metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles">Ensembles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importances">Feature importances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-engineering-and-selection">Feature engineering and selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommender-systems">Recommender systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-nlp">Introduction to NLP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiclass-classification-and-computer-vision">Multiclass classification and computer vision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#survival-analysis">Survival analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics">Ethics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="final-exam-review-guiding-questions">
+<h1>Final exam review guiding questions<a class="headerlink" href="#final-exam-review-guiding-questions" title="Link to this heading">#</a></h1>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">npr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">OrdinalEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;data/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="study-tips">
+<h2>Study tips<a class="headerlink" href="#study-tips" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Review the course learning objectives, found at the start of the lecture notes, to clarify expectations. The overall course objectives are available <a class="reference external" href="https://ubc-cs.github.io/cpsc330-2024W1/learning-objectives.html">here</a>. Consider creating a checklist for each objective and rate your confidence in performing each task.</p></li>
+<li><p>Focus on understanding not just <strong>how</strong> to do something, but also <strong>why</strong> it’s done that way. This will prepare you for exam questions requiring novel applications of concepts.</p></li>
+<li><p>If reasoning questions are challenging, try explaining concepts out loud. Articulating your thoughts often highlights gaps in understanding.</p></li>
+<li><p>Revisit homework assignments thoroughly. Review the problems, your solutions, and any feedback to deepen your understanding.</p></li>
+<li><p>Use active recall techniques like flashcards, summary sheets, or teaching concepts to peers to test your memory and comprehension.</p></li>
+<li><p>Develop a strong grasp of core machine learning concepts. For each, know the definition, application, and implications in real-world contexts.</p></li>
+<li><p>Review case studies and examples from the course to see how theoretical concepts are applied in practice.</p></li>
+<li><p>Take advantage of office hours, tutorials, and other available resources.</p></li>
+<li><p>Create a study schedule that prioritizes topics where you feel less confident.</p></li>
+<li><p>Study in focused intervals (e.g., 25 minutes of work followed by a 5-minute break) to maintain concentration.</p></li>
+<li><p>Begin each study session with a minute or two of focused breathing to calm your mind and improve focus.</p></li>
+<li><p>Join or form study groups to discuss material and exchange ideas. Teaching others is one of the most effective ways to solidify your understanding.</p></li>
+</ul>
+</section>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What is ML? When is it suitable?</p></li>
+<li><p>ML terminology</p></li>
+<li><p>ML types</p></li>
+</ul>
+</section>
+<section id="ml-fundamentals">
+<h3>ML fundamentals<a class="headerlink" href="#ml-fundamentals" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What are four splits of data we have seen so far?</p></li>
+<li><p>What are the advantages of cross-validation?</p></li>
+<li><p>Why it’s important to look at sub-scores of cross-validation?</p></li>
+<li><p>What is the fundamental trade-off in supervised machine learning?</p></li>
+<li><p>What is the Golden rule in supervised machine learning?</p></li>
+</ul>
+</section>
+<section id="pros-cons-parameters-and-hyperparameters-of-different-ml-models">
+<h3>Pros, cons, parameters and hyperparameters of different ML models<a class="headerlink" href="#pros-cons-parameters-and-hyperparameters-of-different-ml-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Decision trees</p></li>
+<li><p>KNNs, SVM RBFs</p></li>
+<li><p>Linear models</p></li>
+<li><p>Random forests</p></li>
+<li><p>Grading Boosyinh, LGBM, CatBoost</p></li>
+<li><p>Stacking, averaging</p></li>
+</ul>
+</section>
+<section id="preprocessing">
+<h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What are various data preprocessing steps such as scaling, OHE, ordinal encoding, and handling missing values. Why and when each step is necessary?</p></li>
+</ul>
+<p>Let’s bring back our quiz2 grades toy dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s1">&#39;quiz2-grade-toy-col-transformer.csv&#39;</span><span class="p">)</span>
+<span class="n">grades_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>enjoy_course</th>
+      <th>ml_experience</th>
+      <th>major</th>
+      <th>class_attendance</th>
+      <th>university_years</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yes</td>
+      <td>1</td>
+      <td>Computer Science</td>
+      <td>Excellent</td>
+      <td>3</td>
+      <td>92</td>
+      <td>93.0</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>yes</td>
+      <td>1</td>
+      <td>Mechanical Engineering</td>
+      <td>Average</td>
+      <td>2</td>
+      <td>94</td>
+      <td>90.0</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>yes</td>
+      <td>0</td>
+      <td>Mathematics</td>
+      <td>Poor</td>
+      <td>3</td>
+      <td>78</td>
+      <td>85.0</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>no</td>
+      <td>0</td>
+      <td>Mathematics</td>
+      <td>Excellent</td>
+      <td>3</td>
+      <td>91</td>
+      <td>NaN</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>yes</td>
+      <td>0</td>
+      <td>Psychology</td>
+      <td>Good</td>
+      <td>4</td>
+      <td>77</td>
+      <td>83.0</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">grades_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;quiz2&#39;</span><span class="p">]),</span> <span class="n">grades_df</span><span class="p">[</span><span class="s1">&#39;quiz2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_feats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;university_years&quot;</span><span class="p">,</span> <span class="s2">&quot;lab1&quot;</span><span class="p">,</span> <span class="s2">&quot;lab3&quot;</span><span class="p">,</span> <span class="s2">&quot;lab4&quot;</span><span class="p">,</span> <span class="s2">&quot;quiz1&quot;</span><span class="p">]</span>  <span class="c1"># apply scaling</span>
+<span class="n">categorical_feats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;major&quot;</span><span class="p">]</span>  <span class="c1"># apply one-hot encoding</span>
+<span class="n">passthrough_feats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ml_experience&quot;</span><span class="p">]</span>  <span class="c1"># do not apply any transformation</span>
+<span class="n">drop_feats</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;lab2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;class_attendance&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;enjoy_course&quot;</span><span class="p">,</span>
+<span class="p">]</span>  <span class="c1"># do not include these features in modeling</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>What’s the difference between sklearn estimators and transformers?</p></li>
+<li><p>Can you think of a better way to impute missing values compared to <code class="docutils literal notranslate"><span class="pre">SimpleImputer</span></code>?</p></li>
+</ul>
+<p><strong>One-hot encoding</strong></p>
+<ul class="simple">
+<li><p>What’s the purpose of the following arguments of one-hot encoding?</p>
+<ul>
+<li><p>handle_unknown=”ignore”</p></li>
+<li><p>sparse=False</p></li>
+<li><p>drop=”if_binary”</p></li>
+</ul>
+</li>
+<li><p>How do you deal with categorical features with only two possible categories?</p></li>
+</ul>
+<p><strong>Ordinal encoding</strong></p>
+<ul class="simple">
+<li><p>What’s the difference between ordinal encoding and one-hot encoding?</p></li>
+<li><p>What happens if we do not order the categories when we apply ordinal encoding?  Does it matter if we order the categories in ascending or descending order?</p></li>
+<li><p>What would happen if an unknown category shows up during validation or test time during ordinal encoding? For example, for <code class="docutils literal notranslate"><span class="pre">class_attendance</span></code> feature what if a category called “super poor” shows up?</p></li>
+</ul>
+<p><br><br><br><br></p>
+<p><strong>OHE vs. ordinal encoding</strong></p>
+<ul class="simple">
+<li><p>Since <code class="docutils literal notranslate"><span class="pre">enjoy_course</span></code> feature is binary you decide to apply one-hot encoding with <code class="docutils literal notranslate"><span class="pre">drop=&quot;if_binary&quot;</span></code>. Your friend decide to apply ordinal encoding on it. Will it make any difference in the transformed data?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ohe</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="s2">&quot;if_binary&quot;</span><span class="p">,</span> <span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ohe_encoded</span> <span class="o">=</span> <span class="n">ohe</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">grades_df</span><span class="p">[[</span><span class="s1">&#39;enjoy_course&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oe</span> <span class="o">=</span> <span class="n">OrdinalEncoder</span><span class="p">()</span>
+<span class="n">oe_encoded</span> <span class="o">=</span> <span class="n">oe</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">grades_df</span><span class="p">[[</span><span class="s1">&#39;enjoy_course&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;oe_encoded&quot;</span><span class="p">:</span> <span class="n">oe_encoded</span><span class="p">,</span> 
+         <span class="s2">&quot;ohe_encoded&quot;</span><span class="p">:</span> <span class="n">ohe_encoded</span><span class="p">}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>oe_encoded</th>
+      <th>ohe_encoded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>In what scenarios it’s OK to break the golden rule?</p></li>
+<li><p>What are possible ways to deal with categorical columns with large number of categories?</p></li>
+<li><p>In what scenarios you’ll not include a feature in your model even if it’s a good predictor?</p></li>
+</ul>
+<ul class="simple">
+<li><p>What’s the problem with calling <code class="docutils literal notranslate"><span class="pre">fit_transform</span></code> on the test data in the context of <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code>?</p></li>
+<li><p>Do we need to scale after applying bag-of-words representation?</p></li>
+</ul>
+</section>
+<section id="hyperparameter-optimization">
+<h3>Hyperparameter optimization<a class="headerlink" href="#hyperparameter-optimization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What makes hyperparameter optimization a hard problem?</p></li>
+<li><p>What are two different tools provided by sklearn for hyperparameter optimization?</p></li>
+<li><p>What is optimization bias?</p></li>
+</ul>
+</section>
+<section id="evaluation-metrics">
+<h3>Evaluation metrics<a class="headerlink" href="#evaluation-metrics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Understand different metrics used to evaluate machine learning models like accuracy, precision, recall, F1-score, and PR curve, ROC curves for classification; mean squared error, root mean-squared error, MAPE and r2 for regression. Be prepared to discuss why you would choose one metric over another based on the problem context.</p></li>
+<li><p>Why accuracy is not always enough?</p></li>
+<li><p>Why it’s useful to get prediction probabilities?</p></li>
+<li><p>In what scenarios do you care more about precision or recall?</p></li>
+<li><p>What’s the main difference between AP score and F1 score?</p></li>
+<li><p>What are advantages of RMSE or MAPE over MSE?</p></li>
+</ul>
+</section>
+<section id="ensembles">
+<h3>Ensembles<a class="headerlink" href="#ensembles" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>How does a random forest model inject randomness in the model?</p></li>
+<li><p>What’s the difference between random forests and gradient boosted trees?</p></li>
+<li><p>Why do we need averaging or stacking?</p></li>
+<li><p>What are the benefits of stacking over averaging?</p></li>
+</ul>
+</section>
+<section id="feature-importances">
+<h3>Feature importances<a class="headerlink" href="#feature-importances" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What are the limitations of looking at simple correlations between features and targets?</p></li>
+<li><p>How can you get feature importances or non-linear models?</p></li>
+<li><p>What you might need to explain a single prediction?</p></li>
+</ul>
+</section>
+<section id="feature-engineering-and-selection">
+<h3>Feature engineering and selection<a class="headerlink" href="#feature-engineering-and-selection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What’s the difference between feature engineering and feature selection?</p></li>
+<li><p>Why do we need feature selection?</p></li>
+<li><p>What are the three possible ways we looked at for feature selection?</p></li>
+</ul>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<section id="clustering">
+<h3>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Why clustering and what is the problem of clustering?</p></li>
+<li><p>Compare and contrast different clustering methods.</p></li>
+<li><p>What’s the difficulty in evaluation of clustering? How do we evaluate clusters?</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Which clustering method?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Well-separated spherical clusters</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Large datasets</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Flexibility with cluster shapes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Small to medium datasets</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Prior knowlege on how many clusters</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Clusters are roughly of equal size</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Irregularly shaped clusters</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Clusters with different densities</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Datasets with hierarchical relationships</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>No prior knowledge on number of clusters</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Noise and outliers</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Which clustering method would you use in each of the scenarios below? Why?</p></li>
+<li><p>How would you represent the data in each case?</p>
+<ul>
+<li><p>Scenario 1: Customer segmentation in retail</p></li>
+<li><p>Scenario 2: An environmental study aiming to identify clusters of a rare plant species</p></li>
+<li><p>Scenario 3: Clustering furniture items for inventory management and customer recommendations</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>How to decide the number of clusters?</p></li>
+<li><p>What’s the difficulty in evaluation of clustering? How do we evaluate clusters?</p></li>
+</ul>
+</section>
+<section id="recommender-systems">
+<h3>Recommender systems<a class="headerlink" href="#recommender-systems" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What’s the utility matrix?</p></li>
+<li><p>How do we evaluate recommender systems?</p></li>
+<li><p>What are the baseline models we talked about?</p>
+<ul>
+<li><p>Global average</p></li>
+<li><p>Per user average</p></li>
+<li><p>Per item average</p></li>
+</ul>
+</li>
+<li><p>Evaluation of recommender systems</p></li>
+<li><p>Compare and contrast KNN Imputer, collaborative filtering, and content-based filtering</p></li>
+<li><p>Ethical issues associated with recommender systems</p></li>
+</ul>
+</section>
+<section id="introduction-to-nlp">
+<h3>Introduction to NLP<a class="headerlink" href="#introduction-to-nlp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Embeddings</p>
+<ul>
+<li><p>What are different document and word representations we talked about?</p></li>
+<li><p>Why do we care about creating different representations?</p></li>
+<li><p>What are pre-trained models? Why are the benefits of using them?</p></li>
+</ul>
+</li>
+<li><p>Topic modeling</p>
+<ul>
+<li><p>What is topic modeling? What are the inputs and outputs of topic modeling?</p></li>
+<li><p>How it’s different from clustering documents using a clustering model, say KMeans?</p></li>
+</ul>
+</li>
+<li><p>Text Preprocessing</p></li>
+</ul>
+</section>
+<section id="multiclass-classification-and-computer-vision">
+<h3>Multiclass classification and computer vision<a class="headerlink" href="#multiclass-classification-and-computer-vision" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>How is the Softmax function used by logistic regression in the context of multiclass classification?</p></li>
+<li><p>What are the methods we saw to use pre-trained image classification models for our image classification tasks?</p>
+<ul>
+<li><p>Out of the box</p></li>
+<li><p>Using pre-trained models as feature extractors</p></li>
+</ul>
+</li>
+</ul>
+<p>How would you use pre-trained model in each case below?</p>
+<ul class="simple">
+<li><p>Imagine you want to quickly develop a prototype for an app that can identify different cat breeds from photos.</p></li>
+<li><p>Suppose you’re working on a project to predict the city in Canada based on the photos of landmarks in the city, a task for which there’s limited training data available.</p></li>
+<li><p>Suppose you’re developing a system to diagnose specific types of tumors from MRI scans.</p></li>
+</ul>
+</section>
+<section id="time-series">
+<h3>Time series<a class="headerlink" href="#time-series" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>When is time series analysis appropriate?</p>
+<ul>
+<li><p>Time series analysis is used when there is a temporal aspect in the data.</p></li>
+</ul>
+</li>
+<li><p><strong>Data splitting</strong>: Data should be split based on time to avoid future data leaking into the training set.</p></li>
+<li><p><strong>Essential questions for Exploratory Data Analysis (EDA)</strong>:</p>
+<ul>
+<li><p>What is the frequency of data collection (e.g., hourly, daily)?</p></li>
+<li><p>How many time series are present within the dataset?</p></li>
+<li><p>Are there any gaps or missing values in the data?</p></li>
+</ul>
+</li>
+<li><p><strong>Feature engineering</strong></p>
+<ul>
+<li><p>Derived new features from the date/time column.</p></li>
+<li><p>Appropriately encoded features based on the chosen model.</p></li>
+<li><p>Created lag features to incorporate past values for prediction.</p></li>
+</ul>
+</li>
+<li><p><strong>Baseline model approach</strong>: Employ a simple model, such as using today’s target value to predict tomorrow’s, as a starting point for comparison.</p></li>
+<li><p><strong>Cross-Validation Method for Time Series</strong>: In <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, use <code class="docutils literal notranslate"><span class="pre">TimeSeriesSplit</span></code> as the <code class="docutils literal notranslate"><span class="pre">cv</span></code> parameter in functions like <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> or <code class="docutils literal notranslate"><span class="pre">cross_val_score</span></code> for time-appropriate validation.</p></li>
+<li><p><strong>Strategies for long-term forecasting</strong>:</p>
+<ul>
+<li><p>Generate forecasts for sequential time steps by assuming the predictions for the previous steps are accurate.</p></li>
+</ul>
+</li>
+<li><p><strong>Trends</strong></p>
+<ul>
+<li><p>A ‘days since’ feature to capture the trend over time</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="survival-analysis">
+<h3>Survival analysis<a class="headerlink" href="#survival-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What is right-censored data?</p></li>
+<li><p>What happens when we treat right-censored data the same as “regular” data?</p>
+<ul>
+<li><p>Predicting churn vs. no churn</p></li>
+<li><p>Predicting tenure</p>
+<ul>
+<li><p>Throw away people who haven’t churned</p></li>
+<li><p>Assume everyone churns today</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Survival analysis encompasses predicting both churn and tenure and deals with censoring and can make rich and useful predictions!</p>
+<ul>
+<li><p>We can get survival curves which show the probability of survival over time.</p></li>
+<li><p>KM model <span class="math notranslate nohighlight">\(\rightarrow\)</span> doesn’t look at features</p></li>
+<li><p>CPH model <span class="math notranslate nohighlight">\(\rightarrow\)</span> like linear regression, does look at the features and provides coefficients associated with each feature</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="communication">
+<h3>Communication<a class="headerlink" href="#communication" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Why is communication important in ML and Data Science?</p></li>
+<li><p>What are different principles of good explanation?</p></li>
+<li><p>What to watch out for when producing or consuming visualizations?</p></li>
+</ul>
+</section>
+<section id="ethics">
+<h3>Ethics<a class="headerlink" href="#ethics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bias and fairness</p></li>
+</ul>
+</section>
+<section id="deployment">
+<h3>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Deploying a model as a web app</p></li>
+<li><p>Deploying a model as a REST API</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-cpsc330-py"
+        },
+        kernelOptions: {
+            name: "conda-env-cpsc330-py",
+            path: "./lectures/notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="24_deployment-conclusion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 24: Deployment and conclusion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendixA_feature-engineering-text-data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix A: Demo of feature engineering for text data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-tips">Study tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-fundamentals">ML fundamentals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-cons-parameters-and-hyperparameters-of-different-ml-models">Pros, cons, parameters and hyperparameters of different ML models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-optimization">Hyperparameter optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-metrics">Evaluation metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles">Ensembles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importances">Feature importances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-engineering-and-selection">Feature engineering and selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommender-systems">Recommender systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-nlp">Introduction to NLP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiclass-classification-and-computer-vision">Multiclass classification and computer vision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#survival-analysis">Survival analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics">Ethics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Varada Kolhatkar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
