@@ -41,7 +41,8 @@ parts:
   - file: lectures/notes/20_time-series.ipynb
   - file: lectures/notes/21_survival-analysis.ipynb  
   - file: lectures/notes/22_communication.ipynb    
-  - file: lectures/notes/24_deployment-conclusion.ipynb     
+  - file: lectures/notes/24_deployment-conclusion.ipynb
+  - file: lectures/notes/final-exam-review-guiding-question.ipynb  
   - file: lectures/notes/appendixA_feature-engineering-text-data.ipynb
   - file: lectures/notes/appendixB_multiclass-strategies.ipynb
 - caption: Section slides
