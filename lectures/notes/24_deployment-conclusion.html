@@ -1008,7 +1008,12 @@ Name: count, dtype: int64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;text&quot;:&quot;The students will be submitting their last homework assignment soon!&quot;}&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:5000/predict
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;text&quot;:&quot;The students will be submitting their last homework assignment soon!&quot;}&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:5000/predict
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;achievement&quot;
 </pre></div>
 </div>
 </div>
