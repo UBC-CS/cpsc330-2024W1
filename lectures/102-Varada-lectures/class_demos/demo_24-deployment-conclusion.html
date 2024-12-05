@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lecture 24: Class demo (Based on the lecture notes) &#8212; CPSC 330 Applied Machine Learning 2024W1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/102-Varada-lectures/class_demos/demo_24-deployment-conclusion';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/UBC-CS-logo.png" class="logo__image only-light" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+    <img src="../../../_static/UBC-CS-logo.png" class="logo__image only-dark pst-js-only" alt="CPSC 330 Applied Machine Learning 2024W1 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../README.html">
+                    UBC CPSC 330: Applied Machine Learning (2024W1)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Things you should know</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">CPSC 330 Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../learning-objectives.html">Course Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notes/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/12_ensembles.html">Lecture 12: Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/13_feat-importances.html">Lecture 13: Feature importances and model transparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/14_feature-engineering-selection.html">Lecture 14: Feature engineering and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/15_K-Means.html">Lecture 15: K-Means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/16_DBSCAN-hierarchical.html">Lecture 16: More Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/17_recommender-systems.html">Lecture 17: Recommender Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/18_natural-language-processing.html">Lecture 18: Introduction to natural language processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/19_intro_to_computer-vision.html">Lecture 19: Multi-class classification and introduction to computer vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/20_time-series.html">Lecture 20: Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/21_survival-analysis.html">Lecture 21: Survival analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/22_communication.html">Lecture 22: Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/24_deployment-conclusion.html">Lecture 24: Deployment and conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/final-exam-review-guiding-question.html">Final exam preparation: guiding questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/appendixA_feature-engineering-text-data.html">Appendix A: Demo of feature engineering for text data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/appendixB_multiclass-strategies.html">Appendix B: Multi-class, meta-strategies</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../101-Giulia-lectures/README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/01_intro.html">Lecture 1: Course Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/04_kNNs-SVM-RBF.html">Lecture 4: <span class="math notranslate nohighlight">\(k\)</span>-Nearest Neighbours and SVM RBFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/05_preprocessing-pipelines.html">Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/06_column-transformer-text-feats.html">Lecture 6: <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> and Text Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/07_linear-models.html">Lecture 7: Linear Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../101-Giulia-lectures/10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-18">Lecture 18</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-01.html">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-02.html">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-03.html">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-04.html">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-05.html">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-06.html">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-07.html">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-08.html">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-09.html">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-10.html">Lecture 10</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-11.html">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-12.html">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-13.html">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-14.html">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-15.html">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-16.html">Lecture 16</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-17.html">Lecture 17</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-18.html">Lecture 18</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-19.html">Lecture 19</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-20.html">Lecture 20</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-21.html">Lecture 21</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-01-intro">Lecture 1</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees">Lecture 2</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals">Lecture 3</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF">Lecture 4</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines">Lecture 5</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-06">Lecture 6</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-07">Lecture 7</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-08">Lecture 8</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-09">Lecture 9</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-11">Lecture 11</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-12">Lecture 12</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-13">Lecture 13</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-14">Lecture 14</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-15">Lecture 15</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-16">Lecture 16</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-18">Lecture 18</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-19">Lecture 19</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-20">Lecture 20</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Attribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../LICENSE.html">LICENSE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/UBC-CS/cpsc330-2024W1" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lectures/102-Varada-lectures/class_demos/demo_24-deployment-conclusion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 24: Class demo (Based on the lecture notes)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-deploying-moment-classification-model">Demo: Deploying moment classification model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-model">Building a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-on-the-full-corpus">Training on the full corpus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-model">Saving the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-saved-model">Loading our saved model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-setting-up-a-directory-structure-and-environment">(Optional) Setting up a directory structure and environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-deployment">Model deployment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-and-deploying-a-web-app">Building and deploying a web app</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-app-on-local-server">Web app on local server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-app-on-a-real-server">Web app on a real server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#render-set-up-i-already-did-these">Render set-up (I already did these):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-of-creating-a-new-web-service">Demo of creating a new web service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-on-the-localhost">API on the localhost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-a-request-to-the-api">Sending a request to the API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-the-api-on-a-server-not-covered">Deploying the API on a server (not covered)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-24-class-demo-based-on-the-lecture-notes">
+<h1>Lecture 24: Class demo (Based on the lecture notes)<a class="headerlink" href="#lecture-24-class-demo-based-on-the-lecture-notes" title="Link to this heading">#</a></h1>
+<p>UBC 2024-25</p>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span><span class="p">,</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">make_pipeline</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">),</span> <span class="s2">&quot;data/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br></p>
+<p><strong>Requirements</strong></p>
+<ul class="simple">
+<li><p>render account. Register <a class="reference external" href="https://render.com/">here</a>.</p></li>
+</ul>
+<p>More python installations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Flask</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">Flask</span><span class="o">-</span><span class="n">WTF</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">joblib</span>
+</pre></div>
+</div>
+</section>
+<section id="demo-deploying-moment-classification-model">
+<h2>Demo: Deploying moment classification model<a class="headerlink" href="#demo-deploying-moment-classification-model" title="Link to this heading">#</a></h2>
+<section id="building-a-model">
+<h3>Building a model<a class="headerlink" href="#building-a-model" title="Link to this heading">#</a></h3>
+<p>Recall the multi-class classification problem using the <a class="reference external" href="https://www.kaggle.com/ritresearch/happydb">HappyDB</a> corpus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;cleaned_hm.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">sample_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">sample_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">sample_df</span> <span class="o">=</span> <span class="n">sample_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cleaned_hm&quot;</span><span class="p">:</span> <span class="s2">&quot;moment&quot;</span><span class="p">,</span> <span class="s2">&quot;ground_truth_category&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">sample_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>wid</th>
+      <th>reflection_period</th>
+      <th>original_hm</th>
+      <th>moment</th>
+      <th>modified</th>
+      <th>num_sentence</th>
+      <th>target</th>
+      <th>predicted_category</th>
+    </tr>
+    <tr>
+      <th>hmid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27676</th>
+      <td>206</td>
+      <td>24h</td>
+      <td>We had a serious talk with some friends of our...</td>
+      <td>We had a serious talk with some friends of our...</td>
+      <td>True</td>
+      <td>2</td>
+      <td>bonding</td>
+      <td>bonding</td>
+    </tr>
+    <tr>
+      <th>27678</th>
+      <td>45</td>
+      <td>24h</td>
+      <td>I meditated last night.</td>
+      <td>I meditated last night.</td>
+      <td>True</td>
+      <td>1</td>
+      <td>leisure</td>
+      <td>leisure</td>
+    </tr>
+    <tr>
+      <th>27697</th>
+      <td>498</td>
+      <td>24h</td>
+      <td>My grandmother start to walk from the bed afte...</td>
+      <td>My grandmother start to walk from the bed afte...</td>
+      <td>True</td>
+      <td>1</td>
+      <td>affection</td>
+      <td>affection</td>
+    </tr>
+    <tr>
+      <th>27705</th>
+      <td>5732</td>
+      <td>24h</td>
+      <td>I picked my daughter up from the airport and w...</td>
+      <td>I picked my daughter up from the airport and w...</td>
+      <td>True</td>
+      <td>1</td>
+      <td>bonding</td>
+      <td>affection</td>
+    </tr>
+    <tr>
+      <th>27715</th>
+      <td>2272</td>
+      <td>24h</td>
+      <td>when i received flowers from my best friend</td>
+      <td>when i received flowers from my best friend</td>
+      <td>True</td>
+      <td>1</td>
+      <td>bonding</td>
+      <td>bonding</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>target
+affection           4810
+achievement         4276
+bonding             1750
+enjoy_the_moment    1514
+leisure             1306
+nature               252
+exercise             217
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s a multiclass classification problem!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">sample_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">X_train_happy</span><span class="p">,</span> <span class="n">y_train_happy</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;moment&quot;</span><span class="p">],</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
+<span class="n">X_test_happy</span><span class="p">,</span> <span class="n">y_test_happy</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;moment&quot;</span><span class="p">],</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+    <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">),</span>
+    <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_happy</span><span class="p">,</span> <span class="n">y_train_happy</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_happy</span><span class="p">,</span> <span class="n">y_train_happy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9530973451327434
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe_lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_happy</span><span class="p">,</span> <span class="n">y_test_happy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8162831858407079
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training-on-the-full-corpus">
+<h3>Training on the full corpus<a class="headerlink" href="#training-on-the-full-corpus" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ideally, you’ll try all different models, fine tune the most promising models and deploy the best performing model.</p></li>
+<li><p>Sometimes before deploying a model people train it on the full dataset.</p>
+<ul>
+<li><p>This is probably a good idea, because more data is better.</p></li>
+<li><p>It’s also a little scary, because we can’t test this new model.</p></li>
+</ul>
+</li>
+<li><p>Here I’m just deploying the model trained on the training set.</p></li>
+</ul>
+</section>
+<section id="saving-the-model">
+<h3>Saving the model<a class="headerlink" href="#saving-the-model" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If we want to deploy a model, we need to save it.</p></li>
+<li><p>We are using <code class="docutils literal notranslate"><span class="pre">joblib</span></code> for that.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">joblib</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../../web_api/moment_predictor.joblib&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../../web_application/moment_predictor.joblib&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">pipe_lr</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll define a function that accepts input data as a dictionary and returns a prediction:</p>
+</section>
+<section id="loading-our-saved-model">
+<h3>Loading our saved model<a class="headerlink" href="#loading-our-saved-model" title="Link to this heading">#</a></h3>
+<p>Let’s write a function to get predictions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">return_prediction</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">text</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">prediction</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;../../web_api/moment_predictor.joblib&quot;</span><span class="p">)</span> <span class="c1"># load the saved model</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I love my students!&quot;</span>
+<span class="n">return_prediction</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;affection&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function appears in the <code class="docutils literal notranslate"><span class="pre">app.py</span></code> that we’ll be using shortly.</p>
+</section>
+<section id="optional-setting-up-a-directory-structure-and-environment">
+<h3>(Optional) Setting up a directory structure and environment<a class="headerlink" href="#optional-setting-up-a-directory-structure-and-environment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We need a specific directory structure to help us easily deploy our machine learning model.</p></li>
+<li><p>This is already set up in this repo.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── web_api
+│   └── moment_predictor.joblib  # this is the machine learning model we have built locally
+│   └── app.py  # the file that defines our flask API
+│   └── Procfile  # required to help start flask app
+│   └── requirements.txt  # file containing required packages
+│   
+└── web_application
+    └── moment_predictor.joblib  # this is the machine learning model we have built locally
+    └── app.py  # the file that defines our flask API
+    └── Procfile  # required to help start flask app
+    └── requirements.txt  # file containing required packages
+    └── templates  # contains HTML templates to help us build the web application
+    │   └── style.css  # css template to be used in web application
+    └── static  # this subdirectory contains CSS style sheets
+        └── home.html  # html template to be used in web application
+        └── prediction.html  # html template to be used in web application
+</pre></div>
+</div>
+</section>
+<section id="model-deployment">
+<h3>Model deployment<a class="headerlink" href="#model-deployment" title="Link to this heading">#</a></h3>
+<p>We have two options for deploying our moment prediction model. We can:</p>
+<ol class="arabic simple">
+<li><p>Build a web application (app) with a HTML user-interface that interacts directly with our model.</p></li>
+<li><p>Develop a RESTful (REST stands for REpresentational State Transfer) web API that accepts HTTP requests in the form of input data and returns a prediction.</p></li>
+</ol>
+<p>We’ll explore both options below.</p>
+</section>
+<section id="building-and-deploying-a-web-app">
+<h3>Building and deploying a web app<a class="headerlink" href="#building-and-deploying-a-web-app" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>on localhost (my laptop)</p></th>
+<th class="head"><p>on server (the interwebs)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>app</p></td>
+<td><p>❓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>API</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Flask can create entire web applications.</p></li>
+<li><p>We need to link our code to some html and css to create our web application.</p></li>
+<li><p>We will use Flask to create a html form, accept data submitted to the form, and return a prediction using the submitted data.</p></li>
+<li><p>Again, I won’t go into too much detail here, but we can open up <code class="docutils literal notranslate"><span class="pre">web_application/</span></code> and take a quick look.</p></li>
+</ul>
+<ul class="simple">
+<li><p>If you want to learn more about Flask, see:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH">Flask tutorial video series by Corey Schafer</a></p></li>
+<li><p><a class="reference external" href="https://flask.palletsprojects.com/en/1.1.x/">Flask docs</a></p></li>
+<li><p><a class="reference external" href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">Flask tutorial by Miguel Grinberg</a></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Let’s try <code class="docutils literal notranslate"><span class="pre">web_application/app.py</span></code> that handles this part.</p></li>
+<li><p>We can open it up here in Jupyter and take a look.</p></li>
+<li><p>If we run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code> we’ll bring it to life.</p></li>
+</ul>
+</section>
+<section id="web-app-on-local-server">
+<h3>Web app on local server<a class="headerlink" href="#web-app-on-local-server" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Go to the terminal.</p></li>
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">web_application</span></code> directory.</p></li>
+<li><p>Run the following to make the app alive: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code>.</p>
+<ul class="simple">
+<li><p>If you get an error, you may need to install those extra packages and make sure you have the environment loaded.</p></li>
+</ul>
+</li>
+<li><p>Now you should be able to access the app at: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/</span></code> or <code class="docutils literal notranslate"><span class="pre">http://localhost:5000/</span></code>.</p></li>
+</ol>
+</section>
+<section id="web-app-on-a-real-server">
+<h3>Web app on a real server<a class="headerlink" href="#web-app-on-a-real-server" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If you want people to use your app/model, you would probably want to put it on a real server and not your laptop so that it’s live all the time.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>on localhost (my laptop)</p></th>
+<th class="head"><p>on server (the interwebs)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>app</p></td>
+<td><p>✅</p></td>
+<td><p>❓</p></td>
+</tr>
+<tr class="row-odd"><td><p>API</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>We’ll use <a class="reference external" href="https://render.com/">Render</a> for this.</p></li>
+</ul>
+</section>
+<section id="render-set-up-i-already-did-these">
+<h3>Render set-up (I already did these):<a class="headerlink" href="#render-set-up-i-already-did-these" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://dashboard.render.com/">render</a>, log-in</p></li>
+<li><p>Click on “New” and create a web service.</p></li>
+</ol>
+<p><img alt="" src="../../../_images/render-new-app.png" /></p>
+<!-- <img src="img/render-new-app.png" width="600"> --></section>
+<section id="demo-of-creating-a-new-web-service">
+<h3>Demo of creating a new web service<a class="headerlink" href="#demo-of-creating-a-new-web-service" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create an associated GitHub repository.</p></li>
+<li><p>I’ve put the contents from <code class="docutils literal notranslate"><span class="pre">web_application</span></code> folder <a class="reference external" href="https://github.com/kvarada/ml-deployment-example">in this repository</a>.</p></li>
+<li><p>Then you connect that repository to your new web service in render.</p></li>
+</ul>
+<p><img alt="" src="../../../_images/github-to-render.png" /></p>
+<ul class="simple">
+<li><p>Once you fill in all the information, it’ll create an environment for you using <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code> and if everything goes well, your web service will be live.</p></li>
+<li><p>You’ll see a link at the top which you can share with your friends.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Try it out for your own machine learning applications!</p></li>
+<li><p>This is nice! If you develop a model and you want your friends to try it out without installing anything on their local computers, you can do this.</p></li>
+</ul>
+</section>
+<section id="api-on-the-localhost">
+<h3>API on the localhost<a class="headerlink" href="#api-on-the-localhost" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Often you want other people to be able to use your models in their applications.</p></li>
+<li><p>We can do this by creating an <strong>API</strong>.</p></li>
+<li><p>If you don’t know what an API is, that’s OK.</p>
+<ul>
+<li><p>For our purposes, it’s something that exists at a particular address, that can accept information and return information.</p></li>
+<li><p>Sort of like a function but not Python-specific and potentially accessible by anyone on the internet.</p></li>
+</ul>
+</li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>on localhost (my laptop)</p></th>
+<th class="head"><p>on server (the interwebs)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>app</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>API</p></td>
+<td><p>❓</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Go to the terminal.</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">web_api</span></code> folder in this repo.</p></li>
+<li><p>Run the following to make the api alive: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code></p></li>
+</ul>
+<p>(Note that for more complex applications, you may choose to containerize everything in a Docker container to deploy to render).</p>
+</section>
+<section id="sending-a-request-to-the-api">
+<h3>Sending a request to the API<a class="headerlink" href="#sending-a-request-to-the-api" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We have a RESTful (REST stands for REpresentational State Transfer) web API that accepts HTTP requests in the form of input data and returns a prediction.</p></li>
+<li><p>Now you can send requests to the API and get predictions.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;text&quot;:&quot;The students will be submitting their last homework assignment soon!&quot;}&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:5000/predict
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;achievement&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">curl</span></code> (stands for client URL) is a tool for transferring data using various network protocols.</p></li>
+</ul>
+<p>Here’s what each part does in the command:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> allows you to send a POST request with the specified data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'{&quot;text&quot;:&quot;The</span> <span class="pre">students</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">submitting</span> <span class="pre">their</span> <span class="pre">last</span> <span class="pre">homework</span> <span class="pre">assignment</span> <span class="pre">soon!&quot;}'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> the JSON data you’re sending.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-H</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> specifies a custom header, in this case, Content-Type: application/json to tell the server you’re sending JSON.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-X</span> <span class="pre">POST</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> explicitly sets the HTTP method to POST.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http://localhost:5000/predict</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> the URL where you’re sending the request.</p></li>
+</ul>
+<p>Make sure you have <code class="docutils literal notranslate"><span class="pre">app.py</span></code> running at port 5000 when you execute the curl command.</p>
+<p>Okay, so we have a working API running on localhost, but we don’t want to host this service on my laptop!</p>
+</section>
+<section id="deploying-the-api-on-a-server-not-covered">
+<h3>Deploying the API on a server (not covered)<a class="headerlink" href="#deploying-the-api-on-a-server-not-covered" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We now want to deploy it on a “real” server so others can send it requests.</p></li>
+<li><p>You could use services such as AWS for this</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>on localhost (my laptop)</p></th>
+<th class="head"><p>on server (the interwebs)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>app</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>API</p></td>
+<td><p>✅</p></td>
+<td><p>❓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">render</span></code> for this. Follow the instructions <a class="reference external" href="https://render.com/docs/api">here</a> to try the API on server.</p>
+</section>
+<section id="discussion">
+<h3>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>There are many ways to deploy a model; a RESTful API is very common and convenient.</p></li>
+<li><p>As you can see, a simple deployment is fairly straight forward.</p></li>
+<li><p>However, there may be other considerations such as:</p>
+<ul>
+<li><p>Privacy/security</p></li>
+<li><p>Scaling to large number of requests</p></li>
+<li><p>Error handling</p></li>
+<li><p>Real-time / speed</p></li>
+<li><p>Low-resource environments</p></li>
+<li><p>etc.</p></li>
+</ul>
+</li>
+</ul>
+<p><br><br><br><br></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "cpsc330"
+        },
+        kernelOptions: {
+            name: "cpsc330",
+            path: "./lectures/102-Varada-lectures/class_demos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'cpsc330'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-deploying-moment-classification-model">Demo: Deploying moment classification model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-model">Building a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-on-the-full-corpus">Training on the full corpus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-model">Saving the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-saved-model">Loading our saved model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-setting-up-a-directory-structure-and-environment">(Optional) Setting up a directory structure and environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-deployment">Model deployment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-and-deploying-a-web-app">Building and deploying a web app</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-app-on-local-server">Web app on local server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-app-on-a-real-server">Web app on a real server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#render-set-up-i-already-did-these">Render set-up (I already did these):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-of-creating-a-new-web-service">Demo of creating a new web service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-on-the-localhost">API on the localhost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-a-request-to-the-api">Sending a request to the API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-the-api-on-a-server-not-covered">Deploying the API on a server (not covered)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Varada Kolhatkar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
