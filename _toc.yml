@@ -160,8 +160,8 @@ parts:
       #   title: Lecture 22
       # - url: "https://firasm.github.io/cpsc330-slides/slides-23"
       #   title: Lecture 23
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-24"
-      #   title: Lecture 24
+      - url: "https://firasm.github.io/cpsc330-slides/slides-24"
+        title: Lecture 24
 - caption: Attribution
   chapters: 
   - file: attribution
