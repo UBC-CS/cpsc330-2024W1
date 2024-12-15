@@ -72,7 +72,7 @@ parts:
       - file: lectures/101-Giulia-lectures/20_time-series
       - file: lectures/101-Giulia-lectures/21_survival-analysis
       - file: lectures/101-Giulia-lectures/22_communication
-      - file: lectures/103-Firas-lectures/lec23
+      - file: lectures/101-Giulia-lectures/lec23
         title: Lecture 23
   - file: lectures/102-Varada-lectures/README
     sections:
@@ -112,7 +112,6 @@ parts:
         title: Lecture 17
       - file: lectures/102-Varada-lectures/lec18
         title: Lecture 18
-
       - file: lectures/102-Varada-lectures/lec19
         title: Lecture 19
       - file: lectures/102-Varada-lectures/lec20
@@ -121,7 +120,7 @@ parts:
         title: Lecture 21
       - file: lectures/102-Varada-lectures/lec22
         title: Lecture 22
-      - file: lectures/103-Firas-lectures/lec23
+      - file: lectures/102-Varada-lectures/lec23
         title: Lecture 23
       - file: lectures/102-Varada-lectures/lec24
         title: Lecture 24
