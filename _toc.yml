@@ -72,7 +72,7 @@ parts:
       - file: lectures/101-Giulia-lectures/20_time-series
       - file: lectures/101-Giulia-lectures/21_survival-analysis
       - file: lectures/101-Giulia-lectures/22_communication
-      - file: lectures/103-Firas-lectures/lec23
+      - file: lectures/103-Giulia-lectures/lec23
         title: Lecture 23
   - file: lectures/102-Varada-lectures/README
     sections:
@@ -120,7 +120,7 @@ parts:
         title: Lecture 21                        
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-22.html"
         title: Lecture 22                        
-      - file: lectures/103-Firas-lectures/lec23
+      - file: lectures/102-Varada-lectures/lec23
         title: Lecture 23
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-24.html"
         title: Lecture 24                                
