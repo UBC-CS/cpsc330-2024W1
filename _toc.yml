@@ -59,11 +59,21 @@ parts:
       - file: lectures/101-Giulia-lectures/08_hyperparameter-optimization.ipynb
       - file: lectures/101-Giulia-lectures/09_classification-metrics.ipynb
       - file: lectures/101-Giulia-lectures/10_regression-metrics.ipynb
+      - file: lectures/101-Giulia-lectures/12_ensembles.ipynb
+      - file: lectures/101-Giulia-lectures/13_feat-importances
+      - file: lectures/101-Giulia-lectures/14_feature-engineering-selection
+      - file: lectures/101-Giulia-lectures/15_K-Means
+      - file: lectures/101-Giulia-lectures/16_DBSCAN-hierarchical
       - url: "https://firasm.github.io/cpsc330-slides/slides-17"
         title: Lecture 17
       - url: "https://firasm.github.io/cpsc330-slides/slides-18"
         title: Lecture 18
-
+      - file: lectures/101-Giulia-lectures/19_intro_to_computer-vision
+      - file: lectures/101-Giulia-lectures/20_time-series
+      - file: lectures/101-Giulia-lectures/21_survival-analysis
+      - file: lectures/101-Giulia-lectures/22_communication
+      - file: lectures/103-Firas-lectures/lec23
+        title: Lecture 23
   - file: lectures/102-Varada-lectures/README
     sections:
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-01.html"
@@ -108,12 +118,12 @@ parts:
         title: Lecture 20                        
       - url: "https://kvarada.github.io/cpsc330-slides/lecture-21.html"
         title: Lecture 21                        
-    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-22.html"
-    #   title: Lecture 22                        
-    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-23.html"
-    #   title: Lecture 23                        
-    # - url: "https://kvarada.github.io/cpsc330-slides/lecture-24.html"
-    #   title: Lecture 24                                
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-22.html"
+        title: Lecture 22                        
+      - file: lectures/103-Firas-lectures/lec23
+        title: Lecture 23
+      - url: "https://kvarada.github.io/cpsc330-slides/lecture-24.html"
+        title: Lecture 24                                
   - file: lectures/103-Firas-lectures/README
     sections:
       - url: "https://firasm.github.io/cpsc330-slides/slides-01-intro"
@@ -154,12 +164,12 @@ parts:
         title: Lecture 19
       - url: "https://firasm.github.io/cpsc330-slides/slides-20"
         title: Lecture 20
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-21"
-      #   title: Lecture 21
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-22"
-      #   title: Lecture 22
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-23"
-      #   title: Lecture 23
+      - url: "https://firasm.github.io/cpsc330-slides/slides-21"
+        title: Lecture 21
+      - file: lectures/103-Firas-lectures/lec22
+        title: Lecture 22
+      - file: lectures/103-Firas-lectures/lec23
+        title: Lecture 23
       - url: "https://firasm.github.io/cpsc330-slides/slides-24"
         title: Lecture 24
 - caption: Attribution
