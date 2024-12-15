@@ -6,7 +6,7 @@ This is the course homepage for CPSC 330: Applied Machine Learning at the Univer
 
 ## The teaching team  
 ### Instructors
-- [Giulia Toti](gtoti@cs.ubc.ca) (Section 101: Tue Thu 3:30 to 4:50)
+- [Giulia Toti](gtoti@cs.ubc.ca) (Section 101: Tue Thu 3:30 to 4:50) (Office Hours, Mon's ICCS 231, 2:00-3:15pm)
 - [Varada Kolhatkar](kvarada@cs.ubc.ca) (Section 102: Tue Thu 11:00 to 12:20)
 - [Firas Moosvi](firas.moosvi@ubc.ca) (Section 103: Tue Thu 5:00 to 6:20) (Office Hours, Wed's ICCS 253, 12:30-1:30pm)
 
@@ -68,8 +68,8 @@ Usually the homework assignments will be due on Mondays (except next week) and w
 | hw6            | ~~November 04~~ Nov 6th, 11:59 pm | [GitHub repo](https://github.com/new?template_name=hw6&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | **Midterm 2**  | Nov 14 and Nov 15     | PrairieLearn (CBTF, in person)                                                     | PrairieLearn (CBTF, in person)                        |
 | hw7            | November 18, 11:59 pm | [GitHub repo](https://github.com/new?template_name=hw7&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| hw8            | November 25, 11:59 pm | GitHub repo[](https://github.com/new?template_name=hw8&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
-| hw9            | December 05, 11:59 pm | GitHub repo[](https://github.com/new?template_name=hw9&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw8            | November 25, 11:59 pm | [GitHub repo](https://github.com/new?template_name=hw8&template_owner=ubc-cpsc330)  | [Gradescope](https://www.gradescope.ca/courses/18608) |
+| hw9            | December 05, 11:59 pm | [GitHub repo](https://github.com/new?template_name=hw9&template_owner=ubc-cpsc330) | [Gradescope](https://www.gradescope.ca/courses/18608) |
 | **Final exam** | TBA                   | PrairieLearn (CBTF, in person)                                                           | PrairieLearn (CBTF, in person)                              |
 
 ## Lecture schedule (tentative)

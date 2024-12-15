@@ -37,7 +37,14 @@ parts:
   - file: lectures/notes/16_DBSCAN-hierarchical.ipynb  
   - file: lectures/notes/17_recommender-systems.ipynb
   - file: lectures/notes/18_natural-language-processing.ipynb
+  - file: lectures/notes/19_intro_to_computer-vision.ipynb
+  - file: lectures/notes/20_time-series.ipynb
+  - file: lectures/notes/21_survival-analysis.ipynb  
+  - file: lectures/notes/22_communication.ipynb    
+  - file: lectures/notes/24_deployment-conclusion.ipynb
+  - file: lectures/notes/final-exam-review-guiding-question.ipynb  
   - file: lectures/notes/appendixA_feature-engineering-text-data.ipynb
+  - file: lectures/notes/appendixB_multiclass-strategies.ipynb
 - caption: Section slides
   chapters:
   - file: lectures/101-Giulia-lectures/README
@@ -61,7 +68,12 @@ parts:
         title: Lecture 17
       - file: lectures/101-Firas-lectures/lec18
         title: Lecture 18
-
+      - file: lectures/101-Giulia-lectures/19_intro_to_computer-vision
+      - file: lectures/101-Giulia-lectures/20_time-series
+      - file: lectures/101-Giulia-lectures/21_survival-analysis
+      - file: lectures/101-Giulia-lectures/22_communication
+      - file: lectures/103-Firas-lectures/lec23
+        title: Lecture 23
   - file: lectures/102-Varada-lectures/README
     sections:
       - file: lectures/102-Varada-lectures/lec1
@@ -137,18 +149,18 @@ parts:
         title: Lecture 17
       - file: lectures/103-Firas-lectures/lec18
         title: Lecture 18
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-19"
-      #   title: Lecture 19
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-20"
-      #   title: Lecture 20
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-21"
-      #   title: Lecture 21
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-22"
-      #   title: Lecture 22
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-23"
-      #   title: Lecture 23
-      # - url: "https://firasm.github.io/cpsc330-slides/slides-24"
-      #   title: Lecture 24
+      - url: "https://firasm.github.io/cpsc330-slides/slides-19"
+        title: Lecture 19
+      - url: "https://firasm.github.io/cpsc330-slides/slides-20"
+        title: Lecture 20
+      - url: "https://firasm.github.io/cpsc330-slides/slides-21"
+        title: Lecture 21
+      - file: lectures/103-Firas-lectures/lec22
+        title: Lecture 22
+      - file: lectures/103-Firas-lectures/lec23
+        title: Lecture 23
+      - url: "https://firasm.github.io/cpsc330-slides/slides-24"
+        title: Lecture 24
 - caption: Attribution
   chapters: 
   - file: attribution
