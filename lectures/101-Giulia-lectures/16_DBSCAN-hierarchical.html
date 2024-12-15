@@ -67,6 +67,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 19: Multi-class classification and introduction to computer vision" href="19_intro_to_computer-vision.html" />
+    <link rel="prev" title="Lecture 15: K-Means Clustering" href="15_K-Means.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +119,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -207,8 +207,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/appendixB_multiclass-strategies.html">Appendix B: Multi-class, meta-strategies</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section slides</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Section 101</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Section 101</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_intro.html">Lecture 1: Course Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_terminology-decision-trees.html">Lecture 2: Terminology, Baselines, Decision Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_ml-fundamentals.html">Lecture 3: Machine Learning Fundamentals</a></li>
@@ -219,8 +219,17 @@
 <li class="toctree-l2"><a class="reference internal" href="08_hyperparameter-optimization.html">Lecture 8: Hyperparameter Optimization and Optimization Bias</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09_classification-metrics.html">Lecture 9: Classification metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_regression-metrics.html">Lecture 10: Regression metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_ensembles.html">Lecture 12: Ensembles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_feat-importances.html">Lecture 13: Feature importances and model transparency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_feature-engineering-selection.html">Lecture 14: Feature engineering and feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_K-Means.html">Lecture 15: K-Means Clustering</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 16: More Clustering</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-17">Lecture 17</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-18">Lecture 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_intro_to_computer-vision.html">Lecture 19: Multi-class classification and introduction to computer vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20_time-series.html">Lecture 20: Time series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_survival-analysis.html">Lecture 21: Survival analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_communication.html">Lecture 22: Communication</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../102-Varada-lectures/README.html">Section 102</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -245,6 +254,9 @@
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-19.html">Lecture 19</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-20.html">Lecture 20</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-21.html">Lecture 21</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-22.html">Lecture 22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../102-Varada-lectures/lec23.html">Lecture 23</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://kvarada.github.io/cpsc330-slides/lecture-24.html">Lecture 24</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../103-Firas-lectures/README.html">Section 103</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -267,6 +279,9 @@
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-18">Lecture 18</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-19">Lecture 19</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-20">Lecture 20</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-21">Lecture 21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../103-Firas-lectures/lec22.html">Lecture 22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../103-Firas-lectures/lec23.html">Lecture 23</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://firasm.github.io/cpsc330-slides/slides-24">Lecture 24</a></li>
 </ul>
 </details></li>
@@ -2384,6 +2399,24 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="15_K-Means.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 15: K-Means Clustering</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="19_intro_to_computer-vision.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 19: Multi-class classification and introduction to computer vision</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
