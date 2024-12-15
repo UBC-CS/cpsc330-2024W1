@@ -113,6 +113,19 @@ parts:
       - file: lectures/102-Varada-lectures/lec18
         title: Lecture 18
 
+      - file: lectures/102-Varada-lectures/lec19
+        title: Lecture 19
+      - file: lectures/102-Varada-lectures/lec20
+        title: Lecture 20
+      - file: lectures/102-Varada-lectures/lec21
+        title: Lecture 21
+      - file: lectures/102-Varada-lectures/lec22
+        title: Lecture 22
+      - file: lectures/103-Firas-lectures/lec23
+        title: Lecture 23
+      - file: lectures/102-Varada-lectures/lec24
+        title: Lecture 24
+
   - file: lectures/103-Firas-lectures/README
     sections:
       - file: lectures/103-Firas-lectures/lec1
@@ -149,17 +162,17 @@ parts:
         title: Lecture 17
       - file: lectures/103-Firas-lectures/lec18
         title: Lecture 18
-      - url: "https://firasm.github.io/cpsc330-slides/slides-19"
+      - file: lectures/103-Firas-lectures/lec19
         title: Lecture 19
-      - url: "https://firasm.github.io/cpsc330-slides/slides-20"
+      - file: lectures/103-Firas-lectures/lec20
         title: Lecture 20
-      - url: "https://firasm.github.io/cpsc330-slides/slides-21"
+      - file: lectures/103-Firas-lectures/lec21
         title: Lecture 21
       - file: lectures/103-Firas-lectures/lec22
         title: Lecture 22
       - file: lectures/103-Firas-lectures/lec23
         title: Lecture 23
-      - url: "https://firasm.github.io/cpsc330-slides/slides-24"
+      - file: lectures/103-Firas-lectures/lec24
         title: Lecture 24
 - caption: Attribution
   chapters: 
