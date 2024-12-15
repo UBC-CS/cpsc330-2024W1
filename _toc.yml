@@ -64,9 +64,9 @@ parts:
       - file: lectures/101-Giulia-lectures/14_feature-engineering-selection.ipynb
       - file: lectures/101-Giulia-lectures/15_K-Means.ipynb
       - file: lectures/101-Giulia-lectures/16_DBSCAN-hierarchical.ipynb
-      - file: lectures/101-Firas-lectures/lec17
+      - file: lectures/101-Giulia-lectures/lec17
         title: Lecture 17
-      - file: lectures/101-Firas-lectures/lec18
+      - file: lectures/101-Giulia-lectures/lec18
         title: Lecture 18
       - file: lectures/101-Giulia-lectures/19_intro_to_computer-vision
       - file: lectures/101-Giulia-lectures/20_time-series
